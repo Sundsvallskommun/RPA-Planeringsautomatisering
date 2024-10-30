@@ -5,7 +5,7 @@
     <x:Property Name="out_dt_MedicalRecords" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="out_dt_Utredning" Type="OutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1237,1400</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1333,1863</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="654,1295" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="654,1798" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DateTom" />
       <Variable x:TypeArguments="x:String" Name="DateFrom" />
@@ -128,15 +128,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,53" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,294" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,293" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If sap:VirtualizedContainerService.HintSize="388,183" sap2010:WorkflowViewState.IdRef="If_1">
+          <If sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
@@ -159,7 +159,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:MultipleAssign DisplayName="Multiple Assign for test" sap:VirtualizedContainerService.HintSize="592,53" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign for test" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -211,26 +211,26 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,53" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="654,830" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="654,779" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch Aktualiseringar" sap:VirtualizedContainerService.HintSize="592,719" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch DisplayName="Try Catch Aktualiseringar" sap:VirtualizedContainerService.HintSize="592,668" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <TryCatch.Try>
-              <Sequence sap:VirtualizedContainerService.HintSize="554,486" sap2010:WorkflowViewState.IdRef="Sequence_27">
+              <Sequence sap:VirtualizedContainerService.HintSize="554,440" sap2010:WorkflowViewState.IdRef="Sequence_27">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:RetryScope DisplayName="Retry Scope Aktualiseringar" sap:VirtualizedContainerService.HintSize="492,375" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:10">
+                <ui:RetryScope DisplayName="Retry Scope Aktualiseringar" sap:VirtualizedContainerService.HintSize="492,329" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:10">
                   <ui:RetryScope.ActivityBody>
                     <ActivityAction>
-                      <Sequence DisplayName="Get Aktualiseringar" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                      <Sequence DisplayName="Get Aktualiseringar" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_32">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -256,14 +256,14 @@
                   </ui:RetryScope.ActivityBody>
                   <ui:RetryScope.Condition>
                     <ActivityFunc x:TypeArguments="x:Boolean">
-                      <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Aktualiseringar" Expression="[out_dt_Aktualisering IsNot Nothing AndAlso out_dt_Aktualisering.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,131" sap2010:WorkflowViewState.IdRef="CheckTrue_2" />
+                      <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Aktualiseringar" Expression="[out_dt_Aktualisering IsNot Nothing AndAlso out_dt_Aktualisering.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_2" />
                     </ActivityFunc>
                   </ui:RetryScope.Condition>
                 </ui:RetryScope>
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -274,13 +274,13 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="450,253" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <Sequence sap:VirtualizedContainerService.HintSize="450,334" sap2010:WorkflowViewState.IdRef="Sequence_25">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Could not get data table for Aktualiseringar. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Could not get data table for Aktualiseringar. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
                     <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Aktualiseringar.&quot;)]" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Throw_4" />
                   </Sequence>
                 </ActivityAction>
@@ -296,79 +296,245 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,53" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="654,750" sap2010:WorkflowViewState.IdRef="Sequence_39">
+    <TryCatch DisplayName="Try Catch Get Bevakningar" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="554,440" sap2010:WorkflowViewState.IdRef="Sequence_24">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch Get Bevakningar" sap:VirtualizedContainerService.HintSize="592,719" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <ui:RetryScope DisplayName="Retry Scope Get Bevakningar" sap:VirtualizedContainerService.HintSize="492,329" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:10">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Get Bevakningar" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Search_Tool_1" In_SearchTool="Gem Bevakning">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </pg:Search_Tool>
+                  <pa:Search_Bevakning in_CitizensID2="{x:Null}" DisplayName="Search Bevakning" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Search_Bevakning_1" in_From="[DateFrom]" in_Tom="[DateTom]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <pa:Search_Bevakning.in_CitizensID1>
+                      <InArgument x:TypeArguments="x:String" />
+                    </pa:Search_Bevakning.in_CitizensID1>
+                  </pa:Search_Bevakning>
+                  <pa:Get_Bevakning_Table DisplayName="Get Bevakning Table" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Get_Bevakning_Table_1" out_dt_Bevakning="[out_dt_Bevakning]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </pa:Get_Bevakning_Table>
+                  <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_1" />
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean">
+                <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Bevakningar" Expression="[out_dt_Bevakning IsNot Nothing AndAlso out_dt_Bevakning.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
+              </ActivityFunc>
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="450,334" sap2010:WorkflowViewState.IdRef="Sequence_22">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Could not get data table for Bevakningar. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
+              <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Bevakningar.&quot;)]" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="592,1037" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="554,809" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope DisplayName="Retry Scope Medical Records" sap:VirtualizedContainerService.HintSize="492,698" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:10">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Get Medical Records" sap:VirtualizedContainerService.HintSize="450,450" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Search_Tool_4" In_SearchTool="VoO Sök dokumentation" />
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <pa:Search_Medical_Records DisplayName="Search Medical Records" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="Search_Medical_Records_1" in_From="[DateFrom]" in_Tom="[DateTom]" />
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <pa:Get_Medical_RecordsTable DisplayName="Get Medical RecordsTable" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Get_Medical_RecordsTable_1" out_dt_MedicalRecords="[out_dt_MedicalRecords]" />
+                  <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_4" />
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean">
+                <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Medical Records" Expression="[out_dt_MedicalRecords IsNot Nothing AndAlso out_dt_MedicalRecords.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_3" />
+              </ActivityFunc>
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="450,334" sap2010:WorkflowViewState.IdRef="Sequence_31">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Could not get data table for Medical Records. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
+              <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Medical Records.&quot;)]" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Throw_6" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,242" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_41">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence sap:VirtualizedContainerService.HintSize="554,486" sap2010:WorkflowViewState.IdRef="Sequence_24">
+              <Sequence sap:VirtualizedContainerService.HintSize="554,1140" sap2010:WorkflowViewState.IdRef="Sequence_36">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:RetryScope DisplayName="Retry Scope Get Bevakningar" sap:VirtualizedContainerService.HintSize="492,375" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:10">
+                <ui:RetryScope DisplayName="Retry Scope Utrdning" sap:VirtualizedContainerService.HintSize="492,1029" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:10">
                   <ui:RetryScope.ActivityBody>
                     <ActivityAction>
-                      <Sequence DisplayName="Get Bevakningar" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                      <Sequence DisplayName="Get Utrdning" sap:VirtualizedContainerService.HintSize="450,737" sap2010:WorkflowViewState.IdRef="Sequence_37">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Search_Tool_1" In_SearchTool="Gem Bevakning">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </pg:Search_Tool>
-                        <pa:Search_Bevakning in_CitizensID2="{x:Null}" DisplayName="Search Bevakning" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Search_Bevakning_1" in_From="[DateFrom]" in_Tom="[DateTom]">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <pa:Search_Bevakning.in_CitizensID1>
+                        <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Search_Tool_2" In_SearchTool="VoO Utredning" />
+                        <pa:Search_Utredning in_From="{x:Null}" in_Tom="{x:Null}" DisplayName="Search Utredning" sap:VirtualizedContainerService.HintSize="388,299" sap2010:WorkflowViewState.IdRef="Search_Utredning_1" in_CitizensID2="[CitizensID]" in_RadioButton="Pågående">
+                          <pa:Search_Utredning.in_CitizensID1>
                             <InArgument x:TypeArguments="x:String" />
-                          </pa:Search_Bevakning.in_CitizensID1>
-                        </pa:Search_Bevakning>
-                        <pa:Get_Bevakning_Table DisplayName="Get Bevakning Table" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Get_Bevakning_Table_1" out_dt_Bevakning="[out_dt_Bevakning]">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </pa:Get_Bevakning_Table>
-                        <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_1" />
+                          </pa:Search_Utredning.in_CitizensID1>
+                        </pa:Search_Utredning>
+                        <pa:Get_Utredning_Table DisplayName="Get Utredning Table" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Get_Utredning_Table_1" out_dt_Utredning="[out_dt_Utredning]" />
+                        <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_2" />
                       </Sequence>
                     </ActivityAction>
                   </ui:RetryScope.ActivityBody>
                   <ui:RetryScope.Condition>
                     <ActivityFunc x:TypeArguments="x:Boolean">
-                      <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Bevakningar" Expression="[out_dt_Bevakning IsNot Nothing AndAlso out_dt_Bevakning.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,131" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
+                      <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Utrdning" Expression="[out_dt_Utredning IsNot Nothing AndAlso out_dt_Utredning.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,131" sap2010:WorkflowViewState.IdRef="CheckTrue_4" />
                     </ActivityFunc>
                   </ui:RetryScope.Condition>
                 </ui:RetryScope>
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -379,14 +545,14 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="450,253" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <Sequence sap:VirtualizedContainerService.HintSize="450,297" sap2010:WorkflowViewState.IdRef="Sequence_38">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Could not get data table for Bevakningar. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
-                    <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Bevakningar.&quot;)]" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Could not get data table for Utrdning. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
+                    <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Utrdning.&quot;)]" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Throw_7" />
                   </Sequence>
                 </ActivityAction>
               </Catch>
@@ -394,138 +560,6 @@
           </TryCatch>
         </Sequence>
       </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="592,719" sap2010:WorkflowViewState.IdRef="TryCatch_6">
-      <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="554,486" sap2010:WorkflowViewState.IdRef="Sequence_29">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:RetryScope DisplayName="Retry Scope Medical Records" sap:VirtualizedContainerService.HintSize="492,375" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:10">
-            <ui:RetryScope.ActivityBody>
-              <ActivityAction>
-                <Sequence DisplayName="Get Medical Records" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Search_Tool_4" In_SearchTool="VoO Sök dokumentation" />
-                  <pa:Search_Medical_Records DisplayName="Search Medical Records" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="Search_Medical_Records_1" in_From="[DateFrom]" in_Tom="[DateTom]" />
-                  <pa:Get_Medical_RecordsTable DisplayName="Get Medical RecordsTable" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Get_Medical_RecordsTable_1" out_dt_MedicalRecords="[out_dt_MedicalRecords]" />
-                  <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_4" />
-                </Sequence>
-              </ActivityAction>
-            </ui:RetryScope.ActivityBody>
-            <ui:RetryScope.Condition>
-              <ActivityFunc x:TypeArguments="x:Boolean">
-                <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Medical Records" Expression="[out_dt_MedicalRecords IsNot Nothing AndAlso out_dt_MedicalRecords.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,131" sap2010:WorkflowViewState.IdRef="CheckTrue_3" />
-              </ActivityFunc>
-            </ui:RetryScope.Condition>
-          </ui:RetryScope>
-        </Sequence>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="450,253" sap2010:WorkflowViewState.IdRef="Sequence_31">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Could not get data table for Medical Records. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
-              <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Medical Records.&quot;)]" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Throw_6" />
-            </Sequence>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
-    <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="592,53" sap2010:WorkflowViewState.IdRef="TryCatch_5">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="554,1140" sap2010:WorkflowViewState.IdRef="Sequence_36">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:RetryScope DisplayName="Retry Scope Utrdning" sap:VirtualizedContainerService.HintSize="492,1029" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:10">
-            <ui:RetryScope.ActivityBody>
-              <ActivityAction>
-                <Sequence DisplayName="Get Utrdning" sap:VirtualizedContainerService.HintSize="450,737" sap2010:WorkflowViewState.IdRef="Sequence_37">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Search_Tool_2" In_SearchTool="VoO Utredning" />
-                  <pa:Search_Utredning in_From="{x:Null}" in_Tom="{x:Null}" DisplayName="Search Utredning" sap:VirtualizedContainerService.HintSize="388,299" sap2010:WorkflowViewState.IdRef="Search_Utredning_1" in_CitizensID2="[CitizensID]" in_RadioButton="Pågående">
-                    <pa:Search_Utredning.in_CitizensID1>
-                      <InArgument x:TypeArguments="x:String" />
-                    </pa:Search_Utredning.in_CitizensID1>
-                  </pa:Search_Utredning>
-                  <pa:Get_Utredning_Table DisplayName="Get Utredning Table" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Get_Utredning_Table_1" out_dt_Utredning="[out_dt_Utredning]" />
-                  <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_2" />
-                </Sequence>
-              </ActivityAction>
-            </ui:RetryScope.ActivityBody>
-            <ui:RetryScope.Condition>
-              <ActivityFunc x:TypeArguments="x:Boolean">
-                <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Utrdning" Expression="[out_dt_Utredning IsNot Nothing AndAlso out_dt_Utredning.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,131" sap2010:WorkflowViewState.IdRef="CheckTrue_4" />
-              </ActivityFunc>
-            </ui:RetryScope.Condition>
-          </ui:RetryScope>
-        </Sequence>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="450,297" sap2010:WorkflowViewState.IdRef="Sequence_38">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Could not get data table for Utrdning. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
-              <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Utrdning.&quot;)]" sap:VirtualizedContainerService.HintSize="388,91" sap2010:WorkflowViewState.IdRef="Throw_7" />
-            </Sequence>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
   </Sequence>
 </Activity>

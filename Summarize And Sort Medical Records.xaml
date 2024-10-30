@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2542,922</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1333,871</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Medical_Records_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -46,6 +46,7 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Globalization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -99,7 +100,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Summarize_And_Sort_Medical_Records" sap:VirtualizedContainerService.HintSize="496,619" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Summarize_And_Sort_Medical_Records" sap:VirtualizedContainerService.HintSize="496,806" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,10 +128,22 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[out_CaseManager_dt_MedicalRecords.AsEnumerable().
-    OrderBy(Function(row) DateTime.ParseExact(row("Datum").ToString(), "yyMMdd", System.Globalization.CultureInfo.InvariantCulture)).
+    OrderBy(Function(row) DateTime.ParseExact(row("Dokumentationsdatum").ToString(), "yyMMdd", System.Globalization.CultureInfo.InvariantCulture)).
     CopyToDataTable()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Got datatable for case manager. Number of row(s) &quot; + out_CaseManager_dt_MedicalRecords.RowCount.ToString]" />
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xD;&#xA;Dim orderedColumnNames = out_CaseManager_dt_MedicalRecords.Columns.Cast(Of DataColumn)().&#xD;&#xA;    Select(Function(col) col.ColumnName).&#xD;&#xA;    OrderBy(Function(name) name).ToList()&#xD;&#xA;&#xD;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xD;&#xA;Dim sortedTable As New DataTable()&#xD;&#xA;&#xD;&#xA;' Lägg till kolumnerna i bokstavsordning&#xD;&#xA;For Each colName In orderedColumnNames&#xD;&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_MedicalRecords.Columns(colName).DataType)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xD;&#xA;For Each row As DataRow In out_CaseManager_dt_MedicalRecords.Rows&#xD;&#xA;    Dim newRow = sortedTable.NewRow()&#xD;&#xA;    For Each colName In orderedColumnNames&#xD;&#xA;        newRow(colName) = row(colName)&#xD;&#xA;    Next&#xD;&#xA;    sortedTable.Rows.Add(newRow)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xD;&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_MedicalRecords kan du göra det här:&#xD;&#xA;out_CaseManager_dt_MedicalRecords = sortedTable&#xD;&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_MedicalRecords">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_CaseManager_dt_MedicalRecords" />
+        </InOutArgument>
+      </ui:InvokeCode.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeCode>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Got datatable for case manager. Number of row(s) &quot; + out_CaseManager_dt_MedicalRecords.RowCount.ToString]" />
   </Sequence>
 </Activity>

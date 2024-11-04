@@ -3,7 +3,7 @@
   "description": "Robotic Enterprise Framework (Windows)",
   "main": "Main.xaml",
   "dependencies": {
-    "Procapita.Plus": "[1.0.10]",
+    "Procapita.Plus": "[1.0.11]",
     "UiPath.Excel.Activities": "[2.22.4]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[23.10.1]",
@@ -91,6 +91,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\TestCaseSumAndSort.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "8dbc438f-3259-4305-bb3f-e511ad962bdb",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCaseCompareExcelOchProcapita.xaml"
       }
     ],
     "modernBehavior": false

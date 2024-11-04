@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>486,1327</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1667,1164</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Utredningar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,7 +103,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Summarize_And_Sort_Utredningar" sap:VirtualizedContainerService.HintSize="496,1222" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Summarize_And_Sort_Utredningar" sap:VirtualizedContainerService.HintSize="496,1099" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="TempDistinctClientList" />
     </Sequence.Variables>
@@ -114,7 +114,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,192" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -151,7 +151,7 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[out_CaseManager_dt_Utredningar.AsEnumerable().
-                     Select(Function(row) row.Field(Of String)("Namn")).Distinct().ToList()]</InArgument>
+                     Select(Function(row) row.Field(Of String)("Personnr")).Distinct().ToList()]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign DisplayName="Private: Assign io_DistinctClientList Utredningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
@@ -162,11 +162,9 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[io_DistinctClientList.Concat(TempDistinctClientList).Distinct().ToList()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xD;&#xA;Dim orderedColumnNames = out_CaseManager_dt_Utredningar.Columns.Cast(Of DataColumn)().&#xD;&#xA;    Select(Function(col) col.ColumnName).&#xD;&#xA;    OrderBy(Function(name) name).ToList()&#xD;&#xA;&#xD;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xD;&#xA;Dim sortedTable As New DataTable()&#xD;&#xA;&#xD;&#xA;' Lägg till kolumnerna i bokstavsordning&#xD;&#xA;For Each colName In orderedColumnNames&#xD;&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_Utredningar.Columns(colName).DataType)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xD;&#xA;For Each row As DataRow In out_CaseManager_dt_Utredningar.Rows&#xD;&#xA;    Dim newRow = sortedTable.NewRow()&#xD;&#xA;    For Each colName In orderedColumnNames&#xD;&#xA;        newRow(colName) = row(colName)&#xD;&#xA;    Next&#xD;&#xA;    sortedTable.Rows.Add(newRow)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xD;&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_Utredningar kan du göra det här:&#xD;&#xA;out_CaseManager_dt_Utredningar = sortedTable&#xD;&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xD;&#xA;Dim orderedColumnNames As List(Of String) = out_CaseManager_dt_Utredningar.Columns.Cast(Of DataColumn)().&#xD;&#xA;    Select(Function(col) col.ColumnName).&#xD;&#xA;    OrderBy(Function(name) name).ToList()&#xD;&#xA;&#xD;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xD;&#xA;Dim sortedTable As New DataTable()&#xD;&#xA;&#xD;&#xA;' Lägg till kolumnerna i bokstavsordning&#xD;&#xA;For Each colName As String In orderedColumnNames&#xD;&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_Utredningar.Columns(colName).DataType)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xD;&#xA;For Each row As DataRow In out_CaseManager_dt_Utredningar.Rows&#xD;&#xA;    Dim newRow As DataRow = sortedTable.NewRow()&#xD;&#xA;    For Each colName As String In orderedColumnNames&#xD;&#xA;        newRow(colName) = row(colName)&#xD;&#xA;    Next&#xD;&#xA;    sortedTable.Rows.Add(newRow)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xD;&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_Utredningar kan du göra det här:&#xD;&#xA;out_CaseManager_dt_Utredningar = sortedTable&#xD;&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Utredningar">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_CaseManager_dt_Utredningar" />
-        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Utredningar">[out_CaseManager_dt_Utredningar]</InOutArgument>
       </ui:InvokeCode.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -190,16 +188,6 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <Assign DisplayName="Private: out_CaseManager_dt_Utredningar Sort by date" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_9">
-      <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataTable">[out_CaseManager_dt_Utredningar]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[out_CaseManager_dt_Utredningar.AsEnumerable().
-    OrderBy(Function(row) DateTime.ParseExact(row("From").ToString(), "yyMMdd", System.Globalization.CultureInfo.InvariantCulture)).
-    CopyToDataTable()]</InArgument>
-      </Assign.Value>
-    </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Got datatable for case manager. Number of row(s) &quot; + out_CaseManager_dt_Utredningar.RowCount.ToString]" />
   </Sequence>
 </Activity>

@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1667,1001</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1667,871</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Medical_Records_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,11 +128,11 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[out_CaseManager_dt_MedicalRecords.AsEnumerable().
-    OrderBy(Function(row) DateTime.ParseExact(row("Dokumentationsdatum").ToString(), "yyMMdd", System.Globalization.CultureInfo.InvariantCulture)).
+    OrderByDescending(Function(row) DateTime.ParseExact(row("Dokumentationsdatum").ToString(), "yyMMdd", System.Globalization.CultureInfo.InvariantCulture)).
     CopyToDataTable()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xD;&#xA;Dim orderedColumnNames As List(Of String) = out_CaseManager_dt_MedicalRecords.Columns.Cast(Of DataColumn)().&#xD;&#xA;    Select(Function(col) col.ColumnName).&#xD;&#xA;    OrderBy(Function(name) name).ToList()&#xD;&#xA;&#xD;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xD;&#xA;Dim sortedTable As New DataTable()&#xD;&#xA;&#xD;&#xA;' Lägg till kolumnerna i bokstavsordning&#xD;&#xA;For Each colName As String In orderedColumnNames&#xD;&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_MedicalRecords.Columns(colName).DataType)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xD;&#xA;For Each row As DataRow In out_CaseManager_dt_MedicalRecords.Rows&#xD;&#xA;    Dim newRow As DataRow = sortedTable.NewRow()&#xD;&#xA;    For Each colName As String In orderedColumnNames&#xD;&#xA;        newRow(colName) = row(colName)&#xD;&#xA;    Next&#xD;&#xA;    sortedTable.Rows.Add(newRow)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xD;&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_MedicalRecords kan du göra det här:&#xD;&#xA;out_CaseManager_dt_MedicalRecords = sortedTable&#xD;&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xA;Dim orderedColumnNames As List(Of String) = out_CaseManager_dt_MedicalRecords.Columns.Cast(Of DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i bokstavsordning&#xA;For Each colName As String In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_MedicalRecords.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In out_CaseManager_dt_MedicalRecords.Rows&#xA;    Dim newRow As DataRow = sortedTable.NewRow()&#xA;    For Each colName As String In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_MedicalRecords kan du göra det här:&#xA;out_CaseManager_dt_MedicalRecords = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_MedicalRecords">[out_CaseManager_dt_MedicalRecords]</InOutArgument>
       </ui:InvokeCode.Arguments>

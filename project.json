@@ -3,7 +3,7 @@
   "description": "Robotic Enterprise Framework (Windows)",
   "main": "Main.xaml",
   "dependencies": {
-    "Procapita.Plus": "[1.0.11]",
+    "Procapita.Plus": "[1.0.12]",
     "UiPath.Excel.Activities": "[2.22.4]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[23.10.1]",
@@ -24,7 +24,8 @@
     "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
-      "*password*"
+      "*password*",
+      "*"
     ],
     "executionType": "Workflow",
     "readyForPiP": false,

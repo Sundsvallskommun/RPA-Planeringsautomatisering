@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1667,2445</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1677,2445</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Bevakningar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -271,7 +271,7 @@
                         <OutArgument x:TypeArguments="x:Object">[dt_CaseManage_BevakningarCopy(IndexDataRow)(IndexDataCell)]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:Object">[System.Text.RegularExpressions.Regex.Replace(currentItem, "\s+", "")]</InArgument>
+                        <InArgument x:TypeArguments="x:Object" xml:space="preserve">[System.Text.RegularExpressions.Regex.Replace(currentItem, "\s+",  " ")]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">

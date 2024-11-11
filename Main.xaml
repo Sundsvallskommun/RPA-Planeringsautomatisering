@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1662,922</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1333,879</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -54,7 +54,7 @@
     <scg:List x:TypeArguments="AssemblyReference" Capacity="88">
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
-      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
@@ -64,6 +64,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
@@ -72,10 +73,12 @@
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
@@ -89,6 +92,7 @@
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
@@ -98,12 +102,6 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>WindowsFormsIntegration</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
-      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
-      <AssemblyReference>System.ObjectModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Planeringsautomatisering]&#xA;[Genererar senaste uppdateringarna för handläggnarna inom 'Aktualiseringar', 'Bevakningar', 'Journalantecknigar' och 'Utredningar']&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="703,814" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -230,7 +228,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="584,1449" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="231,188" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="538,977" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -262,27 +260,13 @@
                       </Assign>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="438,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Framework\Process.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                            <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="TransactionItem" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
-                            <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
-                          </InArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Bevakning">
-                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Bevakning" />
-                          </InOutArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Aktualisering">
-                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualisering" />
-                          </InOutArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Utredning">
-                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Utredning" />
-                          </InOutArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_MedicalRecords">
-                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_MedicalRecords" />
-                          </InOutArgument>
+                          <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[TransactionNumber]</InArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Bevakning">[dt_Bevakning]</InOutArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Aktualisering">[dt_Aktualisering]</InOutArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Utredning">[dt_Utredning]</InOutArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_MedicalRecords">[dt_MedicalRecords]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <TryCatch DisplayName="Try Catch Set Transaction Status (Success)" sap:VirtualizedContainerService.HintSize="438,341" sap2010:WorkflowViewState.IdRef="TryCatch_10">

@@ -1,19 +1,14 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Update_Excel_File" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_dt_Aktualiseringar" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="in_dt_Bevakningar" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="in_dt_Utredning" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="in_dt_MedicalRecords" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_ExcelFilePath" Type="InArgument(x:String)" />
-    <x:Property Name="in_dt_ExcelNotProcapita" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="in_Excelfile_Old" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="in_RemoveRowIndexList" Type="InArgument(scg:List(x:Int32))" />
     <x:Property Name="in_SheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_AddRowIndexList" Type="InArgument(scg:List(x:Int32))" />
+    <x:Property Name="in_RemoveRowIndexList" Type="InArgument(scg:List(x:Int32))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1973,1799</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1677,1799</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Excel_File_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -238,7 +233,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="486,421" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[in_RemoveRowIndexList.AsEnumerable]">
+                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="486,421" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[in_AddRowIndexList.AsEnumerable]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>

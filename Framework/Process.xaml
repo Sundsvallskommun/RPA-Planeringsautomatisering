@@ -3,15 +3,15 @@
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
-    <x:Property Name="io_dt_Bevakning" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="io_dt_Aktualisering" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="io_dt_MedicalRecords" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="io_dt_Utredning" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_Bevakning_AllCaseManagers" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_Aktualisering_AllCaseManagers" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_MedicalRecords_AllCaseManagers" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_Utredning_AllCaseManagers" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1776,2469</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1776,3331</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -126,7 +126,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1786,2404" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1786,3266" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Hofling, Anneli" Name="CaseManager" />
       <Variable x:TypeArguments="x:String" Default="AIHG" Name="CaseManagerSign" />
@@ -150,133 +150,105 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="1724,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1724,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1724,446" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="493,367" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Multiple Assign TransactionItem" sap:VirtualizedContainerService.HintSize="431,256" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
             <ui:MultipleAssign.AssignOperations>
-              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
                   <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:String">[CaseManager]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[FolderPath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Name").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[in_Config("ExcelFolderPath").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
                   <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:String">[CaseManagerSign]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[FileName]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Signatur").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("FileName").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
                   <ui:AssignOperation.To>
                     <OutArgument x:TypeArguments="x:String">[ExcelFilePath]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("FilePath").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[FolderPath + "\"+FileName]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[CaseManager]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerName").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[CaseManagerSign]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerID").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[CaseManagerEmail]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Email").ToString]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
         </Sequence>
       </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ui:MultipleAssign DisplayName="Multiple Assign TransactionItem" sap:VirtualizedContainerService.HintSize="1724,256" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-      <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[FolderPath]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("ExcelFolderPath").ToString]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[FileName]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("FileName").ToString]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[ExcelFilePath]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[FolderPath + "\"+FileName]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[CaseManager]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerName").ToString]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[CaseManagerSign]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerID").ToString]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[CaseManagerEmail]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Email").ToString]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-        </scg:List>
-      </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:MultipleAssign>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1724,1645" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    </ui:CommentOut>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1724,2409" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Flowchart sap:VirtualizedContainerService.HintSize="1686,1417" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart sap:VirtualizedContainerService.HintSize="1514,2181" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_Aktualiseringar_CaseManager" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_Bevakningar_CaseManager" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Aktualiseringar_NewRowsFromExcel" />
             <Variable x:TypeArguments="sd:DataTable" Name="dt_Aktualiseringar_Excel" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_Bevakningar_Excel" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_MedicalRecords_Excel" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_Utredning_Excel" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_MergedBevakningar" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_MergedAktualiseringar" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_MergedUtredningar" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Aktualiseringar_CaseManager" />
+            <Variable x:TypeArguments="scg:List(x:Int32)" Name="RemoveRowIndexList_Aktualiseringar" />
+            <Variable x:TypeArguments="scg:List(x:Int32)" Name="AddRowIndexList_Aktualiseringar" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Utredning_NewRowsFromExcel" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Bevakningar_OldRowsFromExcel" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Journalanteckningar_OldRowsFromExcel" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Utredning_OldRowsFromExcel" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Aktualiseringar_OldRowsFromExcel" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Bevkakningar_NewRowsFromExcel" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Journalanteckningar_NewRowsFromExcel" />
+            <Variable x:TypeArguments="scg:List(x:Int32)" Name="RemoveRowIndexList_Utredningar" />
+            <Variable x:TypeArguments="scg:List(x:Int32)" Name="AddRowIndexList_Utredningar" />
             <Variable x:TypeArguments="sd:DataTable" Name="dt_Utredningar_CaseManager" />
-            <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(Of String)]" Name="DistinctClientList" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_MedicalRecords_CaseManager" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_MergedMedicalRecords" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_ExcelNotProcapita" />
-            <Variable x:TypeArguments="sd:DataTable" Name="dt_ProcapitaNotExcel" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Utredning_Excel" />
+            <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="DistinctClientList" />
+            <Variable x:TypeArguments="sd:DataTable" Name="dt_Bevakningar_CaseManager" />
           </Flowchart.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -285,14 +257,14 @@
               <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,116.5</av:PointCollection>
-              <x:Double x:Key="Width">1652</x:Double>
-              <x:Double x:Key="Height">1380</x:Double>
+              <x:Double x:Key="Width">1480</x:Double>
+              <x:Double x:Key="Height">2144</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID7</x:Reference>
+            <x:Reference>__ReferenceID16</x:Reference>
           </Flowchart.StartNode>
-          <FlowStep x:Name="__ReferenceID0">
+          <FlowStep x:Name="__ReferenceID2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">50,218.5</av:Point>
@@ -302,10 +274,10 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar alla datatabeller i gränssnitet" DisplayName="FirstRunInit.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,94" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="FirstRunInit.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakning">[io_dt_Bevakning]</OutArgument>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualisering">[io_dt_Aktualisering]</OutArgument>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_MedicalRecords">[io_dt_MedicalRecords]</OutArgument>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[io_dt_Utredning]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakning">[io_dt_Bevakning_AllCaseManagers]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualisering">[io_dt_Aktualisering_AllCaseManagers]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_MedicalRecords">[io_dt_MedicalRecords_AllCaseManagers]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[io_dt_Utredning_AllCaseManagers]</OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -314,7 +286,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
             <FlowStep.Next>
-              <FlowStep x:Name="__ReferenceID1">
+              <FlowStep x:Name="__ReferenceID3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">260,342.5</av:Point>
@@ -324,21 +296,25 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:Comment sap:VirtualizedContainerService.HintSize="200,75" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Hämta Inställningar för excelfilen" />
                 <FlowStep.Next>
-                  <FlowStep x:Name="__ReferenceID2">
+                  <FlowStep x:Name="__ReferenceID4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">260,447.5</av:Point>
-                        <av:Size x:Key="ShapeSize">200,94</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">360,541.5 360,589.5</av:PointCollection>
+                        <av:Size x:Key="ShapeSize">200,139</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">360,586.5 360,636.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar alla blad och sparar de som datatabeller." DisplayName="Get Data From Excel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,94" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excel\Get Data From Excel.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar alla blad och sparar de som datatabeller. (Med och utan kolumerna: Prioritet,Status och Kommentar)" DisplayName="Get Data From Excel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excel\Get Data From Excel.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[ExcelFilePath]</InArgument>
-                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualiseringar">[dt_Aktualiseringar_Excel]</OutArgument>
-                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakningar">[dt_Bevakningar_Excel]</OutArgument>
-                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Journalanteckningar">[dt_MedicalRecords_Excel]</OutArgument>
-                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[dt_Utredning_Excel]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">\\safs008\RPA\VoF\RPA_029\Temp\Mall- Visa.xlsx</InArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning_NewRowsFromExcel">[dt_Utredning_NewRowsFromExcel]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakningar_OldRowsFromExcel">[dt_Bevakningar_OldRowsFromExcel]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Journalanteckningar_OldRowsFromExcel">[dt_Journalanteckningar_OldRowsFromExcel]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning_OldRowsFromExcel">[dt_Utredning_Excel]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualiseringar_OldRowsFromExcel">[dt_Aktualiseringar_OldRowsFromExcel]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevkakningar_NewRowsFromExcel">[dt_Bevkakningar_NewRowsFromExcel]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Journalanteckningar_NewRowsFromExcel">[dt_Journalanteckningar_NewRowsFromExcel]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualiseringar_NewRowsFromExcel">[dt_Aktualiseringar_NewRowsFromExcel]</OutArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -348,171 +324,235 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InvokeWorkflowFile>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID3">
+                      <FlowDecision x:Name="__ReferenceID12" Condition="[(io_dt_Aktualisering_AllCaseManagers IsNot Nothing AndAlso io_dt_Aktualisering_AllCaseManagers.Rows.Count &gt; 0)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">260,589.5</av:Point>
-                            <av:Size x:Key="ShapeSize">200,153</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">360,742.5 360,773.5</av:PointCollection>
+                            <av:Point x:Key="ShapeLocation">320.5,636.5</av:Point>
+                            <av:Size x:Key="ShapeSize">79,87</av:Size>
+                            <av:PointCollection x:Key="TrueConnector">320.5,680 168,680 168,744</av:PointCollection>
+                            <av:PointCollection x:Key="FalseConnector">399.5,680 510,680 510,744</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence sap2010:Annotation.AnnotationText="Filtrerar ut de rader som är den specifika handläggarens. och lägger alla klienter i en lista." DisplayName="Summarize And Sort All Utredning,Bevakning, Aktuallisering" sap:VirtualizedContainerService.HintSize="200,153" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize Aktualiseringar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Aktualiseringar.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                                <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                              </InArgument>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Aktualiseringar">
-                                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_CaseManager" />
-                              </OutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManager" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Aktualisering">
-                                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dt_Aktualisering" />
-                              </InArgument>
-                              <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
-                                <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
-                              </InOutArgument>
-                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                              </InArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                          </ui:InvokeWorkflowFile>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Bevakningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Bevakningar.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">
-                                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Bevakningar_CaseManager" />
-                              </OutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManagerSign" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Bevakningar">
-                                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dt_Bevakning" />
-                              </InArgument>
-                              <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
-                                <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
-                              </InOutArgument>
-                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
-                            </ui:InvokeWorkflowFile.Arguments>
+                        <FlowDecision.True>
+                          <FlowStep x:Name="__ReferenceID11">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">68,744</av:Point>
+                                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">168,796 168,826 350,826 350,846.5</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </ui:InvokeWorkflowFile>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Utredningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Utredningar.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">[CaseManager]</InArgument>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Utredningar">[io_dt_Utredning]</InArgument>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Utredningar">[dt_Utredningar_CaseManager]</OutArgument>
-                              <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[DistinctClientList]</InOutArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:InvokeWorkflowFile>
-                        </Sequence>
-                        <FlowStep.Next>
-                          <FlowStep x:Name="__ReferenceID4">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">260,773.5</av:Point>
-                                <av:Size x:Key="ShapeSize">200,139</av:Size>
-                                <av:PointCollection x:Key="ConnectorLocation">460,843 490,843 490,850 540,850</av:PointCollection>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en tabell med de rader som saknas i Excelfilen. (Aktualiseringar)" DisplayName="Compare Exccel And Procapita.xaml - Aktualiseringar" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Compare Exccel And Procapita.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize Aktualiseringar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Aktualiseringar.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Excel">
-                                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_Excel" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">
-                                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_CaseManager" />
-                                </InArgument>
-                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ProcapitaNotExcel" />
-                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ExcelNotProcapita" />
-                                <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_RemoveRowIndexList" />
+                                <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Aktualiseringar">[dt_Aktualiseringar_CaseManager]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">[CaseManager]</InArgument>
+                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Aktualisering">[io_dt_Aktualisering_AllCaseManagers]</InArgument>
+                                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[DistinctClientList]</InOutArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
                             <FlowStep.Next>
-                              <FlowStep x:Name="__ReferenceID6">
+                              <FlowDecision x:Name="__ReferenceID1" Condition="[(io_dt_Bevakning_AllCaseManagers IsNot Nothing AndAlso io_dt_Bevakning_AllCaseManagers.Rows.Count &gt; 0)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">540,780.5</av:Point>
-                                    <av:Size x:Key="ShapeSize">200,139</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">740,850 830,850</av:PointCollection>
+                                    <av:Point x:Key="ShapeLocation">310.5,846.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                    <av:PointCollection x:Key="TrueConnector">310.5,890 160.5,890 160.5,964</av:PointCollection>
+                                    <av:PointCollection x:Key="FalseConnector">389.5,890 510,890 510,964</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en tabell med de rader som saknas i Excelfilen. (Bevakningar)" DisplayName="Compare Exccel And Procapita.xaml - Bevakningar" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Compare Exccel And Procapita.xaml">
-                                  <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Excel">[dt_Bevakningar_Excel]</InArgument>
-                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">[dt_Bevakningar_CaseManager]</InArgument>
-                                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Merged">[dt_MergedBevakningar]</OutArgument>
-                                  </ui:InvokeWorkflowFile.Arguments>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </ui:InvokeWorkflowFile>
-                                <FlowStep.Next>
-                                  <FlowStep x:Name="__ReferenceID5">
+                                <FlowDecision.True>
+                                  <FlowStep x:Name="__ReferenceID10">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">830,780.5</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,139</av:Size>
+                                        <av:Point x:Key="ShapeLocation">60.5,964</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">160.5,1016 160.5,1046 340,1046 340,1086.5</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en tabell med de rader som saknas i Excelfilen. (Utredningar)" DisplayName="Compare Exccel And Procapita.xaml - Utredningar" sap:VirtualizedContainerService.HintSize="358,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Compare Exccel And Procapita.xaml">
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Bevakningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Bevakningar.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Excel">
-                                          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Utredning_Excel" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">
-                                          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Utredningar_CaseManager" />
-                                        </InArgument>
-                                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ProcapitaNotExcel">
-                                          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_ProcapitaNotExcel" />
-                                        </OutArgument>
-                                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ExcelNotProcapita">
-                                          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_ExcelNotProcapita" />
-                                        </OutArgument>
-                                        <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_RemoveRowIndexList" />
+                                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">[dt_Bevakningar_CaseManager]</OutArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">[CaseManagerSign]</InArgument>
+                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Bevakningar">[io_dt_Bevakning_AllCaseManagers]</InArgument>
+                                        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[DistinctClientList]</InOutArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
                                       </ui:InvokeWorkflowFile.Arguments>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:InvokeWorkflowFile>
+                                    <FlowStep.Next>
+                                      <FlowDecision x:Name="__ReferenceID0" Condition="[(io_dt_Utredning_AllCaseManagers IsNot Nothing AndAlso io_dt_Utredning_AllCaseManagers.Rows.Count &gt; 0)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <av:Point x:Key="ShapeLocation">300.5,1086.5</av:Point>
+                                            <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                            <av:PointCollection x:Key="TrueConnector">300.5,1130 270.5,1130 270.5,1200 240,1200</av:PointCollection>
+                                            <av:PointCollection x:Key="FalseConnector">379.5,1130 540,1130 540,1184</av:PointCollection>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <FlowDecision.True>
+                                          <FlowStep x:Name="__ReferenceID9">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">40,1174</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">140,1226 140,1256 890,1256 890,1360.5</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Utredningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Utredningar.xaml">
+                                              <ui:InvokeWorkflowFile.Arguments>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
+                                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManager" />
+                                                </InArgument>
+                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Utredningar">
+                                                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dt_Utredning_AllCaseManagers" />
+                                                </InArgument>
+                                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Utredningar">
+                                                  <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Utredningar_CaseManager" />
+                                                </OutArgument>
+                                                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
+                                                  <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
+                                                </InOutArgument>
+                                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                                </InArgument>
+                                              </ui:InvokeWorkflowFile.Arguments>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:InvokeWorkflowFile>
+                                            <FlowStep.Next>
+                                              <FlowStep x:Name="__ReferenceID5">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <av:Point x:Key="ShapeLocation">790,1360.5</av:Point>
+                                                    <av:Size x:Key="ShapeSize">200,139</av:Size>
+                                                    <av:PointCollection x:Key="ConnectorLocation">890,1499.5 890,1534</av:PointCollection>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en tabell med de rader som saknas i Excelfilen. (Utredningar)" DisplayName="Compare Exccel And Procapita.xaml - Utredningar" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Compare Exccel And Procapita.xaml">
+                                                  <ui:InvokeWorkflowFile.Arguments>
+                                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Excel">[dt_Utredning_Excel]</InArgument>
+                                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">[dt_Utredningar_CaseManager]</InArgument>
+                                                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ProcapitaNotExcel" />
+                                                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ExcelNotProcapita" />
+                                                    <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_RemoveRowIndexList">[RemoveRowIndexList_Utredningar]</OutArgument>
+                                                    <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_AddRowIndexList">[AddRowIndexList_Utredningar]</OutArgument>
+                                                  </ui:InvokeWorkflowFile.Arguments>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:InvokeWorkflowFile>
+                                                <FlowStep.Next>
+                                                  <FlowStep x:Name="__ReferenceID8">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <av:Point x:Key="ShapeLocation">790,1534</av:Point>
+                                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                        <av:PointCollection x:Key="ConnectorLocation">890,1586 890,1634</av:PointCollection>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Excel\Update Excel File.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:InvokeWorkflowFile>
+                                                    <FlowStep.Next>
+                                                      <FlowStep x:Name="__ReferenceID7">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <av:Point x:Key="ShapeLocation">790,1634</av:Point>
+                                                            <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                            <av:PointCollection x:Key="ConnectorLocation">930,975.5 930,925.5</av:PointCollection>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:CommentOut sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                                          <ui:CommentOut.Body>
+                                                            <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Hej&quot;]" />
+                                                            </Sequence>
+                                                          </ui:CommentOut.Body>
+                                                        </ui:CommentOut>
+                                                      </FlowStep>
+                                                    </FlowStep.Next>
+                                                  </FlowStep>
+                                                </FlowStep.Next>
+                                              </FlowStep>
+                                            </FlowStep.Next>
+                                          </FlowStep>
+                                        </FlowDecision.True>
+                                        <FlowDecision.False>
+                                          <FlowStep x:Name="__ReferenceID15">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">440,1184</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                <av:PointCollection x:Key="ConnectorLocation">520,806 520,836 379.75,836 379.75,856.5</av:PointCollection>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;No rows found in Procapita for Utredningar&quot;]" />
+                                          </FlowStep>
+                                        </FlowDecision.False>
+                                      </FlowDecision>
+                                    </FlowStep.Next>
                                   </FlowStep>
-                                </FlowStep.Next>
-                              </FlowStep>
+                                </FlowDecision.True>
+                                <FlowDecision.False>
+                                  <FlowStep x:Name="__ReferenceID14">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <av:Point x:Key="ShapeLocation">410,964</av:Point>
+                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                        <av:PointCollection x:Key="ConnectorLocation">510,1016 510,1046 359.75,1046 359.75,1086.5</av:PointCollection>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;No rows found in Procapita for Bevakningar&quot;]" />
+                                    <FlowStep.Next>
+                                      <x:Reference>__ReferenceID0</x:Reference>
+                                    </FlowStep.Next>
+                                  </FlowStep>
+                                </FlowDecision.False>
+                              </FlowDecision>
                             </FlowStep.Next>
                           </FlowStep>
-                        </FlowStep.Next>
-                      </FlowStep>
+                        </FlowDecision.True>
+                        <FlowDecision.False>
+                          <FlowStep x:Name="__ReferenceID13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:Point x:Key="ShapeLocation">410,744</av:Point>
+                                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">510,796 510,826 369.75,826 369.75,846.5</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;No rows found in Procapita for Aktualiseringar&quot;]" />
+                            <FlowStep.Next>
+                              <x:Reference>__ReferenceID1</x:Reference>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowDecision.False>
+                      </FlowDecision>
                     </FlowStep.Next>
                   </FlowStep>
                 </FlowStep.Next>
               </FlowStep>
             </FlowStep.Next>
           </FlowStep>
-          <FlowDecision x:Name="__ReferenceID7" Condition="[in_TransactionNumber.Equals(1)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}" False="{x:Reference __ReferenceID1}">
+          <FlowDecision x:Name="__ReferenceID16" Condition="[in_TransactionNumber.Equals(1)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID2}" False="{x:Reference __ReferenceID3}">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -523,10 +563,58 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </FlowDecision>
-          <x:Reference>__ReferenceID1</x:Reference>
-          <x:Reference>__ReferenceID2</x:Reference>
           <x:Reference>__ReferenceID3</x:Reference>
           <x:Reference>__ReferenceID4</x:Reference>
+          <FlowStep>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">220,1360.5</av:Point>
+                <av:Size x:Key="ShapeSize">200,139</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">420,1430 500,1430</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en tabell med de rader som saknas i Excelfilen. (Aktualiseringar)" DisplayName="Compare Exccel And Procapita.xaml - Aktualiseringar" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Compare Exccel And Procapita.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Excel">[dt_Aktualiseringar_Excel]</InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">[dt_Aktualiseringar_CaseManager]</InArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ProcapitaNotExcel" />
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ExcelNotProcapita" />
+                <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_RemoveRowIndexList">[RemoveRowIndexList_Aktualiseringar]</OutArgument>
+                <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_AddRowIndexList">[AddRowIndexList_Aktualiseringar]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+            <FlowStep.Next>
+              <FlowStep x:Name="__ReferenceID6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">500,1360.5</av:Point>
+                    <av:Size x:Key="ShapeSize">200,139</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">700,1430 790,1430</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en tabell med de rader som saknas i Excelfilen. (Bevakningar)" DisplayName="Compare Exccel And Procapita.xaml - Bevakningar" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Compare Exccel And Procapita.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Excel">[dt_Bevakningar_Excel]</InArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">[dt_Bevakningar_CaseManager]</InArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Merged">[dt_MergedBevakningar]</OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
+                <FlowStep.Next>
+                  <x:Reference>__ReferenceID5</x:Reference>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowStep.Next>
+          </FlowStep>
           <x:Reference>__ReferenceID5</x:Reference>
           <x:Reference>__ReferenceID6</x:Reference>
           <FlowStep>
@@ -548,7 +636,7 @@
                   <OutArgument x:TypeArguments="sd:DataTable">[dt_MedicalRecords_CaseManager]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Object">[io_dt_MedicalRecords.AsEnumerable().Where(Function(row) DistinctClientList.Contains(row.Field(Of Integer)("Personnr"))).CopyToDataTable()]</InArgument>
+                  <InArgument x:TypeArguments="x:Object">[io_dt_MedicalRecords_AllCaseManagers.AsEnumerable().Where(Function(row) DistinctClientList.Contains(row.Field(Of Integer)("Personnr"))).CopyToDataTable()]</InArgument>
                 </Assign.Value>
               </Assign>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort\Summarize And Sort Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Medical Records.xaml">
@@ -576,16 +664,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage Message="{x:Null}" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_2" />
           </FlowStep>
-          <FlowStep>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">830,1164</av:Point>
-                <av:Size x:Key="ShapeSize">200,52</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">930,975.5 930,925.5</av:PointCollection>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Hej&quot;]" />
-          </FlowStep>
+          <x:Reference>__ReferenceID7</x:Reference>
           <FlowStep>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -601,6 +680,26 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:ExcelInsertDeleteRows>
           </FlowStep>
+          <x:Reference>__ReferenceID8</x:Reference>
+          <x:Reference>__ReferenceID9</x:Reference>
+          <x:Reference>__ReferenceID10</x:Reference>
+          <x:Reference>__ReferenceID11</x:Reference>
+          <x:Reference>__ReferenceID12</x:Reference>
+          <x:Reference>__ReferenceID1</x:Reference>
+          <x:Reference>__ReferenceID0</x:Reference>
+          <FlowStep>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">40,1276</av:Point>
+                <av:Size x:Key="ShapeSize">200,52</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">940,985.5 940,935.5</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Hej&quot;]" />
+          </FlowStep>
+          <x:Reference>__ReferenceID13</x:Reference>
+          <x:Reference>__ReferenceID14</x:Reference>
+          <x:Reference>__ReferenceID15</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>

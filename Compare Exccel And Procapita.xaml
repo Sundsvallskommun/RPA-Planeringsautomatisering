@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Nyttgammal" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Compare_Exccel_And_Procapita" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_dt_Excel" Type="InArgument(sd:DataTable)" />
     <x:Property Name="in_dt_Procapita" Type="InArgument(sd:DataTable)" />
     <x:Property Name="out_RemoveRowIndexList" Type="OutArgument(scg:List(x:Int32))" />
     <x:Property Name="out_AddRowIndexList" Type="OutArgument(scg:List(x:Int32))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1498,1938</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1037,1939</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Kollar ifall det är gammal eller nya rader och noterar vilka rader som är nya." sap:VirtualizedContainerService.HintSize="572,1873" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="Kollar ifall det är gammal eller nya rader och noterar vilka rader som är nya." sap:VirtualizedContainerService.HintSize="572,1874" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="Index_Excel" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ExcelCopy" />
@@ -132,7 +132,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Assign DisplayName="Assign dt_ExcelCopy" sap:VirtualizedContainerService.HintSize="510,81" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign DisplayName="Assign dt_ExcelCopy" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy]</OutArgument>
       </Assign.To>
@@ -147,7 +147,29 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Prioritet" DataTable="[dt_ExcelCopy]" DisplayName="Private: Remove Data Column Prioritet" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+      <If Condition="[dt_ExcelCopy.Columns.Contains(&quot;Prioritet&quot;)]" DisplayName="If dt has col Prioritet" sap:VirtualizedContainerService.HintSize="410,456" sap2010:WorkflowViewState.IdRef="If_2">
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,274" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Prioritet" DataTable="[dt_ExcelCopy]" DisplayName="Private: Remove Data Column Prioritet" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RemoveDataColumn>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15" />
+        </If.Else>
+      </If>
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Kvitteringsstatus" DataTable="[dt_ExcelCopy]" DisplayName="Private: Remove Data Column Status" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -155,18 +177,10 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:RemoveDataColumn>
-      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Kvitteringsstatus" DataTable="[dt_ExcelCopy]" DisplayName="Private: Remove Data Column Status" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2">
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Kommentarer" DataTable="[dt_ExcelCopy]" DisplayName="Private: Remove Data Column Kommentar" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:RemoveDataColumn>
-      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Kommentarer" DataTable="[dt_ExcelCopy]" DisplayName="Private: Remove Data Column Kommentar" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>

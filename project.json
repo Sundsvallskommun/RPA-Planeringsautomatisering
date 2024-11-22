@@ -3,7 +3,7 @@
   "description": "Robotic Enterprise Framework (Windows)",
   "main": "Main.xaml",
   "dependencies": {
-    "Procapita.Plus": "[1.0.12]",
+    "Procapita.Plus": "[1.0.15]",
     "UiPath.Excel.Activities": "[2.22.4]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[23.10.1]",
@@ -78,13 +78,6 @@
         "testCaseType": "TestCase",
         "executionTemplateType": "Local",
         "fileName": "Tests\\ProcessTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "9de6982c-90fc-451c-b9a6-03fc65d50812",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
       },
       {
         "editingStatus": "InProgress",

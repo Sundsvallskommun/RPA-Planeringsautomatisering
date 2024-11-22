@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1311,1175</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1677,2709</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HämtaGammalData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,21 +113,21 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Hämtar datatabeller från excelfilen och sparar de i fyra olika tabeller.&#xA;Samt sorterar tabellernas kolumner i alfabetisk ordning samt tar bort radbryten" DisplayName="Get Data From Excel" sap:VirtualizedContainerService.HintSize="612,2697" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Hämtar datatabeller från excelfilen och sparar de i fyra olika tabeller.&#xA;Samt sorterar tabellernas kolumner i alfabetisk ordning samt tar bort radbryten" DisplayName="Get Data From Excel" sap:VirtualizedContainerService.HintSize="610,2644" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Aktualiseringar" sap:VirtualizedContainerService.HintSize="550,481" sap2010:WorkflowViewState.IdRef="Sequence_25">
+    <Sequence DisplayName="Aktualiseringar" sap:VirtualizedContainerService.HintSize="548,671" sap2010:WorkflowViewState.IdRef="Sequence_25">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Aktualiseringar" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch Aktualiseringar" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -178,23 +178,32 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xA;Dim orderedColumnNames = out_CaseManager_dt_Aktualiseringar.Columns.Cast(Of DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i bokstavsordning&#xA;For Each colName In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_Aktualiseringar.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In out_CaseManager_dt_Aktualiseringar.Rows&#xA;    Dim newRow = sortedTable.NewRow()&#xA;    For Each colName In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_Aktualiseringar kan du göra det här:&#xA;out_CaseManager_dt_Aktualiseringar = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically Aktualisering" sap:VirtualizedContainerService.HintSize="388,83" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
-        <ui:InvokeCode.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Aktualiseringar">[out_dt_Aktualiseringar_OldRowsFromExcel]</InOutArgument>
-        </ui:InvokeCode.Arguments>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:InvokeCode>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' aktualiseringar" DisplayName="ManipulateDtFromExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,273" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xA;Dim orderedColumnNames = out_CaseManager_dt_Aktualiseringar.Columns.Cast(Of DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i bokstavsordning&#xA;For Each colName In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_Aktualiseringar.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In out_CaseManager_dt_Aktualiseringar.Rows&#xA;    Dim newRow = sortedTable.NewRow()&#xA;    For Each colName In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_Aktualiseringar kan du göra det här:&#xA;out_CaseManager_dt_Aktualiseringar = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically Aktualisering" sap:VirtualizedContainerService.HintSize="388,83" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+              <ui:InvokeCode.Arguments>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Aktualiseringar">[out_dt_Aktualiseringar_OldRowsFromExcel]</InOutArgument>
+              </ui:InvokeCode.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeCode>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' aktualiseringar" DisplayName="ManipulateDtFromExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">
-            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_dt_Aktualiseringar_OldRowsFromExcel" />
-          </InOutArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Aktualiseringar_OldRowsFromExcel]</InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -203,14 +212,14 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="Bevakningar" sap:VirtualizedContainerService.HintSize="550,481" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Bevakningar" sap:VirtualizedContainerService.HintSize="548,671" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Bevakningar" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <TryCatch DisplayName="Try Catch Bevakningar" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="TryCatch_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -277,23 +286,32 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xA;Dim orderedColumnNames = out_CaseManager_dt_Bevakningar.Columns.Cast(Of DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i bokstavsordning&#xA;For Each colName In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_Bevakningar.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In out_CaseManager_dt_Bevakningar.Rows&#xA;    Dim newRow = sortedTable.NewRow()&#xA;    For Each colName In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_Bevakningar kan du göra det här:&#xA;out_CaseManager_dt_Bevakningar = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically Bevakning" sap:VirtualizedContainerService.HintSize="388,83" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
-        <ui:InvokeCode.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">[out_dt_Bevakningar_OldRowsFromExcel]</InOutArgument>
-        </ui:InvokeCode.Arguments>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:InvokeCode>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' bevaknigar" DisplayName="ManipulateDtFromExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,273" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xA;Dim orderedColumnNames = out_CaseManager_dt_Bevakningar.Columns.Cast(Of DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i bokstavsordning&#xA;For Each colName In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_Bevakningar.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In out_CaseManager_dt_Bevakningar.Rows&#xA;    Dim newRow = sortedTable.NewRow()&#xA;    For Each colName In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_Bevakningar kan du göra det här:&#xA;out_CaseManager_dt_Bevakningar = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically Bevakning" sap:VirtualizedContainerService.HintSize="388,83" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
+              <ui:InvokeCode.Arguments>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">[out_dt_Bevakningar_OldRowsFromExcel]</InOutArgument>
+              </ui:InvokeCode.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeCode>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' bevaknigar" DisplayName="ManipulateDtFromExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">
-            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_dt_Bevakningar_OldRowsFromExcel" />
-          </InOutArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Bevakningar_OldRowsFromExcel]</InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -302,14 +320,14 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="MedicalRecords" sap:VirtualizedContainerService.HintSize="550,481" sap2010:WorkflowViewState.IdRef="Sequence_22">
+    <Sequence DisplayName="MedicalRecords" sap:VirtualizedContainerService.HintSize="548,671" sap2010:WorkflowViewState.IdRef="Sequence_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="TryCatch_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -362,23 +380,32 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xA;Dim orderedColumnNames = out_CaseManager_dt_MedicalRecords.Columns.Cast(Of DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i bokstavsordning&#xA;For Each colName In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_MedicalRecords.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In out_CaseManager_dt_MedicalRecords.Rows&#xA;    Dim newRow = sortedTable.NewRow()&#xA;    For Each colName In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_MedicalRecords kan du göra det här:&#xA;out_CaseManager_dt_MedicalRecords = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically Medical Records" sap:VirtualizedContainerService.HintSize="388,83" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
-        <ui:InvokeCode.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_MedicalRecords">[out_dt_Journalanteckningar_OldRowsFromExcel]</InOutArgument>
-        </ui:InvokeCode.Arguments>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:InvokeCode>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' journalanteckningar" DisplayName="ManipulateDtFromExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,273" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_26">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xA;Dim orderedColumnNames = out_CaseManager_dt_MedicalRecords.Columns.Cast(Of DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i bokstavsordning&#xA;For Each colName In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_MedicalRecords.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In out_CaseManager_dt_MedicalRecords.Rows&#xA;    Dim newRow = sortedTable.NewRow()&#xA;    For Each colName In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_MedicalRecords kan du göra det här:&#xA;out_CaseManager_dt_MedicalRecords = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically Medical Records" sap:VirtualizedContainerService.HintSize="388,83" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+              <ui:InvokeCode.Arguments>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_MedicalRecords">[out_dt_Journalanteckningar_OldRowsFromExcel]</InOutArgument>
+              </ui:InvokeCode.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeCode>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' journalanteckningar" DisplayName="ManipulateDtFromExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">
-            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_dt_Journalanteckningar_OldRowsFromExcel" />
-          </InOutArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Journalanteckningar_OldRowsFromExcel]</InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -387,29 +414,29 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="Utredning" sap:VirtualizedContainerService.HintSize="550,981" sap2010:WorkflowViewState.IdRef="Sequence_23">
+    <Sequence DisplayName="Utredning" sap:VirtualizedContainerService.HintSize="548,358" sap2010:WorkflowViewState.IdRef="Sequence_23">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="488,675" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+      <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence sap:VirtualizedContainerService.HintSize="450,447" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope DisplayName="Retry Scope Utrdning" sap:VirtualizedContainerService.HintSize="388,336" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:03">
+            <ui:RetryScope DisplayName="Retry Scope Utrdning" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:03">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_Utredning_OldRowsFromExcel]" DisplayName="Private: Read Range Workbook Utredning" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Utredning" WorkbookPath="[in_FilePath]" />
@@ -420,6 +447,12 @@
                   <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Utrdning" Expression="[out_dt_Utredning_OldRowsFromExcel IsNot Nothing AndAlso out_dt_Utredning_OldRowsFromExcel.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_4" />
                 </ActivityFunc>
               </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
           </Sequence>
         </TryCatch.Try>
@@ -448,11 +481,9 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' utredningar" DisplayName="Excel\ManipulateDtFromExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="488,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' utredningar" DisplayName="Excel\ManipulateDtFromExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">
-            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_dt_Utredning_OldRowsFromExcel" />
-          </InOutArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Utredning_OldRowsFromExcel]</InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">

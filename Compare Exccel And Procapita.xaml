@@ -5,7 +5,7 @@
     <x:Property Name="out_RemoveRowIndexList" Type="OutArgument(scg:List(x:Int32))" />
     <x:Property Name="out_AddRowIndexList" Type="OutArgument(scg:List(x:Int32))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1037,1985</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1498,1853</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Kollar ifall det är gammal eller nya rader och noterar vilka rader som är nya." sap:VirtualizedContainerService.HintSize="548,1920" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="Kollar ifall det är gammal eller nya rader och noterar vilka rader som är nya." sap:VirtualizedContainerService.HintSize="512,1748" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="Index_Excel" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ExcelCopy" />
@@ -117,8 +117,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Compare tables from Procapita and Excel.&quot;]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign out arguments" sap:VirtualizedContainerService.HintSize="486,101" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Compare tables from Procapita and Excel.&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign out arguments" sap:VirtualizedContainerService.HintSize="450,101" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -132,7 +132,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Assign DisplayName="Assign dt_ExcelCopy" sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign DisplayName="Assign dt_ExcelCopy" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy]</OutArgument>
       </Assign.To>
@@ -140,7 +140,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[in_dt_Excel.Copy]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Remove columns: Prioritet, Status och Kommentar" sap:VirtualizedContainerService.HintSize="486,347" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence DisplayName="Remove columns: Prioritet, Status och Kommentar" sap:VirtualizedContainerService.HintSize="450,347" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,9 +192,9 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:RemoveDataColumn>
     </Sequence>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,227" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,194" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -224,15 +224,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,227" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,253" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap2010:Annotation.AnnotationText="Hämtar ut de raderna som finns i in_dt_Excel men INTE i in_dt_Procapita. Detta är rader som ska bort ur excelfilen som inte längre är relevanta. &#xA;" DisplayName="Assign out_dt_ProcapitaNotExcel" sap:VirtualizedContainerService.HintSize="434,140" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign sap2010:Annotation.AnnotationText="Hämtar ut de raderna som finns i in_dt_Excel men INTE i in_dt_Procapita. Detta är rader som ska bort ur excelfilen som inte längre är relevanta. &#xA;" DisplayName="Assign out_dt_ProcapitaNotExcel" sap:VirtualizedContainerService.HintSize="434,142" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[out_dt_ExcelNotProcapita]</OutArgument>
             </Assign.To>
@@ -256,7 +256,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign DisplayName="Private: Remove blank rows out_dt_old" sap:VirtualizedContainerService.HintSize="486,83" sap2010:WorkflowViewState.IdRef="Assign_18">
+    <Assign DisplayName="Private: Remove blank rows out_dt_old" sap:VirtualizedContainerService.HintSize="450,83" sap2010:WorkflowViewState.IdRef="Assign_18">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy]</OutArgument>
       </Assign.To>
@@ -266,30 +266,30 @@ Where(Function(row) Not row.ItemArray.All(Function(field) field Is DBNull.Value 
 CopyToDataTable()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,359" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="572,644" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If sap2010:Annotation.AnnotationText="Kollar att det finns både nya och gamla rader. Om det bara finns rader i &quot;nya-tabellen&quot; delas den inte upp, och tom out_dt_old sätts bara till en tom tabell med samma kolumner." Condition="[dt_ExcelCopy.RowCount &gt; 16]" DisplayName="If both old and new rows" sap:VirtualizedContainerService.HintSize="388,169" sap2010:WorkflowViewState.IdRef="If_1">
+          <If sap2010:Annotation.AnnotationText="Kollar att det finns både nya och gamla rader. Om det bara finns rader i &quot;nya-tabellen&quot; delas den inte upp, och tom out_dt_old sätts bara till en tom tabell med samma kolumner." Condition="[dt_ExcelCopy.RowCount &gt; 16]" DisplayName="If both old and new rows" sap:VirtualizedContainerService.HintSize="510,533" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="476,293" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence sap:VirtualizedContainerService.HintSize="476,294" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Private: Assign dt_ExcelCopy" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign DisplayName="Private: Assign dt_ExcelCopy" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_13">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy]</OutArgument>
                   </Assign.To>
@@ -297,7 +297,7 @@ CopyToDataTable()]</InArgument>
                     <InArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy.AsEnumerable().Skip(16).CopyToDataTable()]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign DisplayName="Private: Remove blank rows out_dt_old" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_15">
+                <Assign DisplayName="Private: Remove blank rows out_dt_old" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_15">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy]</OutArgument>
                   </Assign.To>
@@ -329,8 +329,14 @@ CopyToDataTable()]</InArgument>
           </If>
         </Sequence>
       </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign sap2010:Annotation.AnnotationText="Hämtar ut de radindex som finns i in_dt_Procapita men INTE i in_dt_excel. Detta är de index på de nya raderna som ska läggas högst upp i filen." DisplayName="Assign out_AddRowIndexList" sap:VirtualizedContainerService.HintSize="486,125" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <Assign sap2010:Annotation.AnnotationText="Hämtar ut de radindex som finns i in_dt_Procapita men INTE i in_dt_excel. Detta är de index på de nya raderna som ska läggas högst upp i filen." DisplayName="Assign out_AddRowIndexList" sap:VirtualizedContainerService.HintSize="450,127" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:Int32)">[out_AddRowIndexList]</OutArgument>
       </Assign.To>
@@ -348,7 +354,7 @@ CopyToDataTable()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="Hämtar ut de radindex som finns i in_dt_excel men INTE i in_dt_Procapita . Detta är de index på de rader som ska tas bort och inte längre är aktuella." DisplayName="Assign out_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="486,125" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap2010:Annotation.AnnotationText="Hämtar ut de radindex som finns i in_dt_excel men INTE i in_dt_Procapita . Detta är de index på de rader som ska tas bort och inte längre är aktuella." DisplayName="Assign out_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="450,127" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:Int32)">[out_RemoveRowIndexList]</OutArgument>
       </Assign.To>
@@ -366,5 +372,6 @@ CopyToDataTable()]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Hej&quot;]" />
   </Sequence>
 </Activity>

@@ -5,6 +5,7 @@
   "dependencies": {
     "Procapita.Plus": "[1.0.15]",
     "UiPath.Excel.Activities": "[2.22.4]",
+    "UiPath.Mail.Activities": "[1.22.2]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[23.10.1]",
     "UiPath.UIAutomation.Activities": "[23.10.13]"

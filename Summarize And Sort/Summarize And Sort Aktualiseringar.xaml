@@ -10,7 +10,7 @@
   <this:Summarize_Aktualiseringar.in_CaseManager>
     <InArgument x:TypeArguments="x:String" />
   </this:Summarize_Aktualiseringar.in_CaseManager>
-  <sap:VirtualizedContainerService.HintSize>1677,2007</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1498,1615</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,7 +128,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sum And Sort" sap:VirtualizedContainerService.HintSize="656,1862" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Sum And Sort" sap:VirtualizedContainerService.HintSize="656,1550" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="TempDistinctClientList" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_CaseManager_AktualiseringarCopy" />
@@ -140,7 +140,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Filter Columns" sap:VirtualizedContainerService.HintSize="594,1466" sap2010:WorkflowViewState.IdRef="Sequence_20">
+    <Sequence DisplayName="Filter Columns" sap:VirtualizedContainerService.HintSize="594,1154" sap2010:WorkflowViewState.IdRef="Sequence_20">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnList" />
         <Variable x:TypeArguments="x:String" Name="ColumnString" />
@@ -172,25 +172,6 @@
           <InArgument x:TypeArguments="x:String">[in_Config("ColumnsInAktualiseringar").ToString]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,272" sap2010:WorkflowViewState.IdRef="CommentOut_9">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_24">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign ColumnString - unik" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_20">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[ColumnString]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">Aktual;Datum;Namn;Personnr;Typavaktu</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
       <Assign DisplayName="Assign Column List" sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_17">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(x:String)">[ColumnList]</OutArgument>

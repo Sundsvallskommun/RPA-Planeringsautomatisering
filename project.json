@@ -3,7 +3,7 @@
   "description": "Robotic Enterprise Framework (Windows)",
   "main": "Main.xaml",
   "dependencies": {
-    "Procapita.Plus": "[1.0.15]",
+    "Procapita.Plus": "[1.0.16]",
     "UiPath.Excel.Activities": "[2.22.4]",
     "UiPath.Mail.Activities": "[1.22.2]",
     "UiPath.System.Activities": "[22.10.4]",

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestCaseSumAndSort" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1286,3877" sap2010:WorkflowViewState.IdRef="TestCaseSumAndSort_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pa="clr-namespace:Procapita_Plus.Actions_In_Search_Tool;assembly=Procapita Plus" xmlns:pg="clr-namespace:Procapita_Plus.Genreal;assembly=Procapita Plus" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCaseSumAndSort" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="600,3611" sap2010:WorkflowViewState.IdRef="TestCaseSumAndSort_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pa="clr-namespace:Procapita_Plus.Actions_In_Search_Tool;assembly=Procapita Plus" xmlns:pg="clr-namespace:Procapita_Plus.Genreal;assembly=Procapita Plus" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -109,7 +109,7 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TestCaseSumAndSort" sap:VirtualizedContainerService.HintSize="610,3812" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TestCaseSumAndSort" sap:VirtualizedContainerService.HintSize="610,3546" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="221024" Name="DateTom" />
       <Variable x:TypeArguments="x:String" Default="310824" Name="DateFrom" />
@@ -129,14 +129,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="548,1103" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="548,837" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_28">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_28">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_45">
             <sap:WorkflowViewStateService.ViewState>
@@ -161,7 +161,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_27">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_27">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_44">
             <sap:WorkflowViewStateService.ViewState>
@@ -179,7 +179,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,280" sap2010:WorkflowViewState.IdRef="CommentOut_33">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_33">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_50">
             <sap:WorkflowViewStateService.ViewState>
@@ -190,9 +190,32 @@
             <pa:Get_Medical_RecordsTable DisplayName="Get Medical RecordsTable" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Get_Medical_RecordsTable_4" out_dt_MedicalRecords="[out_dt_MedicalRecords]" />
           </Sequence>
         </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <pa:Get_Utredning_Table DisplayName="Get Utredning Table" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Get_Utredning_Table_3" out_dt_Utredning="[dt_Utredning]" />
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_34">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_51">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <pa:Get_Utredning_Table DisplayName="Get Utredning Table" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Get_Utredning_Table_3" out_dt_Utredning="[dt_Utredning]" />
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="654,1428" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
@@ -283,7 +306,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_8">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="752,1718" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <sap:WorkflowViewStateService.ViewState>
@@ -291,7 +314,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="690,1645" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="690,1607" sap2010:WorkflowViewState.IdRef="TryCatch_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -414,7 +437,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_12">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="752,1246" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <sap:WorkflowViewStateService.ViewState>
@@ -523,7 +546,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Assign sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="scg:List(x:String)">[DistinctClientList]</OutArgument>
         </Assign.To>
@@ -549,18 +572,10 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Bevakningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Bevakningar.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">
-                  <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_sort_Bev" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
-                  <Literal x:TypeArguments="x:String">AIHG</Literal>
-                </InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Bevakningar">
-                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Bevakningar" />
-                </InArgument>
-                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
-                  <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
-                </InOutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">[dt_sort_Bev]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">AIHG</InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Bevakningar">[dt_Bevakningar]</InArgument>
+                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[DistinctClientList]</InOutArgument>
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
@@ -584,18 +599,10 @@
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Aktualiseringar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Aktualiseringar.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem" />
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Aktualiseringar">
-                  <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="case_dt_Akt" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
-                  <Literal x:TypeArguments="x:String">Hofling, Anneli</Literal>
-                </InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Aktualisering">
-                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Akt" />
-                </InArgument>
-                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
-                  <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
-                </InOutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Aktualiseringar">[case_dt_Akt]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">Hofling, Anneli</InArgument>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Aktualisering">[dt_Akt]</InArgument>
+                <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[DistinctClientList]</InOutArgument>
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
@@ -604,18 +611,10 @@
       </ui:CommentOut>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Utredningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Utredningar.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
-            <Literal x:TypeArguments="x:String">Hofling, Anneli</Literal>
-          </InArgument>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Utredningar">
-            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Utredning" />
-          </InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Utredningar">
-            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_sort_Ut" />
-          </OutArgument>
-          <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
-            <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
-          </InOutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">Hofling, Anneli</InArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Utredningar">[dt_Utredning]</InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Utredningar">[dt_sort_Ut]</OutArgument>
+          <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[DistinctClientList]</InOutArgument>
           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>

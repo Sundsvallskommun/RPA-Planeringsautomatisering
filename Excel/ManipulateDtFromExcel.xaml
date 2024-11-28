@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="io_dt_AllRows" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1498,1146</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1077,1848</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -100,9 +100,10 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Manipulate Dt From Excel" sap:VirtualizedContainerService.HintSize="690,1081" sap2010:WorkflowViewState.IdRef="Sequence_22">
+  <Sequence DisplayName="Manipulate Dt From Excel" sap:VirtualizedContainerService.HintSize="690,1783" sap2010:WorkflowViewState.IdRef="Sequence_22">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="IndexDataRow" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ExcelCopy" />
@@ -120,13 +121,25 @@
         <InArgument x:TypeArguments="sd:DataTable">[io_dt_AllRows]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" sap2010:Annotation.AnnotationText="Går igenom varje cell och tar bort eventuella radbryten." CurrentIndex="[IndexDataRow]" DataTable="[dt_ExcelCopy]" DisplayName="Private: For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="628,728" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning. (Förutom kolumnerna &quot;Kvitteringsstatus&quot;, &quot;Prioritet&quot;, &quot;Kommentarer&quot;." Code="' Kopiera referensen till io_dt till en lokal variabel för att undvika ByRef-problemet&#xA;Dim inputTable As DataTable = io_dt&#xA;&#xA;' Lista med kolumnnamn som inte ska sorteras&#xA;Dim excludedColumns As New List(Of String) From {&quot;Kvitteringsstatus&quot;, &quot;Prioritet&quot;, &quot;Kommentarer&quot;}&#xA;&#xA;' Separera de kolumner som ska sorteras från de som inte ska sorteras&#xA;Dim orderedColumnNames = inputTable.Columns.Cast(Of DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    Where(Function(name) Not excludedColumns.Contains(name)).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Lägg till de uteslutna kolumnerna i slutet av listan&#xA;orderedColumnNames.AddRange(excludedColumns.Where(Function(name) inputTable.Columns.Contains(name)))&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i önskad ordning&#xA;For Each colName In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, inputTable.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In inputTable.Rows&#xA;    Dim newRow = sortedTable.NewRow()&#xA;    For Each colName In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela den sorterade tabellen tillbaka till io_dt&#xA;io_dt = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically " sap:VirtualizedContainerService.HintSize="628,222" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt">[dt_ExcelCopy]</InOutArgument>
+      </ui:InvokeCode.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeCode>
+    <ui:ForEachRow ColumnNames="{x:Null}" sap2010:Annotation.AnnotationText="Går igenom varje cell och tar bort eventuella radbryten." CurrentIndex="[IndexDataRow]" DataTable="[dt_ExcelCopy]" DisplayName="Private: For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="628,727" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="594,581" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="594,580" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="IndexDataCell" />
             </Sequence.Variables>
@@ -135,13 +148,13 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[IndexDataCell]" DisplayName="Private: For Each" sap:VirtualizedContainerService.HintSize="532,470" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[CurrentRow.ItemArray]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[IndexDataCell]" DisplayName="Private: For Each" sap:VirtualizedContainerService.HintSize="532,469" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[CurrentRow.ItemArray]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,345" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,344" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="temp" />
                       <Variable x:TypeArguments="x:String" Name="CellValue" />
@@ -159,7 +172,7 @@
                         <InArgument x:TypeArguments="x:String">[If(currentItem IsNot Nothing, currentItem.ToString(), "")]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap2010:Annotation.AnnotationText="" DisplayName="Private: Assign replace all noice" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign sap2010:Annotation.AnnotationText="" DisplayName="Private: Assign replace all noice" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="Assign_7">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[dt_ExcelCopy(IndexDataRow)(IndexDataCell)]</OutArgument>
                       </Assign.To>
@@ -187,13 +200,41 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <Assign sap:VirtualizedContainerService.HintSize="628,81" sap2010:WorkflowViewState.IdRef="Assign_14">
-      <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataTable">[io_dt_AllRows]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy.AsEnumerable.CopyToDataTable()]</InArgument>
-      </Assign.Value>
-    </Assign>
+    <If Condition="[dt_ExcelCopy.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="628,522" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_14">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[io_dt_AllRows]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy.AsEnumerable.CopyToDataTable()]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_24">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_15">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataTable">[io_dt_AllRows]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataTable">[dt_ExcelCopy.Clone]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>

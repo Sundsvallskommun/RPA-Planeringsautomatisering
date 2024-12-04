@@ -4,7 +4,7 @@
     <x:Property Name="io_DistinctClientList" Type="InOutArgument(scg:List(x:String))" />
     <x:Property Name="out_CaseManager_dt" Type="OutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1677,760</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1832,917</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,9 +117,11 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xA;Dim orderedColumnNames As List(Of String) = out_CaseManager_dt_Aktualiseringar.Columns.Cast(Of System.Data.DataColumn)().&#xA;    Select(Function(col) col.ColumnName).&#xA;    OrderBy(Function(name) name).ToList()&#xA;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i bokstavsordning&#xA;For Each colName As String In orderedColumnNames&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt_Aktualiseringar.Columns(colName).DataType)&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In out_CaseManager_dt_Aktualiseringar.Rows&#xA;    Dim newRow As DataRow = sortedTable.NewRow()&#xA;    For Each colName As String In orderedColumnNames&#xA;        newRow(colName) = row(colName)&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_Aktualiseringar kan du göra det här:&#xA;out_CaseManager_dt_Aktualiseringar = sortedTable&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically" sap:VirtualizedContainerService.HintSize="450,196" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar kolumnerna i alfabetisk ordning." Code="' Sortera kolumnnamnen i bokstavsordning&#xD;&#xA;Dim orderedColumnNames As List(Of String) = out_CaseManager_dt.Columns.Cast(Of System.Data.DataColumn)().&#xD;&#xA;    Select(Function(col) col.ColumnName).&#xD;&#xA;    OrderBy(Function(name) name).ToList()&#xD;&#xA;&#xD;&#xA;' Skapa en ny datatabell för att hålla de sorterade kolumnerna&#xD;&#xA;Dim sortedTable As New DataTable()&#xD;&#xA;&#xD;&#xA;' Lägg till kolumnerna i bokstavsordning&#xD;&#xA;For Each colName As String In orderedColumnNames&#xD;&#xA;    sortedTable.Columns.Add(colName, out_CaseManager_dt.Columns(colName).DataType)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xD;&#xA;For Each row As DataRow In out_CaseManager_dt.Rows&#xD;&#xA;    Dim newRow As DataRow = sortedTable.NewRow()&#xD;&#xA;    For Each colName As String In orderedColumnNames&#xD;&#xA;        newRow(colName) = row(colName)&#xD;&#xA;    Next&#xD;&#xA;    sortedTable.Rows.Add(newRow)&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;' sortedTable har nu kolumnerna sorterade i bokstavsordning&#xD;&#xA;' Om du vill spara den sorterade tabellen tillbaka till out_CaseManager_dt_Aktualiseringar kan du göra det här:&#xD;&#xA;out_CaseManager_dt = sortedTable&#xD;&#xA;" DisplayName="Private: Invoke Code Sort Alphabetically" sap:VirtualizedContainerService.HintSize="450,196" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
       <ui:InvokeCode.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Aktualiseringar">[TempTable]</InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TempTable" />
+        </InOutArgument>
       </ui:InvokeCode.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

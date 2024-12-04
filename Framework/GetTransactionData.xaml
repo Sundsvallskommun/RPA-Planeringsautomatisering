@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1373,1134</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2434,1134</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetTransactionData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -207,17 +207,14 @@
           </ui:RetryScope.Condition>
         </ui:RetryScope>
         <FlowStep.Next>
-          <FlowDecision x:Name="__ReferenceID1" DisplayName="Any Transaction Found?" sap:VirtualizedContainerService.HintSize="133,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-            <FlowDecision.Condition>
-              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="out_TransactionItem isNot Nothing" />
-            </FlowDecision.Condition>
+          <FlowDecision x:Name="__ReferenceID1" Condition="[out_TransactionItem isNot Nothing]" DisplayName="Any Transaction Found?" sap:VirtualizedContainerService.HintSize="133,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <av:Point x:Key="ShapeLocation">233.5,228.5</av:Point>
                 <av:Size x:Key="ShapeSize">133,87</av:Size>
                 <av:PointCollection x:Key="TrueConnector">233.5,272 203.5,272 203.5,390 200,390</av:PointCollection>
-                <av:PointCollection x:Key="FalseConnector">366.5,272 416.75,272 416.75,306.5</av:PointCollection>
+                <av:PointCollection x:Key="FalseConnector">366.5,272 417.5,272 417.5,306.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <FlowDecision.True>
@@ -266,10 +263,7 @@
               </FlowStep>
             </FlowDecision.True>
             <FlowDecision.False>
-              <FlowDecision x:Name="__ReferenceID4" DisplayName="TransactionNumber &gt; 1?" sap:VirtualizedContainerService.HintSize="136,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-                <FlowDecision.Condition>
-                  <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_TransactionNumber &gt; 1" />
-                </FlowDecision.Condition>
+              <FlowDecision x:Name="__ReferenceID4" Condition="[in_TransactionNumber &gt; 1]" DisplayName="TransactionNumber &gt; 1?" sap:VirtualizedContainerService.HintSize="136,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -312,7 +306,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:MultipleAssign DisplayName="Multiple Assign From Config File" sap:VirtualizedContainerService.HintSize="484,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                      <ui:MultipleAssign DisplayName="Multiple Assign From Config File" sap:VirtualizedContainerService.HintSize="530,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                         <ui:MultipleAssign.AssignOperations>
                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -340,7 +334,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:MultipleAssign>
-                      <ui:FolderExistsX DisplayName="Folder Exists" Exists="[FolderExists]" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[ExcelFolder]">
+                      <ui:FolderExistsX DisplayName="Folder Exists" Exists="[FolderExists]" sap:VirtualizedContainerService.HintSize="530,52" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[ExcelFolder]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -348,7 +342,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:FolderExistsX>
-                      <If Condition="[Not FolderExists]" DisplayName="If Folder Doesn't Exists" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If Condition="[Not FolderExists]" DisplayName="If Folder Doesn't Exists" sap:VirtualizedContainerService.HintSize="530,52" sap2010:WorkflowViewState.IdRef="If_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -382,7 +376,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.xlsx" Folder="[ExcelFolder]" sap:VirtualizedContainerService.HintSize="484,331" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="True">
+                      <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.xlsx" Folder="[ExcelFolder]" sap:VirtualizedContainerService.HintSize="530,1429" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="True">
                         <ui:ForEachFileX.Body>
                           <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                             <ActivityAction.Argument1>
@@ -391,19 +385,20 @@
                             <ActivityAction.Argument2>
                               <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                             </ActivityAction.Argument2>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1179" sap2010:WorkflowViewState.IdRef="Sequence_30">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(Of String, Object)]" Name="QueueItemData" />
-                                <Variable x:TypeArguments="x:String" Name="CaseManagerName" />
+                                <Variable x:TypeArguments="x:String" Name="CaseManagerSurName" />
                                 <Variable x:TypeArguments="x:String" Name="CaseManagerID" />
                                 <Variable x:TypeArguments="x:String" Name="FileName" />
                                 <Variable x:TypeArguments="x:String" Name="Email" />
                                 <Variable x:TypeArguments="sd:DataTable" Name="dt_CaseManagerInfo" />
+                                <Variable x:TypeArguments="x:String" Name="CaseManagerFirstName" />
                               </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:Comment sap:VirtualizedContainerService.HintSize="434,56" sap2010:WorkflowViewState.IdRef="Comment_2" Text="kolla om filen har dagens datum, isf kör inte. " />
@@ -416,15 +411,15 @@
                                 </Assign.Value>
                               </Assign>
                               <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_CaseManagerInfo]" DisplayName="Private: Read Range Workbook" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Inställningar" WorkbookPath="[CurrentFile.ToString]" />
-                              <ui:MultipleAssign DisplayName="Multiple Assign From ExcelFile" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                              <ui:MultipleAssign DisplayName="Multiple Assign From ExcelFile" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                                 <ui:MultipleAssign.AssignOperations>
                                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
                                       <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:String">[CaseManagerName]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:String">[CaseManagerSurName]</OutArgument>
                                       </ui:AssignOperation.To>
                                       <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">[dt_CaseManagerInfo.Rows(0)("Namn (Efternamn,Förnamn)").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">[dt_CaseManagerInfo.Rows(0)("Namn (Efternamn)").ToString]</InArgument>
                                       </ui:AssignOperation.Value>
                                     </ui:AssignOperation>
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -433,6 +428,14 @@
                                       </ui:AssignOperation.To>
                                       <ui:AssignOperation.Value>
                                         <InArgument x:TypeArguments="x:String">[dt_CaseManagerInfo.Rows(0)("Handläggar ID").ToString]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[CaseManagerFirstName]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[dt_CaseManagerInfo.Rows(0)("Namn (Förnamn)").ToString]</InArgument>
                                       </ui:AssignOperation.Value>
                                     </ui:AssignOperation>
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -455,20 +458,28 @@
                                 </ui:MultipleAssign.AssignOperations>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:MultipleAssign>
-                              <ui:MultipleAssign DisplayName="Multiple Assign QueueItemData" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                              <ui:MultipleAssign DisplayName="Multiple Assign QueueItemData" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
                                 <ui:MultipleAssign.AssignOperations>
                                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
                                       <ui:AssignOperation.To>
-                                        <OutArgument x:TypeArguments="x:Object">[QueueItemData("CaseManagerName")]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:Object">[QueueItemData("CaseManagerFirstName")]</OutArgument>
                                       </ui:AssignOperation.To>
                                       <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:Object">[CaseManagerName]</InArgument>
+                                        <InArgument x:TypeArguments="x:Object">[CaseManagerFirstName]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:Object">[QueueItemData("CaseManagerSurName")]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:Object">[CaseManagerSurName]</InArgument>
                                       </ui:AssignOperation.Value>
                                     </ui:AssignOperation>
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
@@ -499,8 +510,8 @@
                                 </ui:MultipleAssign.AssignOperations>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:MultipleAssign>

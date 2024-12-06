@@ -1,5 +1,9 @@
 {
-  "Tags": [],
+  "Tags": [
+    {
+      "Key": "Procapita Plus"
+    }
+  ],
   "SeparateRuntimeDependencies": true,
   "IncludeSources": true
 }

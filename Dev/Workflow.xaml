@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Workflow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1677,1065" sap2010:WorkflowViewState.IdRef="Workflow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pa="clr-namespace:Procapita_Plus.Actions_In_Search_Tool;assembly=Procapita Plus" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1132,1027" sap2010:WorkflowViewState.IdRef="Workflow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pa="clr-namespace:Procapita_Plus.Actions_In_Search_Tool;assembly=Procapita Plus" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -103,7 +103,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Workflow" sap:VirtualizedContainerService.HintSize="496,1000" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Workflow" sap:VirtualizedContainerService.HintSize="496,962" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_medProc" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_akt_pro" />
@@ -128,16 +128,33 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new List(Of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <pa:Get_Utredning_Table DisplayName="Get Utredning Table" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Get_Utredning_Table_1" out_dt_Utredning="[dt_ut_Proc]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,461" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <pa:Get_Aktualisering_Table DisplayName="Get Aktualisering Table" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Get_Aktualisering_Table_1" out_dt_Aktualisering="[dt_akt_pro]">
+          <pa:Get_Utredning_Table in_FilePathToApplication="{x:Null}" DisplayName="Get Utredning Table" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="Get_Utredning_Table_1" out_dt_Utredning="[dt_ut_Proc]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,347" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <pa:Get_Aktualisering_Table in_FilePathToApplication="{x:Null}" DisplayName="Get Aktualisering Table" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Get_Aktualisering_Table_1" out_dt_Aktualisering="[dt_akt_pro]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -145,7 +162,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </pa:Get_Aktualisering_Table>
-          <pa:Get_Bevakning_Table DisplayName="Get Bevakning Table" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Get_Bevakning_Table_1" out_dt_Bevakning="[dt_bev_Proc]">
+          <pa:Get_Bevakning_Table in_FilePathToApplication="{x:Null}" DisplayName="Get Bevakning Table" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Get_Bevakning_Table_1" out_dt_Bevakning="[dt_bev_Proc]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -153,7 +170,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </pa:Get_Bevakning_Table>
-          <pa:Get_Medical_RecordsTable DisplayName="Get Medical RecordsTable" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Get_Medical_RecordsTable_1" out_dt_MedicalRecords="[dt_medProc]">
+          <pa:Get_Medical_RecordsTable in_FilePathToApplication="{x:Null}" DisplayName="Get Medical RecordsTable" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="Get_Medical_RecordsTable_1" out_dt_MedicalRecords="[dt_medProc]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -172,18 +189,10 @@
     </ui:CommentOut>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort\Summarize And Sort Utredningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Utredningar.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
-          <Literal x:TypeArguments="x:String">Hofling, Anneli</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Utredningar">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_ut_Proc" />
-        </InArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Utredningar">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_ut_Sort" />
-        </OutArgument>
-        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
-          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="list" />
-        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">Hofling, Anneli</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Utredningar">[dt_ut_Proc]</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Utredningar">[dt_ut_Sort]</OutArgument>
+        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[list]</InOutArgument>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>

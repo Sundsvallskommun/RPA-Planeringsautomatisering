@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2138,879</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1132,879</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -655,9 +655,13 @@
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[Config("ExScreenshotsFolderPath").ToString]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_Folder">
+                                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;ExScreenshotsFolderPath&quot;).ToString" />
+                                                          </InArgument>
                                                           <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_Environment">[Config("Environment").ToString]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_Environment">
+                                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Environment&quot;).ToString" />
+                                                          </InArgument>
                                                         </ui:InvokeWorkflowFile.Arguments>
                                                       </ui:InvokeWorkflowFile>
                                                       <Assign DisplayName="Add one to consecutive init system exception" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_29">

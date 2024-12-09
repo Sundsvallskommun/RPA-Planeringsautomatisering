@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,2299</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1316,2252</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HämtaGammalData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Hämtar datatabeller från excelfilen och sparar de i fyra olika tabeller.&#xA;Samt sorterar tabellernas kolumner i alfabetisk ordning samt tar bort radbryten" DisplayName="Get Data From Excel" sap:VirtualizedContainerService.HintSize="634,2234" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Hämtar datatabeller från excelfilen och sparar de i fyra olika tabeller.&#xA;Samt sorterar tabellernas kolumner i alfabetisk ordning samt tar bort radbryten" DisplayName="Get Data From Excel" sap:VirtualizedContainerService.HintSize="634,2187" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -217,7 +217,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Bevakningar" sap:VirtualizedContainerService.HintSize="572,997" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Bevakningar" sap:VirtualizedContainerService.HintSize="572,950" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -291,7 +291,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <If Condition="[out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="510,794" sap2010:WorkflowViewState.IdRef="If_2">
+      <If Condition="[out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="510,747" sap2010:WorkflowViewState.IdRef="If_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -299,7 +299,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,612" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence sap:VirtualizedContainerService.HintSize="476,565" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnListOrder" />
             </Sequence.Variables>
@@ -308,22 +308,24 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' bevaknigar" DisplayName="ManipulateDtFromExcel Bevakningar" sap:VirtualizedContainerService.HintSize="434,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' bevaknigar" DisplayName="ManipulateDtFromExcel Bevakningar" sap:VirtualizedContainerService.HintSize="434,109" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Bevakningar_OldRowsFromExcel]</InOutArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
-            <Assign DisplayName="Column List order" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Column List order" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[ColumnListOrder]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String) From {"Datum", "Objekt", "Namn", "Personnr", "Status", "Typ av", "Kvitteringsstatus", "Kommentarer"}]</InArgument>
+                <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String) From {"Datum", "Objekt", "Namn", "Personnr", "Status", "Typ av", "Kvitteringsstatus", "Prioritet", "Kommentarer"}]</InArgument>
               </Assign.Value>
             </Assign>
             <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar tabellens kolumner i samma ordning som excelfilen." Code="' Skapa en ny DataTable för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i den angivna ordningen&#xA;For Each columnName In desiredColumnOrder&#xA;    If in_dt.Columns.Contains(columnName) Then&#xA;        sortedTable.Columns.Add(columnName, in_dt.Columns(columnName).DataType)&#xA;    End If&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In in_dt.Rows&#xA;    Dim newRow As DataRow = sortedTable.NewRow()&#xA;    For Each columnName In desiredColumnOrder&#xA;        If in_dt.Columns.Contains(columnName) Then&#xA;            newRow(columnName) = row(columnName)&#xA;        End If&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela den sorterade tabellen tillbaka till in_dt&#xA;out_dt  = sortedTable&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="434,207" sap2010:WorkflowViewState.IdRef="InvokeCode_1">

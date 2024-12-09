@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1081,3723</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,3723</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -214,7 +214,7 @@
             <av:PointCollection x:Key="ConnectorLocation">150,822.5 150,852.5 360,852.5 360,917.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sätter datum till sök&#xA;&#xA;Hämtar alla datatabeller i gränssnitet" DisplayName="FirstRunInit.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="FirstRunInit.xaml">
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sätter datum till sök&#xA;&#xA;Hämtar alla datatabeller i gränssnitet" DisplayName="FirstRunInit.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Summarize And Sort\FirstRunInit.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakning">[io_dt_Bevakning_AllCaseManagers]</OutArgument>
             <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualisering">[io_dt_Aktualisering_AllCaseManagers]</OutArgument>

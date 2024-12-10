@@ -10,7 +10,7 @@
   <this:Summarize_Aktualiseringar.in_CaseManager>
     <InArgument x:TypeArguments="x:String" />
   </this:Summarize_Aktualiseringar.in_CaseManager>
-  <sap:VirtualizedContainerService.HintSize>2125,2002</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1759,2134</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -131,7 +131,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sum And Sort" sap:VirtualizedContainerService.HintSize="710,1937" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence DisplayName="Sum And Sort" sap:VirtualizedContainerService.HintSize="710,2069" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="TempDistinctClientList" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_CaseManager_AktualiseringarCopy" />
@@ -143,7 +143,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Filter Columns akt" sap:VirtualizedContainerService.HintSize="648,1826" sap2010:WorkflowViewState.IdRef="Sequence_20">
+    <Sequence DisplayName="Filter Columns akt" sap:VirtualizedContainerService.HintSize="648,1958" sap2010:WorkflowViewState.IdRef="Sequence_20">
       <Sequence.Variables>
         <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnList" />
         <Variable x:TypeArguments="x:String" Name="ColumnString" />
@@ -155,9 +155,9 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[in_dt_Aktualisering IsNot Nothing AndAlso &#xA;   in_dt_Aktualisering.AsEnumerable().&#xA;       Any(Function(row) row(&quot;Handlägg&quot;).ToString() = in_CaseManager)]" DisplayName="If rows for casemanager exists." sap:VirtualizedContainerService.HintSize="586,1715" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[in_dt_Aktualisering IsNot Nothing AndAlso &#xA;   in_dt_Aktualisering.AsEnumerable().&#xA;       Any(Function(row) row(&quot;Handlägg&quot;).ToString() = in_CaseManager)]" DisplayName="If rows for casemanager exists." sap:VirtualizedContainerService.HintSize="586,1847" sap2010:WorkflowViewState.IdRef="If_3">
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="552,1533" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence sap:VirtualizedContainerService.HintSize="552,1665" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -264,6 +264,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Antal i listan aktual: &quot; + io_DistinctClientList.Count.ToString]" />
             <If Condition="[TempTable.RowCount &gt; 0]" DisplayName="If TempTable &gt; 0 akt" sap:VirtualizedContainerService.HintSize="510,384" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="476,202" sap2010:WorkflowViewState.IdRef="Sequence_31">

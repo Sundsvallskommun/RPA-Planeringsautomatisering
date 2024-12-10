@@ -401,7 +401,7 @@
                                                 <av:PointCollection x:Key="ConnectorLocation">240,1850 327.5,1850 327.5,1896.5</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File - Bevakningar" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Excel\Update Excel File.xaml">
+                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File - Bevakningar" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Excel\Update Excel File.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
                                                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelFilePath" />
@@ -1058,7 +1058,7 @@
                                                                                             <av:PointCollection x:Key="ConnectorLocation">540,2949.5 540,3001.5</av:PointCollection>
                                                                                           </scg:Dictionary>
                                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                                        <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="654,3365" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                                        <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                                                                           <Sequence.Variables>
                                                                                             <Variable x:TypeArguments="x:String" Name="MailBodyTextFirstPart" />
                                                                                             <Variable x:TypeArguments="x:String" Name="MailEmailAddresses" />

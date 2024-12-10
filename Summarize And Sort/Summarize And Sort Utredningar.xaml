@@ -314,7 +314,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Inga aktualiseringar funna för: &quot; + in_CaseManager]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Inga utrednningar funna för: &quot; + in_CaseManager]" />
           <Assign DisplayName="Assign out_CaseManager_dt_Aktualiseringar clone" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_21">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[out_CaseManager_dt_Utredningar]</OutArgument>

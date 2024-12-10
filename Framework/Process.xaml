@@ -505,7 +505,7 @@
                                                                         <av:PointCollection x:Key="ConnectorLocation">150,2484.54 150,2514.54</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Medical Records.xaml">
+                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Medical Records.xaml">
                                                                       <ui:InvokeWorkflowFile.Arguments>
                                                                         <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
                                                                           <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManager" />
@@ -1093,7 +1093,7 @@
                                                                                             <av:PointCollection x:Key="ConnectorLocation">540,2949.5 540,3001.5</av:PointCollection>
                                                                                           </scg:Dictionary>
                                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                                        <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                                        <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="654,3496" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                                                                           <Sequence.Variables>
                                                                                             <Variable x:TypeArguments="x:String" Name="MailBodyTextFirstPart" />
                                                                                             <Variable x:TypeArguments="x:String" Name="MailEmailAddresses" />
@@ -1356,13 +1356,13 @@
                                                                                               </scg:Dictionary>
                                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                                             <If.Then>
-                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,290" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_66">
                                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                   </scg:Dictionary>
                                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                                                <Assign DisplayName="Replace NrOfNewBevakningar" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                                                                                <Assign DisplayName="Replace NrOfNewBevakningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_28">
                                                                                                   <Assign.To>
                                                                                                     <OutArgument x:TypeArguments="x:String">[MailBodyTextBevakningar]</OutArgument>
                                                                                                   </Assign.To>
@@ -1370,7 +1370,7 @@
                                                                                                     <InArgument x:TypeArguments="x:String">[MailBodyTextBevakningar.Replace("[NrOfNewBevakningar]", If(AddRowIndexList_Bevakningar IsNot Nothing, AddRowIndexList_Bevakningar.Count.ToString(), "0"))]</InArgument>
                                                                                                   </Assign.Value>
                                                                                                 </Assign>
-                                                                                                <Assign DisplayName="MailBodyTextSendMail add bev" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                                                                                <Assign DisplayName="MailBodyTextSendMail add bev" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_43">
                                                                                                   <Assign.To>
                                                                                                     <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
                                                                                                   </Assign.To>
@@ -1384,20 +1384,21 @@
                                                                                               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_67" />
                                                                                             </If.Else>
                                                                                           </If>
-                                                                                          <If Condition="[MailMedicalRecords]" DisplayName="If MailMedicalRecords" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_10">
+                                                                                          <If Condition="[MailMedicalRecords]" DisplayName="If MailMedicalRecords" sap:VirtualizedContainerService.HintSize="592,606" sap2010:WorkflowViewState.IdRef="If_10">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                                               </scg:Dictionary>
                                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                                             <If.Then>
-                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,424" sap2010:WorkflowViewState.IdRef="Sequence_68">
                                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                   </scg:Dictionary>
                                                                                                 </sap:WorkflowViewStateService.ViewState>
+                                                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Antal rader i medred mail: &quot; +AddRowIndexList_MedicalRecords.Count.ToString]" />
                                                                                                 <Assign DisplayName="Replace NrOfNewJournalanteckningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_29">
                                                                                                   <Assign.To>
                                                                                                     <OutArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords]</OutArgument>
@@ -1420,10 +1421,10 @@
                                                                                               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_69" />
                                                                                             </If.Else>
                                                                                           </If>
-                                                                                          <If Condition="[MailUtredningar]" DisplayName="If MailUtredningar" sap:VirtualizedContainerService.HintSize="592,475" sap2010:WorkflowViewState.IdRef="If_11">
+                                                                                          <If Condition="[MailUtredningar]" DisplayName="If MailUtredningar" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_11">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                                               </scg:Dictionary>
                                                                                             </sap:WorkflowViewStateService.ViewState>
@@ -1715,11 +1716,11 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">403,659</av:Point>
-                <av:Size x:Key="ShapeSize">434,81</av:Size>
+                <av:Size x:Key="ShapeSize">434,82</av:Size>
                 <av:PointCollection x:Key="ConnectorLocation">620,741 620,854 360,854 360,917.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_51">
+            <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_51">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[DistinctClientList]</OutArgument>
               </Assign.To>

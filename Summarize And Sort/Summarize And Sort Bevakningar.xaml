@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1759,2932</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1759,2655</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Bevakningar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,7 +126,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Summarize_And_Sort_Bevakningar" sap:VirtualizedContainerService.HintSize="710,2867" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Summarize_And_Sort_Bevakningar" sap:VirtualizedContainerService.HintSize="710,2590" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="TempDistinctClientList" />
       <Variable x:TypeArguments="x:String" Name="str_test" />
@@ -139,29 +139,46 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="648,329" sap2010:WorkflowViewState.IdRef="ForEach`1_13" Values="[in_dt_Bevakningar.Columns]">
-      <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="sd:DataColumn">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="currentItem" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="648,52" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="548,438" sap2010:WorkflowViewState.IdRef="Sequence_32">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,327" sap2010:WorkflowViewState.IdRef="ForEach`1_13" Values="[in_dt_Bevakningar.Columns]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="sd:DataColumn">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="currentItem" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Kolumnnamn: &quot; + currentItem.ColumnName]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Kolumnnamn: &quot; + currentItem.ColumnName]" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEach.Body>
+          </ui:ForEach>
+        </Sequence>
+      </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:ForEach>
+    </ui:CommentOut>
     <If Condition="[in_dt_Bevakningar IsNot Nothing AndAlso &#xA;   in_dt_Bevakningar.AsEnumerable().&#xA;       Any(Function(row) row(&quot;Handläggare&quot;).ToString() = in_CaseManager)]" DisplayName="If rows for case manager exists" sap:VirtualizedContainerService.HintSize="648,2387" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -220,19 +237,19 @@
                 <InArgument x:TypeArguments="scg:List(x:String)">[ColumnString.Split(";"c).ToList()]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_dt_Bevakningar.Columns" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[in_dt_Bevakningar.Columns]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_dt_Bevakningar.Columns" sap:VirtualizedContainerService.HintSize="660,1015" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[in_dt_Bevakningar.Columns]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="columnName" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472,699" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="624,889" sap2010:WorkflowViewState.IdRef="Sequence_21">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[Not ColumnList.Contains(columnName.ToString())]" DisplayName="Check if column in columnList Bev" sap:VirtualizedContainerService.HintSize="410,588" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[Not ColumnList.Contains(columnName.ToString())]" DisplayName="Check if column in columnList Bev" sap:VirtualizedContainerService.HintSize="562,778" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -240,13 +257,13 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,406" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <Sequence sap:VirtualizedContainerService.HintSize="528,596" sap2010:WorkflowViewState.IdRef="Sequence_19">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[columnName.ToString]" DataTable="[TempTable]" DisplayName="Remove Data Column in TempTable" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+                          <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[columnName.ToString]" DataTable="[TempTable]" DisplayName="Remove Data Column in TempTable" sap:VirtualizedContainerService.HintSize="486,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -254,7 +271,18 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:RemoveDataColumn>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;tar bort kolumn: &quot; + columnName.ToString]" />
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,282" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;tar bort kolumn: &quot; + columnName.ToString]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
                         </Sequence>
                       </If.Then>
                       <If.Else>

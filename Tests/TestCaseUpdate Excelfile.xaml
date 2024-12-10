@@ -263,7 +263,9 @@
           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">
             <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Procapita" />
           </InArgument>
-          <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_RemoveRowIndexList" />
+          <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_RemoveRowIndexList">
+            <VisualBasicValue x:TypeArguments="scg:List(x:Int32)" ExpressionText="new List(of Int32)" />
+          </InArgument>
           <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_AddRowIndexList">
             <VisualBasicValue x:TypeArguments="scg:List(x:Int32)" ExpressionText="new List(Of Int32) From{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18}" />
           </InArgument>

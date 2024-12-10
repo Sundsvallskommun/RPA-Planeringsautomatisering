@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2125,3127</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2125,3433</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Bevakningar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,7 +126,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Summarize_And_Sort_Bevakningar" sap:VirtualizedContainerService.HintSize="708,3062" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Summarize_And_Sort_Bevakningar" sap:VirtualizedContainerService.HintSize="708,3368" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="TempDistinctClientList" />
       <Variable x:TypeArguments="x:String" Name="str_test" />
@@ -155,8 +155,14 @@
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <If Condition="[in_dt_Bevakningar IsNot Nothing AndAlso &#xA;   in_dt_Bevakningar.AsEnumerable().&#xA;       Any(Function(row) row(&quot;Handläggare&quot;).ToString() = in_CaseManager)]" DisplayName="If rows for case manager exists" sap:VirtualizedContainerService.HintSize="646,2582" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[in_dt_Bevakningar IsNot Nothing AndAlso &#xA;   in_dt_Bevakningar.AsEnumerable().&#xA;       Any(Function(row) row(&quot;Handläggare&quot;).ToString() = in_CaseManager)]" DisplayName="If rows for case manager exists" sap:VirtualizedContainerService.HintSize="646,2888" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -164,7 +170,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="612,2400" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence sap:VirtualizedContainerService.HintSize="612,2706" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnListOrder" />
           </Sequence.Variables>
@@ -173,7 +179,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Filter Columns bev" sap:VirtualizedContainerService.HintSize="570,1640" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Filter Columns bev" sap:VirtualizedContainerService.HintSize="570,1904" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnList" />
               <Variable x:TypeArguments="x:String" Name="ColumnString" />
@@ -205,6 +211,7 @@
                 <InArgument x:TypeArguments="x:String">[in_Config("ColumnsInBevakningar").ToString]</InArgument>
               </Assign.Value>
             </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="508,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[ColumnString]" />
             <Assign DisplayName="Assign Column List" sap:VirtualizedContainerService.HintSize="508,81" sap2010:WorkflowViewState.IdRef="Assign_20">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[ColumnList]</OutArgument>
@@ -213,19 +220,19 @@
                 <InArgument x:TypeArguments="scg:List(x:String)">[ColumnString.Split(";"c).ToList()]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_dt_Bevakningar.Columns" sap:VirtualizedContainerService.HintSize="508,691" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[in_dt_Bevakningar.Columns]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_dt_Bevakningar.Columns" sap:VirtualizedContainerService.HintSize="508,823" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[in_dt_Bevakningar.Columns]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="columnName" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472,567" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472,699" sap2010:WorkflowViewState.IdRef="Sequence_21">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[Not ColumnList.Contains(columnName.ToString())]" DisplayName="Check if column in columnList Bev" sap:VirtualizedContainerService.HintSize="410,456" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[Not ColumnList.Contains(columnName.ToString())]" DisplayName="Check if column in columnList Bev" sap:VirtualizedContainerService.HintSize="410,588" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,7 +240,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,274" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,406" sap2010:WorkflowViewState.IdRef="Sequence_19">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -247,6 +254,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:RemoveDataColumn>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;tar bort kolumn: &quot; + columnName.ToString]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
@@ -301,7 +309,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
           </Sequence>
-          <Assign DisplayName="Column List order" sap:VirtualizedContainerService.HintSize="496,82" sap2010:WorkflowViewState.IdRef="Assign_28">
+          <Assign DisplayName="Column List order" sap:VirtualizedContainerService.HintSize="570,82" sap2010:WorkflowViewState.IdRef="Assign_28">
             <Assign.To>
               <OutArgument x:TypeArguments="scg:List(x:String)">[ColumnListOrder]</OutArgument>
             </Assign.To>
@@ -309,7 +317,7 @@
               <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String) From {"Datum", "Objekt", "Namn", "Personnr", "Status", "Typ av"}]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar tabellens kolumner i samma ordning som excelfilen." Code="' Skapa en ny DataTable för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i den angivna ordningen&#xA;For Each columnName In desiredColumnOrder&#xA;    If in_dt.Columns.Contains(columnName) Then&#xA;        sortedTable.Columns.Add(columnName, in_dt.Columns(columnName).DataType)&#xA;    End If&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In in_dt.Rows&#xA;    Dim newRow As DataRow = sortedTable.NewRow()&#xA;    For Each columnName In desiredColumnOrder&#xA;        If in_dt.Columns.Contains(columnName) Then&#xA;            newRow(columnName) = row(columnName)&#xA;        End If&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela den sorterade tabellen tillbaka till in_dt&#xA;out_dt  = sortedTable&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="496,165" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
+          <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sorterar tabellens kolumner i samma ordning som excelfilen." Code="' Skapa en ny DataTable för att hålla de sorterade kolumnerna&#xA;Dim sortedTable As New DataTable()&#xA;&#xA;' Lägg till kolumnerna i den angivna ordningen&#xA;For Each columnName In desiredColumnOrder&#xA;    If in_dt.Columns.Contains(columnName) Then&#xA;        sortedTable.Columns.Add(columnName, in_dt.Columns(columnName).DataType)&#xA;    End If&#xA;Next&#xA;&#xA;' Kopiera rader från originaltabellen till den sorterade tabellen&#xA;For Each row As DataRow In in_dt.Rows&#xA;    Dim newRow As DataRow = sortedTable.NewRow()&#xA;    For Each columnName In desiredColumnOrder&#xA;        If in_dt.Columns.Contains(columnName) Then&#xA;            newRow(columnName) = row(columnName)&#xA;        End If&#xA;    Next&#xA;    sortedTable.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela den sorterade tabellen tillbaka till in_dt&#xA;out_dt  = sortedTable&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="570,207" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
             <ui:InvokeCode.Arguments>
               <InArgument x:TypeArguments="scg:List(x:String)" x:Key="desiredColumnOrder ">[ColumnListOrder]</InArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt">[TempTable]</InArgument>
@@ -321,7 +329,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeCode>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="496,52" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="570,52" sap2010:WorkflowViewState.IdRef="CommentOut_11">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_28">
                 <sap:WorkflowViewStateService.ViewState>
@@ -345,7 +353,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <Sequence DisplayName="Remove new lines in cell" sap:VirtualizedContainerService.HintSize="496,81" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence DisplayName="Remove new lines in cell" sap:VirtualizedContainerService.HintSize="570,81" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -436,7 +444,7 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Got datatable for case manager. Number of row(s) &quot; + out_CaseManager_dt_Bevakningar.RowCount.ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="570,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Got datatable for case manager. Number of row(s) &quot; + out_CaseManager_dt_Bevakningar.RowCount.ToString]" />
         </Sequence>
       </If.Then>
       <If.Else>

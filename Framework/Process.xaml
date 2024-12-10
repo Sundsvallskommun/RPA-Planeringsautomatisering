@@ -348,21 +348,11 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Bevakningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Bevakningar.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">
-                                          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Bevakningar_CaseManager" />
-                                        </OutArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
-                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManagerSign" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Bevakningar">
-                                          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dt_Bevakning_AllCaseManagers" />
-                                        </InArgument>
-                                        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
-                                          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
-                                        </InOutArgument>
-                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                                        </InArgument>
+                                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">[dt_Bevakningar_CaseManager]</OutArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">[CaseManagerSign]</InArgument>
+                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Bevakningar">[io_dt_Bevakning_AllCaseManagers]</InArgument>
+                                        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[DistinctClientList]</InOutArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -403,24 +393,12 @@
                                             </sap:WorkflowViewStateService.ViewState>
                                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File - Bevakningar" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Excel\Update Excel File.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
-                                                <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
-                                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelFilePath" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
-                                                  <Literal x:TypeArguments="x:String">Bevakningar</Literal>
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_AllExcelRows">
-                                                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Bevakningar_Excel" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">
-                                                  <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Bevakningar_CaseManager" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_RemoveRowIndexList">
-                                                  <VisualBasicValue x:TypeArguments="scg:List(x:Int32)" ExpressionText="RemoveRowIndexList_Bevakningar" />
-                                                </InArgument>
-                                                <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_AddRowIndexList">
-                                                  <VisualBasicValue x:TypeArguments="scg:List(x:Int32)" ExpressionText="AddRowIndexList_Bevakningar" />
-                                                </InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[ExcelFilePath]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">Bevakningar</InArgument>
+                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_AllExcelRows">[dt_Bevakningar_Excel]</InArgument>
+                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">[dt_Bevakningar_CaseManager]</InArgument>
+                                                <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_RemoveRowIndexList">[RemoveRowIndexList_Bevakningar]</InArgument>
+                                                <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_AddRowIndexList">[AddRowIndexList_Bevakningar]</InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -527,12 +505,23 @@
                                                                         <av:PointCollection x:Key="ConnectorLocation">150,2484.54 150,2514.54</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Medical Records.xaml">
+                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Medical Records.xaml">
                                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">[CaseManager]</InArgument>
-                                                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MedicalRecords">[io_dt_MedicalRecords_AllCaseManagers]</InArgument>
-                                                                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_MedicalRecords">[dt_MedicalRecords_CaseManager]</InOutArgument>
-                                                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
+                                                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManager" />
+                                                                        </InArgument>
+                                                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MedicalRecords">
+                                                                          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dt_MedicalRecords_AllCaseManagers" />
+                                                                        </InArgument>
+                                                                        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_MedicalRecords">
+                                                                          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_MedicalRecords_CaseManager" />
+                                                                        </InOutArgument>
+                                                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                                                          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                                                        </InArgument>
+                                                                        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_DistinctClientList">
+                                                                          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
+                                                                        </InArgument>
                                                                       </ui:InvokeWorkflowFile.Arguments>
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -596,7 +585,7 @@
                                                                                     <av:PointCollection x:Key="ConnectorLocation">570,2683.04 570,2713.04 573.1416666666667,2713.04 573.1416666666667,2753.04</av:PointCollection>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                                <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Dashboard" sap:VirtualizedContainerService.HintSize="572,2126" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                                                                <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Dashboard" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_76">
                                                                                   <Sequence.Variables>
                                                                                     <Variable x:TypeArguments="sd:DataTable" Name="dt_DashboardFromExcel" />
                                                                                     <Variable x:TypeArguments="sd:DataTable" Name="dt_DashboardToExcel" />
@@ -1015,13 +1004,13 @@
                                                                                   </If>
                                                                                   <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                                                                                     <ui:CommentOut.Body>
-                                                                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="472,514" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                                                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,293" sap2010:WorkflowViewState.IdRef="Sequence_73">
                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                           </scg:Dictionary>
                                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                                        <If Condition="[dt_DashboardFfromExcelKeep IsNot Nothing AndAlso dt_DashboardFfromExcelKeep.RowCount &gt; 0]" DisplayName="If dt_DashboardFfromExcelKeep &gt; 0" sap:VirtualizedContainerService.HintSize="410,403" sap2010:WorkflowViewState.IdRef="If_1">
+                                                                                        <If Condition="[dt_DashboardFfromExcelKeep IsNot Nothing AndAlso dt_DashboardFfromExcelKeep.RowCount &gt; 0]" DisplayName="If dt_DashboardFfromExcelKeep &gt; 0" sap:VirtualizedContainerService.HintSize="388,182" sap2010:WorkflowViewState.IdRef="If_1">
                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1726,11 +1715,11 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">403,659</av:Point>
-                <av:Size x:Key="ShapeSize">434,82</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">620,741 620,771 360,771 360,917.5</av:PointCollection>
+                <av:Size x:Key="ShapeSize">434,81</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">620,741 620,854 360,854 360,917.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_51">
+            <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_51">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[DistinctClientList]</OutArgument>
               </Assign.To>

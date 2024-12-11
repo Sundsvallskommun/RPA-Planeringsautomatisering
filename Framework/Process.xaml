@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1759,3951</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1428,4027</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -146,7 +146,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1129,3886" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1129,3962" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CaseManager" />
       <Variable x:TypeArguments="x:String" Name="CaseManagerSign" />
@@ -173,9 +173,9 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="1067,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1067,3343" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1067,3419" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <Flowchart sap:VirtualizedContainerService.HintSize="1029,3115" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart sap:VirtualizedContainerService.HintSize="1029,3191" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="dt_Bevakningar_Excel" />
             <Variable x:TypeArguments="scg:List(x:Int32)" Name="AddRowIndexList_Bevakningar" />
@@ -207,7 +207,7 @@
               <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,158.5</av:PointCollection>
               <x:Double x:Key="Width">995.0121481166984</x:Double>
-              <x:Double x:Key="Height">3077.5</x:Double>
+              <x:Double x:Key="Height">3153.5</x:Double>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
@@ -244,13 +244,32 @@
                     <av:PointCollection x:Key="ConnectorLocation">360,1056.5 360,1096.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar alla blad och sparar de som datatabeller. (Med och utan kolumerna: Prioritet,Status och Kommentar)" DisplayName="Get Data From Excel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excel\Get Data From Excel.xaml">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar alla blad och sparar de som datatabeller. (Med och utan kolumerna: Prioritet,Status och Kommentar)" DisplayName="Get Data From Excel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excel\Get Data From Excel.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[ExcelFilePath]</InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakningar_OldRowsFromExcel">[dt_Bevakningar_Excel]</OutArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Journalanteckningar_OldRowsFromExcel">[dt_MedicalRecords_Excel]</OutArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning_OldRowsFromExcel">[dt_Utredning_Excel]</OutArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualiseringar_OldRowsFromExcel">[dt_Aktualiseringar_Excel]</OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelFilePath" />
+                    </InArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakningar_OldRowsFromExcel">
+                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Bevakningar_Excel" />
+                    </OutArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Journalanteckningar_OldRowsFromExcel">
+                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_MedicalRecords_Excel" />
+                    </OutArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning_OldRowsFromExcel">
+                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Utredning_Excel" />
+                    </OutArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualiseringar_OldRowsFromExcel">
+                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_Excel" />
+                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_TempFilePath">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TempFolderFilePath" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FileName">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FileName" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_OrgFolderPath">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;FolderName&quot;).ToString" />
+                    </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1830,7 +1849,7 @@
                                                                                                 <av:PointCollection x:Key="ConnectorLocation">540,2949.5 540,3001.5</av:PointCollection>
                                                                                               </scg:Dictionary>
                                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                                            <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="654,2942" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                                            <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                                                                               <Sequence.Variables>
                                                                                                 <Variable x:TypeArguments="x:String" Name="MailBodyTextFirstPart" />
                                                                                                 <Variable x:TypeArguments="x:String" Name="MailEmailAddresses" />
@@ -2129,13 +2148,13 @@
                                                                                                   </scg:Dictionary>
                                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                                 <If.Then>
-                                                                                                  <Sequence sap:VirtualizedContainerService.HintSize="528,614" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                                                                                  <Sequence sap:VirtualizedContainerService.HintSize="476,384" sap2010:WorkflowViewState.IdRef="Sequence_68">
                                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                       </scg:Dictionary>
                                                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,282" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                                                                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_9">
                                                                                                       <ui:CommentOut.Body>
                                                                                                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_123">
                                                                                                           <sap:WorkflowViewStateService.ViewState>
@@ -2146,8 +2165,14 @@
                                                                                                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Antal rader i medred mail: &quot; +AddRowIndexList_MedicalRecords.Count.ToString]" />
                                                                                                         </Sequence>
                                                                                                       </ui:CommentOut.Body>
+                                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                        </scg:Dictionary>
+                                                                                                      </sap:WorkflowViewStateService.ViewState>
                                                                                                     </ui:CommentOut>
-                                                                                                    <Assign DisplayName="Replace NrOfNewJournalanteckningar" sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                                                                                    <Assign DisplayName="Replace NrOfNewJournalanteckningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_29">
                                                                                                       <Assign.To>
                                                                                                         <OutArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords]</OutArgument>
                                                                                                       </Assign.To>
@@ -2155,7 +2180,7 @@
                                                                                                         <InArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords.Replace("[NrOfNewJournalanteckningar]", If(AddRowIndexList_MedicalRecords IsNot Nothing, AddRowIndexList_MedicalRecords.Count.ToString(), "0"))]</InArgument>
                                                                                                       </Assign.Value>
                                                                                                     </Assign>
-                                                                                                    <Assign DisplayName="MailBodyTextSendMail add med rec" sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_44">
+                                                                                                    <Assign DisplayName="MailBodyTextSendMail add med rec" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_44">
                                                                                                       <Assign.To>
                                                                                                         <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
                                                                                                       </Assign.To>
@@ -2401,7 +2426,7 @@
                     <av:PointCollection x:Key="ConnectorLocation">150,666.58 150,698.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                <Sequence DisplayName="Copy Files" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_72">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="NewFileName" />
                     <Variable x:TypeArguments="x:String" Name="FolderPathCopy" />
@@ -2411,7 +2436,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:CopyFolderX ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="Private: Copy Folder" From="[FolderPath]" sap:VirtualizedContainerService.HintSize="492,159" sap2010:WorkflowViewState.IdRef="CopyFolderX_4" IncludeSubfolders="True" Overwrite="True" To="[TempFolderFilePath]">
+                  <ui:CopyFolderX ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="Private: Copy Folder" From="[FolderPath]" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="CopyFolderX_4" IncludeSubfolders="True" Overwrite="True" To="[TempFolderFilePath]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
@@ -2420,7 +2445,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CopyFolderX>
-                  <Assign DisplayName="Assign FolderPathCopy" sap:VirtualizedContainerService.HintSize="492,81" sap2010:WorkflowViewState.IdRef="Assign_49">
+                  <Assign DisplayName="Assign FolderPathCopy" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_49">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[FolderPathCopy]</OutArgument>
                     </Assign.To>
@@ -2428,7 +2453,7 @@
                       <InArgument x:TypeArguments="x:String">[TempFolderFilePath + "\" + Split(FolderPath, "\").Last]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="Assign NewFileName" sap:VirtualizedContainerService.HintSize="492,81" sap2010:WorkflowViewState.IdRef="Assign_48">
+                  <Assign DisplayName="Assign NewFileName" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_48">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[NewFileName]</OutArgument>
                     </Assign.To>
@@ -2436,7 +2461,7 @@
                       <InArgument x:TypeArguments="x:String">[Split(FolderPathCopy, "\").Last + " " + Now.ToString("yyyy-MM-dd HHmm")]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:RetryScope DisplayName="Private: Retry Scope" sap:VirtualizedContainerService.HintSize="492,418" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+                  <ui:RetryScope DisplayName="Private: Retry Scope" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,243" sap2010:WorkflowViewState.IdRef="Sequence_75">
@@ -2452,6 +2477,12 @@
                     <ui:RetryScope.Condition>
                       <ActivityFunc x:TypeArguments="x:Boolean" />
                     </ui:RetryScope.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
                 </Sequence>
                 <FlowStep.Next>
@@ -2464,11 +2495,11 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">403,659</av:Point>
-                    <av:Size x:Key="ShapeSize">434,81</av:Size>
+                    <av:Size x:Key="ShapeSize">434,82</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">620,741 620,854 360,854 360,917.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_51">
+                <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_51">
                   <Assign.To>
                     <OutArgument x:TypeArguments="scg:List(x:String)">[DistinctClientList]</OutArgument>
                   </Assign.To>

@@ -15,7 +15,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1759,2042</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>600,2234</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Medical_Records_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Summarize_And_Sort_Medical_Records" sap:VirtualizedContainerService.HintSize="610,1977" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Summarize_And_Sort_Medical_Records" sap:VirtualizedContainerService.HintSize="610,2169" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_CaseManager_MedicalRecordsCopy" />
       <Variable x:TypeArguments="x:Int32" Name="IndexDataRow" />
@@ -213,7 +213,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
     </Sequence>
-    <Sequence DisplayName="Get Rows From DistinctClientList" sap:VirtualizedContainerService.HintSize="548,970" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Get Rows From DistinctClientList" sap:VirtualizedContainerService.HintSize="548,1162" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="Index" />
         <Variable x:TypeArguments="scg:List(x:Int32)" Default="[New List(Of Int32)]" Name="RemoveRowsIndex" />
@@ -225,14 +225,14 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:CommentOut DisplayName="Comment Out För test" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,292" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,293" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:BuildDataTable DataTable="[in_dt_MedicalRecords]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Personnr&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Personnr&gt;text&lt;/Personnr&gt;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Personnr&gt;123&lt;/Personnr&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Personnr&gt;132&lt;/Personnr&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Personnr&gt;323&lt;/Personnr&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_17">
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_17">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[in_DistinctClientList]</OutArgument>
               </Assign.To>
@@ -249,7 +249,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <Assign DisplayName="Assign dt_MedicalRecordsCopy" sap:VirtualizedContainerService.HintSize="486,81" sap2010:WorkflowViewState.IdRef="Assign_18">
+      <Assign DisplayName="Assign dt_MedicalRecordsCopy" sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_18">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[dt_MedicalRecordsCopy]</OutArgument>
         </Assign.To>
@@ -311,8 +311,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Nr in list to remove medrec: &quot; + RemoveRowsIndex.Count.ToString]" />
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,422" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[RemoveRowsIndex.AsEnumerable().Reverse().ToList()]">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,282" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Nr in list to remove medrec: &quot; + RemoveRowsIndex.Count.ToString]" />
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,423" sap2010:WorkflowViewState.IdRef="ForEach`1_15" Values="[RemoveRowsIndex.AsEnumerable().Reverse().ToList()]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -339,13 +350,9 @@
     </Sequence>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="kan det bli konstigt om man inte fyller i ett io, blir den tom då?&#xA;" DisplayName="Sort Columns And Remove New Lines.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="548,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Summarize And Sort\Sort Columns And Remove New Lines.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="TempTable">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_MedicalRecordsCopy" />
-        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="TempTable">[dt_MedicalRecordsCopy]</InArgument>
         <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList" />
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_CaseManager_dt_MedicalRecords" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt">[out_CaseManager_dt_MedicalRecords]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

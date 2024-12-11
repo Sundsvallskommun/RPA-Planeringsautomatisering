@@ -14,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.28",
+  "projectVersion": "1.0.29",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -100,6 +100,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\TestCaseUpdate Excelfile.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7245cb58-bf5e-4011-8cfd-5886502d0e31",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCaseUpdate Excelfile medrec.xaml"
       }
     ],
     "modernBehavior": false

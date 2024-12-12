@@ -215,17 +215,17 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID30</x:Reference>
+            <x:Reference>__ReferenceID32</x:Reference>
           </Flowchart.StartNode>
           <FlowStep x:Name="__ReferenceID4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">50,538.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,124</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">150,662.5 150,692.5 360,692.5 360,757.5</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">250,600.5 360,600.5 360,757.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sätter datum till sök&#xA;&#xA;Hämtar alla datatabeller i gränssnitet" DisplayName="FirstRunInit.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="Summarize And Sort\FirstRunInit.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Sätter datum till sök&#xA;&#xA;Hämtar alla datatabeller i gränssnitet" DisplayName="FirstRunInit.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Summarize And Sort\FirstRunInit.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakning">[io_dt_Bevakning_AllCaseManagers]</OutArgument>
                 <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualisering">[io_dt_Aktualisering_AllCaseManagers]</OutArgument>
@@ -1819,7 +1819,7 @@
                                                                                       </ui:ExcelApplicationScope>
                                                                                     </Sequence>
                                                                                     <FlowStep.Next>
-                                                                                      <FlowStep x:Name="__ReferenceID29">
+                                                                                      <FlowStep x:Name="__ReferenceID28">
                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                             <av:Point x:Key="ShapeLocation">470,2573.04</av:Point>
@@ -1873,7 +1873,7 @@
                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                         </ui:MultipleAssign>
                                                                                         <FlowStep.Next>
-                                                                                          <FlowDecision x:Name="__ReferenceID28" DisplayName="Wants Mail?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                                                                                          <FlowDecision x:Name="__ReferenceID27" DisplayName="Wants Mail?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                                                                                             <FlowDecision.Condition>
                                                                                               <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="MailAktualiseringar OrElse MailBevakningar OrElse MailMedicalRecords OrElse MailUtredningar" />
                                                                                             </FlowDecision.Condition>
@@ -1883,6 +1883,7 @@
                                                                                                 <av:Point x:Key="ShapeLocation">365,2666.5</av:Point>
                                                                                                 <av:Size x:Key="ShapeSize">70,87</av:Size>
                                                                                                 <av:PointCollection x:Key="TrueConnector">365,2710 331.89166666666665,2710 331.89166666666665,2783.04</av:PointCollection>
+                                                                                                <av:PointCollection x:Key="FalseConnector">435,2710 465,2710 465,2770 550,2770</av:PointCollection>
                                                                                               </scg:Dictionary>
                                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                                             <FlowDecision.True>
@@ -1892,502 +1893,521 @@
                                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                     <av:Point x:Key="ShapeLocation">310.64166666666665,2783.04</av:Point>
                                                                                                     <av:Size x:Key="ShapeSize">85,87</av:Size>
-                                                                                                    <av:PointCollection x:Key="TrueConnector">310.64166666666665,2826.54 190,2826.54 190,2940 220,2940</av:PointCollection>
+                                                                                                    <av:PointCollection x:Key="TrueConnector">310.64166666666665,2826.54 120,2826.54 120,2870.54</av:PointCollection>
+                                                                                                    <av:PointCollection x:Key="FalseConnector">395.64166666666665,2826.54 425.64166666666665,2826.54 425.64166666666665,2920 550,2920</av:PointCollection>
                                                                                                   </scg:Dictionary>
                                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                                 <FlowDecision.True>
-                                                                                                  <FlowStep x:Name="__ReferenceID22">
+                                                                                                  <FlowStep x:Name="__ReferenceID29">
                                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                        <av:Point x:Key="ShapeLocation">220,2898.5</av:Point>
-                                                                                                        <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                                                                                        <av:PointCollection x:Key="ConnectorLocation">320,2979.5 320,3009.5 330,3009.5 330,3042</av:PointCollection>
+                                                                                                        <av:Point x:Key="ShapeLocation">20,2870.54</av:Point>
+                                                                                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                                                                        <av:PointCollection x:Key="ConnectorLocation">120,2922.54 120,3019 150,3019</av:PointCollection>
                                                                                                       </scg:Dictionary>
                                                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                                                    <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="654,2769" sap2010:WorkflowViewState.IdRef="Sequence_37">
-                                                                                                      <Sequence.Variables>
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailBodyTextFirstPart" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailEmailAddresses" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailSenderAddress" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailSenderName" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailServerAddress" />
-                                                                                                        <Variable x:TypeArguments="x:Int32" Name="MailServerPort" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailSubject" />
-                                                                                                        <Variable x:TypeArguments="scg:List(x:String)" Name="MailAddressesList" />
-                                                                                                        <Variable x:TypeArguments="x:Boolean" Name="MailBevakningar" />
-                                                                                                        <Variable x:TypeArguments="x:Boolean" Name="MailMedicalRecords" />
-                                                                                                        <Variable x:TypeArguments="x:Boolean" Name="MailUtredningar" />
-                                                                                                        <Variable x:TypeArguments="x:Boolean" Name="MailAktualiseringar" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailBodyTextUtredningar" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailBodyTextMedicalRecords" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailBodyTextBevakningar" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailBodyTextAktualiseringar" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailBodyTextLastPart" />
-                                                                                                        <Variable x:TypeArguments="x:String" Name="MailBodyTextSendMail" />
-                                                                                                      </Sequence.Variables>
-                                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                        </scg:Dictionary>
-                                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="CommentOut_11">
-                                                                                                        <ui:CommentOut.Body>
-                                                                                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="493,336" sap2010:WorkflowViewState.IdRef="Sequence_136">
-                                                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                              </scg:Dictionary>
-                                                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                                                            <ui:MultipleAssign sap2010:Annotation.AnnotationText="Hårdkodat från inställningar i excefilen." DisplayName="Multiple Assign Bool Mail" sap:VirtualizedContainerService.HintSize="431,225" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
-                                                                                                              <ui:MultipleAssign.AssignOperations>
-                                                                                                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                                                                  <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_33">
-                                                                                                                    <ui:AssignOperation.To>
-                                                                                                                      <OutArgument x:TypeArguments="x:Boolean">[MailAktualiseringar]</OutArgument>
-                                                                                                                    </ui:AssignOperation.To>
-                                                                                                                    <ui:AssignOperation.Value>
-                                                                                                                      <InArgument x:TypeArguments="x:Boolean">[If(dt_Settings.Rows(0)("Aktualiseringar").ToString().Trim().ToLower() = "ja",True, False)]</InArgument>
-                                                                                                                    </ui:AssignOperation.Value>
-                                                                                                                  </ui:AssignOperation>
-                                                                                                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
-                                                                                                                    <ui:AssignOperation.To>
-                                                                                                                      <OutArgument x:TypeArguments="x:Boolean">[MailBevakningar]</OutArgument>
-                                                                                                                    </ui:AssignOperation.To>
-                                                                                                                    <ui:AssignOperation.Value>
-                                                                                                                      <InArgument x:TypeArguments="x:Boolean">[If(dt_Settings.Rows(0)("Bevakningar").ToString().Trim().ToLower() = "ja",True, False)]</InArgument>
-                                                                                                                    </ui:AssignOperation.Value>
-                                                                                                                  </ui:AssignOperation>
-                                                                                                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
-                                                                                                                    <ui:AssignOperation.To>
-                                                                                                                      <OutArgument x:TypeArguments="x:Boolean">[MailMedicalRecords]</OutArgument>
-                                                                                                                    </ui:AssignOperation.To>
-                                                                                                                    <ui:AssignOperation.Value>
-                                                                                                                      <InArgument x:TypeArguments="x:Boolean">[If(dt_Settings.Rows(0)("Journalanteckningar").ToString().Trim().ToLower() = "ja",True, False)]</InArgument>
-                                                                                                                    </ui:AssignOperation.Value>
-                                                                                                                  </ui:AssignOperation>
-                                                                                                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
-                                                                                                                    <ui:AssignOperation.To>
-                                                                                                                      <OutArgument x:TypeArguments="x:Boolean">[MailUtredningar]</OutArgument>
-                                                                                                                    </ui:AssignOperation.To>
-                                                                                                                    <ui:AssignOperation.Value>
-                                                                                                                      <InArgument x:TypeArguments="x:Boolean">[If(dt_Settings.Rows(0)("Utredning").ToString().Trim().ToLower() = "ja",True, False)]</InArgument>
-                                                                                                                    </ui:AssignOperation.Value>
-                                                                                                                  </ui:AssignOperation>
-                                                                                                                </scg:List>
-                                                                                                              </ui:MultipleAssign.AssignOperations>
-                                                                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                                                                                                </scg:Dictionary>
-                                                                                                              </sap:WorkflowViewStateService.ViewState>
-                                                                                                            </ui:MultipleAssign>
-                                                                                                          </Sequence>
-                                                                                                        </ui:CommentOut.Body>
+                                                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;add aktual: &quot; + AddRowIndexList_Aktualiseringar.Count.ToString + &quot; add bev: &quot; + AddRowIndexList_Bevakningar.Count.ToString + &quot; add medrec: &quot; + AddRowIndexList_MedicalRecords.Count.ToString + &quot; add utrednig: &quot; + AddRowIndexList_Utredningar.Count.ToString]" />
+                                                                                                    <FlowStep.Next>
+                                                                                                      <FlowStep x:Name="__ReferenceID22">
                                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                            <av:Point x:Key="ShapeLocation">150,2978.5</av:Point>
+                                                                                                            <av:Size x:Key="ShapeSize">200,81</av:Size>
                                                                                                           </scg:Dictionary>
                                                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                                                      </ui:CommentOut>
-                                                                                                      <ui:MultipleAssign DisplayName="Multiple Assign Mail" sap:VirtualizedContainerService.HintSize="592,411" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-                                                                                                        <ui:MultipleAssign.AssignOperations>
-                                                                                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextFirstPart]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextFirstPart").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailSenderAddress]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailSenderAddress").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailSenderName]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailSenderName").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailServerAddress]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailServerAddress").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:Int32">[MailServerPort]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:Int32">[CInt(in_Config("MailServerPort"))]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailSubject]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailSubject").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextUtredningar]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextUtredningar").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextMedicalRecords").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextBevakningar]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextBevakningar").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextAktualiseringar]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextAktualiseringar").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_42">
-                                                                                                              <ui:AssignOperation.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextLastPart]</OutArgument>
-                                                                                                              </ui:AssignOperation.To>
-                                                                                                              <ui:AssignOperation.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextLastPart").ToString]</InArgument>
-                                                                                                              </ui:AssignOperation.Value>
-                                                                                                            </ui:AssignOperation>
-                                                                                                          </scg:List>
-                                                                                                        </ui:MultipleAssign.AssignOperations>
-                                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                                          </scg:Dictionary>
-                                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                                      </ui:MultipleAssign>
-                                                                                                      <Assign DisplayName="Assign MailAddressesList" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_24">
-                                                                                                        <Assign.To>
-                                                                                                          <OutArgument x:TypeArguments="scg:List(x:String)">[MailAddressesList]</OutArgument>
-                                                                                                        </Assign.To>
-                                                                                                        <Assign.Value>
-                                                                                                          <InArgument x:TypeArguments="scg:List(x:String)">[dt_Settings.AsEnumerable.Select(Function (f) f.Field(Of String)("Email")).ToList]</InArgument>
-                                                                                                        </Assign.Value>
-                                                                                                      </Assign>
-                                                                                                      <Assign DisplayName="Assign MailAddressesList" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_50">
-                                                                                                        <Assign.To>
-                                                                                                          <OutArgument x:TypeArguments="scg:List(x:String)">[MailAddressesList]</OutArgument>
-                                                                                                        </Assign.To>
-                                                                                                        <Assign.Value>
-                                                                                                          <InArgument x:TypeArguments="scg:List(x:String)">[MailAddressesList.Where(Function(item) Not String.IsNullOrWhiteSpace(item)).ToList()]</InArgument>
-                                                                                                        </Assign.Value>
-                                                                                                      </Assign>
-                                                                                                      <Assign DisplayName="Assign MailEmailAddresses" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_22">
-                                                                                                        <Assign.To>
-                                                                                                          <OutArgument x:TypeArguments="x:String">[MailEmailAddresses]</OutArgument>
-                                                                                                        </Assign.To>
-                                                                                                        <Assign.Value>
-                                                                                                          <InArgument x:TypeArguments="x:String">[String.Join(";",MailAddressesList)]</InArgument>
-                                                                                                        </Assign.Value>
-                                                                                                      </Assign>
-                                                                                                      <Assign DisplayName="Replace CaseManagerName" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_25">
-                                                                                                        <Assign.To>
-                                                                                                          <OutArgument x:TypeArguments="x:String">[MailBodyTextFirstPart]</OutArgument>
-                                                                                                        </Assign.To>
-                                                                                                        <Assign.Value>
-                                                                                                          <InArgument x:TypeArguments="x:String">[MailBodyTextFirstPart.Replace("[CaseManagerName]", CaseManager)]</InArgument>
-                                                                                                        </Assign.Value>
-                                                                                                      </Assign>
-                                                                                                      <Assign DisplayName="Replace LastRun" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_26">
-                                                                                                        <Assign.To>
-                                                                                                          <OutArgument x:TypeArguments="x:String">[MailBodyTextFirstPart]</OutArgument>
-                                                                                                        </Assign.To>
-                                                                                                        <Assign.Value>
-                                                                                                          <InArgument x:TypeArguments="x:String">[MailBodyTextFirstPart.Replace("[LastRun]", LastRun)]</InArgument>
-                                                                                                        </Assign.Value>
-                                                                                                      </Assign>
-                                                                                                      <Assign DisplayName="Assign MailBodyTextSendMail" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_41">
-                                                                                                        <Assign.To>
-                                                                                                          <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
-                                                                                                        </Assign.To>
-                                                                                                        <Assign.Value>
-                                                                                                          <InArgument x:TypeArguments="x:String">[MailBodyTextFirstPart]</InArgument>
-                                                                                                        </Assign.Value>
-                                                                                                      </Assign>
-                                                                                                      <If Condition="[MailAktualiseringar]" DisplayName="If MailAktualiseringar" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_8">
-                                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                                          </scg:Dictionary>
-                                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                                        <If.Then>
-                                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_64">
-                                                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                              </scg:Dictionary>
-                                                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                                                            <Assign DisplayName="Replace NrOfNewAktualiseringar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_27">
-                                                                                                              <Assign.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextAktualiseringar]</OutArgument>
-                                                                                                              </Assign.To>
-                                                                                                              <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[MailBodyTextAktualiseringar.Replace("[NrOfNewAktualiseringar]", If(AddRowIndexList_Aktualiseringar IsNot Nothing, AddRowIndexList_Aktualiseringar.Count.ToString(), "0"))]</InArgument>
-                                                                                                              </Assign.Value>
-                                                                                                            </Assign>
-                                                                                                            <Assign DisplayName="MailBodyTextSendMail add akt" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_42">
-                                                                                                              <Assign.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
-                                                                                                              </Assign.To>
-                                                                                                              <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextAktualiseringar]</InArgument>
-                                                                                                              </Assign.Value>
-                                                                                                            </Assign>
-                                                                                                          </Sequence>
-                                                                                                        </If.Then>
-                                                                                                        <If.Else>
-                                                                                                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_65" />
-                                                                                                        </If.Else>
-                                                                                                      </If>
-                                                                                                      <If Condition="[MailBevakningar]" DisplayName="If MailBevakningar" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_9">
-                                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                                          </scg:Dictionary>
-                                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                                        <If.Then>
-                                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_66">
-                                                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                              </scg:Dictionary>
-                                                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                                                            <Assign DisplayName="Replace NrOfNewBevakningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_28">
-                                                                                                              <Assign.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextBevakningar]</OutArgument>
-                                                                                                              </Assign.To>
-                                                                                                              <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[MailBodyTextBevakningar.Replace("[NrOfNewBevakningar]", If(AddRowIndexList_Bevakningar IsNot Nothing, AddRowIndexList_Bevakningar.Count.ToString(), "0"))]</InArgument>
-                                                                                                              </Assign.Value>
-                                                                                                            </Assign>
-                                                                                                            <Assign DisplayName="MailBodyTextSendMail add bev" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_43">
-                                                                                                              <Assign.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
-                                                                                                              </Assign.To>
-                                                                                                              <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextBevakningar]</InArgument>
-                                                                                                              </Assign.Value>
-                                                                                                            </Assign>
-                                                                                                          </Sequence>
-                                                                                                        </If.Then>
-                                                                                                        <If.Else>
-                                                                                                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_67" />
-                                                                                                        </If.Else>
-                                                                                                      </If>
-                                                                                                      <If Condition="[MailMedicalRecords]" DisplayName="If MailMedicalRecords" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_10">
-                                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                                          </scg:Dictionary>
-                                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                                        <If.Then>
-                                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="476,384" sap2010:WorkflowViewState.IdRef="Sequence_68">
-                                                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                              </scg:Dictionary>
-                                                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_9">
-                                                                                                              <ui:CommentOut.Body>
-                                                                                                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                                                                                                        <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                                                          <Sequence.Variables>
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailBodyTextFirstPart" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailEmailAddresses" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailSenderAddress" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailSenderName" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailServerAddress" />
+                                                                                                            <Variable x:TypeArguments="x:Int32" Name="MailServerPort" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailSubject" />
+                                                                                                            <Variable x:TypeArguments="scg:List(x:String)" Name="MailAddressesList" />
+                                                                                                            <Variable x:TypeArguments="x:Boolean" Name="MailBevakningar" />
+                                                                                                            <Variable x:TypeArguments="x:Boolean" Name="MailMedicalRecords" />
+                                                                                                            <Variable x:TypeArguments="x:Boolean" Name="MailUtredningar" />
+                                                                                                            <Variable x:TypeArguments="x:Boolean" Name="MailAktualiseringar" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailBodyTextUtredningar" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailBodyTextMedicalRecords" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailBodyTextBevakningar" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailBodyTextAktualiseringar" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailBodyTextLastPart" />
+                                                                                                            <Variable x:TypeArguments="x:String" Name="MailBodyTextSendMail" />
+                                                                                                          </Sequence.Variables>
+                                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                            </scg:Dictionary>
+                                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                                                                                                            <ui:CommentOut.Body>
+                                                                                                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="493,336" sap2010:WorkflowViewState.IdRef="Sequence_136">
+                                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                  </scg:Dictionary>
+                                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                                <ui:MultipleAssign sap2010:Annotation.AnnotationText="Hårdkodat från inställningar i excefilen." DisplayName="Multiple Assign Bool Mail" sap:VirtualizedContainerService.HintSize="431,225" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                                                                                                                  <ui:MultipleAssign.AssignOperations>
+                                                                                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                                                                                      <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_33">
+                                                                                                                        <ui:AssignOperation.To>
+                                                                                                                          <OutArgument x:TypeArguments="x:Boolean">[MailAktualiseringar]</OutArgument>
+                                                                                                                        </ui:AssignOperation.To>
+                                                                                                                        <ui:AssignOperation.Value>
+                                                                                                                          <InArgument x:TypeArguments="x:Boolean">[If(dt_Settings.Rows(0)("Aktualiseringar").ToString().Trim().ToLower() = "ja",True, False)]</InArgument>
+                                                                                                                        </ui:AssignOperation.Value>
+                                                                                                                      </ui:AssignOperation>
+                                                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
+                                                                                                                        <ui:AssignOperation.To>
+                                                                                                                          <OutArgument x:TypeArguments="x:Boolean">[MailBevakningar]</OutArgument>
+                                                                                                                        </ui:AssignOperation.To>
+                                                                                                                        <ui:AssignOperation.Value>
+                                                                                                                          <InArgument x:TypeArguments="x:Boolean">[If(dt_Settings.Rows(0)("Bevakningar").ToString().Trim().ToLower() = "ja",True, False)]</InArgument>
+                                                                                                                        </ui:AssignOperation.Value>
+                                                                                                                      </ui:AssignOperation>
+                                                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
+                                                                                                                        <ui:AssignOperation.To>
+                                                                                                                          <OutArgument x:TypeArguments="x:Boolean">[MailMedicalRecords]</OutArgument>
+                                                                                                                        </ui:AssignOperation.To>
+                                                                                                                        <ui:AssignOperation.Value>
+                                                                                                                          <InArgument x:TypeArguments="x:Boolean">[If(dt_Settings.Rows(0)("Journalanteckningar").ToString().Trim().ToLower() = "ja",True, False)]</InArgument>
+                                                                                                                        </ui:AssignOperation.Value>
+                                                                                                                      </ui:AssignOperation>
+                                                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
+                                                                                                                        <ui:AssignOperation.To>
+                                                                                                                          <OutArgument x:TypeArguments="x:Boolean">[MailUtredningar]</OutArgument>
+                                                                                                                        </ui:AssignOperation.To>
+                                                                                                                        <ui:AssignOperation.Value>
+                                                                                                                          <InArgument x:TypeArguments="x:Boolean">[If(dt_Settings.Rows(0)("Utredning").ToString().Trim().ToLower() = "ja",True, False)]</InArgument>
+                                                                                                                        </ui:AssignOperation.Value>
+                                                                                                                      </ui:AssignOperation>
+                                                                                                                    </scg:List>
+                                                                                                                  </ui:MultipleAssign.AssignOperations>
                                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                                                                                     </scg:Dictionary>
                                                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Antal rader i medred mail: &quot; +AddRowIndexList_MedicalRecords.Count.ToString]" />
-                                                                                                                </Sequence>
-                                                                                                              </ui:CommentOut.Body>
-                                                                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                                                </scg:Dictionary>
-                                                                                                              </sap:WorkflowViewStateService.ViewState>
-                                                                                                            </ui:CommentOut>
-                                                                                                            <Assign DisplayName="Replace NrOfNewJournalanteckningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_29">
-                                                                                                              <Assign.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords]</OutArgument>
-                                                                                                              </Assign.To>
-                                                                                                              <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords.Replace("[NrOfNewJournalanteckningar]", If(AddRowIndexList_MedicalRecords IsNot Nothing, AddRowIndexList_MedicalRecords.Count.ToString(), "0"))]</InArgument>
-                                                                                                              </Assign.Value>
-                                                                                                            </Assign>
-                                                                                                            <Assign DisplayName="MailBodyTextSendMail add med rec" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_44">
-                                                                                                              <Assign.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
-                                                                                                              </Assign.To>
-                                                                                                              <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextMedicalRecords]</InArgument>
-                                                                                                              </Assign.Value>
-                                                                                                            </Assign>
-                                                                                                          </Sequence>
-                                                                                                        </If.Then>
-                                                                                                        <If.Else>
-                                                                                                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_69" />
-                                                                                                        </If.Else>
-                                                                                                      </If>
-                                                                                                      <If Condition="[MailUtredningar]" DisplayName="If MailUtredningar" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_11">
-                                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                                          </scg:Dictionary>
-                                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                                        <If.Then>
-                                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_70">
-                                                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                              </scg:Dictionary>
-                                                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                                                            <Assign DisplayName="Replace NrOfNewUtredningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_30">
-                                                                                                              <Assign.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextUtredningar]</OutArgument>
-                                                                                                              </Assign.To>
-                                                                                                              <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[MailBodyTextUtredningar.Replace("[NrOfNewUtredningar]", If(AddRowIndexList_Utredningar IsNot Nothing, AddRowIndexList_Utredningar.Count.ToString(), "0"))]</InArgument>
-                                                                                                              </Assign.Value>
-                                                                                                            </Assign>
-                                                                                                            <Assign DisplayName="MailBodyTextSendMail add utr" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_45">
-                                                                                                              <Assign.To>
-                                                                                                                <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
-                                                                                                              </Assign.To>
-                                                                                                              <Assign.Value>
-                                                                                                                <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextUtredningar]</InArgument>
-                                                                                                              </Assign.Value>
-                                                                                                            </Assign>
-                                                                                                          </Sequence>
-                                                                                                        </If.Then>
-                                                                                                        <If.Else>
-                                                                                                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_71" />
-                                                                                                        </If.Else>
-                                                                                                      </If>
-                                                                                                      <Assign DisplayName="Replace ExcelFilePath" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_31">
-                                                                                                        <Assign.To>
-                                                                                                          <OutArgument x:TypeArguments="x:String">[MailBodyTextLastPart]</OutArgument>
-                                                                                                        </Assign.To>
-                                                                                                        <Assign.Value>
-                                                                                                          <InArgument x:TypeArguments="x:String">[MailBodyTextLastPart.Replace("[ExcelFilePath]", ExcelFilePath)]</InArgument>
-                                                                                                        </Assign.Value>
-                                                                                                      </Assign>
-                                                                                                      <Assign DisplayName="Last MailBodyTextSendMail" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_46">
-                                                                                                        <Assign.To>
-                                                                                                          <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
-                                                                                                        </Assign.To>
-                                                                                                        <Assign.Value>
-                                                                                                          <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextLastPart]</InArgument>
-                                                                                                        </Assign.Value>
-                                                                                                      </Assign>
-                                                                                                      <TryCatch DisplayName="Try Catch Send Mail" sap:VirtualizedContainerService.HintSize="592,771" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                                                                                                        <TryCatch.Try>
-                                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="554,543" sap2010:WorkflowViewState.IdRef="Sequence_78">
-                                                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                              </scg:Dictionary>
-                                                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                                                            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,432" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3">
-                                                                                                              <ui:RetryScope.ActivityBody>
-                                                                                                                <ActivityAction>
-                                                                                                                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,257" sap2010:WorkflowViewState.IdRef="Sequence_77">
-                                                                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                                      </scg:Dictionary>
-                                                                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                                                                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[MailBodyTextSendMail]" DisplayName="Send SMTP Summary Mail Message" EnableSSL="True" From="[MailSenderAddress]" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="[MailSenderName]" Port="[MailServerPort]" SecureConnection="Auto" Server="[MailServerAddress]" Subject="[MailSubject]" To="[MailEmailAddresses]">
-                                                                                                                      <ui:SendMail.Files>
-                                                                                                                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                                                                                                      </ui:SendMail.Files>
-                                                                                                                    </ui:SendMail>
-                                                                                                                  </Sequence>
-                                                                                                                </ActivityAction>
-                                                                                                              </ui:RetryScope.ActivityBody>
-                                                                                                              <ui:RetryScope.Condition>
-                                                                                                                <ActivityFunc x:TypeArguments="x:Boolean" />
-                                                                                                              </ui:RetryScope.Condition>
-                                                                                                            </ui:RetryScope>
-                                                                                                          </Sequence>
-                                                                                                        </TryCatch.Try>
-                                                                                                        <TryCatch.Catches>
-                                                                                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                                                                                                </ui:MultipleAssign>
+                                                                                                              </Sequence>
+                                                                                                            </ui:CommentOut.Body>
                                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                                                               </scg:Dictionary>
                                                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                                                            <ActivityAction x:TypeArguments="s:Exception">
-                                                                                                              <ActivityAction.Argument>
-                                                                                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                                                                                              </ActivityAction.Argument>
-                                                                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Misslyckades att skicka mail. Felmeddelande: &quot; +  exception.Message]" />
-                                                                                                            </ActivityAction>
-                                                                                                          </Catch>
-                                                                                                        </TryCatch.Catches>
-                                                                                                      </TryCatch>
-                                                                                                    </Sequence>
-                                                                                                    <FlowStep.Next>
-                                                                                                      <FlowStep x:Name="__ReferenceID25">
-                                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                            <av:Point x:Key="ShapeLocation">230,3042</av:Point>
-                                                                                                            <av:Size x:Key="ShapeSize">200,75</av:Size>
-                                                                                                          </scg:Dictionary>
-                                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                                        <ui:Comment sap:VirtualizedContainerService.HintSize="200,75" sap2010:WorkflowViewState.IdRef="Comment_2" Text="döp om fil med dagens datum">
-                                                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                                            </scg:Dictionary>
-                                                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                                                        </ui:Comment>
+                                                                                                          </ui:CommentOut>
+                                                                                                          <ui:MultipleAssign DisplayName="Multiple Assign Mail" sap:VirtualizedContainerService.HintSize="592,411" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                                                                                            <ui:MultipleAssign.AssignOperations>
+                                                                                                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextFirstPart]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextFirstPart").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailSenderAddress]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailSenderAddress").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailSenderName]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailSenderName").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailServerAddress]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailServerAddress").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:Int32">[MailServerPort]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:Int32">[CInt(in_Config("MailServerPort"))]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailSubject]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailSubject").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextUtredningar]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextUtredningar").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_39">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextMedicalRecords").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_40">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextBevakningar]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextBevakningar").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_41">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextAktualiseringar]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextAktualiseringar").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_42">
+                                                                                                                  <ui:AssignOperation.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextLastPart]</OutArgument>
+                                                                                                                  </ui:AssignOperation.To>
+                                                                                                                  <ui:AssignOperation.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[in_Config("MailBodyTextLastPart").ToString]</InArgument>
+                                                                                                                  </ui:AssignOperation.Value>
+                                                                                                                </ui:AssignOperation>
+                                                                                                              </scg:List>
+                                                                                                            </ui:MultipleAssign.AssignOperations>
+                                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                              </scg:Dictionary>
+                                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                                          </ui:MultipleAssign>
+                                                                                                          <Assign DisplayName="Assign MailAddressesList" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                                                                                            <Assign.To>
+                                                                                                              <OutArgument x:TypeArguments="scg:List(x:String)">[MailAddressesList]</OutArgument>
+                                                                                                            </Assign.To>
+                                                                                                            <Assign.Value>
+                                                                                                              <InArgument x:TypeArguments="scg:List(x:String)">[dt_Settings.AsEnumerable.Select(Function (f) f.Field(Of String)("Email")).ToList]</InArgument>
+                                                                                                            </Assign.Value>
+                                                                                                          </Assign>
+                                                                                                          <Assign DisplayName="Assign MailAddressesList" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_50">
+                                                                                                            <Assign.To>
+                                                                                                              <OutArgument x:TypeArguments="scg:List(x:String)">[MailAddressesList]</OutArgument>
+                                                                                                            </Assign.To>
+                                                                                                            <Assign.Value>
+                                                                                                              <InArgument x:TypeArguments="scg:List(x:String)">[MailAddressesList.Where(Function(item) Not String.IsNullOrWhiteSpace(item)).ToList()]</InArgument>
+                                                                                                            </Assign.Value>
+                                                                                                          </Assign>
+                                                                                                          <Assign DisplayName="Assign MailEmailAddresses" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                                                                                            <Assign.To>
+                                                                                                              <OutArgument x:TypeArguments="x:String">[MailEmailAddresses]</OutArgument>
+                                                                                                            </Assign.To>
+                                                                                                            <Assign.Value>
+                                                                                                              <InArgument x:TypeArguments="x:String">[String.Join(";",MailAddressesList)]</InArgument>
+                                                                                                            </Assign.Value>
+                                                                                                          </Assign>
+                                                                                                          <Assign DisplayName="Replace CaseManagerName" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                                                                                            <Assign.To>
+                                                                                                              <OutArgument x:TypeArguments="x:String">[MailBodyTextFirstPart]</OutArgument>
+                                                                                                            </Assign.To>
+                                                                                                            <Assign.Value>
+                                                                                                              <InArgument x:TypeArguments="x:String">[MailBodyTextFirstPart.Replace("[CaseManagerName]", CaseManager)]</InArgument>
+                                                                                                            </Assign.Value>
+                                                                                                          </Assign>
+                                                                                                          <Assign DisplayName="Replace LastRun" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                                                                                            <Assign.To>
+                                                                                                              <OutArgument x:TypeArguments="x:String">[MailBodyTextFirstPart]</OutArgument>
+                                                                                                            </Assign.To>
+                                                                                                            <Assign.Value>
+                                                                                                              <InArgument x:TypeArguments="x:String">[MailBodyTextFirstPart.Replace("[LastRun]", LastRun)]</InArgument>
+                                                                                                            </Assign.Value>
+                                                                                                          </Assign>
+                                                                                                          <Assign DisplayName="Assign MailBodyTextSendMail" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_41">
+                                                                                                            <Assign.To>
+                                                                                                              <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
+                                                                                                            </Assign.To>
+                                                                                                            <Assign.Value>
+                                                                                                              <InArgument x:TypeArguments="x:String">[MailBodyTextFirstPart]</InArgument>
+                                                                                                            </Assign.Value>
+                                                                                                          </Assign>
+                                                                                                          <If Condition="[MailAktualiseringar]" DisplayName="If MailAktualiseringar" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_8">
+                                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                              </scg:Dictionary>
+                                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                                            <If.Then>
+                                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                  </scg:Dictionary>
+                                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                                <Assign DisplayName="Replace NrOfNewAktualiseringar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                                                                                                  <Assign.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextAktualiseringar]</OutArgument>
+                                                                                                                  </Assign.To>
+                                                                                                                  <Assign.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[MailBodyTextAktualiseringar.Replace("[NrOfNewAktualiseringar]", If(AddRowIndexList_Aktualiseringar IsNot Nothing, AddRowIndexList_Aktualiseringar.Count.ToString(), "0"))]</InArgument>
+                                                                                                                  </Assign.Value>
+                                                                                                                </Assign>
+                                                                                                                <Assign DisplayName="MailBodyTextSendMail add akt" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_42">
+                                                                                                                  <Assign.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
+                                                                                                                  </Assign.To>
+                                                                                                                  <Assign.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextAktualiseringar]</InArgument>
+                                                                                                                  </Assign.Value>
+                                                                                                                </Assign>
+                                                                                                              </Sequence>
+                                                                                                            </If.Then>
+                                                                                                            <If.Else>
+                                                                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_65" />
+                                                                                                            </If.Else>
+                                                                                                          </If>
+                                                                                                          <If Condition="[MailBevakningar]" DisplayName="If MailBevakningar" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_9">
+                                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                              </scg:Dictionary>
+                                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                                            <If.Then>
+                                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                  </scg:Dictionary>
+                                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                                <Assign DisplayName="Replace NrOfNewBevakningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                                                                                                  <Assign.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextBevakningar]</OutArgument>
+                                                                                                                  </Assign.To>
+                                                                                                                  <Assign.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[MailBodyTextBevakningar.Replace("[NrOfNewBevakningar]", If(AddRowIndexList_Bevakningar IsNot Nothing, AddRowIndexList_Bevakningar.Count.ToString(), "0"))]</InArgument>
+                                                                                                                  </Assign.Value>
+                                                                                                                </Assign>
+                                                                                                                <Assign DisplayName="MailBodyTextSendMail add bev" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                                                                                                  <Assign.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
+                                                                                                                  </Assign.To>
+                                                                                                                  <Assign.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextBevakningar]</InArgument>
+                                                                                                                  </Assign.Value>
+                                                                                                                </Assign>
+                                                                                                              </Sequence>
+                                                                                                            </If.Then>
+                                                                                                            <If.Else>
+                                                                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_67" />
+                                                                                                            </If.Else>
+                                                                                                          </If>
+                                                                                                          <If Condition="[MailMedicalRecords]" DisplayName="If MailMedicalRecords" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_10">
+                                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                              </scg:Dictionary>
+                                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                                            <If.Then>
+                                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,384" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                  </scg:Dictionary>
+                                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                                                                                                                  <ui:CommentOut.Body>
+                                                                                                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                                                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                        </scg:Dictionary>
+                                                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Antal rader i medred mail: &quot; +AddRowIndexList_MedicalRecords.Count.ToString]" />
+                                                                                                                    </Sequence>
+                                                                                                                  </ui:CommentOut.Body>
+                                                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                                    </scg:Dictionary>
+                                                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                                                </ui:CommentOut>
+                                                                                                                <Assign DisplayName="Replace NrOfNewJournalanteckningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                                                                                                  <Assign.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords]</OutArgument>
+                                                                                                                  </Assign.To>
+                                                                                                                  <Assign.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[MailBodyTextMedicalRecords.Replace("[NrOfNewJournalanteckningar]", If(AddRowIndexList_MedicalRecords IsNot Nothing, AddRowIndexList_MedicalRecords.Count.ToString(), "0"))]</InArgument>
+                                                                                                                  </Assign.Value>
+                                                                                                                </Assign>
+                                                                                                                <Assign DisplayName="MailBodyTextSendMail add med rec" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_44">
+                                                                                                                  <Assign.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
+                                                                                                                  </Assign.To>
+                                                                                                                  <Assign.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextMedicalRecords]</InArgument>
+                                                                                                                  </Assign.Value>
+                                                                                                                </Assign>
+                                                                                                              </Sequence>
+                                                                                                            </If.Then>
+                                                                                                            <If.Else>
+                                                                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_69" />
+                                                                                                            </If.Else>
+                                                                                                          </If>
+                                                                                                          <If Condition="[MailUtredningar]" DisplayName="If MailUtredningar" sap:VirtualizedContainerService.HintSize="592,52" sap2010:WorkflowViewState.IdRef="If_11">
+                                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                              </scg:Dictionary>
+                                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                                            <If.Then>
+                                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                  </scg:Dictionary>
+                                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                                <Assign DisplayName="Replace NrOfNewUtredningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                                                                                                  <Assign.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextUtredningar]</OutArgument>
+                                                                                                                  </Assign.To>
+                                                                                                                  <Assign.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[MailBodyTextUtredningar.Replace("[NrOfNewUtredningar]", If(AddRowIndexList_Utredningar IsNot Nothing, AddRowIndexList_Utredningar.Count.ToString(), "0"))]</InArgument>
+                                                                                                                  </Assign.Value>
+                                                                                                                </Assign>
+                                                                                                                <Assign DisplayName="MailBodyTextSendMail add utr" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_45">
+                                                                                                                  <Assign.To>
+                                                                                                                    <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
+                                                                                                                  </Assign.To>
+                                                                                                                  <Assign.Value>
+                                                                                                                    <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextUtredningar]</InArgument>
+                                                                                                                  </Assign.Value>
+                                                                                                                </Assign>
+                                                                                                              </Sequence>
+                                                                                                            </If.Then>
+                                                                                                            <If.Else>
+                                                                                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_71" />
+                                                                                                            </If.Else>
+                                                                                                          </If>
+                                                                                                          <Assign DisplayName="Replace ExcelFilePath" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                                                                                            <Assign.To>
+                                                                                                              <OutArgument x:TypeArguments="x:String">[MailBodyTextLastPart]</OutArgument>
+                                                                                                            </Assign.To>
+                                                                                                            <Assign.Value>
+                                                                                                              <InArgument x:TypeArguments="x:String">[MailBodyTextLastPart.Replace("[ExcelFilePath]", ExcelFilePath)]</InArgument>
+                                                                                                            </Assign.Value>
+                                                                                                          </Assign>
+                                                                                                          <Assign DisplayName="Last MailBodyTextSendMail" sap:VirtualizedContainerService.HintSize="592,82" sap2010:WorkflowViewState.IdRef="Assign_46">
+                                                                                                            <Assign.To>
+                                                                                                              <OutArgument x:TypeArguments="x:String">[MailBodyTextSendMail]</OutArgument>
+                                                                                                            </Assign.To>
+                                                                                                            <Assign.Value>
+                                                                                                              <InArgument x:TypeArguments="x:String">[MailBodyTextSendMail + MailBodyTextLastPart]</InArgument>
+                                                                                                            </Assign.Value>
+                                                                                                          </Assign>
+                                                                                                          <TryCatch DisplayName="Try Catch Send Mail" sap:VirtualizedContainerService.HintSize="592,771" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                                                                                            <TryCatch.Try>
+                                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="554,543" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                  </scg:Dictionary>
+                                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,432" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3">
+                                                                                                                  <ui:RetryScope.ActivityBody>
+                                                                                                                    <ActivityAction>
+                                                                                                                      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,257" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                                          </scg:Dictionary>
+                                                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                                                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[MailBodyTextSendMail]" DisplayName="Send SMTP Summary Mail Message" EnableSSL="True" From="[MailSenderAddress]" sap:VirtualizedContainerService.HintSize="388,146" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="[MailSenderName]" Port="[MailServerPort]" SecureConnection="Auto" Server="[MailServerAddress]" Subject="[MailSubject]" To="[MailEmailAddresses]">
+                                                                                                                          <ui:SendMail.Files>
+                                                                                                                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                                                                                          </ui:SendMail.Files>
+                                                                                                                        </ui:SendMail>
+                                                                                                                      </Sequence>
+                                                                                                                    </ActivityAction>
+                                                                                                                  </ui:RetryScope.ActivityBody>
+                                                                                                                  <ui:RetryScope.Condition>
+                                                                                                                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                                                                                                                  </ui:RetryScope.Condition>
+                                                                                                                </ui:RetryScope>
+                                                                                                              </Sequence>
+                                                                                                            </TryCatch.Try>
+                                                                                                            <TryCatch.Catches>
+                                                                                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="558,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                                  </scg:Dictionary>
+                                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                                <ActivityAction x:TypeArguments="s:Exception">
+                                                                                                                  <ActivityAction.Argument>
+                                                                                                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                                                                                  </ActivityAction.Argument>
+                                                                                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Misslyckades att skicka mail. Felmeddelande: &quot; +  exception.Message]" />
+                                                                                                                </ActivityAction>
+                                                                                                              </Catch>
+                                                                                                            </TryCatch.Catches>
+                                                                                                          </TryCatch>
+                                                                                                        </Sequence>
                                                                                                       </FlowStep>
                                                                                                     </FlowStep.Next>
                                                                                                   </FlowStep>
                                                                                                 </FlowDecision.True>
+                                                                                                <FlowDecision.False>
+                                                                                                  <FlowStep x:Name="__ReferenceID31">
+                                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                        <av:Point x:Key="ShapeLocation">550,2894</av:Point>
+                                                                                                        <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                                                                        <av:PointCollection x:Key="ConnectorLocation">140,2942.54 140,3039 170,3039</av:PointCollection>
+                                                                                                      </scg:Dictionary>
+                                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Inga nya rader att rapportera för &quot; + CaseManager + &quot;.&quot;]" />
+                                                                                                  </FlowStep>
+                                                                                                </FlowDecision.False>
                                                                                               </FlowDecision>
                                                                                             </FlowDecision.True>
+                                                                                            <FlowDecision.False>
+                                                                                              <FlowStep x:Name="__ReferenceID30">
+                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                    <av:Point x:Key="ShapeLocation">550,2744</av:Point>
+                                                                                                    <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                                                                    <av:PointCollection x:Key="ConnectorLocation">130,2932.54 130,3029 160,3029</av:PointCollection>
+                                                                                                  </scg:Dictionary>
+                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[CaseManager + &quot; vill inte ha några notiser på mail.&quot;]" />
+                                                                                              </FlowStep>
+                                                                                            </FlowDecision.False>
                                                                                           </FlowDecision>
                                                                                         </FlowStep.Next>
                                                                                       </FlowStep>
@@ -2494,7 +2514,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <FlowDecision.True>
-              <FlowStep x:Name="__ReferenceID26">
+              <FlowStep x:Name="__ReferenceID25">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">50,425.58000000000004</av:Point>
@@ -2567,7 +2587,7 @@
               </FlowStep>
             </FlowDecision.True>
             <FlowDecision.False>
-              <FlowStep x:Name="__ReferenceID27">
+              <FlowStep x:Name="__ReferenceID26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">403,499</av:Point>
@@ -2616,7 +2636,7 @@
           <x:Reference>__ReferenceID21</x:Reference>
           <x:Reference>__ReferenceID22</x:Reference>
           <x:Reference>__ReferenceID23</x:Reference>
-          <FlowStep x:Name="__ReferenceID30">
+          <FlowStep x:Name="__ReferenceID32">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">200,158.5</av:Point>
@@ -2718,7 +2738,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_47">
+              <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_47">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[CaseManager]</OutArgument>
                 </Assign.To>
@@ -2751,6 +2771,8 @@
           <x:Reference>__ReferenceID27</x:Reference>
           <x:Reference>__ReferenceID28</x:Reference>
           <x:Reference>__ReferenceID29</x:Reference>
+          <x:Reference>__ReferenceID30</x:Reference>
+          <x:Reference>__ReferenceID31</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>

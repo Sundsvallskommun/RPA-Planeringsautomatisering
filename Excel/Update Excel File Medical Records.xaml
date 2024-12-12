@@ -760,7 +760,13 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExcelWriteCell Cell="A17" DisplayName="Write Cell 15 or less" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="[in_SheetName]" Text="Fler nya journalanteckningar. Se nedan." />
+                  <ui:ExcelWriteCell Cell="A17" DisplayName="Write Cell 15 or less" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="[in_SheetName]">
+                    <ui:ExcelWriteCell.Text>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ui:ExcelWriteCell.Text>
+                  </ui:ExcelWriteCell>
                 </Sequence>
               </If.Else>
             </If>

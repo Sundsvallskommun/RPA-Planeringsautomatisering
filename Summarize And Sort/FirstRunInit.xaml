@@ -6,7 +6,7 @@
     <x:Property Name="out_dt_Utredning" Type="OutArgument(sd:DataTable)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1759,794</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>483,1065</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -123,7 +123,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="450,623" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="493,1000" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DateTomUtredning" />
       <Variable x:TypeArguments="x:String" Name="DateFromUtredning" />
@@ -140,13 +140,14 @@
       <Variable x:TypeArguments="x:Int32" Name="DaysBackBevakning" />
       <Variable x:TypeArguments="x:Int32" Name="DaysBackMedicalRecords" />
       <Variable x:TypeArguments="x:Int32" Name="DaysBackUtredning" />
+      <Variable x:TypeArguments="x:Int32" Name="DaysTomBevaknig" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign days to remove" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+    <ui:MultipleAssign DisplayName="Multiple Assign days to remove" sap:VirtualizedContainerService.HintSize="431,225" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
@@ -181,16 +182,24 @@
               <InArgument x:TypeArguments="x:Int32">[CInt(in_Config("NrOfDaysToSearchInUtredning").ToString)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[DaysTomBevaknig]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">[CInt(in_Config("DagarFramåtBevakning").ToString)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:MultipleAssign DisplayName="Multiple Assign Dates " sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+    <ui:MultipleAssign DisplayName="Multiple Assign Dates " sap:VirtualizedContainerService.HintSize="431,256" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
@@ -198,7 +207,7 @@
               <OutArgument x:TypeArguments="x:String">[DateTomBevakning]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyMMdd")]</InArgument>
+              <InArgument x:TypeArguments="x:String">[DateTime.Now.AddDays(DaysTomBevaknig).ToString("yyMMdd")]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
@@ -245,30 +254,30 @@
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:RetryScope ContinueOnError="True" DisplayName="Private: Retry Scope Aktualiseringar" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="RetryScope_11" NumberOfRetries="5" RetryInterval="00:00:10">
+    <ui:RetryScope ContinueOnError="True" DisplayName="Private: Retry Scope Aktualiseringar" sap:VirtualizedContainerService.HintSize="431,52" sap2010:WorkflowViewState.IdRef="RetryScope_16" NumberOfRetries="5" RetryInterval="00:00:10">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Private: Try Catch Aktualiseringar " sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+          <TryCatch DisplayName="Private: Try Catch Aktualiseringar " sap:VirtualizedContainerService.HintSize="534,1184" sap2010:WorkflowViewState.IdRef="TryCatch_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Get Aktualiseringar" sap:VirtualizedContainerService.HintSize="496,832" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <Sequence DisplayName="Get Aktualiseringar" sap:VirtualizedContainerService.HintSize="496,956" sap2010:WorkflowViewState.IdRef="Sequence_32">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign ProcapitaClosedAktualiseringar" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign DisplayName="Assign ProcapitaClosedAktualiseringar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[ProcapitaClosedAktualiseringar]</OutArgument>
                   </Assign.To>
@@ -284,10 +293,10 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </pg:Search_Tool>
-                <pa:Search_Aktualisering in_From="{x:Null}" in_Tom="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar ut alla aktualiseringar som har statusen &quot;Ej Behandlade&quot;. Dessa är alltså alla som är aktiva. Därför behövs inget tidsintervall." DisplayName="Search Aktualisering" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="Search_Aktualisering_2" in_CitizensID2="[CitizensID]" in_RadioButton="Ej Behandlade">
+                <pa:Search_Aktualisering in_From="{x:Null}" in_Tom="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar ut alla aktualiseringar som har statusen &quot;Ej Behandlade&quot;. Dessa är alltså alla som är aktiva. Därför behövs inget tidsintervall." DisplayName="Search Aktualisering" sap:VirtualizedContainerService.HintSize="434,351" sap2010:WorkflowViewState.IdRef="Search_Aktualisering_2" in_CitizensID2="[CitizensID]" in_RadioButton="Ej Behandlade">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
@@ -296,10 +305,10 @@
                     <InArgument x:TypeArguments="x:String" />
                   </pa:Search_Aktualisering.in_CitizensID1>
                 </pa:Search_Aktualisering>
-                <pa:Get_Aktualisering_Table DisplayName="Get Aktualisering Table" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="Get_Aktualisering_Table_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_Aktualisering="[out_dt_Aktualisering]">
+                <pa:Get_Aktualisering_Table DisplayName="Get Aktualisering Table" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Get_Aktualisering_Table_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_Aktualisering="[out_dt_Aktualisering]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -393,18 +402,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Get Bevakningar" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="RetryScope_13" NumberOfRetries="5" RetryInterval="00:00:10">
+    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Get Bevakningar" sap:VirtualizedContainerService.HintSize="431,52" sap2010:WorkflowViewState.IdRef="RetryScope_13" NumberOfRetries="5" RetryInterval="00:00:10">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="534,1165" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="534,1297" sap2010:WorkflowViewState.IdRef="TryCatch_12">
             <TryCatch.Try>
-              <Sequence DisplayName="Get Bevakningar" sap:VirtualizedContainerService.HintSize="496,937" sap2010:WorkflowViewState.IdRef="Sequence_33">
+              <Sequence DisplayName="Get Bevakningar" sap:VirtualizedContainerService.HintSize="496,1069" sap2010:WorkflowViewState.IdRef="Sequence_33">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Från-datum bevakning: &quot;+ DateFromBevakning +&quot;. Tom-datum bevakning: &quot; + DateTomBevakning]" />
                 <Assign DisplayName="Assign ProcapitaClosedBevakningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[ProcapitaClosedBevakningar]</OutArgument>
@@ -468,7 +478,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="495,676" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                  <Sequence sap:VirtualizedContainerService.HintSize="495,838" sap2010:WorkflowViewState.IdRef="Sequence_44">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -536,10 +546,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Medical Records" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="RetryScope_12" NumberOfRetries="5" RetryInterval="00:00:10">
+    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Medical Records" sap:VirtualizedContainerService.HintSize="431,52" sap2010:WorkflowViewState.IdRef="RetryScope_18" NumberOfRetries="5" RetryInterval="00:00:10">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="534,1100" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+          <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="534,1233" sap2010:WorkflowViewState.IdRef="TryCatch_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -547,7 +557,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Get Medical Records" sap:VirtualizedContainerService.HintSize="496,873" sap2010:WorkflowViewState.IdRef="Sequence_34">
+              <Sequence DisplayName="Get Medical Records" sap:VirtualizedContainerService.HintSize="496,1005" sap2010:WorkflowViewState.IdRef="Sequence_34">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -562,6 +572,7 @@
                     <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                   </Assign.Value>
                 </Assign>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Från-datum journalanteckningar: &quot;+ DateFromMedicalRecords +&quot;. Tom-datum journalanteckningar: &quot; + DateTomMedicalRecords]" />
                 <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Search_Tool_5" In_SearchTool="VoO Sök dokumentation" />
                 <pa:Search_Medical_Records DisplayName="Search Medical Records" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="Search_Medical_Records_2" in_From="[DateFromMedicalRecords]" in_Tom="[DateTomMedicalRecords]" />
                 <pa:Get_Medical_RecordsTable DisplayName="Get Medical RecordsTable" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="Get_Medical_RecordsTable_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_MedicalRecords="[out_dt_MedicalRecords]" />
@@ -654,10 +665,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:RetryScope DisplayName="Retry Scope Utrdning" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="RetryScope_15" NumberOfRetries="5" RetryInterval="00:00:10">
+    <ui:RetryScope DisplayName="Retry Scope Utrdning" sap:VirtualizedContainerService.HintSize="431,52" sap2010:WorkflowViewState.IdRef="RetryScope_17" NumberOfRetries="5" RetryInterval="00:00:10">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch Utredningar" sap:VirtualizedContainerService.HintSize="534,923" sap2010:WorkflowViewState.IdRef="TryCatch_14">
+          <TryCatch DisplayName="Try Catch Utredningar" sap:VirtualizedContainerService.HintSize="534,1055" sap2010:WorkflowViewState.IdRef="TryCatch_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -665,7 +676,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Get Utrdning" sap:VirtualizedContainerService.HintSize="496,695" sap2010:WorkflowViewState.IdRef="Sequence_37">
+              <Sequence DisplayName="Get Utrdning" sap:VirtualizedContainerService.HintSize="496,827" sap2010:WorkflowViewState.IdRef="Sequence_37">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -680,6 +691,7 @@
                     <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                   </Assign.Value>
                 </Assign>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Från-datum Utredning: &quot;+ DateFromUtredning +&quot;. Tom-datum Utredning: &quot; + DateTomUtredning]" />
                 <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Search_Tool_2" In_SearchTool="VoO Utredning">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">

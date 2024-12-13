@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2068,4027</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1119,4027</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -1873,10 +1873,7 @@
                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                         </ui:MultipleAssign>
                                                                                         <FlowStep.Next>
-                                                                                          <FlowDecision x:Name="__ReferenceID27" DisplayName="Wants Mail?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
-                                                                                            <FlowDecision.Condition>
-                                                                                              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="MailAktualiseringar OrElse MailBevakningar OrElse MailMedicalRecords OrElse MailUtredningar" />
-                                                                                            </FlowDecision.Condition>
+                                                                                          <FlowDecision x:Name="__ReferenceID27" Condition="[MailAktualiseringar OrElse MailBevakningar OrElse MailMedicalRecords OrElse MailUtredningar]" DisplayName="Wants Mail?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1915,7 +1912,7 @@
                                                                                                             <av:Size x:Key="ShapeSize">200,81</av:Size>
                                                                                                           </scg:Dictionary>
                                                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                                                        <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                                                        <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="654,2769" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                                                                                           <Sequence.Variables>
                                                                                                             <Variable x:TypeArguments="x:String" Name="MailBodyTextFirstPart" />
                                                                                                             <Variable x:TypeArguments="x:String" Name="MailEmailAddresses" />
@@ -1925,10 +1922,6 @@
                                                                                                             <Variable x:TypeArguments="x:Int32" Name="MailServerPort" />
                                                                                                             <Variable x:TypeArguments="x:String" Name="MailSubject" />
                                                                                                             <Variable x:TypeArguments="scg:List(x:String)" Name="MailAddressesList" />
-                                                                                                            <Variable x:TypeArguments="x:Boolean" Name="MailBevakningar" />
-                                                                                                            <Variable x:TypeArguments="x:Boolean" Name="MailMedicalRecords" />
-                                                                                                            <Variable x:TypeArguments="x:Boolean" Name="MailUtredningar" />
-                                                                                                            <Variable x:TypeArguments="x:Boolean" Name="MailAktualiseringar" />
                                                                                                             <Variable x:TypeArguments="x:String" Name="MailBodyTextUtredningar" />
                                                                                                             <Variable x:TypeArguments="x:String" Name="MailBodyTextMedicalRecords" />
                                                                                                             <Variable x:TypeArguments="x:String" Name="MailBodyTextBevakningar" />

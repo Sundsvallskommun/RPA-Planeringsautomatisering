@@ -6,7 +6,7 @@
     <x:Property Name="out_dt_Utredning" Type="OutArgument(sd:DataTable)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>2068,1449</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2068,2226</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,7 +128,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="548,1384" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="639,2161" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DateTomUtredning" />
       <Variable x:TypeArguments="x:String" Name="DateFromUtredning" />
@@ -148,13 +148,17 @@
       <Variable x:TypeArguments="x:Int32" Name="DaysFutureBevaknig" />
       <Variable x:TypeArguments="x:Int32" Name="DaysFutureUtredning" />
       <Variable x:TypeArguments="x:Int32" Name="DaysFutureJournalanteckningar" />
+      <Variable x:TypeArguments="x:Int32" Name="TimeoutVeryShort" />
+      <Variable x:TypeArguments="x:Int32" Name="TimeoutShort" />
+      <Variable x:TypeArguments="x:Int32" Name="TimeoutMedium" />
+      <Variable x:TypeArguments="x:Int32" Name="TimeoutSearchInProcapitaInSeconds" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign days to remove/add" sap:VirtualizedContainerService.HintSize="486,287" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+    <ui:MultipleAssign DisplayName="Multiple Assign days to remove/add" sap:VirtualizedContainerService.HintSize="577,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
@@ -217,12 +221,12 @@
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:MultipleAssign DisplayName="Multiple Assign Dates " sap:VirtualizedContainerService.HintSize="486,256" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+    <ui:MultipleAssign DisplayName="Multiple Assign Dates " sap:VirtualizedContainerService.HintSize="577,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
@@ -277,15 +281,59 @@
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:RetryScope ContinueOnError="True" DisplayName="Private: Retry Scope Aktualiseringar" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="RetryScope_19" NumberOfRetries="5" RetryInterval="00:00:10">
+    <ui:MultipleAssign DisplayName="Multiple Assign Timeouts" sap:VirtualizedContainerService.HintSize="577,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_28">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[TimeoutVeryShort]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">1000</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[TimeoutShort]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">5000</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[TimeoutMedium]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">30000</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[TimeoutSearchInProcapitaInSeconds]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">360</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <ui:RetryScope ContinueOnError="True" DisplayName="Private: Retry Scope Aktualiseringar" sap:VirtualizedContainerService.HintSize="577,1406" sap2010:WorkflowViewState.IdRef="RetryScope_20" NumberOfRetries="5" RetryInterval="00:00:10">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Private: Try Catch Aktualiseringar " sap:VirtualizedContainerService.HintSize="534,971" sap2010:WorkflowViewState.IdRef="TryCatch_11">
+          <TryCatch DisplayName="Private: Try Catch Aktualiseringar " sap:VirtualizedContainerService.HintSize="535,1231" sap2010:WorkflowViewState.IdRef="TryCatch_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -293,7 +341,10 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Get Aktualiseringar" sap:VirtualizedContainerService.HintSize="496,744" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <Sequence DisplayName="Get Aktualiseringar" sap:VirtualizedContainerService.HintSize="496,621" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="ResultFoundAktualisering" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -316,7 +367,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </pg:Search_Tool>
-                <pa:Search_Aktualisering in_From="{x:Null}" in_Tom="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar ut alla aktualiseringar som har statusen &quot;Ej Behandlade&quot;. Dessa är alltså alla som är aktiva. Därför behövs inget tidsintervall." DisplayName="Search Aktualisering" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="Search_Aktualisering_2" in_CitizensID2="[CitizensID]" in_RadioButton="Ej Behandlade">
+                <pa:Search_Aktualisering in_From="{x:Null}" in_Tom="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar ut alla aktualiseringar som har statusen &quot;Ej Behandlade&quot;. Dessa är alltså alla som är aktiva. Därför behövs inget tidsintervall." DisplayName="Search Aktualisering" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="Search_Aktualisering_2" in_CitizensID2="[CitizensID]" in_RadioButton="Ej Behandlade" in_TimeoutInSeconds="[TimeoutSearchInProcapitaInSeconds]" out_ResultFound="[ResultFoundAktualisering]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -328,35 +379,61 @@
                     <InArgument x:TypeArguments="x:String" />
                   </pa:Search_Aktualisering.in_CitizensID1>
                 </pa:Search_Aktualisering>
-                <pa:Get_Aktualisering_Table DisplayName="Get Aktualisering Table" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Get_Aktualisering_Table_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_Aktualisering="[out_dt_Aktualisering]">
+                <If Condition="[ResultFoundAktualisering]" DisplayName="If ResultFoundAktualisering" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </pa:Get_Aktualisering_Table>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="300,263" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <pa:Get_Aktualisering_Table DisplayName="Get Aktualisering Table" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="Get_Aktualisering_Table_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_Aktualisering="[out_dt_Aktualisering]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </pa:Get_Aktualisering_Table>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Converts data type to object" Code="' Klona strukturen för att skapa en ny DataTable&#xA;Dim dt_Converted_Local As DataTable = out_dt_Utredning.Clone()&#xA;&#xA;' Ändra kolumndatatyp till Object&#xA;For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;    col.DataType = GetType(Object)&#xA;Next&#xA;&#xA;' Kopiera värden från originaltabellen och konvertera till Object&#xA;For Each row As DataRow In out_dt_Utredning.Rows&#xA;    Dim newRow As DataRow = dt_Converted_Local.NewRow()&#xA;    For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;        newRow(col.ColumnName) = row(col.ColumnName)&#xA;    Next&#xA;    dt_Converted_Local.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela parametern värdet av den lokala variabeln&#xA;dt_Converted = dt_Converted_Local&#xA;" DisplayName="Invoke Code Aktualisering" sap:VirtualizedContainerService.HintSize="258,83" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
+                        <ui:InvokeCode.Arguments>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[out_dt_Aktualisering]</InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Converted">[out_dt_Aktualisering]</OutArgument>
+                        </ui:InvokeCode.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeCode>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="300,81" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
                 <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_3" />
-                <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Converts data type to object" Code="' Klona strukturen för att skapa en ny DataTable&#xA;Dim dt_Converted_Local As DataTable = out_dt_Utredning.Clone()&#xA;&#xA;' Ändra kolumndatatyp till Object&#xA;For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;    col.DataType = GetType(Object)&#xA;Next&#xA;&#xA;' Kopiera värden från originaltabellen och konvertera till Object&#xA;For Each row As DataRow In out_dt_Utredning.Rows&#xA;    Dim newRow As DataRow = dt_Converted_Local.NewRow()&#xA;    For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;        newRow(col.ColumnName) = row(col.ColumnName)&#xA;    Next&#xA;    dt_Converted_Local.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela parametern värdet av den lokala variabeln&#xA;dt_Converted = dt_Converted_Local&#xA;" DisplayName="Invoke Code Aktualisering" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
-                  <ui:InvokeCode.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[out_dt_Aktualisering]</InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Converted">[out_dt_Aktualisering]</OutArgument>
-                  </ui:InvokeCode.Arguments>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:InvokeCode>
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="501,1068" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -364,26 +441,43 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Aktualiseringar " sap:VirtualizedContainerService.HintSize="450,670" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                  <Sequence DisplayName="Aktualiseringar " sap:VirtualizedContainerService.HintSize="495,999" sap2010:WorkflowViewState.IdRef="Sequence_41">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Could not get data table for Aktualiseringar. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="433,52" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Could not get data table for Aktualiseringar. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
                         <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
                         <InArgument x:TypeArguments="x:String" x:Key="in_Environment">[in_Config("Environment").ToString]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ph:Handles_TimeoutException DisplayName="Handles TimeoutException" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Handles_TimeoutException_3" out_ProcapitaClosed="[ProcapitaClosedAktualiseringar]" />
-                    <If Condition="[ProcapitaClosedAktualiseringar]" DisplayName="If ProcapitaClosed In Aktualiseringar" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_1">
+                    <ph:Handles_TimeoutException DisplayName="Handles TimeoutException" sap:VirtualizedContainerService.HintSize="433,90" sap2010:WorkflowViewState.IdRef="Handles_TimeoutException_3" out_ProcapitaClosed="[ProcapitaClosedAktualiseringar]" />
+                    <If Condition="[ProcapitaClosedAktualiseringar]" DisplayName="If ProcapitaClosed In Aktualiseringar" sap:VirtualizedContainerService.HintSize="433,383" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -402,27 +496,17 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_40" />
-                      </If.Else>
-                    </If>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_40">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Aktualiseringar.&quot; + exception.Message + &quot; &quot; + exception.Source)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                          <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_8" />
                         </Sequence>
-                      </ui:CommentOut.Body>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:CommentOut>
+                      </If.Else>
+                    </If>
+                    <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Aktualiseringar.&quot; + exception.Message + &quot; &quot; + exception.Source)]" sap:VirtualizedContainerService.HintSize="433,90" sap2010:WorkflowViewState.IdRef="Throw_13" />
                   </Sequence>
                 </ActivityAction>
               </Catch>
@@ -431,23 +515,24 @@
         </ActivityAction>
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
-        <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Aktualiseringar" Expression="[out_dt_Aktualisering IsNot Nothing AndAlso out_dt_Aktualisering.Rows.Count &gt; 0 AndAlso Not ProcapitaClosedAktualiseringar]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_2" />
-        </ActivityFunc>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
       </ui:RetryScope.Condition>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Get Bevakningar" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="RetryScope_13" NumberOfRetries="5" RetryInterval="00:00:10">
+    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Get Bevakningar" sap:VirtualizedContainerService.HintSize="577,52" sap2010:WorkflowViewState.IdRef="RetryScope_13" NumberOfRetries="5" RetryInterval="00:00:10">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="534,1105" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="534,1024" sap2010:WorkflowViewState.IdRef="TryCatch_12">
             <TryCatch.Try>
-              <Sequence DisplayName="Get Bevakningar" sap:VirtualizedContainerService.HintSize="496,877" sap2010:WorkflowViewState.IdRef="Sequence_33">
+              <Sequence DisplayName="Get Bevakningar" sap:VirtualizedContainerService.HintSize="496,796" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="ResultFoundBevakning" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -455,7 +540,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Från-datum bevakning: &quot;+ DateFromBevakning +&quot;. Tom-datum bevakning: &quot; + DateTomBevakning]" />
-                <Assign DisplayName="Assign ProcapitaClosedBevakningar" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign DisplayName="Assign ProcapitaClosedBevakningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[ProcapitaClosedBevakningar]</OutArgument>
                   </Assign.To>
@@ -471,7 +556,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </pg:Search_Tool>
-                <pa:Search_Bevakning in_CitizensID2="{x:Null}" DisplayName="Search Bevakning" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Search_Bevakning_1" in_From="[DateFromBevakning]" in_Tom="[DateTomBevakning]">
+                <pa:Search_Bevakning in_CitizensID2="{x:Null}" DisplayName="Search Bevakning" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Search_Bevakning_1" in_From="[DateFromBevakning]" in_TimeoutInSeconds="[TimeoutSearchInProcapitaInSeconds]" in_Tom="[DateTomBevakning]" out_ResultFound="[ResultFoundBevakning]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -482,32 +567,52 @@
                     <InArgument x:TypeArguments="x:String" />
                   </pa:Search_Bevakning.in_CitizensID1>
                 </pa:Search_Bevakning>
-                <pa:Get_Bevakning_Table DisplayName="Get Bevakning Table" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="Get_Bevakning_Table_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_Bevakning="[out_dt_Bevakning]">
+                <If Condition="[ResultFoundBevakning]" DisplayName="If ResultFoundBevakning" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="If_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </pa:Get_Bevakning_Table>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,352" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <pa:Get_Bevakning_Table DisplayName="Get Bevakning Table" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="Get_Bevakning_Table_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_Bevakning="[out_dt_Bevakning]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </pa:Get_Bevakning_Table>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Converts data type to object" Code="' Klona strukturen för att skapa en ny DataTable&#xA;Dim dt_Converted_Local As DataTable = out_dt_Utredning.Clone()&#xA;&#xA;' Ändra kolumndatatyp till Object&#xA;For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;    col.DataType = GetType(Object)&#xA;Next&#xA;&#xA;' Kopiera värden från originaltabellen och konvertera till Object&#xA;For Each row As DataRow In out_dt_Utredning.Rows&#xA;    Dim newRow As DataRow = dt_Converted_Local.NewRow()&#xA;    For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;        newRow(col.ColumnName) = row(col.ColumnName)&#xA;    Next&#xA;    dt_Converted_Local.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela parametern värdet av den lokala variabeln&#xA;dt_Converted = dt_Converted_Local&#xA;" DisplayName="Invoke Code Bevakningar" sap:VirtualizedContainerService.HintSize="334,83" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+                        <ui:InvokeCode.Arguments>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[out_dt_Bevakning]</InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Converted">[out_dt_Bevakning]</OutArgument>
+                        </ui:InvokeCode.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeCode>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_60" />
+                  </If.Else>
+                </If>
                 <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_1" />
-                <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Converts data type to object" Code="' Klona strukturen för att skapa en ny DataTable&#xA;Dim dt_Converted_Local As DataTable = out_dt_Utredning.Clone()&#xA;&#xA;' Ändra kolumndatatyp till Object&#xA;For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;    col.DataType = GetType(Object)&#xA;Next&#xA;&#xA;' Kopiera värden från originaltabellen och konvertera till Object&#xA;For Each row As DataRow In out_dt_Utredning.Rows&#xA;    Dim newRow As DataRow = dt_Converted_Local.NewRow()&#xA;    For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;        newRow(col.ColumnName) = row(col.ColumnName)&#xA;    Next&#xA;    dt_Converted_Local.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela parametern värdet av den lokala variabeln&#xA;dt_Converted = dt_Converted_Local&#xA;" DisplayName="Invoke Code Bevakningar" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
-                  <ui:InvokeCode.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[out_dt_Bevakning]</InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Converted">[out_dt_Bevakning]</OutArgument>
-                  </ui:InvokeCode.Arguments>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:InvokeCode>
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -518,37 +623,54 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="548,1229" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                  <Sequence sap:VirtualizedContainerService.HintSize="450,668" sap2010:WorkflowViewState.IdRef="Sequence_44">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Could not get data table for Bevakningar. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Could not get data table for Bevakningar. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
                         <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
                         <InArgument x:TypeArguments="x:String" x:Key="in_Environment">[in_Config("Environment").ToString]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ph:Handles_TimeoutException DisplayName="Handles TimeoutException" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Handles_TimeoutException_4" out_ProcapitaClosed="[ProcapitaClosedBevakningar]" />
-                    <If Condition="[ProcapitaClosedBevakningar]" DisplayName="If ProcapitaClosed In Bevakningar" sap:VirtualizedContainerService.HintSize="486,383" sap2010:WorkflowViewState.IdRef="If_2">
+                    <ph:Handles_TimeoutException DisplayName="Handles TimeoutException" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Handles_TimeoutException_4" out_ProcapitaClosed="[ProcapitaClosedBevakningar]" />
+                    <If Condition="[ProcapitaClosedBevakningar]" DisplayName="If ProcapitaClosed In Bevakningar" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="399,201" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                        <Sequence sap:VirtualizedContainerService.HintSize="396,202" sap2010:WorkflowViewState.IdRef="Sequence_42">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\InitAllApplications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="357,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\InitAllApplications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
@@ -556,28 +678,24 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_43" />
-                      </If.Else>
-                    </If>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,280" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_43">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Bevakningar.&quot; + exception.Message + &quot; &quot; + exception.Source)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_9">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Throw>
+                          <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_7" />
                         </Sequence>
-                      </ui:CommentOut.Body>
-                    </ui:CommentOut>
+                      </If.Else>
+                    </If>
+                    <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Bevakningar.&quot; + exception.Message + &quot; &quot; + exception.Source)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Throw>
                   </Sequence>
                 </ActivityAction>
               </Catch>
@@ -586,9 +704,7 @@
         </ActivityAction>
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
-        <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Bevakningar" Expression="[out_dt_Bevakning IsNot Nothing AndAlso out_dt_Bevakning.Rows.Count &gt; 0 AndAlso Not ProcapitaClosedBevakningar]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
-        </ActivityFunc>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
       </ui:RetryScope.Condition>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -597,7 +713,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,282" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="577,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_56">
           <sap:WorkflowViewStateService.ViewState>
@@ -605,7 +721,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Private: Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[String.Join(&quot;, &quot;, (out_dt_Bevakning.AsEnumerable().&#xD;&#xA;    Select(Function(f) f.Field(Of String)(&quot;Handläggare&quot;)).&#xD;&#xA;    Distinct().&#xD;&#xA;    Take(5).&#xD;&#xA;    ToList()))]">
+          <ui:LogMessage DisplayName="Private: Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[String.Join(&quot;, &quot;, (out_dt_Bevakning.AsEnumerable().&#xA;    Select(Function(f) f.Field(Of String)(&quot;Handläggare&quot;)).&#xA;    Distinct().&#xA;    Take(5).&#xA;    ToList()))]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -615,11 +731,17 @@
           </ui:LogMessage>
         </Sequence>
       </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Medical Records" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="RetryScope_18" NumberOfRetries="5" RetryInterval="00:00:10">
+    <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Medical Records" sap:VirtualizedContainerService.HintSize="577,52" sap2010:WorkflowViewState.IdRef="RetryScope_18" NumberOfRetries="5" RetryInterval="00:00:10">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="534,1232" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+          <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="534,1123" sap2010:WorkflowViewState.IdRef="TryCatch_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -627,14 +749,17 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Get Medical Records" sap:VirtualizedContainerService.HintSize="496,1004" sap2010:WorkflowViewState.IdRef="Sequence_34">
+              <Sequence DisplayName="Get Medical Records" sap:VirtualizedContainerService.HintSize="496,895" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="ResultFoundMedicalRecords" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign ProcapitaClosedMedicalRecords" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign DisplayName="Assign ProcapitaClosedMedicalRecords" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[ProcapitaClosedMedicalRecords]</OutArgument>
                   </Assign.To>
@@ -644,26 +769,46 @@
                 </Assign>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Från-datum journalanteckningar: &quot;+ DateFromMedicalRecords +&quot;. Tom-datum journalanteckningar: &quot; + DateTomMedicalRecords]" />
                 <pg:Search_Tool DisplayName="Search Tool" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Search_Tool_5" In_SearchTool="VoO Sök dokumentation" />
-                <pa:Search_Medical_Records DisplayName="Search Medical Records" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="Search_Medical_Records_2" in_From="[DateFromMedicalRecords]" in_Tom="[DateTomMedicalRecords]" />
-                <pa:Get_Medical_RecordsTable DisplayName="Get Medical RecordsTable" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="Get_Medical_RecordsTable_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_MedicalRecords="[out_dt_MedicalRecords]" />
-                <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_4" />
-                <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Converts data type to object" Code="' Klona strukturen för att skapa en ny DataTable&#xA;Dim dt_Converted_Local As DataTable = out_dt_Utredning.Clone()&#xA;&#xA;' Ändra kolumndatatyp till Object&#xA;For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;    col.DataType = GetType(Object)&#xA;Next&#xA;&#xA;' Kopiera värden från originaltabellen och konvertera till Object&#xA;For Each row As DataRow In out_dt_Utredning.Rows&#xA;    Dim newRow As DataRow = dt_Converted_Local.NewRow()&#xA;    For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;        newRow(col.ColumnName) = row(col.ColumnName)&#xA;    Next&#xA;    dt_Converted_Local.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela parametern värdet av den lokala variabeln&#xA;dt_Converted = dt_Converted_Local&#xA;" DisplayName="Invoke Code Medical Records" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
-                  <ui:InvokeCode.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[out_dt_MedicalRecords]</InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Converted">[out_dt_MedicalRecords]</OutArgument>
-                  </ui:InvokeCode.Arguments>
+                <pa:Search_Medical_Records DisplayName="Search Medical Records" sap:VirtualizedContainerService.HintSize="434,243" sap2010:WorkflowViewState.IdRef="Search_Medical_Records_2" in_From="[DateFromMedicalRecords]" in_TimeoutInSeconds="[TimeoutSearchInProcapitaInSeconds]" in_Tom="[DateTomMedicalRecords]" out_ResultFound="[ResultFoundMedicalRecords]" />
+                <If Condition="[ResultFoundMedicalRecords]" DisplayName="If ResultFoundMedicalRecords" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </ui:InvokeCode>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,352" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <pa:Get_Medical_RecordsTable DisplayName="Get Medical RecordsTable" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="Get_Medical_RecordsTable_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_MedicalRecords="[out_dt_MedicalRecords]" />
+                      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Converts data type to object" Code="' Klona strukturen för att skapa en ny DataTable&#xA;Dim dt_Converted_Local As DataTable = out_dt_Utredning.Clone()&#xA;&#xA;' Ändra kolumndatatyp till Object&#xA;For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;    col.DataType = GetType(Object)&#xA;Next&#xA;&#xA;' Kopiera värden från originaltabellen och konvertera till Object&#xA;For Each row As DataRow In out_dt_Utredning.Rows&#xA;    Dim newRow As DataRow = dt_Converted_Local.NewRow()&#xA;    For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;        newRow(col.ColumnName) = row(col.ColumnName)&#xA;    Next&#xA;    dt_Converted_Local.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela parametern värdet av den lokala variabeln&#xA;dt_Converted = dt_Converted_Local&#xA;" DisplayName="Invoke Code Medical Records" sap:VirtualizedContainerService.HintSize="334,83" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                        <ui:InvokeCode.Arguments>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[out_dt_MedicalRecords]</InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Converted">[out_dt_MedicalRecords]</OutArgument>
+                        </ui:InvokeCode.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeCode>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_64" />
+                  </If.Else>
+                </If>
+                <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_4" />
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -674,23 +819,40 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="548,898" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                  <Sequence sap:VirtualizedContainerService.HintSize="548,864" sap2010:WorkflowViewState.IdRef="Sequence_45">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Error" Message="[&quot;Could not get data table for Medical Records. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Error" Message="[&quot;Could not get data table for Medical Records. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
                         <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
                         <InArgument x:TypeArguments="x:String" x:Key="in_Environment">[in_Config("Enviroment").ToString]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ph:Handles_TimeoutException DisplayName="Handles TimeoutException  Medical Records" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Handles_TimeoutException_5" out_ProcapitaClosed="[ProcapitaClosedMedicalRecords]" />
-                    <If Condition="[ProcapitaClosedMedicalRecords]" DisplayName="If ProcapitaClosed In  Medical Records" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="If_3">
+                    <ph:Handles_TimeoutException DisplayName="Handles TimeoutException  Medical Records" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Handles_TimeoutException_5" out_ProcapitaClosed="[ProcapitaClosedMedicalRecords]" />
+                    <If Condition="[ProcapitaClosedMedicalRecords]" DisplayName="If ProcapitaClosed In  Medical Records" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -698,13 +860,13 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="399,201" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                        <Sequence sap:VirtualizedContainerService.HintSize="396,202" sap2010:WorkflowViewState.IdRef="Sequence_47">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\InitAllApplications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="357,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\InitAllApplications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
@@ -712,21 +874,17 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_48" />
-                      </If.Else>
-                    </If>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,280" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_48">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Medical Records.&quot; + exception.Message + &quot; &quot; + exception.Source)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_10" />
+                          <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_6" />
                         </Sequence>
-                      </ui:CommentOut.Body>
-                    </ui:CommentOut>
+                      </If.Else>
+                    </If>
+                    <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Medical Records.&quot; + exception.Message + &quot; &quot; + exception.Source)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_14" />
                   </Sequence>
                 </ActivityAction>
               </Catch>
@@ -735,9 +893,7 @@
         </ActivityAction>
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
-        <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Medical Records" Expression="[out_dt_MedicalRecords IsNot Nothing AndAlso out_dt_MedicalRecords.Rows.Count &gt; 0 AndAlso Not ProcapitaClosedMedicalRecords]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_3" />
-        </ActivityFunc>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
       </ui:RetryScope.Condition>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -746,10 +902,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:RetryScope DisplayName="Retry Scope Utrdning" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="RetryScope_17" NumberOfRetries="5" RetryInterval="00:00:10">
+    <ui:RetryScope DisplayName="Retry Scope Utrdning" sap:VirtualizedContainerService.HintSize="577,52" sap2010:WorkflowViewState.IdRef="RetryScope_17" NumberOfRetries="5" RetryInterval="00:00:10">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <TryCatch DisplayName="Try Catch Utredningar" sap:VirtualizedContainerService.HintSize="534,1055" sap2010:WorkflowViewState.IdRef="TryCatch_14">
+          <TryCatch DisplayName="Try Catch Utredningar" sap:VirtualizedContainerService.HintSize="534,932" sap2010:WorkflowViewState.IdRef="TryCatch_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -757,7 +913,10 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Get Utrdning" sap:VirtualizedContainerService.HintSize="496,827" sap2010:WorkflowViewState.IdRef="Sequence_37">
+              <Sequence DisplayName="Get Utrdning" sap:VirtualizedContainerService.HintSize="496,704" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="ResultFoundUtredning" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -781,7 +940,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </pg:Search_Tool>
-                <pa:Search_Utredning DisplayName="Search Utredning" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Search_Utredning_1" in_CitizensID2="[CitizensID]" in_From="[DateFromBevakning]" in_RadioButton="Pågående" in_Tom="[DateTomBevakning]">
+                <pa:Search_Utredning DisplayName="Search Utredning" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Search_Utredning_1" in_CitizensID2="[CitizensID]" in_From="[DateFromBevakning]" in_RadioButton="Pågående" in_TimeoutInSeconds="[TimeoutSearchInProcapitaInSeconds]" in_Tom="[DateTomBevakning]" out_ResultFound="[ResultFoundUtredning]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -792,32 +951,52 @@
                     <InArgument x:TypeArguments="x:String" />
                   </pa:Search_Utredning.in_CitizensID1>
                 </pa:Search_Utredning>
-                <pa:Get_Utredning_Table DisplayName="Get Utredning Table" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Get_Utredning_Table_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_Utredning="[out_dt_Utredning]">
+                <If Condition="[ResultFoundUtredning]" DisplayName="If ResultFoundUtredning" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                </pa:Get_Utredning_Table>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,352" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <pa:Get_Utredning_Table DisplayName="Get Utredning Table" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="Get_Utredning_Table_1" in_FilePathToApplication="[in_Config(&quot;ApplicationFilePath&quot;).ToString]" out_dt_Utredning="[out_dt_Utredning]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </pa:Get_Utredning_Table>
+                      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Converts data type to object" Code="' Klona strukturen för att skapa en ny DataTable&#xA;Dim dt_Converted_Local As DataTable = out_dt_Utredning.Clone()&#xA;&#xA;' Ändra kolumndatatyp till Object&#xA;For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;    col.DataType = GetType(Object)&#xA;Next&#xA;&#xA;' Kopiera värden från originaltabellen och konvertera till Object&#xA;For Each row As DataRow In out_dt_Utredning.Rows&#xA;    Dim newRow As DataRow = dt_Converted_Local.NewRow()&#xA;    For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;        newRow(col.ColumnName) = row(col.ColumnName)&#xA;    Next&#xA;    dt_Converted_Local.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela parametern värdet av den lokala variabeln&#xA;dt_Converted = dt_Converted_Local&#xA;" DisplayName="Invoke Code Utredning" sap:VirtualizedContainerService.HintSize="334,83" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+                        <ui:InvokeCode.Arguments>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[out_dt_Utredning]</InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Converted">[out_dt_Utredning]</OutArgument>
+                        </ui:InvokeCode.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeCode>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_67" />
+                  </If.Else>
+                </If>
                 <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_2" />
-                <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Converts data type to object" Code="' Klona strukturen för att skapa en ny DataTable&#xA;Dim dt_Converted_Local As DataTable = out_dt_Utredning.Clone()&#xA;&#xA;' Ändra kolumndatatyp till Object&#xA;For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;    col.DataType = GetType(Object)&#xA;Next&#xA;&#xA;' Kopiera värden från originaltabellen och konvertera till Object&#xA;For Each row As DataRow In out_dt_Utredning.Rows&#xA;    Dim newRow As DataRow = dt_Converted_Local.NewRow()&#xA;    For Each col As System.Data.DataColumn In dt_Converted_Local.Columns&#xA;        newRow(col.ColumnName) = row(col.ColumnName)&#xA;    Next&#xA;    dt_Converted_Local.Rows.Add(newRow)&#xA;Next&#xA;&#xA;' Tilldela parametern värdet av den lokala variabeln&#xA;dt_Converted = dt_Converted_Local&#xA;" DisplayName="Invoke Code Utredning" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
-                  <ui:InvokeCode.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning">[out_dt_Utredning]</InArgument>
-                    <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Converted">[out_dt_Utredning]</OutArgument>
-                  </ui:InvokeCode.Arguments>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:InvokeCode>
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -828,37 +1007,54 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap:VirtualizedContainerService.HintSize="548,898" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                  <Sequence sap:VirtualizedContainerService.HintSize="492,799" sap2010:WorkflowViewState.IdRef="Sequence_46">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Error" Message="[&quot;Could not get data table for Utrdning. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Environment">[in_Config("Environment").ToString]</InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                    <ph:Handles_TimeoutException DisplayName="Handles TimeoutException" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Handles_TimeoutException_6" out_ProcapitaClosed="[ProcapitaClosedUtredningar]" />
-                    <If Condition="[ProcapitaClosedUtredningar]" DisplayName="If ProcapitaClosed In Utredningar" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="If_4">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="430,52" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,203" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Error" Message="[&quot;Could not get data table for Utrdning. &quot;+ exception.Message + &quot; &quot; + exception.Source]" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="430,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
+                        <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Environment">[in_Config("Environment").ToString]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ph:Handles_TimeoutException DisplayName="Handles TimeoutException" sap:VirtualizedContainerService.HintSize="430,90" sap2010:WorkflowViewState.IdRef="Handles_TimeoutException_6" out_ProcapitaClosed="[ProcapitaClosedUtredningar]" />
+                    <If Condition="[ProcapitaClosedUtredningar]" DisplayName="If ProcapitaClosed In Utredningar" sap:VirtualizedContainerService.HintSize="430,182" sap2010:WorkflowViewState.IdRef="If_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="399,201" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                        <Sequence sap:VirtualizedContainerService.HintSize="396,202" sap2010:WorkflowViewState.IdRef="Sequence_49">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\InitAllApplications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="357,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\InitAllApplications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
@@ -866,21 +1062,17 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_50" />
-                      </If.Else>
-                    </If>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,280" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,201" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_50">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Utrdning.&quot; + exception.Message + &quot; &quot; + exception.Source)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_11" />
+                          <pg:Close_Window_Search_Tool DisplayName="Close Window Search Tool" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Close_Window_Search_Tool_5" />
                         </Sequence>
-                      </ui:CommentOut.Body>
-                    </ui:CommentOut>
+                      </If.Else>
+                    </If>
+                    <Throw DisplayName="Throw SE" Exception="[new SystemException(&quot;Could not get data table for Utrdning.&quot; + exception.Message + &quot; &quot; + exception.Source)]" sap:VirtualizedContainerService.HintSize="430,91" sap2010:WorkflowViewState.IdRef="Throw_15" />
                   </Sequence>
                 </ActivityAction>
               </Catch>
@@ -889,16 +1081,7 @@
         </ActivityAction>
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
-        <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True Utrdning" Expression="[out_dt_Utredning IsNot Nothing AndAlso out_dt_Utredning.Rows.Count &gt; 0 AndAlso Not ProcapitaClosedUtredningar]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="CheckTrue_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:CheckTrue>
-        </ActivityFunc>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
       </ui:RetryScope.Condition>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

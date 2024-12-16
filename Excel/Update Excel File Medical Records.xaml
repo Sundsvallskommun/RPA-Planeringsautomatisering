@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1428,5730</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1428,4683</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Excel_File_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="696,5665" sap2010:WorkflowViewState.IdRef="Sequence_86">
+  <Sequence sap:VirtualizedContainerService.HintSize="636,4618" sap2010:WorkflowViewState.IdRef="Sequence_86">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable]" Name="dt_AddToExcelNewRows" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KvitteradeRowsFromExcel" />
@@ -126,7 +126,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="634,4283" sap2010:WorkflowViewState.IdRef="Sequence_73">
+    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="574,4283" sap2010:WorkflowViewState.IdRef="Sequence_73">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsFromExcelStillNytt" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsToAddFromProcapita" />
@@ -703,20 +703,19 @@
         </If>
       </Sequence>
     </Sequence>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Update Excel" sap:VirtualizedContainerService.HintSize="634,1099" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_ExcelFilePath]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Update Excel" sap:VirtualizedContainerService.HintSize="574,52" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_ExcelFilePath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,989" sap2010:WorkflowViewState.IdRef="Sequence_87">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,857" sap2010:WorkflowViewState.IdRef="Sequence_87">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Antal kvitterade rader&quot; + dt_KvitteradeRowsFromExcel.RowCount.ToString]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Antal kvitterade rader&quot; + dt_KvitteradeRowsFromExcel.RowCount.ToString]" />
             <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_AddToExcelNewRows]" DisplayName="Private: Write Range New Rows" sap:VirtualizedContainerService.HintSize="410,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="[in_SheetName]" StartingCell="A2" />
             <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_KvitteradeRowsFromExcel]" DisplayName="Private: Write Range Old Rows" sap:VirtualizedContainerService.HintSize="410,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_5" SheetName="[in_SheetName]" StartingCell="A19" />
             <If Condition="[MoreThan15Rows]" DisplayName="If MoreThan15 Rows MedRec" sap:VirtualizedContainerService.HintSize="410,358" sap2010:WorkflowViewState.IdRef="If_17">
@@ -758,11 +757,11 @@
       </ui:ExcelApplicationScope.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Sheet: &quot; +  in_SheetName + &quot; in excel file is updated&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="574,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Sheet: &quot; +  in_SheetName + &quot; in excel file is updated&quot;]" />
   </Sequence>
 </Activity>

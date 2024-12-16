@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Summarize_And_Sort_Bevakningar" this:Summarize_And_Sort_Bevakningar.in_CaseManager="Hej" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Summarize_And_Sort_Bevakningar" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_CaseManager_dt_Bevakningar" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="in_CaseManager" Type="InArgument(x:String)" />
@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2068,3011</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1428,3011</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Bevakningar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -189,7 +189,7 @@
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="572,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[CaseManagerCaps]" />
-    <If Condition="[in_dt_Bevakningar IsNot Nothing AndAlso &#xD;&#xA;   in_dt_Bevakningar.AsEnumerable().&#xD;&#xA;       Any(Function(row) row(&quot;Handläggare&quot;).ToString() = CaseManagerCaps)]" DisplayName="If rows for case manager exists" sap:VirtualizedContainerService.HintSize="572,2489" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[in_dt_Bevakningar IsNot Nothing AndAlso &#xA;   in_dt_Bevakningar.AsEnumerable().&#xA;       Any(Function(row) row(&quot;Handläggare&quot;).ToString() = CaseManagerCaps)]" DisplayName="If rows for case manager exists" sap:VirtualizedContainerService.HintSize="572,2489" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

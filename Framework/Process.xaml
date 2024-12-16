@@ -2590,7 +2590,7 @@
           </FlowStep>
           <FlowDecision x:Name="__ReferenceID24" DisplayName="Should get data from procapita?" sap:VirtualizedContainerService.HintSize="160,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
             <FlowDecision.Condition>
-              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="io_dt_Aktualisering_AllCaseManagers IsNot Nothing OrElse io_dt_Aktualisering_AllCaseManagers.RowCount &gt; 0 OrElse&#xD;&#xA;io_dt_Bevakning_AllCaseManagers IsNot Nothing OrElse io_dt_Bevakning_AllCaseManagers.RowCount  &gt; 0  OrElse&#xD;&#xA;io_dt_MedicalRecords_AllCaseManagers IsNot Nothing OrElse io_dt_MedicalRecords_AllCaseManagers.RowCount  &gt; 0 OrElse&#xD;&#xA;io_dt_Utredning_AllCaseManagers IsNot Nothing OrElse io_dt_Utredning_AllCaseManagers.RowCount  &gt; 0" />
+              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="(io_dt_Aktualisering_AllCaseManagers IsNot Nothing AndAlso io_dt_Aktualisering_AllCaseManagers.Rows.Count &gt; 0) OrElse&#xD;&#xA;(io_dt_Bevakning_AllCaseManagers IsNot Nothing AndAlso io_dt_Bevakning_AllCaseManagers.Rows.Count &gt; 0) OrElse&#xD;&#xA;(io_dt_MedicalRecords_AllCaseManagers IsNot Nothing AndAlso io_dt_MedicalRecords_AllCaseManagers.Rows.Count &gt; 0) OrElse&#xD;&#xA;(io_dt_Utredning_AllCaseManagers IsNot Nothing AndAlso io_dt_Utredning_AllCaseManagers.Rows.Count &gt; 0)" />
             </FlowDecision.Condition>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">

@@ -2590,7 +2590,7 @@
           </FlowStep>
           <FlowDecision x:Name="__ReferenceID24" DisplayName="Should get data from procapita?" sap:VirtualizedContainerService.HintSize="160,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
             <FlowDecision.Condition>
-              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="(io_dt_Aktualisering_AllCaseManagers IsNot Nothing AndAlso io_dt_Aktualisering_AllCaseManagers.Rows.Count &gt; 0) OrElse&#xD;&#xA;(io_dt_Bevakning_AllCaseManagers IsNot Nothing AndAlso io_dt_Bevakning_AllCaseManagers.Rows.Count &gt; 0) OrElse&#xD;&#xA;(io_dt_MedicalRecords_AllCaseManagers IsNot Nothing AndAlso io_dt_MedicalRecords_AllCaseManagers.Rows.Count &gt; 0) OrElse&#xD;&#xA;(io_dt_Utredning_AllCaseManagers IsNot Nothing AndAlso io_dt_Utredning_AllCaseManagers.Rows.Count &gt; 0)" />
+              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="(io_dt_Aktualisering_AllCaseManagers Is Nothing OrElse io_dt_Aktualisering_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xD;&#xA;(io_dt_Bevakning_AllCaseManagers Is Nothing OrElse io_dt_Bevakning_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xD;&#xA;(io_dt_MedicalRecords_AllCaseManagers Is Nothing OrElse io_dt_MedicalRecords_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xD;&#xA;(io_dt_Utredning_AllCaseManagers Is Nothing OrElse io_dt_Utredning_AllCaseManagers.Rows.Count &lt; 1)" />
             </FlowDecision.Condition>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2609,11 +2609,11 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">403,389</av:Point>
-                    <av:Size x:Key="ShapeSize">434,82</av:Size>
+                    <av:Size x:Key="ShapeSize">434,81</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">620,471 620,666.5 360,666.5 360,757.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_51">
+                <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_51">
                   <Assign.To>
                     <OutArgument x:TypeArguments="scg:List(x:String)">[DistinctClientList]</OutArgument>
                   </Assign.To>

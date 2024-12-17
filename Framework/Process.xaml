@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1428,4027</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2068,4027</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -2588,10 +2588,7 @@
               </FlowDecision>
             </FlowStep.Next>
           </FlowStep>
-          <FlowDecision x:Name="__ReferenceID24" DisplayName="Should get data from procapita?" sap:VirtualizedContainerService.HintSize="160,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-            <FlowDecision.Condition>
-              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="(io_dt_Aktualisering_AllCaseManagers Is Nothing OrElse io_dt_Aktualisering_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xD;&#xA;(io_dt_Bevakning_AllCaseManagers Is Nothing OrElse io_dt_Bevakning_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xD;&#xA;(io_dt_MedicalRecords_AllCaseManagers Is Nothing OrElse io_dt_MedicalRecords_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xD;&#xA;(io_dt_Utredning_AllCaseManagers Is Nothing OrElse io_dt_Utredning_AllCaseManagers.Rows.Count &lt; 1)" />
-            </FlowDecision.Condition>
+          <FlowDecision x:Name="__ReferenceID24" Condition="[(io_dt_Aktualisering_AllCaseManagers Is Nothing OrElse io_dt_Aktualisering_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xA;(io_dt_Bevakning_AllCaseManagers Is Nothing OrElse io_dt_Bevakning_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xA;(io_dt_MedicalRecords_AllCaseManagers Is Nothing OrElse io_dt_MedicalRecords_AllCaseManagers.Rows.Count &lt; 1) OrElse&#xA;(io_dt_Utredning_AllCaseManagers Is Nothing OrElse io_dt_Utredning_AllCaseManagers.Rows.Count &lt; 1)]" DisplayName="Should get data from procapita?" sap:VirtualizedContainerService.HintSize="160,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID5}">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2601,19 +2598,16 @@
                 <av:PointCollection x:Key="FalseConnector">425,320 620,320 620,389</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <FlowDecision.True>
-              <x:Reference>__ReferenceID5</x:Reference>
-            </FlowDecision.True>
             <FlowDecision.False>
               <FlowStep x:Name="__ReferenceID26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">403,389</av:Point>
-                    <av:Size x:Key="ShapeSize">434,81</av:Size>
+                    <av:Size x:Key="ShapeSize">434,82</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">620,471 620,666.5 360,666.5 360,757.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_51">
+                <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_51">
                   <Assign.To>
                     <OutArgument x:TypeArguments="scg:List(x:String)">[DistinctClientList]</OutArgument>
                   </Assign.To>
@@ -2662,7 +2656,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">340,229.5 340,259.5 345,259.5 345,276.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Init Files" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_57">
+            <Sequence DisplayName="Init Files" sap:VirtualizedContainerService.HintSize="610,1319" sap2010:WorkflowViewState.IdRef="Sequence_57">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="FirstName" />
                 <Variable x:TypeArguments="x:String" Name="SurName" />
@@ -2676,7 +2670,50 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign DisplayName="Multiple Assign TransactionItem" sap:VirtualizedContainerService.HintSize="434,194" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="548,271" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,192" sap2010:WorkflowViewState.IdRef="Sequence_138">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_137">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_88">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[FirstName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">Hej-kal </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_89">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[SurName]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">Abba Karin </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_90">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[CaseManager]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[SurName + ", " + FirstName]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <ui:MultipleAssign DisplayName="Multiple Assign TransactionItem" sap:VirtualizedContainerService.HintSize="548,194" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_27">
@@ -2684,7 +2721,7 @@
                         <OutArgument x:TypeArguments="x:String">[FileName]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("FileName").ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("FileName").ToString.Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_28">
@@ -2692,7 +2729,7 @@
                         <OutArgument x:TypeArguments="x:String">[FirstName]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerFirstName").ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerFirstName").ToString.Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_44">
@@ -2700,7 +2737,7 @@
                         <OutArgument x:TypeArguments="x:String">[SurName]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerSurName").ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerSurName").ToString.Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
@@ -2708,7 +2745,7 @@
                         <OutArgument x:TypeArguments="x:String">[CaseManagerSign]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerID").ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("CaseManagerID").ToString.Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                   </scg:List>
@@ -2720,7 +2757,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <ui:MultipleAssign DisplayName="Multiple Assign Config" sap:VirtualizedContainerService.HintSize="434,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+              <ui:MultipleAssign DisplayName="Multiple Assign Config" sap:VirtualizedContainerService.HintSize="548,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
@@ -2756,7 +2793,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_47">
+              <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="548,82" sap2010:WorkflowViewState.IdRef="Assign_47">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[CaseManager]</OutArgument>
                 </Assign.To>
@@ -2764,13 +2801,13 @@
                   <InArgument x:TypeArguments="x:String">[SurName + ", " + FirstName]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Settings]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Inställningar" WorkbookPath="[ExcelFilePath]" />
-              <ui:ReadCell Cell="H2" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadCell_2" SheetName="Sammanfattning" WorkbookPath="[ExcelFilePath]">
+              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Settings]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="548,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Inställningar" WorkbookPath="[ExcelFilePath]" />
+              <ui:ReadCell Cell="H2" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="548,88" sap2010:WorkflowViewState.IdRef="ReadCell_2" SheetName="Sammanfattning" WorkbookPath="[ExcelFilePath]">
                 <ui:ReadCell.Result>
                   <OutArgument x:TypeArguments="x:String">[LastRun]</OutArgument>
                 </ui:ReadCell.Result>
               </ui:ReadCell>
-              <Assign DisplayName="Assign LastRun" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_40">
+              <Assign DisplayName="Assign LastRun" sap:VirtualizedContainerService.HintSize="548,82" sap2010:WorkflowViewState.IdRef="Assign_40">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[LastRun]</OutArgument>
                 </Assign.To>

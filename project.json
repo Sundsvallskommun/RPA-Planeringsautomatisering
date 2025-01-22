@@ -1,5 +1,6 @@
 {
   "name": "Planeringsautomatisering",
+  "projectId": "2101fbac-699a-4aae-80ef-b4734581bfa0",
   "description": "Robotic Enterprise Framework (Windows)",
   "main": "Main.xaml",
   "dependencies": {
@@ -109,7 +110,8 @@
         "fileName": "Tests\\TestCaseUpdate Excelfile medrec.xaml"
       }
     ],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [

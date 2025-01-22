@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1498,4027</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1874,4027</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -394,30 +394,14 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar alla blad och sparar de som datatabeller. (Med och utan kolumerna: Prioritet,Status och Kommentar)" DisplayName="Get Data From Excel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excel\Get Data From Excel.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelFilePath" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakningar_OldRowsFromExcel">
-                              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Bevakningar_Excel" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Journalanteckningar_OldRowsFromExcel">
-                              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_MedicalRecords_Excel" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning_OldRowsFromExcel">
-                              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Utredning_Excel" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualiseringar_OldRowsFromExcel">
-                              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_Excel" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_FileName">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FileName" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_OrgFolderPath">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ExcelFolderPath&quot;).ToString" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_TempFolderPath">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TempFolderFilePath" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[ExcelFilePath]</InArgument>
+                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Bevakningar_OldRowsFromExcel">[dt_Bevakningar_Excel]</OutArgument>
+                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Journalanteckningar_OldRowsFromExcel">[dt_MedicalRecords_Excel]</OutArgument>
+                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Utredning_OldRowsFromExcel">[dt_Utredning_Excel]</OutArgument>
+                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Aktualiseringar_OldRowsFromExcel">[dt_Aktualiseringar_Excel]</OutArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_FileName">[FileName]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_OrgFolderPath">[in_Config("ExcelFolderPath").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_TempFolderPath">[TempFolderFilePath]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -727,16 +711,35 @@
                                                                                             <av:PointCollection x:Key="ConnectorLocation">250,2483.04 280,2483.04 280,2483.54 470,2483.54</av:PointCollection>
                                                                                           </scg:Dictionary>
                                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Excel\Update Excel File Medical Records.xaml">
+                                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Excel\Update Excel File Medical Records.xaml">
                                                                                           <ui:InvokeWorkflowFile.Arguments>
-                                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[ExcelFilePath]</InArgument>
-                                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">Journalanteckningar</InArgument>
-                                                                                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_AllExcelRows">[dt_MedicalRecords_Excel]</InArgument>
-                                                                                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">[dt_MedicalRecords_CaseManager]</InArgument>
-                                                                                            <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_RemoveRowIndexList">[RemoveRowIndexList_MedicalRecords]</InArgument>
-                                                                                            <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_AddRowIndexList">[AddRowIndexList_MedicalRecords]</InArgument>
-                                                                                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Settings">[dt_Settings]</InArgument>
-                                                                                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_NewRowsForDash">[dt_NewRowsForDash_MedicalRecords]</OutArgument>
+                                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
+                                                                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelFilePath" />
+                                                                                            </InArgument>
+                                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
+                                                                                              <Literal x:TypeArguments="x:String">Journalanteckningar</Literal>
+                                                                                            </InArgument>
+                                                                                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_AllExcelRows">
+                                                                                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_MedicalRecords_Excel" />
+                                                                                            </InArgument>
+                                                                                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">
+                                                                                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_MedicalRecords_CaseManager" />
+                                                                                            </InArgument>
+                                                                                            <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_RemoveRowIndexList">
+                                                                                              <VisualBasicValue x:TypeArguments="scg:List(x:Int32)" ExpressionText="RemoveRowIndexList_MedicalRecords" />
+                                                                                            </InArgument>
+                                                                                            <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_AddRowIndexList">
+                                                                                              <VisualBasicValue x:TypeArguments="scg:List(x:Int32)" ExpressionText="AddRowIndexList_MedicalRecords" />
+                                                                                            </InArgument>
+                                                                                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Settings">
+                                                                                              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Settings" />
+                                                                                            </InArgument>
+                                                                                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_NewRowsForDash">
+                                                                                              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_NewRowsForDash_MedicalRecords" />
+                                                                                            </OutArgument>
+                                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_CaseManagerSign">
+                                                                                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManagerSign" />
+                                                                                            </InArgument>
                                                                                           </ui:InvokeWorkflowFile.Arguments>
                                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2670,7 +2673,7 @@
                 <av:Point x:Key="ShapeLocation">265,276.5</av:Point>
                 <av:Size x:Key="ShapeSize">160,87</av:Size>
                 <av:PointCollection x:Key="TrueConnector">265,320 130,320 130,348</av:PointCollection>
-                <av:PointCollection x:Key="FalseConnector">425,320 620,320 620,389</av:PointCollection>
+                <av:PointCollection x:Key="FalseConnector">425,320 503,320 503,389</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <FlowDecision.False>
@@ -2678,11 +2681,11 @@
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">403,389</av:Point>
-                    <av:Size x:Key="ShapeSize">434,82</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">620,471 620,666.5 360,666.5 360,757.5</av:PointCollection>
+                    <av:Size x:Key="ShapeSize">200,52</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">403,415 360,415 360,757.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_51">
+                <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="Assign_51">
                   <Assign.To>
                     <OutArgument x:TypeArguments="scg:List(x:String)">[DistinctClientList]</OutArgument>
                   </Assign.To>

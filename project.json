@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.52",
+  "projectVersion": "1.0.53",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -108,6 +108,13 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "Tests\\TestCaseUpdate Excelfile medrec.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7be99ec5-f42c-4c85-8104-1854187aa391",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCase - sum and sort med rec.xaml"
       }
     ],
     "modernBehavior": false,

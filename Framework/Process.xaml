@@ -224,7 +224,7 @@
           <Flowchart.StartNode>
             <x:Reference>__ReferenceID33</x:Reference>
           </Flowchart.StartNode>
-          <FlowStep x:Name="__ReferenceID5">
+          <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">30,348</av:Point>
@@ -258,7 +258,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <FlowDecision.True>
-                  <FlowStep x:Name="__ReferenceID25">
+                  <FlowStep x:Name="__ReferenceID25" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">0,779.5</av:Point>
@@ -384,7 +384,7 @@
                       </ui:ForEachFileX>
                     </Sequence>
                     <FlowStep.Next>
-                      <FlowStep x:Name="__ReferenceID4">
+                      <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">260,757.5</av:Point>
@@ -421,7 +421,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <FlowDecision.True>
-                              <FlowStep x:Name="__ReferenceID10">
+                              <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">48,1014</av:Point>
@@ -440,7 +440,7 @@
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
                                 <FlowStep.Next>
-                                  <FlowStep x:Name="__ReferenceID18">
+                                  <FlowStep x:Name="__ReferenceID18" sap2010:WorkflowViewState.IdRef="FlowStep_6">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">48,1097</av:Point>
@@ -462,7 +462,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:InvokeWorkflowFile>
                                     <FlowStep.Next>
-                                      <FlowStep x:Name="__ReferenceID17">
+                                      <FlowStep x:Name="__ReferenceID17" sap2010:WorkflowViewState.IdRef="FlowStep_7">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <av:Point x:Key="ShapeLocation">48,1272</av:Point>
@@ -497,7 +497,7 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <FlowDecision.True>
-                                              <FlowStep x:Name="__ReferenceID9">
+                                              <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_8">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">40,1403.5</av:Point>
@@ -520,7 +520,7 @@
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:InvokeWorkflowFile>
                                                 <FlowStep.Next>
-                                                  <FlowStep x:Name="__ReferenceID7">
+                                                  <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_9">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <av:Point x:Key="ShapeLocation">40,1487.5</av:Point>
@@ -542,7 +542,7 @@
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </ui:InvokeWorkflowFile>
                                                     <FlowStep.Next>
-                                                      <FlowStep x:Name="__ReferenceID19">
+                                                      <FlowStep x:Name="__ReferenceID19" sap2010:WorkflowViewState.IdRef="FlowStep_10">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <av:Point x:Key="ShapeLocation">40,1663.5</av:Point>
@@ -577,7 +577,7 @@
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
                                                             <FlowDecision.True>
-                                                              <FlowStep x:Name="__ReferenceID8">
+                                                              <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_11">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <av:Point x:Key="ShapeLocation">40,1814</av:Point>
@@ -600,7 +600,7 @@
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                 </ui:InvokeWorkflowFile>
                                                                 <FlowStep.Next>
-                                                                  <FlowStep x:Name="__ReferenceID6">
+                                                                  <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_12">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <av:Point x:Key="ShapeLocation">40,1897.5</av:Point>
@@ -622,7 +622,7 @@
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                     </ui:InvokeWorkflowFile>
                                                                     <FlowStep.Next>
-                                                                      <FlowStep x:Name="__ReferenceID20">
+                                                                      <FlowStep x:Name="__ReferenceID20" sap2010:WorkflowViewState.IdRef="FlowStep_13">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <av:Point x:Key="ShapeLocation">40,2073.5</av:Point>
@@ -658,7 +658,7 @@
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                             <FlowDecision.True>
-                                                                              <FlowStep x:Name="__ReferenceID15">
+                                                                              <FlowStep x:Name="__ReferenceID15" sap2010:WorkflowViewState.IdRef="FlowStep_14">
                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                     <av:Point x:Key="ShapeLocation">50,2271.54</av:Point>
@@ -666,13 +666,26 @@
                                                                                     <av:PointCollection x:Key="ConnectorLocation">150,2324.54 150,2354.54</av:PointCollection>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Medical Records.xaml">
+                                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Medical Records.xaml">
                                                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">[CaseManager]</InArgument>
-                                                                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MedicalRecords">[io_dt_MedicalRecords_AllCaseManagers]</InArgument>
-                                                                                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_MedicalRecords">[dt_MedicalRecords_CaseManager]</InOutArgument>
-                                                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                                                                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_DistinctClientList">[DistinctClientList]</InArgument>
+                                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">
+                                                                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManager" />
+                                                                                    </InArgument>
+                                                                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MedicalRecords">
+                                                                                      <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="io_dt_MedicalRecords_AllCaseManagers" />
+                                                                                    </InArgument>
+                                                                                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_MedicalRecords">
+                                                                                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_MedicalRecords_CaseManager" />
+                                                                                    </InOutArgument>
+                                                                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                                                                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                                                                    </InArgument>
+                                                                                    <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_DistinctClientList">
+                                                                                      <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
+                                                                                    </InArgument>
+                                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_CaseManagerSign">
+                                                                                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseManagerSign.ToLower" />
+                                                                                    </InArgument>
                                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -681,7 +694,7 @@
                                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                                 </ui:InvokeWorkflowFile>
                                                                                 <FlowStep.Next>
-                                                                                  <FlowStep x:Name="__ReferenceID16">
+                                                                                  <FlowStep x:Name="__ReferenceID16" sap2010:WorkflowViewState.IdRef="FlowStep_15">
                                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                         <av:Point x:Key="ShapeLocation">50,2354.54</av:Point>
@@ -703,7 +716,7 @@
                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                     </ui:InvokeWorkflowFile>
                                                                                     <FlowStep.Next>
-                                                                                      <FlowStep x:Name="__ReferenceID21">
+                                                                                      <FlowStep x:Name="__ReferenceID21" sap2010:WorkflowViewState.IdRef="FlowStep_16">
                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                             <av:Point x:Key="ShapeLocation">50,2456.54</av:Point>
@@ -711,7 +724,7 @@
                                                                                             <av:PointCollection x:Key="ConnectorLocation">250,2483.04 280,2483.04 280,2483.54 470,2483.54</av:PointCollection>
                                                                                           </scg:Dictionary>
                                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Excel\Update Excel File Medical Records.xaml">
+                                                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File Medical Records.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Excel\Update Excel File Medical Records.xaml">
                                                                                           <ui:InvokeWorkflowFile.Arguments>
                                                                                             <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
                                                                                               <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelFilePath" />
@@ -748,7 +761,7 @@
                                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                                         </ui:InvokeWorkflowFile>
                                                                                         <FlowStep.Next>
-                                                                                          <FlowStep x:Name="__ReferenceID0">
+                                                                                          <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_17">
                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                 <av:Point x:Key="ShapeLocation">470,2442.04</av:Point>
@@ -1982,7 +1995,7 @@
                                                                                               </ui:ExcelApplicationScope>
                                                                                             </Sequence>
                                                                                             <FlowStep.Next>
-                                                                                              <FlowStep x:Name="__ReferenceID28">
+                                                                                              <FlowStep x:Name="__ReferenceID28" sap2010:WorkflowViewState.IdRef="FlowStep_18">
                                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                     <av:Point x:Key="ShapeLocation">470,2573.04</av:Point>
@@ -2058,7 +2071,7 @@
                                                                                                           </scg:Dictionary>
                                                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                                                         <FlowDecision.True>
-                                                                                                          <FlowStep x:Name="__ReferenceID29">
+                                                                                                          <FlowStep x:Name="__ReferenceID29" sap2010:WorkflowViewState.IdRef="FlowStep_19">
                                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                 <av:Point x:Key="ShapeLocation">20,2870.54</av:Point>
@@ -2068,7 +2081,7 @@
                                                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                                                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;add aktual: &quot; + AddRowIndexList_Aktualiseringar.Count.ToString + &quot; add bev: &quot; + AddRowIndexList_Bevakningar.Count.ToString + &quot; add medrec: &quot; + AddRowIndexList_MedicalRecords.Count.ToString + &quot; add utrednig: &quot; + AddRowIndexList_Utredningar.Count.ToString]" />
                                                                                                             <FlowStep.Next>
-                                                                                                              <FlowStep x:Name="__ReferenceID22">
+                                                                                                              <FlowStep x:Name="__ReferenceID22" sap2010:WorkflowViewState.IdRef="FlowStep_20">
                                                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                     <av:Point x:Key="ShapeLocation">150,2978.5</av:Point>
@@ -2539,7 +2552,7 @@
                                                                                                           </FlowStep>
                                                                                                         </FlowDecision.True>
                                                                                                         <FlowDecision.False>
-                                                                                                          <FlowStep x:Name="__ReferenceID31">
+                                                                                                          <FlowStep x:Name="__ReferenceID31" sap2010:WorkflowViewState.IdRef="FlowStep_21">
                                                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                 <av:Point x:Key="ShapeLocation">550,2894</av:Point>
@@ -2553,7 +2566,7 @@
                                                                                                       </FlowDecision>
                                                                                                     </FlowDecision.True>
                                                                                                     <FlowDecision.False>
-                                                                                                      <FlowStep x:Name="__ReferenceID30">
+                                                                                                      <FlowStep x:Name="__ReferenceID30" sap2010:WorkflowViewState.IdRef="FlowStep_22">
                                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                             <av:Point x:Key="ShapeLocation">550,2744</av:Point>
@@ -2588,7 +2601,7 @@
                                                               </FlowStep>
                                                             </FlowDecision.True>
                                                             <FlowDecision.False>
-                                                              <FlowStep x:Name="__ReferenceID14">
+                                                              <FlowStep x:Name="__ReferenceID14" sap2010:WorkflowViewState.IdRef="FlowStep_23">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <av:Point x:Key="ShapeLocation">380,1973.5</av:Point>
@@ -2611,7 +2624,7 @@
                                               </FlowStep>
                                             </FlowDecision.True>
                                             <FlowDecision.False>
-                                              <FlowStep x:Name="__ReferenceID13">
+                                              <FlowStep x:Name="__ReferenceID13" sap2010:WorkflowViewState.IdRef="FlowStep_24">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">410,1504</av:Point>
@@ -2640,7 +2653,7 @@
                               </FlowStep>
                             </FlowDecision.True>
                             <FlowDecision.False>
-                              <FlowStep x:Name="__ReferenceID12">
+                              <FlowStep x:Name="__ReferenceID12" sap2010:WorkflowViewState.IdRef="FlowStep_25">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <av:Point x:Key="ShapeLocation">410,1234</av:Point>
@@ -2677,7 +2690,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <FlowDecision.False>
-              <FlowStep x:Name="__ReferenceID26">
+              <FlowStep x:Name="__ReferenceID26" sap2010:WorkflowViewState.IdRef="FlowStep_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">403,389</av:Point>
@@ -2726,7 +2739,7 @@
           <x:Reference>__ReferenceID21</x:Reference>
           <x:Reference>__ReferenceID22</x:Reference>
           <x:Reference>__ReferenceID23</x:Reference>
-          <FlowStep x:Name="__ReferenceID33">
+          <FlowStep x:Name="__ReferenceID33" sap2010:WorkflowViewState.IdRef="FlowStep_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">240,148.5</av:Point>

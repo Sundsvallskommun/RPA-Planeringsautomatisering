@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1874,4027</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1810,4027</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -2075,7 +2075,7 @@
                                                                                                                     <av:Size x:Key="ShapeSize">200,81</av:Size>
                                                                                                                   </scg:Dictionary>
                                                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                                                                <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="654,2769" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                                                                                <Sequence DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                                                                                                   <Sequence.Variables>
                                                                                                                     <Variable x:TypeArguments="x:String" Name="MailBodyTextFirstPart" />
                                                                                                                     <Variable x:TypeArguments="x:String" Name="MailEmailAddresses" />

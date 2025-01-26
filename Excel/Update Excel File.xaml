@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Update_Excel_File" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Update_Excel_File" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ExcelFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_SheetName" Type="InArgument(x:String)" />
@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1810,4911</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1170,5659</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Excel_File_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -48,6 +48,7 @@
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -113,7 +114,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update_Excel_File" sap:VirtualizedContainerService.HintSize="696,4846" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Update_Excel_File" sap:VirtualizedContainerService.HintSize="696,5594" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable]" Name="dt_AddToExcelNewRows" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KvitteradeRowsFromExcel" />
@@ -144,7 +145,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="634,3586" sap2010:WorkflowViewState.IdRef="Sequence_64">
+    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="634,4334" sap2010:WorkflowViewState.IdRef="Sequence_64">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsFromExcelStillNytt" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsToAddFromProcapita" />
@@ -157,7 +158,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="548,82" sap2010:WorkflowViewState.IdRef="Assign_40">
+      <Assign sap:VirtualizedContainerService.HintSize="572,82" sap2010:WorkflowViewState.IdRef="Assign_40">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[dt_AllExcelRowsCopy]</OutArgument>
         </Assign.To>
@@ -165,7 +166,7 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_dt_AllExcelRows.Copy]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[dt_AllExcelRowsCopy.RowCount &gt; 0]" DisplayName="If dt_AllExcelRowsCopy.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="548,52" sap2010:WorkflowViewState.IdRef="If_15">
+      <If Condition="[dt_AllExcelRowsCopy.RowCount &gt; 0]" DisplayName="If dt_AllExcelRowsCopy.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="572,52" sap2010:WorkflowViewState.IdRef="If_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -210,7 +211,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="548,52" sap2010:WorkflowViewState.IdRef="ForEach`1_22" Values="[in_RemoveRowIndexList.OrderByDescending(Function(x) x).ToList()]">
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="572,52" sap2010:WorkflowViewState.IdRef="ForEach`1_22" Values="[in_RemoveRowIndexList.OrderByDescending(Function(x) x).ToList()]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -238,7 +239,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <Sequence DisplayName="New Rows" sap:VirtualizedContainerService.HintSize="548,2260" sap2010:WorkflowViewState.IdRef="Sequence_67">
+      <Sequence DisplayName="New Rows" sap:VirtualizedContainerService.HintSize="572,2260" sap2010:WorkflowViewState.IdRef="Sequence_67">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -495,14 +496,14 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Old Rows" sap:VirtualizedContainerService.HintSize="548,777" sap2010:WorkflowViewState.IdRef="Sequence_70">
+      <Sequence DisplayName="Old Rows" sap:VirtualizedContainerService.HintSize="572,1525" sap2010:WorkflowViewState.IdRef="Sequence_70">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign DisplayName="Private: dt_RowsToMoveDown" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_30">
+        <Assign DisplayName="Private: dt_RowsToMoveDown" sap:VirtualizedContainerService.HintSize="510,83" sap2010:WorkflowViewState.IdRef="Assign_30">
           <Assign.To>
             <OutArgument x:TypeArguments="sd:DataTable">[dt_KvitteradeRowsFromExcel]</OutArgument>
           </Assign.To>
@@ -512,7 +513,7 @@
     dt_AllExcelRowsCopy.Clone())]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:InvokeCode ContinueOnError="{x:Null}" Code="' Kontrollera att DataTable inte är Nothing&#xA;If in_dt IsNot Nothing Then&#xA;    ' Skapa en lista för tomma rader&#xA;    Dim rowsToRemove As New List(Of DataRow)&#xA;&#xA;    ' Iterera genom varje rad i DataTable&#xA;    For Each row As DataRow In in_dt.Rows&#xA;        ' Kontrollera om alla kolumnvärden är tomma&#xA;        If row.ItemArray.All(Function(value) String.IsNullOrWhiteSpace(value?.ToString())) Then&#xA;            rowsToRemove.Add(row)&#xA;        End If&#xA;    Next&#xA;&#xA;    ' Ta bort de identifierade raderna&#xA;    For Each row As DataRow In rowsToRemove&#xA;        in_dt.Rows.Remove(row)&#xA;    Next&#xA;End If&#xA;&#xA;' Returnera den uppdaterade DataTable&#xA;out_dt = in_dt&#xA;" DisplayName="Invoke Code Remove empty rows" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="InvokeCode_12">
+        <ui:InvokeCode ContinueOnError="{x:Null}" Code="' Kontrollera att DataTable inte är Nothing&#xA;If in_dt IsNot Nothing Then&#xA;    ' Skapa en lista för tomma rader&#xA;    Dim rowsToRemove As New List(Of DataRow)&#xA;&#xA;    ' Iterera genom varje rad i DataTable&#xA;    For Each row As DataRow In in_dt.Rows&#xA;        ' Kontrollera om alla kolumnvärden är tomma&#xA;        If row.ItemArray.All(Function(value) String.IsNullOrWhiteSpace(value?.ToString())) Then&#xA;            rowsToRemove.Add(row)&#xA;        End If&#xA;    Next&#xA;&#xA;    ' Ta bort de identifierade raderna&#xA;    For Each row As DataRow In rowsToRemove&#xA;        in_dt.Rows.Remove(row)&#xA;    Next&#xA;End If&#xA;&#xA;' Returnera den uppdaterade DataTable&#xA;out_dt = in_dt&#xA;" DisplayName="Invoke Code Remove empty rows" sap:VirtualizedContainerService.HintSize="510,165" sap2010:WorkflowViewState.IdRef="InvokeCode_12">
           <ui:InvokeCode.Arguments>
             <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt">[dt_KvitteradeRowsFromExcel]</OutArgument>
             <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt">[dt_KvitteradeRowsFromExcel]</InArgument>
@@ -524,7 +525,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:InvokeCode>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_18">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="CommentOut_18">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,276" sap2010:WorkflowViewState.IdRef="Sequence_90">
               <sap:WorkflowViewStateService.ViewState>
@@ -553,19 +554,39 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <Assign DisplayName="Assign sorted dt_KvitteradeRowsFromExcel by prio and date" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_42">
-          <Assign.To>
-            <OutArgument x:TypeArguments="sd:DataTable">[dt_KvitteradeRowsFromExcel]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="sd:DataTable">[dt_KvitteradeRowsFromExcel.AsEnumerable().OrderBy(Function(row) CInt(row("Prioritet"))).ThenBy(Function(row) CInt(row("Datum"))).CopyToDataTable()]</InArgument>
-          </Assign.Value>
-        </Assign>
-        <If sap2010:Annotation.AnnotationText="lägger endast till tomma rader ifall tabellen är MINDRE än den som lästes in från Excel." Condition="[dt_KvitteradeRowsFromExcel IsNot Nothing AndAlso&#xA;in_dt_AllExcelRows IsNot Nothing AndAlso&#xA;dt_KvitteradeRowsFromExcel.Rows.Count &gt; 0 AndAlso&#xA;in_dt_AllExcelRows.Rows.Count &gt; 0 AndAlso&#xA;dt_KvitteradeRowsFromExcel.Rows.Count &gt; 0 AndAlso &#xA;dt_KvitteradeRowsFromExcel.Rows.Count &lt; in_dt_AllExcelRows.Rows.Count - 16]" DisplayName="If add rows" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="If_10">
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510,324" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch.Try>
+            <Assign DisplayName="Assign sorted dt_KvitteradeRowsFromExcel by prio and date" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_42">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[dt_KvitteradeRowsFromExcel]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[dt_KvitteradeRowsFromExcel.AsEnumerable().OrderBy(Function(row) CInt(row("Prioritet"))).ThenByDescending(Function(row) CInt(row("Datum"))).CopyToDataTable()]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </TryCatch.Try>
+          <TryCatch.Catches>
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,161" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="s:Exception">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                </ActivityAction.Argument>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Warn" Message="[&quot;La till: &quot; + exception.Message]" />
+              </ActivityAction>
+            </Catch>
+          </TryCatch.Catches>
+        </TryCatch>
+        <If sap2010:Annotation.AnnotationText="lägger endast till tomma rader ifall tabellen är MINDRE än den som lästes in från Excel." Condition="[dt_KvitteradeRowsFromExcel IsNot Nothing AndAlso&#xA;in_dt_AllExcelRows IsNot Nothing AndAlso&#xA;dt_KvitteradeRowsFromExcel.Rows.Count &gt; 0 AndAlso&#xA;in_dt_AllExcelRows.Rows.Count &gt; 0 AndAlso&#xA;dt_KvitteradeRowsFromExcel.Rows.Count &gt; 0 AndAlso &#xA;dt_KvitteradeRowsFromExcel.Rows.Count &lt; in_dt_AllExcelRows.Rows.Count - 16]" DisplayName="If add rows" sap:VirtualizedContainerService.HintSize="510,630" sap2010:WorkflowViewState.IdRef="If_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -610,7 +631,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <If Condition="[dt_AddToExcelNewRows IsNot Nothing AndAlso&#xA;dt_NewRowsJoinWithOldRows IsNot Nothing AndAlso &#xA;dt_NewRowsJoinWithOldRows.Rows.Count &gt; 0]" DisplayName="If More than 15 new rows" sap:VirtualizedContainerService.HintSize="548,52" sap2010:WorkflowViewState.IdRef="If_12">
+      <If Condition="[dt_AddToExcelNewRows IsNot Nothing AndAlso&#xA;dt_NewRowsJoinWithOldRows IsNot Nothing AndAlso &#xA;dt_NewRowsJoinWithOldRows.Rows.Count &gt; 0]" DisplayName="If More than 15 new rows" sap:VirtualizedContainerService.HintSize="572,52" sap2010:WorkflowViewState.IdRef="If_12">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>

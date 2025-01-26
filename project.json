@@ -4,18 +4,18 @@
   "description": "Robotic Enterprise Framework (Windows)",
   "main": "Main.xaml",
   "dependencies": {
-    "Procapita.Plus": "[1.0.37]",
+    "Procapita.Plus.Library.Runtime": "[1.0.37]",
     "UiPath.Excel.Activities": "[2.22.4]",
     "UiPath.Mail.Activities": "[1.22.2]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[23.10.1]",
-    "UiPath.UIAutomation.Activities": "[23.10.13]"
+    "UiPath.UIAutomation.Activities.Runtime": "[23.10.13]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.61",
+  "projectVersion": "1.0.63",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -45,87 +45,58 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "0802b87c-7a01-4e87-86b7-c29af4f40847",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "bc3dea0c-bf66-4a5a-ad50-4668909c899b",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "07014a70-6807-4cca-9f9f-4150e32ba7d2",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "111b19c5-8ed4-4300-af5b-c3b21160b8fe",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\MainTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "ac02c32e-9f61-4ffd-a63d-687aad965ae5",
-        "testCaseType": "TestCase",
-        "executionTemplateType": "Local",
-        "fileName": "Tests\\ProcessTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "619fc67c-cbaf-41b5-aa15-1a64fdf8dba6",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Tests\\TestCaseSumAndSort.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "8dbc438f-3259-4305-bb3f-e511ad962bdb",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Tests\\TestCaseCompareExcelOchProcapita.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "482b15a5-87a1-4a41-a07a-3cd77dfc53a4",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Tests\\TestCaseUpdate Excelfile.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "7245cb58-bf5e-4011-8cfd-5886502d0e31",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Tests\\TestCaseUpdate Excelfile medrec.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "7be99ec5-f42c-4c85-8104-1854187aa391",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Tests\\TestCase - sum and sort med rec.xaml"
-      }
-    ],
+    "fileInfoCollection": [],
     "modernBehavior": false,
     "saveToCloud": false
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "in_OrchestratorQueueName",
+        "type": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "required": false,
+        "hasDefault": false
+      },
+      {
+        "name": "in_OrchestratorQueueFolder",
+        "type": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "required": false,
+        "hasDefault": false
+      },
+      {
+        "name": "in_MaxItemsToProcess",
+        "type": "System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "required": false,
+        "hasDefault": false
+      }
+    ],
+    "output": []
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
       "uniqueId": "eedeac04-1e75-4ddc-a000-4fde83a70405",
-      "input": [],
+      "input": [
+        {
+          "name": "in_OrchestratorQueueName",
+          "type": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "in_OrchestratorQueueFolder",
+          "type": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "in_MaxItemsToProcess",
+          "type": "System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        }
+      ],
       "output": []
     }
   ],

@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1170,5659</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1170,5193</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Excel_File_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,7 +114,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update_Excel_File" sap:VirtualizedContainerService.HintSize="696,5594" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Update_Excel_File" sap:VirtualizedContainerService.HintSize="696,5088" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable]" Name="dt_AddToExcelNewRows" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KvitteradeRowsFromExcel" />
@@ -145,7 +145,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="634,4334" sap2010:WorkflowViewState.IdRef="Sequence_64">
+    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="634,3828" sap2010:WorkflowViewState.IdRef="Sequence_64">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsFromExcelStillNytt" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsToAddFromProcapita" />
@@ -496,7 +496,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <Sequence DisplayName="Old Rows" sap:VirtualizedContainerService.HintSize="572,1525" sap2010:WorkflowViewState.IdRef="Sequence_70">
+      <Sequence DisplayName="Old Rows" sap:VirtualizedContainerService.HintSize="572,1019" sap2010:WorkflowViewState.IdRef="Sequence_70">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -554,7 +554,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510,324" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Try Catch Assign sorted dt_KvitteradeRowsFromExcel by prio and date" sap:VirtualizedContainerService.HintSize="510,324" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Try>
             <Assign DisplayName="Assign sorted dt_KvitteradeRowsFromExcel by prio and date" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_42">
               <Assign.To>
@@ -566,7 +566,7 @@
             </Assign>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,161" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="419,161" sap2010:WorkflowViewState.IdRef="Catch`1_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -582,11 +582,11 @@
             </Catch>
           </TryCatch.Catches>
         </TryCatch>
-        <If sap2010:Annotation.AnnotationText="lägger endast till tomma rader ifall tabellen är MINDRE än den som lästes in från Excel." Condition="[dt_KvitteradeRowsFromExcel IsNot Nothing AndAlso&#xA;in_dt_AllExcelRows IsNot Nothing AndAlso&#xA;dt_KvitteradeRowsFromExcel.Rows.Count &gt; 0 AndAlso&#xA;in_dt_AllExcelRows.Rows.Count &gt; 0 AndAlso&#xA;dt_KvitteradeRowsFromExcel.Rows.Count &gt; 0 AndAlso &#xA;dt_KvitteradeRowsFromExcel.Rows.Count &lt; in_dt_AllExcelRows.Rows.Count - 16]" DisplayName="If add rows" sap:VirtualizedContainerService.HintSize="510,630" sap2010:WorkflowViewState.IdRef="If_10">
+        <If sap2010:Annotation.AnnotationText="lägger endast till tomma rader ifall tabellen är MINDRE än den som lästes in från Excel." Condition="[dt_KvitteradeRowsFromExcel IsNot Nothing AndAlso&#xA;in_dt_AllExcelRows IsNot Nothing AndAlso&#xA;dt_KvitteradeRowsFromExcel.Rows.Count &gt; 0 AndAlso&#xA;in_dt_AllExcelRows.Rows.Count &gt; 0 AndAlso&#xA;dt_KvitteradeRowsFromExcel.Rows.Count &gt; 0 AndAlso &#xA;dt_KvitteradeRowsFromExcel.Rows.Count &lt; in_dt_AllExcelRows.Rows.Count - 16]" DisplayName="If add rows" sap:VirtualizedContainerService.HintSize="510,124" sap2010:WorkflowViewState.IdRef="If_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>

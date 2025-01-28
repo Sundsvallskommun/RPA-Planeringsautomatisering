@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Workflow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2738,1390" sap2010:WorkflowViewState.IdRef="Workflow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_RemoveRowIndexList" Type="InArgument(scg:List(x:Int32))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2622,3330</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Workflow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -93,9 +101,10 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Workflow" sap:VirtualizedContainerService.HintSize="558,1285" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Workflow" sap:VirtualizedContainerService.HintSize="732,3225" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="out_CaseManager_dt_MedicalRecords" />
       <Variable x:TypeArguments="x:String" Default="lin15sch" Name="in_CaseManager" />
@@ -106,7 +115,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="496,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="670,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,192" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -152,7 +161,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="496,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="670,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,192" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
@@ -200,7 +209,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence sap:VirtualizedContainerService.HintSize="496,538" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence sap:VirtualizedContainerService.HintSize="670,81" sap2010:WorkflowViewState.IdRef="Sequence_9">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dtClone" />
         <Variable x:TypeArguments="sd:DataTable" Name="originalDataTable" />
@@ -208,7 +217,8 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:BuildDataTable DataTable="[in_dt_AllExcelRows]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Personnr&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName /&gt;&#xD;&#xA;  &lt;TableName /&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Personnr&gt;hej&lt;/Personnr&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Personnr&gt;kalel&lt;/Personnr&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Personnr&gt;hej&lt;/Personnr&gt;&#xD;&#xA;    &lt;Column2&gt;3&lt;/Column2&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Column2&gt;2&lt;/Column2&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Personnr&gt;kalle&lt;/Personnr&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Personnr&gt;kalle&lt;/Personnr&gt;&#xD;&#xA;    &lt;Column2&gt;2&lt;/Column2&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
@@ -240,7 +250,7 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <Sequence sap:VirtualizedContainerService.HintSize="496,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence sap:VirtualizedContainerService.HintSize="670,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dtClone" />
         <Variable x:TypeArguments="sd:DataTable" Name="originalDataTable" />
@@ -326,7 +336,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <Sequence sap:VirtualizedContainerService.HintSize="496,291" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence sap:VirtualizedContainerService.HintSize="670,81" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_NewRowsForDash_MedicalRecords" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_DashboardToExcel" />
@@ -335,7 +345,8 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_NewRowsForDash_MedicalRecords]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Journalanteckningar" WorkbookPath="\\safs008\RPA\VoF\RPA_029\Temp\Handläggare för utveckling\Lindahl, Linnéa.xlsx" />
@@ -393,6 +404,124 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
+    </Sequence>
+    <Sequence sap:VirtualizedContainerService.HintSize="670,2567" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="excell" />
+        <Variable x:TypeArguments="sd:DataTable" Name="ny" />
+        <Variable x:TypeArguments="x:String" Name="list" />
+        <Variable x:TypeArguments="sd:DataTable" Name="excelorginal" />
+        <Variable x:TypeArguments="sd:DataRow" Name="TempRow" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[excelorginal]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="608,88" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Blad1" WorkbookPath="\\safs008\RPA\VoF\RPA_029\Temp\Handläggare för utveckling\Wisting, Elin.xlsx" />
+      <Assign sap:VirtualizedContainerService.HintSize="608,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="sd:DataTable">[excell]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="sd:DataTable">[excelorginal.copy]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Kvitteringsstatus" DataTable="[excell]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="608,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Prioritet" DataTable="[excell]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="608,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Kommentarer" DataTable="[excell]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="608,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3" />
+      <Assign sap:VirtualizedContainerService.HintSize="608,83" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:List(x:Int32)">[in_RemoveRowIndexList]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:List(x:Int32)" xml:space="preserve">[(From row In excell.AsEnumerable()
+                        Group row By key = String.Join(",", row.ItemArray) Into Group
+                        Where Group.Count() &gt; 1
+                        From r In Group
+                        Select excell.Rows.IndexOf(r)).ToList()]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="608,664" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="572,585" sap2010:WorkflowViewState.IdRef="Sequence_26">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[in_RemoveRowIndexList.Count = 2]" sap:VirtualizedContainerService.HintSize="510,474" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="value" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_19">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[value]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[in_RemoveRowIndexList(0)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_20">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[value]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[excelorginal(currentItem)("Kommentar").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_24" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+      <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="608,545" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[in_RemoveRowIndexList]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:Int32">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Int32" Name="currentItem" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,419" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="value" />
+                <Variable x:TypeArguments="sd:DataTable" Name="temptable" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_21">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataRow">[TempRow]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataRow">[excell(currentItem)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:AddDataRow ArrayRow="{x:Null}" DataRow="[excell(currentItem)]" DataTable="[temptable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[ny]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="608,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Blad1" WorkbookPath="\\safs008\RPA\VoF\RPA_029\Temp\Handläggare för utveckling\Wisting, Elin.xlsx" />
     </Sequence>
   </Sequence>
 </Activity>

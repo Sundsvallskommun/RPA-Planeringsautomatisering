@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ProcessTestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="2738,2080" sap2010:WorkflowViewState.IdRef="REFTestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ProcessTestCase" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1652,1326" sap2010:WorkflowViewState.IdRef="REFTestCase_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>Microsoft.VisualBasic</x:String>
@@ -90,7 +90,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Verify if the Process workflow works as expected.&#xA;The verification should check whether the output of the Process workflow is the expected one." DisplayName="ProcessTestCase" sap:VirtualizedContainerService.HintSize="610,2015" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Verify if the Process workflow works as expected.&#xA;The verification should check whether the output of the Process workflow is the expected one." DisplayName="ProcessTestCase" sap:VirtualizedContainerService.HintSize="558,1261" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="ui:QueueItem" Name="TransactionItem" />
@@ -102,8 +102,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - ProcessTestCase" sap:VirtualizedContainerService.HintSize="548,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ProcessTestCase started.&quot;]" />
-    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="548,591" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:LogMessage DisplayName="Log Message - ProcessTestCase" sap:VirtualizedContainerService.HintSize="496,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ProcessTestCase started.&quot;]" />
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="496,591" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,7 +158,14 @@
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="548,224" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="496,224" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:String[]" Name="test">
+          <Variable.Default>
+            <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="New String() {&quot;&quot;}" />
+          </Variable.Default>
+        </Variable>
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -166,20 +173,30 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\Process.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[TransactionItem]</InArgument>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[TransactionNumber]</InArgument>
+          <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
+            <VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="TransactionItem" />
+          </InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+            <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">
+            <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TransactionNumber" />
+          </InArgument>
           <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Bevakning_AllCaseManagers" />
           <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Aktualisering_AllCaseManagers" />
           <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_MedicalRecords_AllCaseManagers" />
           <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_Utredning_AllCaseManagers" />
+          <InOutArgument x:TypeArguments="s:String[]" x:Key="io_CopyNotCoruptFile">
+            <VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="test" />
+          </InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="548,835" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="496,81" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:CommentOut DisplayName="Enable and change as needed" sap:VirtualizedContainerService.HintSize="486,381" sap2010:WorkflowViewState.IdRef="CommentOut_1">

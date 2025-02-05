@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1216,4319</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1893,4319</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -2639,7 +2639,7 @@
                         <OutArgument x:TypeArguments="x:String">[SurName]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[dt_Settings.Rows(0)("Namn (Efternamn)").ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[dt_Settings.Rows(0)("Namn (Efternamn)").ToString.Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_74">
@@ -2647,7 +2647,7 @@
                         <OutArgument x:TypeArguments="x:String">[CaseManagerSign]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[dt_Settings.Rows(0)("Handläggar ID").ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[dt_Settings.Rows(0)("Handläggar ID").ToString.Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_75">
@@ -2655,7 +2655,7 @@
                         <OutArgument x:TypeArguments="x:String">[FirstName]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:String">[dt_Settings.Rows(0)("Namn (Förnamn)").ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[dt_Settings.Rows(0)("Namn (Förnamn)").ToString.Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_76">

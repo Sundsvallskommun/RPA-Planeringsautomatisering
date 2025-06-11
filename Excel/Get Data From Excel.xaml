@@ -8,11 +8,15 @@
     <x:Property Name="in_FileName" Type="InArgument(x:String)" />
     <x:Property Name="in_OrgFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="in_TempFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="out_OldRowsExists_Aktualiseringar" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_OldRowsExists_Bevakningar" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_OldRowsExists_Journalanteckningar" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_OldRowsExists_Utredning" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2028,5444</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1623,2541</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HämtaGammalData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,17 +129,18 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Hämtar datatabeller från excelfilen och sparar de i fyra olika tabeller.&#xA;Samt sorterar tabellernas kolumner i alfabetisk ordning samt tar bort radbryten" DisplayName="Get Data From Excel" sap:VirtualizedContainerService.HintSize="562,1711" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Hämtar datatabeller från excelfilen och sparar de i fyra olika tabeller.&#xA;Samt sorterar tabellernas kolumner i alfabetisk ordning samt tar bort radbryten" DisplayName="Get Data From Excel" sap:VirtualizedContainerService.HintSize="558,2476" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Aktualiseringar" sap:VirtualizedContainerService.HintSize="500,255" sap2010:WorkflowViewState.IdRef="Sequence_25">
+    <Sequence DisplayName="Aktualiseringar" sap:VirtualizedContainerService.HintSize="496,578" sap2010:WorkflowViewState.IdRef="Sequence_25">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_TempAkt" />
         <Variable x:TypeArguments="x:String" Name="NewFolderPath" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_Kvitterade" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,7 +148,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Aktualiseringar" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch Aktualiseringar" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -187,7 +192,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <If Condition="[out_dt_Aktualiseringar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Aktualiseringar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[out_dt_Aktualiseringar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Aktualiseringar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -208,6 +213,8 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
@@ -217,27 +224,55 @@
           <Sequence sap2010:WorkflowViewState.IdRef="Sequence_32" />
         </If.Else>
       </If>
+      <ui:FilterDataTable DataTable="[out_dt_Aktualiseringar_OldRowsFromExcel]" DisplayName="Filter Data Table out_dt_Aktualiseringar_OldRowsFromExcel" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_Kvitterade]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Kvitteringsstatus"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["Kvitterat"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <x:Null />
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <Assign DisplayName="Assign out_OldRowsExists_Aktualiseringar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[out_OldRowsExists_Aktualiseringar]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">[If(dt_Kvitterade.RowCount &gt; 0, True, False)]</InArgument>
+        </Assign.Value>
+      </Assign>
     </Sequence>
-    <Sequence DisplayName="Bevakningar" sap:VirtualizedContainerService.HintSize="500,81" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Bevakningar" sap:VirtualizedContainerService.HintSize="496,578" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="NewFileName" />
         <Variable x:TypeArguments="x:String" Name="NewFolderPath" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_Kvitterade" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Bevakningar" sap:VirtualizedContainerService.HintSize="438,644" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <TryCatch DisplayName="Try Catch Bevakningar" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="TryCatch_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <ui:RetryScope DisplayName="Retry Scope Bevakningar" sap:VirtualizedContainerService.HintSize="376,416" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="3" RetryInterval="00:00:03">
+          <ui:RetryScope DisplayName="Retry Scope Bevakningar" sap:VirtualizedContainerService.HintSize="376,336" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="3" RetryInterval="00:00:03">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
                 <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_Bevakningar_OldRowsFromExcel]" DisplayName="Private: Read Range Workbook Bevakningar" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadRange_19" SheetName="Bevakningar" WorkbookPath="[in_FilePath]" />
@@ -287,7 +322,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <If Condition="[out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="438,52" sap2010:WorkflowViewState.IdRef="If_2">
+      <If Condition="[out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -342,23 +377,53 @@
           <Sequence sap2010:WorkflowViewState.IdRef="Sequence_30" />
         </If.Else>
       </If>
+      <ui:FilterDataTable DataTable="[out_dt_Bevakningar_OldRowsFromExcel]" DisplayName="Filter Data Table dt_Kvitterade Bevakning" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_Kvitterade]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Kvitteringsstatus"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["Kvitterat"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <x:Null />
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <Assign DisplayName="Assign out_OldRowsExists_Bevakningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[out_OldRowsExists_Bevakningar]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">[If(dt_Kvitterade.RowCount &gt; 0, True, False)]</InArgument>
+        </Assign.Value>
+      </Assign>
     </Sequence>
-    <Sequence DisplayName="MedicalRecords" sap:VirtualizedContainerService.HintSize="500,847" sap2010:WorkflowViewState.IdRef="Sequence_22">
+    <Sequence DisplayName="MedicalRecords" sap:VirtualizedContainerService.HintSize="496,578" sap2010:WorkflowViewState.IdRef="Sequence_22">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_Kvitterade" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="438,644" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="TryCatch_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <ui:RetryScope DisplayName="Retry Scope Medical Records" sap:VirtualizedContainerService.HintSize="376,416" sap2010:WorkflowViewState.IdRef="RetryScope_10" NumberOfRetries="3" RetryInterval="00:00:03">
+          <ui:RetryScope DisplayName="Retry Scope Medical Records" sap:VirtualizedContainerService.HintSize="376,336" sap2010:WorkflowViewState.IdRef="RetryScope_10" NumberOfRetries="3" RetryInterval="00:00:03">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
                 <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[out_dt_Journalanteckningar_OldRowsFromExcel]" DisplayName="Private: Read Range Workbook Journalanteckningar" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadRange_20" SheetName="Journalanteckningar" WorkbookPath="[in_FilePath]">
@@ -401,7 +466,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <If Condition="[out_dt_Journalanteckningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Journalanteckningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="438,52" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[out_dt_Journalanteckningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Journalanteckningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -409,13 +474,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="300,197" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence sap:VirtualizedContainerService.HintSize="300,212" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' journalanteckningar" DisplayName="ManipulateDtFromExcel Medrec" sap:VirtualizedContainerService.HintSize="258,109" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' journalanteckningar" DisplayName="ManipulateDtFromExcel Medrec" sap:VirtualizedContainerService.HintSize="258,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Journalanteckningar_OldRowsFromExcel]</InOutArgument>
               </ui:InvokeWorkflowFile.Arguments>
@@ -433,15 +498,45 @@
           <Sequence sap2010:WorkflowViewState.IdRef="Sequence_28" />
         </If.Else>
       </If>
+      <ui:FilterDataTable DataTable="[out_dt_Journalanteckningar_OldRowsFromExcel]" DisplayName="Filter Data Table out_dt_Journalanteckningar_OldRowsFromExcel" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[dt_Kvitterade]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Kvitteringsstatus"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["Kvitterat"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <x:Null />
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <Assign DisplayName="Assign out_OldRowsExists_Journalanteckningar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[out_OldRowsExists_Journalanteckningar]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">[If(dt_Kvitterade.RowCount &gt; 0, True, False)]</InArgument>
+        </Assign.Value>
+      </Assign>
     </Sequence>
-    <Sequence DisplayName="Utredning" sap:VirtualizedContainerService.HintSize="500,255" sap2010:WorkflowViewState.IdRef="Sequence_23">
+    <Sequence DisplayName="Utredning" sap:VirtualizedContainerService.HintSize="496,469" sap2010:WorkflowViewState.IdRef="Sequence_23">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_Kvitterade" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+      <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="TryCatch_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -485,7 +580,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <If Condition="[out_dt_Utredning_OldRowsFromExcel.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_4">
+      <If Condition="[out_dt_Utredning_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Utredning_OldRowsFromExcel" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -515,6 +610,39 @@
           <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34" />
         </If.Else>
       </If>
+      <ui:FilterDataTable DataTable="[out_dt_Utredning_OldRowsFromExcel]" DisplayName="Filter Data Table out_dt_Journalanteckningar_OldRowsFromExcel" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[dt_Kvitterade]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Kvitteringsstatus"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["Kvitterat"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <x:Null />
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:FilterDataTable>
+      <Assign DisplayName="Assign out_OldRowsExists_Utredning" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[out_OldRowsExists_Utredning]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">[If(dt_Kvitterade.RowCount &gt; 0, True, False)]</InArgument>
+        </Assign.Value>
+      </Assign>
     </Sequence>
   </Sequence>
 </Activity>

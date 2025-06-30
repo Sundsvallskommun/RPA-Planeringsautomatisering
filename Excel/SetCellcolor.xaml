@@ -1,0 +1,211 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SetCellcolor" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_SheetName" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExcelFilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1726,1001</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Set Cell color" sap:VirtualizedContainerService.HintSize="552,668" sap2010:WorkflowViewState.IdRef="Sequence_108">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch sap2010:Annotation.AnnotationText="Selects the correct Excel sheet and executes sheet-specific logic using Invoke Code. Input arguments are adjusted per sheet. Wrapped in Try Catch to handle invalid sheet names or runtime errors." DisplayName="Set Cell color" sap:VirtualizedContainerService.HintSize="490,557" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Switch x:TypeArguments="x:String" DisplayName="Switch Set Cellcolor" Expression="[in_SheetName]" sap:VirtualizedContainerService.HintSize="496,312" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+          <Switch.Default>
+            <Throw DisplayName="Throw Oglitigtbladnamn" Exception="[New Exception(&quot;Ogiltigt bladnamn: &quot; &amp; in_SheetName)]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="Throw_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Throw>
+          </Switch.Default>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" x:Key="Aktualiseringar" Code="Dim app As New Microsoft.Office.Interop.Excel.Application()&#xA;app.Visible = False&#xA;app.DisplayAlerts = False&#xA;&#xA;Dim wb As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xA;Dim ws As Microsoft.Office.Interop.Excel.Worksheet = Nothing&#xA;&#xA;Try&#xA;    wb = app.Workbooks.Open(in_ExcelFilePath)&#xA;    ws = CType(wb.Sheets(in_SheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xA;&#xA;    For i As Integer = startRow To endRow&#xA;        Dim sourceCellAddress As String = sourceColumn &amp; i.ToString()&#xA;        Dim targetCellAddress As String = targetColumn &amp; i.ToString()&#xA;&#xA;        Dim sourceCell As Microsoft.Office.Interop.Excel.Range = ws.Range(sourceCellAddress)&#xA;        Dim targetCell As Microsoft.Office.Interop.Excel.Range = ws.Range(targetCellAddress)&#xA;&#xA;        ' Läs färgtext från cellen, t.ex. &quot;Color [A=255, R=255, G=217, B=102]&quot;&#xA;        Dim colorText As String = CStr(sourceCell.Value)&#xA;        Dim color As System.Drawing.Color = System.Drawing.Color.White ' fallback-färg&#xA;&#xA;        If Not String.IsNullOrEmpty(colorText) Then&#xA;            Try&#xA;                If colorText.Contains(&quot;R=&quot;) AndAlso colorText.Contains(&quot;G=&quot;) AndAlso colorText.Contains(&quot;B=&quot;) Then&#xA;                    ' Extrahera RGB&#xA;                    Dim r As Integer = 0&#xA;                    Dim g As Integer = 0&#xA;                    Dim b As Integer = 0&#xA;&#xA;                    Dim rIndex As Integer = colorText.IndexOf(&quot;R=&quot;)&#xA;                    If rIndex &gt;= 0 Then&#xA;                        Dim rStr As String = colorText.Substring(rIndex + 2)&#xA;                        rStr = rStr.Split(&quot;,&quot;c)(0).Trim()&#xA;                        r = Int32.Parse(rStr)&#xA;                    End If&#xA;&#xA;                    Dim gIndex As Integer = colorText.IndexOf(&quot;G=&quot;)&#xA;                    If gIndex &gt;= 0 Then&#xA;                        Dim gStr As String = colorText.Substring(gIndex + 2)&#xA;                        gStr = gStr.Split(&quot;,&quot;c)(0).Trim()&#xA;                        g = Int32.Parse(gStr)&#xA;                    End If&#xA;&#xA;                    Dim bIndex As Integer = colorText.IndexOf(&quot;B=&quot;)&#xA;                    If bIndex &gt;= 0 Then&#xA;                        Dim bStr As String = colorText.Substring(bIndex + 2)&#xA;                        bStr = bStr.Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xA;                        b = Int32.Parse(bStr)&#xA;                    End If&#xA;&#xA;                    color = System.Drawing.Color.FromArgb(r, g, b)&#xA;&#xA;                ElseIf colorText.StartsWith(&quot;Color [&quot;) Then&#xA;                    Dim colorName As String = colorText.Replace(&quot;Color [&quot;, &quot;&quot;).Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xA;                    color = System.Drawing.Color.FromName(colorName)&#xA;                End If&#xA;            Catch ex As Exception&#xA;                color = System.Drawing.Color.White&#xA;            End Try&#xA;        End If&#xA;&#xA;        ' Sätt färgen i målcell&#xA;        Dim oleColor As Integer = System.Drawing.ColorTranslator.ToOle(color)&#xA;        targetCell.Interior.Color = oleColor&#xA;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(sourceCell)&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(targetCell)&#xA;    Next&#xA;&#xA;&#x9;' Töm cellvärden i kolumn H från startRow till endRow&#xA;Dim clearRangeAddress As String = sourceColumn &amp; startRow.ToString() &amp; &quot;:&quot; &amp; sourceColumn &amp; endRow.ToString()&#xA;Dim clearRange As Microsoft.Office.Interop.Excel.Range = ws.Range(clearRangeAddress)&#xA;clearRange.ClearContents()&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(clearRange)&#xA;&#xA;    wb.Save()&#xA;    wb.Close(False)&#xA;&#xA;Catch ex As Exception&#xA;    Throw&#xA;&#xA;Finally&#xA;    app.Quit()&#xA;&#xA;    If ws IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(ws)&#xA;    If wb IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(wb)&#xA;    If app IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(app)&#xA;&#xA;    ws = Nothing&#xA;    wb = Nothing&#xA;    app = Nothing&#xA;&#xA;    GC.Collect()&#xA;    GC.WaitForPendingFinalizers()&#xA;End Try&#xA;" DisplayName="Invoke Code Aktualiseringar" sap:VirtualizedContainerService.HintSize="334,165" sap2010:WorkflowViewState.IdRef="InvokeCode_17">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_ExcelFilePath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_SheetName]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="startRow">2</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="endRow">40</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="sourceColumn">H</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="targetColumn">G</InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <ui:InvokeCode ContinueOnError="{x:Null}" x:Key="Bevakningar" Code="Dim app As New Microsoft.Office.Interop.Excel.Application()&#xA;app.Visible = False&#xA;app.DisplayAlerts = False&#xA;&#xA;Dim wb As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xA;Dim ws As Microsoft.Office.Interop.Excel.Worksheet = Nothing&#xA;&#xA;Try&#xA;    wb = app.Workbooks.Open(in_ExcelFilePath)&#xA;    ws = CType(wb.Sheets(in_SheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xA;&#xA;    For i As Integer = startRow To endRow&#xA;        Dim sourceCellAddress As String = sourceColumn &amp; i.ToString()&#xA;        Dim targetCellAddress As String = targetColumn &amp; i.ToString()&#xA;&#xA;        Dim sourceCell As Microsoft.Office.Interop.Excel.Range = ws.Range(sourceCellAddress)&#xA;        Dim targetCell As Microsoft.Office.Interop.Excel.Range = ws.Range(targetCellAddress)&#xA;&#xA;        ' Läs färgtext från cellen, t.ex. &quot;Color [A=255, R=255, G=217, B=102]&quot;&#xA;        Dim colorText As String = CStr(sourceCell.Value)&#xA;        Dim color As System.Drawing.Color = System.Drawing.Color.White ' fallback-färg&#xA;&#xA;        If Not String.IsNullOrEmpty(colorText) Then&#xA;            Try&#xA;                If colorText.Contains(&quot;R=&quot;) AndAlso colorText.Contains(&quot;G=&quot;) AndAlso colorText.Contains(&quot;B=&quot;) Then&#xA;                    ' Extrahera RGB&#xA;                    Dim r As Integer = 0&#xA;                    Dim g As Integer = 0&#xA;                    Dim b As Integer = 0&#xA;&#xA;                    Dim rIndex As Integer = colorText.IndexOf(&quot;R=&quot;)&#xA;                    If rIndex &gt;= 0 Then&#xA;                        Dim rStr As String = colorText.Substring(rIndex + 2)&#xA;                        rStr = rStr.Split(&quot;,&quot;c)(0).Trim()&#xA;                        r = Int32.Parse(rStr)&#xA;                    End If&#xA;&#xA;                    Dim gIndex As Integer = colorText.IndexOf(&quot;G=&quot;)&#xA;                    If gIndex &gt;= 0 Then&#xA;                        Dim gStr As String = colorText.Substring(gIndex + 2)&#xA;                        gStr = gStr.Split(&quot;,&quot;c)(0).Trim()&#xA;                        g = Int32.Parse(gStr)&#xA;                    End If&#xA;&#xA;                    Dim bIndex As Integer = colorText.IndexOf(&quot;B=&quot;)&#xA;                    If bIndex &gt;= 0 Then&#xA;                        Dim bStr As String = colorText.Substring(bIndex + 2)&#xA;                        bStr = bStr.Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xA;                        b = Int32.Parse(bStr)&#xA;                    End If&#xA;&#xA;                    color = System.Drawing.Color.FromArgb(r, g, b)&#xA;&#xA;                ElseIf colorText.StartsWith(&quot;Color [&quot;) Then&#xA;                    Dim colorName As String = colorText.Replace(&quot;Color [&quot;, &quot;&quot;).Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xA;                    color = System.Drawing.Color.FromName(colorName)&#xA;                End If&#xA;            Catch ex As Exception&#xA;                color = System.Drawing.Color.White&#xA;            End Try&#xA;        End If&#xA;&#xA;        ' Sätt färgen i målcell&#xA;        Dim oleColor As Integer = System.Drawing.ColorTranslator.ToOle(color)&#xA;        targetCell.Interior.Color = oleColor&#xA;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(sourceCell)&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(targetCell)&#xA;    Next&#xA;&#xA;&#x9;' Töm cellvärden i kolumn H från startRow till endRow&#xA;Dim clearRangeAddress As String = sourceColumn &amp; startRow.ToString() &amp; &quot;:&quot; &amp; sourceColumn &amp; endRow.ToString()&#xA;Dim clearRange As Microsoft.Office.Interop.Excel.Range = ws.Range(clearRangeAddress)&#xA;clearRange.ClearContents()&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(clearRange)&#xA;&#xA;    wb.Save()&#xA;    wb.Close(False)&#xA;&#xA;Catch ex As Exception&#xA;    Throw&#xA;&#xA;Finally&#xA;    app.Quit()&#xA;&#xA;    If ws IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(ws)&#xA;    If wb IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(wb)&#xA;    If app IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(app)&#xA;&#xA;    ws = Nothing&#xA;    wb = Nothing&#xA;    app = Nothing&#xA;&#xA;    GC.Collect()&#xA;    GC.WaitForPendingFinalizers()&#xA;End Try&#xA;" DisplayName="Invoke Code Bevakningar" sap:VirtualizedContainerService.HintSize="334,165" sap2010:WorkflowViewState.IdRef="InvokeCode_18">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_ExcelFilePath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_SheetName]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="startRow">2</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="endRow">40</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="sourceColumn">J</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="targetColumn">I</InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <ui:InvokeCode ContinueOnError="{x:Null}" x:Key="Journalanteckningar" Code="Dim app As New Microsoft.Office.Interop.Excel.Application()&#xA;app.Visible = False&#xA;app.DisplayAlerts = False&#xA;&#xA;Dim wb As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xA;Dim ws As Microsoft.Office.Interop.Excel.Worksheet = Nothing&#xA;&#xA;Try&#xA;    wb = app.Workbooks.Open(in_ExcelFilePath)&#xA;    ws = CType(wb.Sheets(in_SheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xA;&#xA;    For i As Integer = startRow To endRow&#xA;        Dim sourceCellAddress As String = sourceColumn &amp; i.ToString()&#xA;        Dim targetCellAddress As String = targetColumn &amp; i.ToString()&#xA;&#xA;        Dim sourceCell As Microsoft.Office.Interop.Excel.Range = ws.Range(sourceCellAddress)&#xA;        Dim targetCell As Microsoft.Office.Interop.Excel.Range = ws.Range(targetCellAddress)&#xA;&#xA;        ' Läs färgtext från cellen, t.ex. &quot;Color [A=255, R=255, G=217, B=102]&quot;&#xA;        Dim colorText As String = CStr(sourceCell.Value)&#xA;        Dim color As System.Drawing.Color = System.Drawing.Color.White ' fallback-färg&#xA;&#xA;        If Not String.IsNullOrEmpty(colorText) Then&#xA;            Try&#xA;                If colorText.Contains(&quot;R=&quot;) AndAlso colorText.Contains(&quot;G=&quot;) AndAlso colorText.Contains(&quot;B=&quot;) Then&#xA;                    ' Extrahera RGB&#xA;                    Dim r As Integer = 0&#xA;                    Dim g As Integer = 0&#xA;                    Dim b As Integer = 0&#xA;&#xA;                    Dim rIndex As Integer = colorText.IndexOf(&quot;R=&quot;)&#xA;                    If rIndex &gt;= 0 Then&#xA;                        Dim rStr As String = colorText.Substring(rIndex + 2)&#xA;                        rStr = rStr.Split(&quot;,&quot;c)(0).Trim()&#xA;                        r = Int32.Parse(rStr)&#xA;                    End If&#xA;&#xA;                    Dim gIndex As Integer = colorText.IndexOf(&quot;G=&quot;)&#xA;                    If gIndex &gt;= 0 Then&#xA;                        Dim gStr As String = colorText.Substring(gIndex + 2)&#xA;                        gStr = gStr.Split(&quot;,&quot;c)(0).Trim()&#xA;                        g = Int32.Parse(gStr)&#xA;                    End If&#xA;&#xA;                    Dim bIndex As Integer = colorText.IndexOf(&quot;B=&quot;)&#xA;                    If bIndex &gt;= 0 Then&#xA;                        Dim bStr As String = colorText.Substring(bIndex + 2)&#xA;                        bStr = bStr.Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xA;                        b = Int32.Parse(bStr)&#xA;                    End If&#xA;&#xA;                    color = System.Drawing.Color.FromArgb(r, g, b)&#xA;&#xA;                ElseIf colorText.StartsWith(&quot;Color [&quot;) Then&#xA;                    Dim colorName As String = colorText.Replace(&quot;Color [&quot;, &quot;&quot;).Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xA;                    color = System.Drawing.Color.FromName(colorName)&#xA;                End If&#xA;            Catch ex As Exception&#xA;                color = System.Drawing.Color.White&#xA;            End Try&#xA;        End If&#xA;&#xA;        ' Sätt färgen i målcell&#xA;        Dim oleColor As Integer = System.Drawing.ColorTranslator.ToOle(color)&#xA;        targetCell.Interior.Color = oleColor&#xA;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(sourceCell)&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(targetCell)&#xA;    Next&#xA;&#xA;&#x9;' Töm cellvärden i kolumn H från startRow till endRow&#xA;Dim clearRangeAddress As String = sourceColumn &amp; startRow.ToString() &amp; &quot;:&quot; &amp; sourceColumn &amp; endRow.ToString()&#xA;Dim clearRange As Microsoft.Office.Interop.Excel.Range = ws.Range(clearRangeAddress)&#xA;clearRange.ClearContents()&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(clearRange)&#xA;&#xA;    wb.Save()&#xA;    wb.Close(False)&#xA;&#xA;Catch ex As Exception&#xA;    Throw&#xA;&#xA;Finally&#xA;    app.Quit()&#xA;&#xA;    If ws IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(ws)&#xA;    If wb IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(wb)&#xA;    If app IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(app)&#xA;&#xA;    ws = Nothing&#xA;    wb = Nothing&#xA;    app = Nothing&#xA;&#xA;    GC.Collect()&#xA;    GC.WaitForPendingFinalizers()&#xA;End Try&#xA;" DisplayName="Invoke Code Journalanteckningar" sap:VirtualizedContainerService.HintSize="334,165" sap2010:WorkflowViewState.IdRef="InvokeCode_19">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_ExcelFilePath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_SheetName]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="startRow">2</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="endRow">40</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="sourceColumn">I</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="targetColumn">H</InArgument>
+            </ui:InvokeCode.Arguments>
+          </ui:InvokeCode>
+          <ui:InvokeCode ContinueOnError="{x:Null}" x:Key="Utredning" Code="Dim app As New Microsoft.Office.Interop.Excel.Application()&#xA;app.Visible = False&#xA;app.DisplayAlerts = False&#xA;&#xA;Dim wb As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xA;Dim ws As Microsoft.Office.Interop.Excel.Worksheet = Nothing&#xA;&#xA;Try&#xA;    wb = app.Workbooks.Open(in_ExcelFilePath)&#xA;    ws = CType(wb.Sheets(in_SheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xA;&#xA;    For i As Integer = startRow To endRow&#xA;        Dim sourceCellAddress As String = sourceColumn &amp; i.ToString()&#xA;        Dim targetCellAddress As String = targetColumn &amp; i.ToString()&#xA;&#xA;        Dim sourceCell As Microsoft.Office.Interop.Excel.Range = ws.Range(sourceCellAddress)&#xA;        Dim targetCell As Microsoft.Office.Interop.Excel.Range = ws.Range(targetCellAddress)&#xA;&#xA;        ' Läs färgtext från cellen, t.ex. &quot;Color [A=255, R=255, G=217, B=102]&quot;&#xA;        Dim colorText As String = CStr(sourceCell.Value)&#xA;        Dim color As System.Drawing.Color = System.Drawing.Color.White ' fallback-färg&#xA;&#xA;        If Not String.IsNullOrEmpty(colorText) Then&#xA;            Try&#xA;                If colorText.Contains(&quot;R=&quot;) AndAlso colorText.Contains(&quot;G=&quot;) AndAlso colorText.Contains(&quot;B=&quot;) Then&#xA;                    ' Extrahera RGB&#xA;                    Dim r As Integer = 0&#xA;                    Dim g As Integer = 0&#xA;                    Dim b As Integer = 0&#xA;&#xA;                    Dim rIndex As Integer = colorText.IndexOf(&quot;R=&quot;)&#xA;                    If rIndex &gt;= 0 Then&#xA;                        Dim rStr As String = colorText.Substring(rIndex + 2)&#xA;                        rStr = rStr.Split(&quot;,&quot;c)(0).Trim()&#xA;                        r = Int32.Parse(rStr)&#xA;                    End If&#xA;&#xA;                    Dim gIndex As Integer = colorText.IndexOf(&quot;G=&quot;)&#xA;                    If gIndex &gt;= 0 Then&#xA;                        Dim gStr As String = colorText.Substring(gIndex + 2)&#xA;                        gStr = gStr.Split(&quot;,&quot;c)(0).Trim()&#xA;                        g = Int32.Parse(gStr)&#xA;                    End If&#xA;&#xA;                    Dim bIndex As Integer = colorText.IndexOf(&quot;B=&quot;)&#xA;                    If bIndex &gt;= 0 Then&#xA;                        Dim bStr As String = colorText.Substring(bIndex + 2)&#xA;                        bStr = bStr.Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xA;                        b = Int32.Parse(bStr)&#xA;                    End If&#xA;&#xA;                    color = System.Drawing.Color.FromArgb(r, g, b)&#xA;&#xA;                ElseIf colorText.StartsWith(&quot;Color [&quot;) Then&#xA;                    Dim colorName As String = colorText.Replace(&quot;Color [&quot;, &quot;&quot;).Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xA;                    color = System.Drawing.Color.FromName(colorName)&#xA;                End If&#xA;            Catch ex As Exception&#xA;                color = System.Drawing.Color.White&#xA;            End Try&#xA;        End If&#xA;&#xA;        ' Sätt färgen i målcell&#xA;        Dim oleColor As Integer = System.Drawing.ColorTranslator.ToOle(color)&#xA;        targetCell.Interior.Color = oleColor&#xA;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(sourceCell)&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(targetCell)&#xA;    Next&#xA;&#xA;&#x9;' Töm cellvärden i kolumn H från startRow till endRow&#xA;Dim clearRangeAddress As String = sourceColumn &amp; startRow.ToString() &amp; &quot;:&quot; &amp; sourceColumn &amp; endRow.ToString()&#xA;Dim clearRange As Microsoft.Office.Interop.Excel.Range = ws.Range(clearRangeAddress)&#xA;clearRange.ClearContents()&#xA;System.Runtime.InteropServices.Marshal.ReleaseComObject(clearRange)&#xA;&#xA;    wb.Save()&#xA;    wb.Close(False)&#xA;&#xA;Catch ex As Exception&#xA;    Throw&#xA;&#xA;Finally&#xA;    app.Quit()&#xA;&#xA;    If ws IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(ws)&#xA;    If wb IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(wb)&#xA;    If app IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(app)&#xA;&#xA;    ws = Nothing&#xA;    wb = Nothing&#xA;    app = Nothing&#xA;&#xA;    GC.Collect()&#xA;    GC.WaitForPendingFinalizers()&#xA;End Try&#xA;" DisplayName="Invoke Code Utredning" sap:VirtualizedContainerService.HintSize="208,52" sap2010:WorkflowViewState.IdRef="InvokeCode_20">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_ExcelFilePath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_SheetName]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="startRow">2</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="endRow">40</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="sourceColumn">H</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="targetColumn">G</InArgument>
+            </ui:InvokeCode.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeCode>
+        </Switch>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,337" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_107">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Error" Message="[&quot;Fel under bearbetning(färgsättning cell) av blad: &quot; &amp; in_SheetName]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

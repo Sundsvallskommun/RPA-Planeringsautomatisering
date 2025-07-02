@@ -13,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1726,1691</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2606,1691</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Excel_File_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -967,12 +967,8 @@
     </ui:ExcelApplicationScope>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="512,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\SetCellcolor.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SheetName" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExcelFilePath" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_SheetName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_ExcelFilePath]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Sheet: &quot; +  in_SheetName + &quot; in excel file is updated&quot;]" />

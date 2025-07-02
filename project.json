@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.0.81-alpha.9",
+  "projectVersion": "1.0.81-alpha.15",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -45,7 +45,14 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "821b258c-c12f-49af-929c-f4deb5bb9d0b",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\ProcessTestCase.xaml"
+      }
+    ],
     "modernBehavior": true,
     "saveToCloud": false
   },

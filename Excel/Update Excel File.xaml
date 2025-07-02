@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1726,2602</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1076,1337</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Excel_File_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update_Excel_File" sap:VirtualizedContainerService.HintSize="636,4084" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Update_Excel_File" sap:VirtualizedContainerService.HintSize="512,1272" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable]" Name="dt_AddToExcelNewRows" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KvitteradeRowsFromExcel" />
@@ -134,8 +134,8 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="574,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Updating Excel File For: &quot; + in_SheetName]" />
-    <Assign DisplayName="Assign NrOfNewRows" sap:VirtualizedContainerService.HintSize="574,82" sap2010:WorkflowViewState.IdRef="Assign_46">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Updating Excel File For: &quot; + in_SheetName]" />
+    <Assign DisplayName="Assign NrOfNewRows" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Assign_46">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[NrOfNewRows]</OutArgument>
       </Assign.To>
@@ -143,7 +143,7 @@
         <InArgument x:TypeArguments="x:Int32">15</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="574,2844" sap2010:WorkflowViewState.IdRef="Sequence_64">
+    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_64">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsFromExcelStillNytt" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsToAddFromProcapita" />
@@ -152,11 +152,11 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign dt_AllExcelRowsCopy" sap:VirtualizedContainerService.HintSize="512,82" sap2010:WorkflowViewState.IdRef="Assign_50">
+      <Assign DisplayName="Assign dt_AllExcelRowsCopy" sap:VirtualizedContainerService.HintSize="512,81" sap2010:WorkflowViewState.IdRef="Assign_50">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[dt_AllExcelRowsCopy]</OutArgument>
         </Assign.To>
@@ -164,7 +164,7 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_dt_AllExcelRows.Copy]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[dt_AllExcelRowsCopy IsNot Nothing AndAlso _&#xA;dt_AllExcelRowsCopy.RowCount &gt; 0]" DisplayName="If dt_AllExcelRowsCopy.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="512,797" sap2010:WorkflowViewState.IdRef="If_15">
+      <If Condition="[dt_AllExcelRowsCopy IsNot Nothing AndAlso _&#xA;dt_AllExcelRowsCopy.RowCount &gt; 0]" DisplayName="If dt_AllExcelRowsCopy.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="512,799" sap2010:WorkflowViewState.IdRef="If_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,14 +172,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,435" sap2010:WorkflowViewState.IdRef="Sequence_88">
+          <Sequence sap:VirtualizedContainerService.HintSize="476,437" sap2010:WorkflowViewState.IdRef="Sequence_88">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Before remove empty rows: &quot; + dt_AllExcelRowsCopy.RowCount.ToString]" />
-            <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_39">
+            <Assign sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="Assign_39">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[dt_AllExcelRowsCopy]</OutArgument>
               </Assign.To>
@@ -209,7 +209,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort rader som inte längre finns med i procapita från excel-filen" DisplayName="For Each in_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="512,94" sap2010:WorkflowViewState.IdRef="ForEach`1_22" Values="[in_RemoveRowIndexList.OrderByDescending(Function(x) x).ToList()]">
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort rader som inte längre finns med i procapita från excel-filen" DisplayName="For Each in_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="512,109" sap2010:WorkflowViewState.IdRef="ForEach`1_22" Values="[in_RemoveRowIndexList.OrderByDescending(Function(x) x).ToList()]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -706,7 +706,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:RetryScope DisplayName="Retry Scope Private: Excel Application Scope Update Excel" sap:VirtualizedContainerService.HintSize="574,550" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(30)]">
+    <ui:RetryScope DisplayName="Retry Scope Private: Excel Application Scope Update Excel" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(30)]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
           <Sequence sap:VirtualizedContainerService.HintSize="450,295" sap2010:WorkflowViewState.IdRef="Sequence_109">
@@ -924,13 +924,7 @@
                           <ui:RetryScope DisplayName="Retry Scope Write Cell 15 eller mindre" sap:VirtualizedContainerService.HintSize="434,263" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
                             <ui:RetryScope.ActivityBody>
                               <ActivityAction>
-                                <ui:ExcelWriteCell Cell="[MoreThanNrOfRowsStart]" DisplayName="Write Cell 15 eller mindre" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="[in_SheetName]">
-                                  <ui:ExcelWriteCell.Text>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <Literal x:TypeArguments="x:String" Value="" />
-                                    </InArgument>
-                                  </ui:ExcelWriteCell.Text>
-                                </ui:ExcelWriteCell>
+                                <ui:ExcelWriteCell Cell="[MoreThanNrOfRowsStart]" DisplayName="Write Cell 15 eller mindre" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="[in_SheetName]" Text="[Nothing]" />
                               </ActivityAction>
                             </ui:RetryScope.ActivityBody>
                             <ui:RetryScope.Condition>
@@ -958,21 +952,38 @@
       </ui:RetryScope.Condition>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="574,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\SetCellcolor.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SheetName" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExcelFilePath" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="574,92" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Sheet: &quot; +  in_SheetName + &quot; in excel file is updated&quot;]" />
+    <If Condition="[in_dt_AllExcelRows.AsEnumerable().Any(Function(row) row(&quot;CellColor&quot;).ToString.Trim() &lt;&gt; &quot;Color [White]&quot;)]" sap:VirtualizedContainerService.HintSize="450,563" sap2010:WorkflowViewState.IdRef="If_20">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,201" sap2010:WorkflowViewState.IdRef="Sequence_110">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\SetCellcolor.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">[in_SheetName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_ExcelFilePath]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_111">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Endast vita rader i kommentarkolumnen.&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Sheet: &quot; +  in_SheetName + &quot; in excel file is updated&quot;]" />
   </Sequence>
 </Activity>

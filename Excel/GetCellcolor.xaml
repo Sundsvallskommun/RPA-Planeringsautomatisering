@@ -4,7 +4,7 @@
     <x:Property Name="in_SheetName" Type="InArgument(x:String)" />
     <x:Property Name="in_Excel" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1726,1752</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1076,650</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,7 +113,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="736,1687" sap2010:WorkflowViewState.IdRef="Sequence_38">
+  <Sequence sap:VirtualizedContainerService.HintSize="530,585" sap2010:WorkflowViewState.IdRef="Sequence_38">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="ExcelRow" />
     </Sequence.Variables>
@@ -122,25 +122,26 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="ÄNDRA SÅ ATT FIL ; KOLUMN OCH SHEET ÄR KORREKT(DYNAMISKT)&#xA;DENNA LÖSNING ÄR SNABBARE ÄN INVOKECODE SOM JAG GJORDE FÖRST" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="674,1576" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Hämtar kommenarfärger&quot;]" />
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" sap2010:Annotation.AnnotationText="ÄNDRA SÅ ATT FIL ; KOLUMN OCH SHEET ÄR KORREKT(DYNAMISKT)&#xA;DENNA LÖSNING ÄR SNABBARE ÄN INVOKECODE SOM JAG GJORDE FÖRST" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="468,210" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3" LaunchMethod="Automation" ProcessMode="AlwaysCreateNew" ShowExcelWindow="False">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="640,1407" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[in_ExcelFilePath]">
+          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ReadOnly="True" ResizeWindow="None" WorkbookPath="[in_ExcelFilePath]">
             <ueab:ExcelApplicationCard.Body>
               <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="ExcelFile" />
                 </ActivityAction.Argument>
-                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_Excel]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,1138" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_Excel]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,1474" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="572,1023" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="572,1359" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="sd1:Color" Name="CellColor" />
                           <Variable x:TypeArguments="sd1:Color" Name="fontColor" />
@@ -160,7 +161,7 @@
                             <InArgument x:TypeArguments="x:Int32">[in_Excel.Rows.IndexOf(CurrentRow) + 2]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch Get Cellcolor" Expression="[in_SheetName]" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch Get Cellcolor" Expression="[in_SheetName]" sap:VirtualizedContainerService.HintSize="510,388" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                           <Switch.Default>
                             <Throw DisplayName="Throw Oglitigtbladnamn" Exception="[New Exception(&quot;Ogiltigt bladnamn vid hämtning av cellfärg: &quot; &amp; in_SheetName)]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="Throw_1">
                               <sap:WorkflowViewStateService.ViewState>
@@ -173,7 +174,7 @@
                           </Switch.Default>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -270,6 +271,12 @@
                 </ui:ForEachRow>
               </ActivityAction>
             </ueab:ExcelApplicationCard.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ueab:ExcelApplicationCard>
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>
@@ -281,5 +288,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Kommenarfärger hämtade&quot;]" />
   </Sequence>
 </Activity>

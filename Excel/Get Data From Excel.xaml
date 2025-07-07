@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1726,4270</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1609,4667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HämtaGammalData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,7 +125,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Hämtar datatabeller från excelfilen och sparar de i fyra olika tabeller.&#xA;Samt sorterar tabellernas kolumner i alfabetisk ordning samt tar bort radbryten" DisplayName="Get Data From Excel" sap:VirtualizedContainerService.HintSize="634,4205" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Hämtar datatabeller från excelfilen och sparar de i fyra olika tabeller.&#xA;Samt sorterar tabellernas kolumner i alfabetisk ordning samt tar bort radbryten" DisplayName="Get Data From Excel" sap:VirtualizedContainerService.HintSize="614,4602" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -191,13 +191,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,385" sap2010:WorkflowViewState.IdRef="Sequence_31">
+          <Sequence sap:VirtualizedContainerService.HintSize="395,385" sap2010:WorkflowViewState.IdRef="Sequence_31">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt" DisplayName="ManipulateDtFromExcel Aktualiseringar" sap:VirtualizedContainerService.HintSize="334,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt" DisplayName="ManipulateDtFromExcel Aktualiseringar" sap:VirtualizedContainerService.HintSize="353,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Aktualiseringar_OldRowsFromExcel]</InOutArgument>
               </ui:InvokeWorkflowFile.Arguments>
@@ -209,7 +209,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Excel\GetCellcolor.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="True" WorkflowFileName="Excel\GetCellcolor.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_FilePath]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">Aktualiseringar</InArgument>
@@ -219,11 +219,17 @@
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_32" />
+          <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_32">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Bevakningar" sap:VirtualizedContainerService.HintSize="572,1119" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Bevakningar" sap:VirtualizedContainerService.HintSize="572,1123" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="NewFileName" />
         <Variable x:TypeArguments="x:String" Name="NewFolderPath" />
@@ -235,7 +241,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Bevakningar" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <TryCatch DisplayName="Try Catch Bevakningar" sap:VirtualizedContainerService.HintSize="510,25" sap2010:WorkflowViewState.IdRef="TryCatch_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -293,7 +299,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <If Condition="[out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="510,916" sap2010:WorkflowViewState.IdRef="If_2">
+      <If Condition="[out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Bevakningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="510,947" sap2010:WorkflowViewState.IdRef="If_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -301,7 +307,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,734" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence sap:VirtualizedContainerService.HintSize="476,765" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnListOrder" />
             </Sequence.Variables>
@@ -310,14 +316,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' bevaknigar" DisplayName="ManipulateDtFromExcel Bevakningar" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' bevaknigar" DisplayName="ManipulateDtFromExcel Bevakningar" sap:VirtualizedContainerService.HintSize="434,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Bevakningar_OldRowsFromExcel]</InOutArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -342,7 +348,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeCode>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Excel\GetCellcolor.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="True" WorkflowFileName="Excel\GetCellcolor.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_FilePath]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">Bevakningar</InArgument>
@@ -356,17 +362,17 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="MedicalRecords" sap:VirtualizedContainerService.HintSize="572,750" sap2010:WorkflowViewState.IdRef="Sequence_22">
+    <Sequence DisplayName="MedicalRecords" sap:VirtualizedContainerService.HintSize="572,1235" sap2010:WorkflowViewState.IdRef="Sequence_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="430,52" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <TryCatch DisplayName="Try Catch Medical Records" sap:VirtualizedContainerService.HintSize="438,564" sap2010:WorkflowViewState.IdRef="TryCatch_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -414,7 +420,7 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <If Condition="[out_dt_Journalanteckningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Journalanteckningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="430,547" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[out_dt_Journalanteckningar_OldRowsFromExcel.RowCount &gt; 0]" DisplayName="If out_dt_Journalanteckningar_OldRowsFromExcel.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="438,520" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -422,13 +428,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,365" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence sap:VirtualizedContainerService.HintSize="376,338" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' journalanteckningar" DisplayName="ManipulateDtFromExcel Medrec" sap:VirtualizedContainerService.HintSize="334,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort radbryt, sorterar kolumnerna och delar upp exceltabellen i 'nya' och 'gamla' journalanteckningar" DisplayName="ManipulateDtFromExcel Medrec" sap:VirtualizedContainerService.HintSize="334,97" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excel\ManipulateDtFromExcel.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_AllRows">[out_dt_Journalanteckningar_OldRowsFromExcel]</InOutArgument>
               </ui:InvokeWorkflowFile.Arguments>
@@ -440,7 +446,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Excel\GetCellcolor.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="True" WorkflowFileName="Excel\GetCellcolor.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_FilePath]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">Journalanteckningar</InArgument>
@@ -454,14 +460,14 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Utredning" sap:VirtualizedContainerService.HintSize="572,781" sap2010:WorkflowViewState.IdRef="Sequence_23">
+    <Sequence DisplayName="Utredning" sap:VirtualizedContainerService.HintSize="572,754" sap2010:WorkflowViewState.IdRef="Sequence_23">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="429,52" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+      <TryCatch DisplayName="Try Catch Utrdning" sap:VirtualizedContainerService.HintSize="429,25" sap2010:WorkflowViewState.IdRef="TryCatch_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -529,7 +535,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Excel\GetCellcolor.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="353,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="True" WorkflowFileName="Excel\GetCellcolor.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_FilePath]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">Utredning</InArgument>

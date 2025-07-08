@@ -439,12 +439,20 @@
                                         <av:PointCollection x:Key="ConnectorLocation">148,1241 148,1296</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en lista på de rader som saknas i Excelfilen. (Aktualiseringar)" DisplayName="Compare Exccel And Procapita.xaml - Aktualiseringar" sap:VirtualizedContainerService.HintSize="200,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Excel\Compare Exccel And Procapita.xaml">
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en lista på de rader som saknas i Excelfilen. (Aktualiseringar)" DisplayName="Compare Exccel And Procapita.xaml - Aktualiseringar" sap:VirtualizedContainerService.HintSize="379,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Excel\Compare Exccel And Procapita.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Excel">[dt_Aktualiseringar_Excel]</InArgument>
-                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">[dt_Aktualiseringar_CaseManager]</InArgument>
-                                        <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_RemoveRowIndexList">[RemoveRowIndexList_Aktualiseringar]</OutArgument>
-                                        <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_AddRowIndexList">[AddRowIndexList_Aktualiseringar]</OutArgument>
+                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Excel">
+                                          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_Excel" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">
+                                          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_CaseManager" />
+                                        </InArgument>
+                                        <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_RemoveRowIndexList">
+                                          <VisualBasicReference x:TypeArguments="scg:List(x:Int32)" ExpressionText="RemoveRowIndexList_Aktualiseringar" />
+                                        </OutArgument>
+                                        <OutArgument x:TypeArguments="scg:List(x:Int32)" x:Key="out_AddRowIndexList">
+                                          <VisualBasicReference x:TypeArguments="scg:List(x:Int32)" ExpressionText="AddRowIndexList_Aktualiseringar" />
+                                        </OutArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -476,13 +484,27 @@
                                               </sap:WorkflowViewStateService.ViewState>
                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\Update Excel File Aktualiseringar" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Excel\Update Excel File.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[ExcelFilePath]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">Aktualiseringar</InArgument>
-                                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_AllExcelRows">[dt_Aktualiseringar_Excel]</InArgument>
-                                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">[dt_Aktualiseringar_CaseManager]</InArgument>
-                                                  <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_RemoveRowIndexList">[RemoveRowIndexList_Aktualiseringar]</InArgument>
-                                                  <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_AddRowIndexList">[AddRowIndexList_Aktualiseringar]</InArgument>
-                                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_NewRowsForDash">[dt_NewRowsForDash_Aktualiseringar]</OutArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
+                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelFilePath" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
+                                                    <Literal x:TypeArguments="x:String">Aktualiseringar</Literal>
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_AllExcelRows">
+                                                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_Excel" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Procapita">
+                                                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Aktualiseringar_CaseManager" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_RemoveRowIndexList">
+                                                    <VisualBasicValue x:TypeArguments="scg:List(x:Int32)" ExpressionText="RemoveRowIndexList_Aktualiseringar" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="scg:List(x:Int32)" x:Key="in_AddRowIndexList">
+                                                    <VisualBasicValue x:TypeArguments="scg:List(x:Int32)" ExpressionText="AddRowIndexList_Aktualiseringar" />
+                                                  </InArgument>
+                                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_NewRowsForDash">
+                                                    <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_NewRowsForDash_Aktualiseringar" />
+                                                  </OutArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">

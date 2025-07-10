@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1609,9714</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2022,5087</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Update_Excel_File_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Update_Excel_File" sap:VirtualizedContainerService.HintSize="714,9649" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Update_Excel_File" sap:VirtualizedContainerService.HintSize="838,4982" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable]" Name="dt_AddToExcelNewRows" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KvitteradeRowsFromExcel" />
@@ -134,8 +134,8 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="672,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Updating Excel File For: &quot; + in_SheetName]" />
-    <Assign DisplayName="Assign NrOfNewRows" sap:VirtualizedContainerService.HintSize="672,82" sap2010:WorkflowViewState.IdRef="Assign_46">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="676,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Updating Excel File For: &quot; + in_SheetName]" />
+    <Assign DisplayName="Assign NrOfNewRows" sap:VirtualizedContainerService.HintSize="676,82" sap2010:WorkflowViewState.IdRef="Assign_46">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[NrOfNewRows]</OutArgument>
       </Assign.To>
@@ -143,7 +143,7 @@
         <InArgument x:TypeArguments="x:Int32">15</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="672,8032" sap2010:WorkflowViewState.IdRef="Sequence_64">
+    <Sequence DisplayName="Sequence2" sap:VirtualizedContainerService.HintSize="776,81" sap2010:WorkflowViewState.IdRef="Sequence_64">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsFromExcelStillNytt" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_RowsToAddFromProcapita" />
@@ -152,7 +152,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -164,7 +164,7 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_dt_AllExcelRows.Copy]</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[dt_AllExcelRowsCopy IsNot Nothing AndAlso _&#xA;dt_AllExcelRowsCopy.RowCount &gt; 0]" DisplayName="If dt_AllExcelRowsCopy.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="610,25" sap2010:WorkflowViewState.IdRef="If_15">
+      <If Condition="[dt_AllExcelRowsCopy IsNot Nothing AndAlso _&#xA;dt_AllExcelRowsCopy.RowCount &gt; 0]" DisplayName="If dt_AllExcelRowsCopy.RowCount &gt; 0" sap:VirtualizedContainerService.HintSize="610,52" sap2010:WorkflowViewState.IdRef="If_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -209,19 +209,19 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort rader som inte längre finns med i procapita från excel-filen" DisplayName="For Each in_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="610,381" sap2010:WorkflowViewState.IdRef="ForEach`1_22" Values="[in_RemoveRowIndexList.OrderByDescending(Function(x) x).ToList()]">
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Tar bort rader som inte längre finns med i procapita från excel-filen" DisplayName="For Each in_RemoveRowIndexList" sap:VirtualizedContainerService.HintSize="610,404" sap2010:WorkflowViewState.IdRef="ForEach`1_22" Values="[in_RemoveRowIndexList.OrderByDescending(Function(x) x).ToList()]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,224" sap2010:WorkflowViewState.IdRef="Sequence_71">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="Sequence_71">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <InvokeMethod DisplayName="Private: Invoke Method" sap:VirtualizedContainerService.HintSize="258,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="RemoveAt">
+              <InvokeMethod DisplayName="Private: Invoke Method" sap:VirtualizedContainerService.HintSize="388,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="RemoveAt">
                 <InvokeMethod.TargetObject>
                   <InArgument x:TypeArguments="sd:DataRowCollection">[dt_AllExcelRowsCopy.Rows]</InArgument>
                 </InvokeMethod.TargetObject>
@@ -751,7 +751,7 @@
           </If.Else>
         </If>
       </Sequence>
-      <If Condition="[dt_AddToExcelNewRows IsNot Nothing AndAlso&#xA;dt_NewRowsJoinWithOldRows IsNot Nothing AndAlso &#xA;dt_NewRowsJoinWithOldRows.Rows.Count &gt; 0]" DisplayName="If More than 15 new rows" sap:VirtualizedContainerService.HintSize="610,1118" sap2010:WorkflowViewState.IdRef="If_12">
+      <If Condition="[dt_AddToExcelNewRows IsNot Nothing AndAlso&#xA;dt_NewRowsJoinWithOldRows IsNot Nothing AndAlso &#xA;dt_NewRowsJoinWithOldRows.Rows.Count &gt; 0]" DisplayName="If More than 15 new rows" sap:VirtualizedContainerService.HintSize="610,1117" sap2010:WorkflowViewState.IdRef="If_12">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -759,7 +759,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,936" sap2010:WorkflowViewState.IdRef="Sequence_76">
+          <Sequence sap:VirtualizedContainerService.HintSize="476,935" sap2010:WorkflowViewState.IdRef="Sequence_76">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -800,7 +800,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeCode>
             <ui:MergeDataTable Destination="[dt_NewRowsJoinWithOldRows]" DisplayName="Merge Data Table - 3" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="MergeDataTable_13" MissingSchemaAction="Add" Source="[dt_KvitteradeRowsFromExcel]" />
-            <Assign DisplayName="Assign dt_KvitteradeRowsFromExcel from dt_NewRowsJoinWithOldRows" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_38">
+            <Assign DisplayName="Assign dt_KvitteradeRowsFromExcel from dt_NewRowsJoinWithOldRows" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_38">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[dt_KvitteradeRowsFromExcel]</OutArgument>
               </Assign.To>
@@ -821,63 +821,66 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:RetryScope DisplayName="Retry Scope Private: Excel Application Scope Update Excel" sap:VirtualizedContainerService.HintSize="672,500" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(30)]">
+    <ui:RetryScope DisplayName="Retry Scope Private: Excel Application Scope Update Excel" sap:VirtualizedContainerService.HintSize="776,4272" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(30)]">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_109">
+          <Sequence sap:VirtualizedContainerService.HintSize="734,4097" sap2010:WorkflowViewState.IdRef="Sequence_109">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Försöker öppna filen: &quot; + in_ExcelFilePath]" />
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Update Excel" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_ExcelFilePath]">
-              <ui:ExcelApplicationScope.Body>
-                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1195" sap2010:WorkflowViewState.IdRef="Sequence_75">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="StartRow" />
-                      <Variable x:TypeArguments="x:String" Name="MoreThanNrOfRowsStart" />
-                    </Sequence.Variables>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="572,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Försöker öppna filen: &quot; + in_ExcelFilePath]" />
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="672,3854" sap2010:WorkflowViewState.IdRef="Sequence_124">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="StartRow" />
+                <Variable x:TypeArguments="x:String" Name="MoreThanNrOfRowsStart" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="610,92" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Antal kvitterade rader&quot; + dt_KvitteradeRowsFromExcel.RowCount.ToString]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <If Condition="[in_dt_AllExcelRows.RowCount &gt; 1]" DisplayName="If in_dt_AllExcelRows.RowCount &gt; 1" sap:VirtualizedContainerService.HintSize="610,1603" sap2010:WorkflowViewState.IdRef="If_21">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="576,1241" sap2010:WorkflowViewState.IdRef="Sequence_131">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Antal kvitterade rader&quot; + dt_KvitteradeRowsFromExcel.RowCount.ToString]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:LogMessage>
-                    <If Condition="[in_dt_AllExcelRows.RowCount &gt; 1]" DisplayName="If in_dt_AllExcelRows.RowCount &gt; 1" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_16">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="576,814" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="534,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_129">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="Try Catch Clear All Rows" sap:VirtualizedContainerService.HintSize="534,726" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <TryCatch DisplayName="Try Catch Clear All Rows" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <TryCatch.Try>
-                              <Sequence sap:VirtualizedContainerService.HintSize="496,498" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                              <Sequence sap:VirtualizedContainerService.HintSize="496,498" sap2010:WorkflowViewState.IdRef="Sequence_125">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="Range" />
                                 </Sequence.Variables>
@@ -886,7 +889,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Assign Range To Delete" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_44">
+                                <Assign DisplayName="Assign Range To Delete" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_54">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[Range]</OutArgument>
                                   </Assign.To>
@@ -894,8 +897,8 @@
                                     <InArgument x:TypeArguments="x:String">["2:" + CInt(in_dt_AllExcelRows.RowCount + 1).ToString]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Försöker ta bort raderna: &quot; + Range]" />
-                                <ui:ExcelDeleteRange DisplayName="Private: Delete Range" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="[Range]" SheetName="[in_SheetName]" ShiftCells="False" ShiftOption="ShiftUp">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Försöker ta bort raderna: &quot; + Range]" />
+                                <ui:ExcelDeleteRange DisplayName="Private: Delete Range" sap:VirtualizedContainerService.HintSize="434,133" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_2" Range="[Range]" SheetName="[in_SheetName]" ShiftCells="False" ShiftOption="ShiftUp">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -906,7 +909,7 @@
                               </Sequence>
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -917,148 +920,229 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Kunde inte ta bort raderna &quot; + exception.Message]" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;Kunde inte ta bort raderna &quot; + exception.Message]" />
                                 </ActivityAction>
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
                         </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_93">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Antal rader i excelfil: &quot; + in_dt_AllExcelRows.RowCount.ToString]" />
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <ui:RetryScope DisplayName="Retry Scope Private: Write Range New Rows" sap:VirtualizedContainerService.HintSize="434,263" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
-                      <ui:RetryScope.ActivityBody>
-                        <ActivityAction>
-                          <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_AddToExcelNewRows]" DisplayName="Private: Write Range New Rows" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="[in_SheetName]" StartingCell="A2" />
-                        </ActivityAction>
-                      </ui:RetryScope.ActivityBody>
-                      <ui:RetryScope.Condition>
-                        <ActivityFunc x:TypeArguments="x:Boolean" />
-                      </ui:RetryScope.Condition>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:RetryScope>
-                    <Assign DisplayName="Assign StartRow" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_47">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[StartRow]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">["A" + (NrOfNewRows+ 4).ToString]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:RetryScope DisplayName="Retry Scope Private: Write Range Old Rows" sap:VirtualizedContainerService.HintSize="434,343" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
-                      <ui:RetryScope.ActivityBody>
-                        <ActivityAction>
-                          <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_KvitteradeRowsFromExcel]" DisplayName="Private: Write Range Old Rows" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="[in_SheetName]" StartingCell="[StartRow]" />
-                        </ActivityAction>
-                      </ui:RetryScope.ActivityBody>
-                      <ui:RetryScope.Condition>
-                        <ActivityFunc x:TypeArguments="x:Boolean" />
-                      </ui:RetryScope.Condition>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:RetryScope>
-                    <If Condition="[MoreThan15Rows]" DisplayName="If MoreThan15 Rows" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_14">
+                      </ui:CommentOut.Body>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="476,473" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                    </ui:CommentOut>
+                    <TryCatch DisplayName="Try Catch Clear All Rows" sap:VirtualizedContainerService.HintSize="534,1061" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch.Try>
+                        <Sequence sap:VirtualizedContainerService.HintSize="496,833" sap2010:WorkflowViewState.IdRef="Sequence_126">
                           <Sequence.Variables>
-                            <Variable x:TypeArguments="x:String" Name="MoreThanNrOfRowsStart" />
+                            <Variable x:TypeArguments="x:Int32" Name="Index" />
                           </Sequence.Variables>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Assign StartRow" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_48">
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_130">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:BuildDataTable DataTable="[in_dt_AllExcelRows]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;_x0031_23&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;_x0032_34&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;text&lt;/Column1&gt;&#xA;    &lt;Column2&gt;1&lt;/Column2&gt;&#xA;    &lt;_x0031_23&gt;3423&lt;/_x0031_23&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;234&lt;/Column1&gt;&#xA;    &lt;_x0031_23&gt;23423e&lt;/_x0031_23&gt;&#xA;    &lt;_x0032_34&gt;2e23e23e&lt;/_x0032_34&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;123&lt;/Column1&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column2&gt;567&lt;/Column2&gt;&#xA;    &lt;_x0031_23&gt;gfj&lt;/_x0031_23&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;_x0031_23&gt;hjkh¨&lt;/_x0031_23&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
+                          <Assign DisplayName="Assign dt_EmptyTableFullSize" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_55">
                             <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[MoreThanNrOfRowsStart]</OutArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable">[dt_EmptyTableFullSize]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">["A" + (NrOfNewRows+ 2).ToString]</InArgument>
+                              <InArgument x:TypeArguments="sd:DataTable">[in_dt_AllExcelRows.Clone]</InArgument>
                             </Assign.Value>
-                          </Assign>
-                          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="434,263" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
-                            <ui:RetryScope.ActivityBody>
-                              <ActivityAction>
-                                <ui:ExcelWriteCell Cell="[MoreThanNrOfRowsStart]" DisplayName="Write Cell Fler än 15" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="[in_SheetName]" Text="[&quot;Fler nya &quot; + in_SheetName +&quot;. Se nedan.&quot;]" />
-                              </ActivityAction>
-                            </ui:RetryScope.ActivityBody>
-                            <ui:RetryScope.Condition>
-                              <ActivityFunc x:TypeArguments="x:Boolean" />
-                            </ui:RetryScope.Condition>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                          </ui:RetryScope>
+                          </Assign>
+                          <ui:InterruptibleWhile Condition="[Index &lt; in_dt_AllExcelRows.RowCount]" CurrentIndex="[Index]" DisplayName="While  Rows to add" sap:VirtualizedContainerService.HintSize="434,352" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                            <ui:InterruptibleWhile.Body>
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[Enumerable.Repeat(Of Object)(Nothing, dt_EmptyTableFullSize.Columns.Count).ToArray()]" DataTable="[dt_EmptyTableFullSize]" DisplayName="Add Data Row to dt_EmptyTableFullSize" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                            </ui:InterruptibleWhile.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InterruptibleWhile>
+                          <ui:WriteRange AddHeaders="False" DataTable="[dt_EmptyTableFullSize]" DisplayName="Write Range Workbook dt_EmptyTableFullSize" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[in_SheetName]" StartingCell="A2" WorkbookPath="[in_ExcelFilePath]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteRange>
                         </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="476,473" sap2010:WorkflowViewState.IdRef="Sequence_83">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:String" Name="MoreThanNrOfRowsStart" />
-                          </Sequence.Variables>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Assign StartRow" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_49">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[MoreThanNrOfRowsStart]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">["A" + (NrOfNewRows+ 2).ToString]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <ui:RetryScope DisplayName="Retry Scope Write Cell 15 eller mindre" sap:VirtualizedContainerService.HintSize="434,263" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
-                            <ui:RetryScope.ActivityBody>
-                              <ActivityAction>
-                                <ui:ExcelWriteCell Cell="[MoreThanNrOfRowsStart]" DisplayName="Write Cell 15 eller mindre" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="[in_SheetName]" Text="[Nothing]" />
-                              </ActivityAction>
-                            </ui:RetryScope.ActivityBody>
-                            <ui:RetryScope.Condition>
-                              <ActivityFunc x:TypeArguments="x:Boolean" />
-                            </ui:RetryScope.Condition>
-                          </ui:RetryScope>
-                        </Sequence>
-                      </If.Else>
-                    </If>
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="Info" Message="[&quot;Kunde inte ta bort raderna &quot; + exception.Message]" />
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                    </TryCatch>
                   </Sequence>
-                </ActivityAction>
-              </ui:ExcelApplicationScope.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:ExcelApplicationScope>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_132">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Info" Message="[&quot;Antal rader i excelfil: &quot; + in_dt_AllExcelRows.RowCount.ToString]" />
+                  </Sequence>
+                </If.Else>
+              </If>
+              <ui:RetryScope DisplayName="Retry Scope Private: Write Range New Rows" sap:VirtualizedContainerService.HintSize="610,291" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <ui:WriteRange AddHeaders="False" DataTable="[dt_AddToExcelNewRows]" DisplayName="Write Range Workbook New" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="[in_SheetName]" StartingCell="A2" WorkbookPath="[in_ExcelFilePath]" />
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                </ui:RetryScope.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RetryScope>
+              <Assign DisplayName="Assign StartRow" sap:VirtualizedContainerService.HintSize="610,82" sap2010:WorkflowViewState.IdRef="Assign_56">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[StartRow]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["A" + (NrOfNewRows+ 4).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:RetryScope DisplayName="Retry Scope Private: Write Range Old Rows" sap:VirtualizedContainerService.HintSize="610,291" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <ui:WriteRange AddHeaders="False" DataTable="[dt_KvitteradeRowsFromExcel]" DisplayName="Write Range Workbook Kvitterade" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteRange_5" SheetName="[in_SheetName]" StartingCell="[StartRow]" WorkbookPath="[in_ExcelFilePath]" />
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                </ui:RetryScope.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RetryScope>
+              <If Condition="[MoreThan15Rows]" DisplayName="If MoreThan15 Rows" sap:VirtualizedContainerService.HintSize="610,1184" sap2010:WorkflowViewState.IdRef="If_22">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="476,501" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Assign StartRow" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_57">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[MoreThanNrOfRowsStart]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">["A" + (NrOfNewRows+ 2).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="RetryScope_8" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
+                      <ui:RetryScope.ActivityBody>
+                        <ActivityAction>
+                          <ui:WriteCell Cell="[MoreThanNrOfRowsStart]" DisplayName="Write Cell Workbook More than 15" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="[in_SheetName]" Text="[&quot;Fler nya &quot; + in_SheetName +&quot;. Se nedan.&quot;]" WorkbookPath="[in_ExcelFilePath]" />
+                        </ActivityAction>
+                      </ui:RetryScope.ActivityBody>
+                      <ui:RetryScope.Condition>
+                        <ActivityFunc x:TypeArguments="x:Boolean" />
+                      </ui:RetryScope.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:RetryScope>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="476,501" sap2010:WorkflowViewState.IdRef="Sequence_128">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Assign StartRow" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_58">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[MoreThanNrOfRowsStart]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">["A" + (NrOfNewRows+ 2).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:RetryScope DisplayName="Retry Scope Write Cell 15 eller mindre" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="RetryScope_9" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(10)]">
+                      <ui:RetryScope.ActivityBody>
+                        <ActivityAction>
+                          <ui:WriteCell Cell="[MoreThanNrOfRowsStart]" DisplayName="Write Cell 15 eller mindre" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="[in_SheetName]" Text="[Nothing]" WorkbookPath="[in_ExcelFilePath]" />
+                        </ActivityAction>
+                      </ui:RetryScope.ActivityBody>
+                      <ui:RetryScope.Condition>
+                        <ActivityFunc x:TypeArguments="x:Boolean" />
+                      </ui:RetryScope.Condition>
+                    </ui:RetryScope>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
           </Sequence>
         </ActivityAction>
       </ui:RetryScope.ActivityBody>
@@ -1072,7 +1156,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <If Condition="[in_dt_AllExcelRows.AsEnumerable().Any(Function(row) row(&quot;CellColor&quot;).ToString.Trim() &lt;&gt; &quot;Color [White]&quot;)]" sap:VirtualizedContainerService.HintSize="672,563" sap2010:WorkflowViewState.IdRef="If_20">
+    <If Condition="[in_dt_AllExcelRows.AsEnumerable().Any(Function(row) row(&quot;CellColor&quot;).ToString.Trim() &lt;&gt; &quot;Color [White]&quot;)]" DisplayName="If Set Color" sap:VirtualizedContainerService.HintSize="776,52" sap2010:WorkflowViewState.IdRef="If_20">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="376,201" sap2010:WorkflowViewState.IdRef="Sequence_110">
           <sap:WorkflowViewStateService.ViewState>
@@ -1099,6 +1189,6 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Sheet: &quot; +  in_SheetName + &quot; in excel file is updated&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="776,92" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Sheet: &quot; +  in_SheetName + &quot; in excel file is updated&quot;]" />
   </Sequence>
 </Activity>

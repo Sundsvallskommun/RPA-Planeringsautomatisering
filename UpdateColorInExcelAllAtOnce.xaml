@@ -1,0 +1,214 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="UpdateColorInExcelAllAtOnce" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Akt" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Bev" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Jour" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Utr" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_ExcelFilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:UpdateColorInExcelAllAtOnce.in_ExcelFilePath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:UpdateColorInExcelAllAtOnce.in_ExcelFilePath>
+  <sap:VirtualizedContainerService.HintSize>1470,856</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>Procapita Plus</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="476,711" sap2010:WorkflowViewState.IdRef="Sequence_198">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))" Name="DictList" />
+      <Variable x:TypeArguments="x:String" Name="LogMessage" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Assign - DictList" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))">[DictList]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))" xml:space="preserve">[New List(Of Dictionary(Of String, Object)) From {
+    in_Akt, in_Bev, in_Jour, in_Utr
+}.Where(Function(dict) dict IsNot Nothing AndAlso dict.Any(Function(kv) kv.Value IsNot Nothing AndAlso Not String.IsNullOrWhiteSpace(kv.Value.ToString()))).ToList()]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,253" sap2010:WorkflowViewState.IdRef="Sequence_202">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim excelApp As New Microsoft.Office.Interop.Excel.Application()&#xD;&#xA;excelApp.Visible = False&#xD;&#xA;excelApp.DisplayAlerts = False&#xD;&#xA;&#xD;&#xA;Dim workbook As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xD;&#xA;Dim worksheet As Microsoft.Office.Interop.Excel.Worksheet = Nothing&#xD;&#xA;&#xD;&#xA;Try&#xD;&#xA;    workbook = excelApp.Workbooks.Open(in_ExcelFilePath)&#xD;&#xA;&#xD;&#xA;    For Each config In in_SheetConfigs&#xD;&#xA;        Dim sheetName As String = CStr(config(&quot;sheetName&quot;))&#xD;&#xA;        Dim startRow As Integer = CInt(config(&quot;startRow&quot;))&#xD;&#xA;        Dim endRow As Integer = CInt(config(&quot;endRow&quot;))&#xD;&#xA;        Dim sourceColumn As String = CStr(config(&quot;sourceColumn&quot;))&#xD;&#xA;        Dim targetColumn As String = CStr(config(&quot;targetColumn&quot;))&#xD;&#xA;&#xD;&#xA;        worksheet = CType(workbook.Sheets(sheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xD;&#xA;&#xD;&#xA;        For i As Integer = startRow To endRow&#xD;&#xA;            Dim sourceCell = worksheet.Range(sourceColumn &amp; i.ToString())&#xD;&#xA;            Dim targetCell = worksheet.Range(targetColumn &amp; i.ToString())&#xD;&#xA;&#xD;&#xA;            Dim colorText As String = If(sourceCell.Value IsNot Nothing, sourceCell.Value.ToString(), &quot;&quot;)&#xD;&#xA;            Dim color As System.Drawing.Color = System.Drawing.Color.White&#xD;&#xA;&#xD;&#xA;            If Not String.IsNullOrEmpty(colorText) Then&#xD;&#xA;                Try&#xD;&#xA;                    If colorText.Contains(&quot;R=&quot;) AndAlso colorText.Contains(&quot;G=&quot;) AndAlso colorText.Contains(&quot;B=&quot;) Then&#xD;&#xA;                        Dim r As Integer = Int32.Parse(colorText.Split({&quot;R=&quot;}, StringSplitOptions.None)(1).Split(&quot;,&quot;c)(0).Trim())&#xD;&#xA;                        Dim g As Integer = Int32.Parse(colorText.Split({&quot;G=&quot;}, StringSplitOptions.None)(1).Split(&quot;,&quot;c)(0).Trim())&#xD;&#xA;                        Dim b As Integer = Int32.Parse(colorText.Split({&quot;B=&quot;}, StringSplitOptions.None)(1).Split(&quot;]&quot;c)(0).Trim())&#xD;&#xA;                        color = System.Drawing.Color.FromArgb(r, g, b)&#xD;&#xA;                    ElseIf colorText.StartsWith(&quot;Color [&quot;) Then&#xD;&#xA;                        Dim colorName As String = colorText.Replace(&quot;Color [&quot;, &quot;&quot;).Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xD;&#xA;                        color = System.Drawing.Color.FromName(colorName)&#xD;&#xA;                    End If&#xD;&#xA;                Catch&#xD;&#xA;                    color = System.Drawing.Color.White&#xD;&#xA;                End Try&#xD;&#xA;            End If&#xD;&#xA;&#xD;&#xA;            targetCell.Interior.Color = System.Drawing.ColorTranslator.ToOle(color)&#xD;&#xA;&#xD;&#xA;            System.Runtime.InteropServices.Marshal.ReleaseComObject(sourceCell)&#xD;&#xA;            System.Runtime.InteropServices.Marshal.ReleaseComObject(targetCell)&#xD;&#xA;        Next&#xD;&#xA;&#xD;&#xA;        ' Clear source column&#xD;&#xA;        Dim clearRange = worksheet.Range(sourceColumn &amp; startRow.ToString() &amp; &quot;:&quot; &amp; sourceColumn &amp; endRow.ToString())&#xD;&#xA;        clearRange.ClearContents()&#xD;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(clearRange)&#xD;&#xA;&#xD;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet)&#xD;&#xA;        worksheet = Nothing&#xD;&#xA;    Next&#xD;&#xA;&#xD;&#xA;    workbook.Save()&#xD;&#xA;    workbook.Close(False)&#xD;&#xA;&#xD;&#xA;Catch ex As Exception&#xD;&#xA;    Throw&#xD;&#xA;Finally&#xD;&#xA;    excelApp.Quit()&#xD;&#xA;&#xD;&#xA;    If worksheet IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet)&#xD;&#xA;    If workbook IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook)&#xD;&#xA;    If excelApp IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp)&#xD;&#xA;&#xD;&#xA;    worksheet = Nothing&#xD;&#xA;    workbook = Nothing&#xD;&#xA;    excelApp = Nothing&#xD;&#xA;&#xD;&#xA;    GC.Collect()&#xD;&#xA;    GC.WaitForPendingFinalizers()&#xD;&#xA;End Try&#xD;&#xA;" DisplayName="Private: Invoke Code - Color Excel" sap:VirtualizedContainerService.HintSize="334,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">[in_ExcelFilePath]</InArgument>
+              <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))" x:Key="in_SheetConfigs">[DictList]</InArgument>
+            </ui:InvokeCode.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeCode>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <If Condition="[DictList.Count &gt; 0]" DisplayName="If - DictList.Count &gt; 0" sap:VirtualizedContainerService.HintSize="434,435" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,253" sap2010:WorkflowViewState.IdRef="Sequence_204">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim excelApp As Microsoft.Office.Interop.Excel.Application = Nothing&#xD;&#xA;Dim workbook As Microsoft.Office.Interop.Excel.Workbook = Nothing&#xD;&#xA;Dim worksheet As Microsoft.Office.Interop.Excel.Worksheet = Nothing&#xD;&#xA;out_LogMessage = &quot;&quot;&#xD;&#xA;&#xD;&#xA;Try&#xD;&#xA;    excelApp = New Microsoft.Office.Interop.Excel.Application()&#xD;&#xA;    excelApp.Visible = False&#xD;&#xA;    excelApp.DisplayAlerts = False&#xD;&#xA;    excelApp.ScreenUpdating = False&#xD;&#xA;    excelApp.EnableEvents = False&#xD;&#xA;&#xD;&#xA;    workbook = excelApp.Workbooks.Open(in_ExcelFilePath)&#xD;&#xA;&#xD;&#xA;    ' Optional: allow Excel to fully load&#xD;&#xA;    System.Threading.Thread.Sleep(500)&#xD;&#xA;&#xD;&#xA;    Try&#xD;&#xA;        excelApp.Calculation = Microsoft.Office.Interop.Excel.XlCalculation.xlCalculationManual&#xD;&#xA;    Catch setCalcEx As Exception&#xD;&#xA;        out_LogMessage &amp;= &quot;Warning: Could not set calculation mode to manual: &quot; &amp; setCalcEx.Message &amp; Environment.NewLine&#xD;&#xA;    End Try&#xD;&#xA;&#xD;&#xA;    For Each config As Dictionary(Of String, Object) In in_SheetConfigs&#xD;&#xA;        Dim sheetName As String = CStr(config(&quot;sheetName&quot;))&#xD;&#xA;        Dim startRow As Integer = Convert.ToInt32(config(&quot;startRow&quot;))&#xD;&#xA;        Dim endRow As Integer = Convert.ToInt32(config(&quot;endRow&quot;))&#xD;&#xA;        Dim sourceColumn As String = CStr(config(&quot;sourceColumn&quot;))&#xD;&#xA;        Dim targetColumn As String = CStr(config(&quot;targetColumn&quot;))&#xD;&#xA;&#xD;&#xA;        worksheet = CType(workbook.Sheets(sheetName), Microsoft.Office.Interop.Excel.Worksheet)&#xD;&#xA;&#xD;&#xA;        Dim rowCount As Integer = endRow - startRow + 1&#xD;&#xA;&#xD;&#xA;        Dim sourceRange As Microsoft.Office.Interop.Excel.Range = worksheet.Range(sourceColumn &amp; startRow.ToString(), sourceColumn &amp; endRow.ToString())&#xD;&#xA;        Dim targetRange As Microsoft.Office.Interop.Excel.Range = worksheet.Range(targetColumn &amp; startRow.ToString(), targetColumn &amp; endRow.ToString())&#xD;&#xA;&#xD;&#xA;        Dim sourceValues(,) As Object = TryCast(sourceRange.Value2, Object(,))&#xD;&#xA;        If sourceValues Is Nothing Then ReDim sourceValues(rowCount, 1)&#xD;&#xA;&#xD;&#xA;        For i As Integer = 1 To rowCount&#xD;&#xA;            Dim colorText As String = If(sourceValues(i, 1) IsNot Nothing, sourceValues(i, 1).ToString(), &quot;&quot;)&#xD;&#xA;            Dim color As System.Drawing.Color = System.Drawing.Color.White&#xD;&#xA;&#xD;&#xA;            If Not String.IsNullOrEmpty(colorText) Then&#xD;&#xA;                Try&#xD;&#xA;                    If colorText.Contains(&quot;R=&quot;) AndAlso colorText.Contains(&quot;G=&quot;) AndAlso colorText.Contains(&quot;B=&quot;) Then&#xD;&#xA;                        Dim r As Integer = Int32.Parse(colorText.Split({&quot;R=&quot;}, StringSplitOptions.None)(1).Split(&quot;,&quot;c)(0).Trim())&#xD;&#xA;                        Dim g As Integer = Int32.Parse(colorText.Split({&quot;G=&quot;}, StringSplitOptions.None)(1).Split(&quot;,&quot;c)(0).Trim())&#xD;&#xA;                        Dim b As Integer = Int32.Parse(colorText.Split({&quot;B=&quot;}, StringSplitOptions.None)(1).Split(&quot;]&quot;c)(0).Trim())&#xD;&#xA;                        color = System.Drawing.Color.FromArgb(r, g, b)&#xD;&#xA;                    ElseIf colorText.StartsWith(&quot;Color [&quot;) Then&#xD;&#xA;                        Dim colorName As String = colorText.Replace(&quot;Color [&quot;, &quot;&quot;).Replace(&quot;]&quot;, &quot;&quot;).Trim()&#xD;&#xA;                        color = System.Drawing.Color.FromName(colorName)&#xD;&#xA;                    End If&#xD;&#xA;                Catch&#xD;&#xA;                    color = System.Drawing.Color.White&#xD;&#xA;                End Try&#xD;&#xA;            End If&#xD;&#xA;&#xD;&#xA;            CType(targetRange.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Interior.Color = System.Drawing.ColorTranslator.ToOle(color)&#xD;&#xA;        Next&#xD;&#xA;&#xD;&#xA;        sourceRange.ClearContents()&#xD;&#xA;&#xD;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(sourceRange)&#xD;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(targetRange)&#xD;&#xA;        System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet)&#xD;&#xA;        worksheet = Nothing&#xD;&#xA;    Next&#xD;&#xA;&#xD;&#xA;    workbook.Save()&#xD;&#xA;    workbook.Close(False)&#xD;&#xA;&#xD;&#xA;Catch ex As Exception&#xD;&#xA;    out_LogMessage = &quot;Excel processing failed: &quot; &amp; ex.Message &amp; Environment.NewLine &amp; ex.StackTrace&#xD;&#xA;Finally&#xD;&#xA;    Try&#xD;&#xA;        ' Attempt to reset Excel settings&#xD;&#xA;        Try&#xD;&#xA;            If excelApp IsNot Nothing Then&#xD;&#xA;                excelApp.Calculation = Microsoft.Office.Interop.Excel.XlCalculation.xlCalculationAutomatic&#xD;&#xA;            End If&#xD;&#xA;        Catch restoreEx As Exception&#xD;&#xA;            out_LogMessage &amp;= Environment.NewLine &amp; &quot;Warning: Could not restore calculation mode: &quot; &amp; restoreEx.Message&#xD;&#xA;        End Try&#xD;&#xA;&#xD;&#xA;        If excelApp IsNot Nothing Then&#xD;&#xA;            excelApp.ScreenUpdating = True&#xD;&#xA;            excelApp.EnableEvents = True&#xD;&#xA;            excelApp.Quit()&#xD;&#xA;        End If&#xD;&#xA;&#xD;&#xA;        If worksheet IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet)&#xD;&#xA;        If workbook IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook)&#xD;&#xA;        If excelApp IsNot Nothing Then System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp)&#xD;&#xA;&#xD;&#xA;        worksheet = Nothing&#xD;&#xA;        workbook = Nothing&#xD;&#xA;        excelApp = Nothing&#xD;&#xA;&#xD;&#xA;        GC.Collect()&#xD;&#xA;        GC.WaitForPendingFinalizers()&#xD;&#xA;&#xD;&#xA;    Catch finalEx As Exception&#xD;&#xA;        out_LogMessage &amp;= Environment.NewLine &amp; &quot;Finalizer error: &quot; &amp; finalEx.Message&#xD;&#xA;    End Try&#xD;&#xA;End Try" DisplayName="Private: Invoke Code - Color Excel" sap:VirtualizedContainerService.HintSize="334,165" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+            <ui:InvokeCode.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExcelFilePath" />
+              </InArgument>
+              <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))" x:Key="in_SheetConfigs">
+                <VisualBasicValue x:TypeArguments="scg:List(scg:Dictionary(x:String, x:Object))" ExpressionText="DictList" />
+              </InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_LogMessage">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="LogMessage" />
+              </OutArgument>
+            </ui:InvokeCode.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeCode>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_205" />
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

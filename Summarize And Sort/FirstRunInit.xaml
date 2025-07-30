@@ -6,7 +6,7 @@
     <x:Property Name="out_dt_Utredning" Type="OutArgument(sd:DataTable)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1726,1622</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1382,1622</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -339,7 +339,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[out_dt_Aktualisering Is Nothing OrElse out_dt_Aktualisering.RowCount &lt; 1]" DisplayName="If out_dt_Aktualisering &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_9">
+            <If Condition="[out_dt_Aktualisering Is Nothing OrElse out_dt_Aktualisering.RowCount &lt; 1]" DisplayName="If out_dt_Aktualisering &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_18">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -548,7 +548,7 @@
                 <InArgument x:TypeArguments="x:String">[If(in_Config("Environment").ToString.ToLower.Equals("test"), "240101" ,DateFromBevakning)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[out_dt_Bevakning Is Nothing OrElse out_dt_Bevakning.RowCount &lt; 1]" DisplayName="If out_dt_Bevakning &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_10">
+            <If Condition="[out_dt_Bevakning Is Nothing OrElse out_dt_Bevakning.RowCount &lt; 1]" DisplayName="If out_dt_Bevakning &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_19">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -780,7 +780,7 @@
                 <InArgument x:TypeArguments="x:String">[If(in_Config("Environment").ToString.ToLower.Equals("test"), "240101" ,DateFromMedicalRecords)]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[out_dt_MedicalRecords Is Nothing OrElse out_dt_MedicalRecords.RowCount &lt; 1]" DisplayName="If out_dt_MedicalRecords &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_13">
+            <If Condition="[out_dt_MedicalRecords Is Nothing OrElse out_dt_MedicalRecords.RowCount &lt; 1]" DisplayName="If out_dt_MedicalRecords &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_21">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>

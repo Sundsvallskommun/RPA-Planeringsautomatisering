@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2022,4506</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1274,4546</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -527,7 +527,7 @@
                                                     <av:PointCollection x:Key="ConnectorLocation">140,1616.5 140,1647.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Bevakningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Bevakningar.xaml">
+                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Bevakningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Bevakningar.xaml">
                                                   <ui:InvokeWorkflowFile.Arguments>
                                                     <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_CaseManager_dt_Bevakningar">[dt_Bevakningar_CaseManager]</OutArgument>
                                                     <InArgument x:TypeArguments="x:String" x:Key="in_CaseManager">[CaseManagerSign]</InArgument>
@@ -572,7 +572,7 @@
                                                             <av:PointCollection x:Key="ConnectorLocation">140,1882.5 140,1912.5 327,1912.5 327,2026.5</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <If Condition="[RemoveRowIndexList_Bevakningar.Count &gt; 0 OrElse &#xA;AddRowIndexList_Bevakningar.Count &gt; 0  OrElse&#xA;dt_Bevakningar_Excel.AsEnumerable().Any(Function(row) (row(&quot;Kvitteringsstatus&quot;).ToString().Trim().ToLower().Equals(&quot;kvitterat&quot;)))]" DisplayName="If Update Bevakningar" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_27">
+                                                        <If Condition="[RemoveRowIndexList_Bevakningar.Count &gt; 0 OrElse &#xA;AddRowIndexList_Bevakningar.Count &gt; 0  OrElse&#xA;dt_Bevakningar_Excel.AsEnumerable().Any(Function(row) (row(&quot;Kvitteringsstatus&quot;).ToString().Trim().ToLower().Equals(&quot;kvitterat&quot;)))]" DisplayName="If Update Bevakningar" sap:VirtualizedContainerService.HintSize="410,563" sap2010:WorkflowViewState.IdRef="If_27">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2527,7 +2527,7 @@
                   <InArgument x:TypeArguments="x:String">[FolderPath + "\"+FileName]</InArgument>
                 </Assign.Value>
               </Assign>
-              <TryCatch DisplayName="Try Catch Open Orginal File" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+              <TryCatch DisplayName="Try Catch Open Orginal File" sap:VirtualizedContainerService.HintSize="488,559" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2564,7 +2564,7 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <ui:ForEachFileX DisplayName="For Each File in Folder - get last working copy" Filter="*.xlsx" Folder="[TempFolderFilePath]" sap:VirtualizedContainerService.HintSize="644,1248" sap2010:WorkflowViewState.IdRef="ForEachFileX_3" IncludeSubDirectories="False" OrderBy="CreationDateNewFirst" SkipFolderWithoutPermission="False">
+                      <ui:ForEachFileX DisplayName="For Each File in Folder - get last working copy" Filter="*.xlsx" Folder="[TempFolderFilePath]" sap:VirtualizedContainerService.HintSize="434,432" sap2010:WorkflowViewState.IdRef="ForEachFileX_3" IncludeSubDirectories="False" OrderBy="CreationDateNewFirst" SkipFolderWithoutPermission="False">
                         <ui:ForEachFileX.Body>
                           <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                             <ActivityAction.Argument1>
@@ -2761,7 +2761,7 @@
                         <InArgument x:TypeArguments="x:String">[dt_Settings.Rows(0)("Namn (Efternamn)").ToString.Trim]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
-                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_74">
+                    <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_74">
                       <ui:AssignOperation.To>
                         <OutArgument x:TypeArguments="x:String">[CaseManagerSign]</OutArgument>
                       </ui:AssignOperation.To>
@@ -2807,7 +2807,7 @@
                   <OutArgument x:TypeArguments="x:String">[LastRun]</OutArgument>
                 </ui:ReadCell.Result>
               </ui:ReadCell>
-              <Assign DisplayName="Assign LastRun" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_40">
+              <Assign DisplayName="Assign LastRun" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_40">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[LastRun]</OutArgument>
                 </Assign.To>

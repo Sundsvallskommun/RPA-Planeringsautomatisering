@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1014,3441</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1382,3893</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Summarize_And_Sort_Bevakningar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -55,6 +55,8 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -124,9 +126,11 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Summarize_And_Sort_Bevakningar" sap:VirtualizedContainerService.HintSize="808,3376" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Summarize_And_Sort_Bevakningar" sap:VirtualizedContainerService.HintSize="808,3748" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="TempDistinctClientList" />
       <Variable x:TypeArguments="x:String" Name="str_test" />
@@ -149,7 +153,7 @@
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="746,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[CaseManagerCaps]" />
-    <If Condition="[in_dt_Bevakningar IsNot Nothing AndAlso &#xA;   in_dt_Bevakningar.AsEnumerable().&#xA;       Any(Function(row) row(&quot;Handläggare&quot;).ToString() = CaseManagerCaps)]" DisplayName="If rows for case manager exists" sap:VirtualizedContainerService.HintSize="746,3011" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[in_dt_Bevakningar IsNot Nothing AndAlso &#xA;   in_dt_Bevakningar.AsEnumerable().&#xA;       Any(Function(row) row(&quot;Handläggare&quot;).ToString() = CaseManagerCaps)]" DisplayName="If rows for case manager exists" sap:VirtualizedContainerService.HintSize="746,3383" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -157,7 +161,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="712,2527" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence sap:VirtualizedContainerService.HintSize="712,2899" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnListOrder" />
           </Sequence.Variables>
@@ -166,7 +170,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Filter Columns bev" sap:VirtualizedContainerService.HintSize="670,1817" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Filter Columns bev" sap:VirtualizedContainerService.HintSize="670,2189" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnList" />
               <Variable x:TypeArguments="x:String" Name="ColumnString" />
@@ -177,7 +181,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap2010:Annotation.AnnotationText="Unik per grej" DisplayName="Private: Assign CaseManager_dt_Aktualiseringar" sap:VirtualizedContainerService.HintSize="608,113" sap2010:WorkflowViewState.IdRef="Assign_17">
+            <Assign sap2010:Annotation.AnnotationText="Unik per grej" DisplayName="Private: Assign CaseManager_dt_Aktualiseringar" sap:VirtualizedContainerService.HintSize="586,113" sap2010:WorkflowViewState.IdRef="Assign_17">
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[TempTable]</OutArgument>
               </Assign.To>
@@ -190,7 +194,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <Assign DisplayName="Assign ColumnString" sap:VirtualizedContainerService.HintSize="608,82" sap2010:WorkflowViewState.IdRef="Assign_26">
+            <Assign DisplayName="Assign ColumnString" sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_26">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[ColumnString]</OutArgument>
               </Assign.To>
@@ -198,8 +202,8 @@
                 <InArgument x:TypeArguments="x:String">[in_Config("ColumnsInBevakningar").ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[ColumnString]" />
-            <Assign DisplayName="Assign Column List" sap:VirtualizedContainerService.HintSize="608,82" sap2010:WorkflowViewState.IdRef="Assign_20">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[ColumnString]" />
+            <Assign DisplayName="Assign Column List" sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_20">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[ColumnList]</OutArgument>
               </Assign.To>
@@ -207,7 +211,7 @@
                 <InArgument x:TypeArguments="scg:List(x:String)">[ColumnString.Split(";"c).ToList()]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_dt_Bevakningar.Columns" sap:VirtualizedContainerService.HintSize="608,52" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[in_dt_Bevakningar.Columns]">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in_dt_Bevakningar.Columns" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[in_dt_Bevakningar.Columns]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -257,7 +261,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
-            <Assign DisplayName="Private: Assign TempDistinctClientList Aktualiseringar" sap:VirtualizedContainerService.HintSize="608,83" sap2010:WorkflowViewState.IdRef="Assign_23">
+            <Assign DisplayName="Private: Assign TempDistinctClientList Aktualiseringar" sap:VirtualizedContainerService.HintSize="586,83" sap2010:WorkflowViewState.IdRef="Assign_23">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[TempDistinctClientList]</OutArgument>
               </Assign.To>
@@ -266,7 +270,7 @@
                      Select(Function(row) row.Field(Of String)("Personnr")).Distinct().ToList()]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap2010:Annotation.AnnotationText="Hämtar ut och slår ihop en lista med distinkta klienter som handläggaren är assignad till." DisplayName="Private: Assign io_DistinctClientList Aktualiseringar" sap:VirtualizedContainerService.HintSize="608,124" sap2010:WorkflowViewState.IdRef="Assign_24">
+            <Assign sap2010:Annotation.AnnotationText="Hämtar ut och slår ihop en lista med distinkta klienter som handläggaren är assignad till." DisplayName="Private: Assign io_DistinctClientList Aktualiseringar" sap:VirtualizedContainerService.HintSize="586,124" sap2010:WorkflowViewState.IdRef="Assign_24">
               <Assign.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">[io_DistinctClientList]</OutArgument>
               </Assign.To>
@@ -279,8 +283,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Antal i listan bevakning: &quot; + io_DistinctClientList.Count.ToString]" />
-            <If Condition="[TempTable.RowCount &gt; 0]" DisplayName="If TempTable &gt; 0 Utredningar" sap:VirtualizedContainerService.HintSize="608,666" sap2010:WorkflowViewState.IdRef="If_3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Antal i listan bevakning: &quot; + io_DistinctClientList.Count.ToString]" />
+            <If Condition="[TempTable.RowCount &gt; 0]" DisplayName="If TempTable &gt; 0 Utredningar" sap:VirtualizedContainerService.HintSize="586,1038" sap2010:WorkflowViewState.IdRef="If_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -289,47 +293,98 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="574,484" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                <Sequence sap:VirtualizedContainerService.HintSize="552,856" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="TempTableSortBev" />
+                    <Variable x:TypeArguments="x:Int32" Name="DaysToShow" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Private: tempTable Sort by date bevakning" sap:VirtualizedContainerService.HintSize="532,83" sap2010:WorkflowViewState.IdRef="Assign_25">
+                  <Assign DisplayName="DaysToShow" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_37">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="sd:DataTable">[TempTable]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[DaysToShow]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[TempTable.AsEnumerable().
-    OrderBy(Function(row) DateTime.ParseExact(row("Datum").ToString(), "yyMMdd", System.Globalization.CultureInfo.InvariantCulture)).
-    CopyToDataTable()]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[CInt(in_Config("DaysToShowBev").ToString)]</InArgument>
                     </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <ui:CommentOut sap2010:Annotation.AnnotationText="Detta är vad som ska användas om man bara vill ha ut 30. " DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,273" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,194" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <Assign DisplayName="Private: tempTable take last days" sap:VirtualizedContainerService.HintSize="510,83" sap2010:WorkflowViewState.IdRef="Assign_34">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataTable">[TempTableSortBev]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[If(
+    TempTable.AsEnumerable().Any(Function(r) Math.Abs((DateTime.ParseExact(r("Datum").ToString(), "yyMMdd", Globalization.CultureInfo.InvariantCulture) - Now).Days) &lt;= DaysToShow),
+    TempTable.AsEnumerable().Where(Function(r) Math.Abs((DateTime.ParseExact(r("Datum").ToString(), "yyMMdd", Globalization.CultureInfo.InvariantCulture) - Now).Days) &lt;= DaysToShow).CopyToDataTable(),
+    TempTable.Clone()
+)]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <If Condition="[TempTableSortBev.RowCount &gt; 1]" sap:VirtualizedContainerService.HintSize="510,523" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,171" sap2010:WorkflowViewState.IdRef="Sequence_33">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Private: tempTable take 30" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_33">
+                        <Assign DisplayName="Private: tempTable Sort by date bevakning" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_25">
                           <Assign.To>
                             <OutArgument x:TypeArguments="sd:DataTable">[TempTable]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[TempTable.AsEnumerable().
-	Take(30).CopyToDataTable]</InArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[TempTableSortBev.AsEnumerable().
+    OrderBy(Function(row) DateTime.ParseExact(row("Datum").ToString(), "yyMMdd", System.Globalization.CultureInfo.InvariantCulture)).
+    CopyToDataTable()]</InArgument>
                           </Assign.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                         </Assign>
                       </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Private: re assign " sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_38">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="sd:DataTable">[TempTable]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="sd:DataTable">[TempTableSortBev]</InArgument>
+                          </Assign.Value>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -357,7 +412,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeCode>
-          <Sequence DisplayName="Remove new lines in cell" sap:VirtualizedContainerService.HintSize="690,902" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence DisplayName="Remove new lines in cell" sap:VirtualizedContainerService.HintSize="670,81" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>

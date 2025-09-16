@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.1.15",
+  "projectVersion": "1.1.17",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -51,6 +51,13 @@
         "testCaseId": "821b258c-c12f-49af-929c-f4deb5bb9d0b",
         "testCaseType": "TestCase",
         "fileName": "Tests\\ProcessTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "91dab341-1a00-44ca-aff0-1b478fe7e758",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TestCaseSumAndSortBev.xaml"
       }
     ],
     "modernBehavior": true,

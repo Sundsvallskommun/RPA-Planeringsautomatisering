@@ -6,7 +6,7 @@
     <x:Property Name="out_dt_Utredning" Type="OutArgument(sd:DataTable)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1416,1679</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1382,1177</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -130,7 +130,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="588,1614" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="588,1112" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DateTomUtredning" />
       <Variable x:TypeArguments="x:String" Name="DateFromUtredning" />
@@ -332,9 +332,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <If Condition="[in_Config(&quot;Environment&quot;).Equals(&quot;Test&quot;)]" sap:VirtualizedContainerService.HintSize="526,1085" sap2010:WorkflowViewState.IdRef="If_24">
+    <If Condition="[in_Config(&quot;Environment&quot;).Equals(&quot;Test&quot;)]" sap:VirtualizedContainerService.HintSize="526,583" sap2010:WorkflowViewState.IdRef="If_25">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="492,763" sap2010:WorkflowViewState.IdRef="Sequence_103">
+        <Sequence sap:VirtualizedContainerService.HintSize="492,261" sap2010:WorkflowViewState.IdRef="Sequence_103">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -369,10 +375,10 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <Sequence sap:VirtualizedContainerService.HintSize="450,583" sap2010:WorkflowViewState.IdRef="Sequence_111">
+          <Sequence sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_111">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -837,7 +843,7 @@
                       <OutArgument x:TypeArguments="x:String">[DateFromMedicalRecords]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[If(in_Config("Environment").ToString.ToLower.Equals("test"), "240101" ,DateFromMedicalRecords)]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[If(in_Config("Environment").ToString.ToLower.Equals("test"), "250801" ,DateFromMedicalRecords)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <If Condition="[out_dt_MedicalRecords Is Nothing OrElse out_dt_MedicalRecords.RowCount &lt; 1]" DisplayName="If out_dt_MedicalRecords &gt; 0" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="If_21">

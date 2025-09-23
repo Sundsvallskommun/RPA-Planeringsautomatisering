@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1416,4505</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2022,4505</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -245,7 +245,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Flowchart.StartNode>
-            <x:Reference>__ReferenceID35</x:Reference>
+            <x:Reference>__ReferenceID36</x:Reference>
           </Flowchart.StartNode>
           <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_2">
             <sap:WorkflowViewStateService.ViewState>
@@ -277,7 +277,7 @@
                     <av:Point x:Key="ShapeLocation">95,546.5</av:Point>
                     <av:Size x:Key="ShapeSize">70,87</av:Size>
                     <av:PointCollection x:Key="TrueConnector">95,590 70,590 70,739.5 100,739.5 100,769.5</av:PointCollection>
-                    <av:PointCollection x:Key="FalseConnector">165,590 350,590 350,738.5</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">165,590 350,590 350,740.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <FlowDecision.True>
@@ -286,7 +286,7 @@
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">0,769.5</av:Point>
                         <av:Size x:Key="ShapeSize">200,81</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">200,810 230,810 230,808 250,808</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">200,810 250,810</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Sequence DisplayName="Copy Files" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_72">
@@ -382,9 +382,9 @@
                       <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">250,738.5</av:Point>
+                            <av:Point x:Key="ShapeLocation">250,740.5</av:Point>
                             <av:Size x:Key="ShapeSize">200,139</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">350,877.5 350,933.5</av:PointCollection>
+                            <av:PointCollection x:Key="ConnectorLocation">350,879.5 350,909.5 349.5,909.5 349.5,933.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Hämtar alla blad och sparar de som datatabeller. (Med och utan kolumerna: Prioritet,Status och Kommentar)" DisplayName="Get Data From Excel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="True" WorkflowFileName="Excel\Get Data From Excel.xaml">
@@ -411,7 +411,7 @@
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">288.5,933.5</av:Point>
                                 <av:Size x:Key="ShapeSize">122,87</av:Size>
-                                <av:PointCollection x:Key="TrueConnector">288.5,977 148,977 148,1034</av:PointCollection>
+                                <av:PointCollection x:Key="TrueConnector">288.5,977 148,977 148,1024</av:PointCollection>
                                 <av:PointCollection x:Key="FalseConnector">411.5,977 510,977 510,1234</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -419,9 +419,9 @@
                               <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <av:Point x:Key="ShapeLocation">48,1034</av:Point>
+                                    <av:Point x:Key="ShapeLocation">48,1024</av:Point>
                                     <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                    <av:PointCollection x:Key="ConnectorLocation">148,1087 148,1117</av:PointCollection>
+                                    <av:PointCollection x:Key="ConnectorLocation">148,1076 148,1126</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize Aktualiseringar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Aktualiseringar.xaml">
@@ -438,9 +438,9 @@
                                   <FlowStep x:Name="__ReferenceID17" sap2010:WorkflowViewState.IdRef="FlowStep_6">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">48,1117</av:Point>
+                                        <av:Point x:Key="ShapeLocation">48,1126</av:Point>
                                         <av:Size x:Key="ShapeSize">200,124</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">148,1241 148,1296</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">148,1250 148,1366</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en lista på de rader som saknas i Excelfilen. (Aktualiseringar)" DisplayName="Compare Exccel And Procapita.xaml - Aktualiseringar" sap:VirtualizedContainerService.HintSize="200,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Excel\Compare Exccel And Procapita.xaml">
@@ -460,9 +460,9 @@
                                       <FlowStep x:Name="__ReferenceID31" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <av:Point x:Key="ShapeLocation">48,1296</av:Point>
+                                            <av:Point x:Key="ShapeLocation">48,1366</av:Point>
                                             <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                            <av:PointCollection x:Key="ConnectorLocation">148,1349 148,1379 337.75,1379 337.75,1486.5</av:PointCollection>
+                                            <av:PointCollection x:Key="ConnectorLocation">148,1418 148,1448 337.5,1448 337.5,1486.5</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If Condition="[RemoveRowIndexList_Aktualiseringar.Count &gt; 0 OrElse &#xA;AddRowIndexList_Aktualiseringar.Count &gt; 0 OrElse&#xA;dt_Aktualiseringar_Excel.AsEnumerable().Any(Function(row) (row(&quot;Kvitteringsstatus&quot;).ToString().Trim().ToLower().Equals(&quot;kvitterat&quot;)))]" DisplayName="If Update Aktualiseringar" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_28">
@@ -524,7 +524,7 @@
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <av:Point x:Key="ShapeLocation">40,1563.5</av:Point>
                                                     <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                                    <av:PointCollection x:Key="ConnectorLocation">140,1616.5 140,1647.5</av:PointCollection>
+                                                    <av:PointCollection x:Key="ConnectorLocation">140,1615.5 140,1665.5</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Bevakningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Bevakningar.xaml">
@@ -545,9 +545,9 @@
                                                   <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_9">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">40,1647.5</av:Point>
+                                                        <av:Point x:Key="ShapeLocation">40,1665.5</av:Point>
                                                         <av:Size x:Key="ShapeSize">200,124</av:Size>
-                                                        <av:PointCollection x:Key="ConnectorLocation">140,1771.5 140,1830.5</av:PointCollection>
+                                                        <av:PointCollection x:Key="ConnectorLocation">140,1789.5 140,1910.5</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
                                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en lista på de rader som saknas i Excelfilen. (Bevakningar)" DisplayName="Compare Exccel And Procapita.xaml - Bevakningar" sap:VirtualizedContainerService.HintSize="200,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Excel\Compare Exccel And Procapita.xaml">
@@ -567,9 +567,9 @@
                                                       <FlowStep x:Name="__ReferenceID30" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <av:Point x:Key="ShapeLocation">40,1830.5</av:Point>
+                                                            <av:Point x:Key="ShapeLocation">40,1910.5</av:Point>
                                                             <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                                            <av:PointCollection x:Key="ConnectorLocation">140,1882.5 140,1912.5 327,1912.5 327,2026.5</av:PointCollection>
+                                                            <av:PointCollection x:Key="ConnectorLocation">140,1962.5 140,1992.5 327,1992.5 327,2026.5</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                         <If Condition="[RemoveRowIndexList_Bevakningar.Count &gt; 0 OrElse &#xA;AddRowIndexList_Bevakningar.Count &gt; 0  OrElse&#xA;dt_Bevakningar_Excel.AsEnumerable().Any(Function(row) (row(&quot;Kvitteringsstatus&quot;).ToString().Trim().ToLower().Equals(&quot;kvitterat&quot;)))]" DisplayName="If Update Bevakningar" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_27">
@@ -631,7 +631,7 @@
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <av:Point x:Key="ShapeLocation">40,2104</av:Point>
                                                                     <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                                                    <av:PointCollection x:Key="ConnectorLocation">140,2157 140,2177.5</av:PointCollection>
+                                                                    <av:PointCollection x:Key="ConnectorLocation">140,2156 140,2206</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort Utredningar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="Summarize And Sort\Summarize And Sort Utredningar.xaml">
@@ -652,9 +652,9 @@
                                                                   <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_12">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <av:Point x:Key="ShapeLocation">40,2177.5</av:Point>
+                                                                        <av:Point x:Key="ShapeLocation">40,2206</av:Point>
                                                                         <av:Size x:Key="ShapeSize">200,124</av:Size>
-                                                                        <av:PointCollection x:Key="ConnectorLocation">140,2301.5 140,2356.5</av:PointCollection>
+                                                                        <av:PointCollection x:Key="ConnectorLocation">140,2330 140,2426.5</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Jämför procapita och excel-datatabell. Returnerar en lista på de rader som saknas i Excelfilen. (Utredningar)" DisplayName="Compare Exccel And Procapita.xaml - Utredningar" sap:VirtualizedContainerService.HintSize="200,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Excel\Compare Exccel And Procapita.xaml">
@@ -674,9 +674,9 @@
                                                                       <FlowStep x:Name="__ReferenceID32" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                            <av:Point x:Key="ShapeLocation">40,2356.5</av:Point>
+                                                                            <av:Point x:Key="ShapeLocation">40,2426.5</av:Point>
                                                                             <av:Size x:Key="ShapeSize">200,52</av:Size>
-                                                                            <av:PointCollection x:Key="ConnectorLocation">140,2408.5 140,2438.5 404.75,2438.5 404.75,2536.5</av:PointCollection>
+                                                                            <av:PointCollection x:Key="ConnectorLocation">140,2478.5 140,2508.5 404.75,2508.5 404.75,2536.5</av:PointCollection>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                         <If Condition="[RemoveRowIndexList_Utredningar.Count &gt; 0 OrElse &#xA;AddRowIndexList_Utredningar.Count &gt; 0 OrElse&#xA;dt_Utredning_Excel.AsEnumerable().Any(Function(row) (row(&quot;Kvitteringsstatus&quot;).ToString().Trim().ToLower().Equals(&quot;kvitterat&quot;)))]" DisplayName="If Update Utredning" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_29">
@@ -723,16 +723,13 @@
                                                                           </If.Else>
                                                                         </If>
                                                                         <FlowStep.Next>
-                                                                          <FlowDecision x:Name="__ReferenceID1" DisplayName="dt_MedicalRecords exist?" sap:VirtualizedContainerService.HintSize="137,87" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
-                                                                            <FlowDecision.Condition>
-                                                                              <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="(io_dt_MedicalRecords_AllCaseManagers IsNot Nothing) AndAlso (io_dt_MedicalRecords_AllCaseManagers.Rows.Count &gt; 0)" />
-                                                                            </FlowDecision.Condition>
+                                                                          <FlowDecision x:Name="__ReferenceID1" Condition="[(io_dt_MedicalRecords_AllCaseManagers IsNot Nothing) AndAlso (io_dt_MedicalRecords_AllCaseManagers.Rows.Count &gt; 0)]" DisplayName="dt_MedicalRecords exist?" sap:VirtualizedContainerService.HintSize="137,87" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                 <av:Point x:Key="ShapeLocation">370.5,2536.5</av:Point>
                                                                                 <av:Size x:Key="ShapeSize">137,87</av:Size>
                                                                                 <av:PointCollection x:Key="TrueConnector">370.5,2580 150,2580 150,2614</av:PointCollection>
-                                                                                <av:PointCollection x:Key="FalseConnector">507.5,2580 570,2580 570,2978.5</av:PointCollection>
+                                                                                <av:PointCollection x:Key="FalseConnector">507.5,2580 570,2580 570,2744</av:PointCollection>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                             <FlowDecision.True>
@@ -744,11 +741,9 @@
                                                                                     <av:PointCollection x:Key="ConnectorLocation">150,2666 150,2701.54</av:PointCollection>
                                                                                   </scg:Dictionary>
                                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort\Reformat Citizen Number List.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="Summarize And Sort\Reformat Citizen Number List.xaml">
+                                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Summarize And Sort\Reformat Citizen Number List.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="Summarize And Sort\Reformat Citizen Number List.xaml">
                                                                                   <ui:InvokeWorkflowFile.Arguments>
-                                                                                    <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">
-                                                                                      <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="DistinctClientList" />
-                                                                                    </InOutArgument>
+                                                                                    <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="io_DistinctClientList">[DistinctClientList]</InOutArgument>
                                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -911,7 +906,7 @@
                                                                                                           </scg:Dictionary>
                                                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                                                       </ui:ReadRange>
-                                                                                                      <Assign DisplayName="Assign dt_DashboardToExcel" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                                                                      <Assign DisplayName="Assign dt_DashboardToExcel" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Assign_5">
                                                                                                         <Assign.To>
                                                                                                           <OutArgument x:TypeArguments="sd:DataTable">[dt_DashboardToExcel]</OutArgument>
                                                                                                         </Assign.To>
@@ -1449,7 +1444,13 @@
                                                                                                           </Sequence>
                                                                                                         </If.Else>
                                                                                                       </If>
-                                                                                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="450,516" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                                                                                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,516" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                                          </scg:Dictionary>
+                                                                                                        </sap:WorkflowViewStateService.ViewState>
                                                                                                         <TryCatch.Try>
                                                                                                           <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="376,288" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="3" RetryInterval="[TimeSpan.FromSeconds(0)]">
                                                                                                             <ui:RetryScope.ActivityBody>
@@ -2341,7 +2342,19 @@
                                                                               </FlowStep>
                                                                             </FlowDecision.True>
                                                                             <FlowDecision.False>
-                                                                              <x:Reference>__ReferenceID0</x:Reference>
+                                                                              <FlowStep x:Name="__ReferenceID35">
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <av:Point x:Key="ShapeLocation">470,2744</av:Point>
+                                                                                    <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                                                    <av:PointCollection x:Key="ConnectorLocation">570,2796 570,2978.5</av:PointCollection>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Info" Message="[&quot;Inga journalanteckningar funna för handläggare&quot;]" />
+                                                                                <FlowStep.Next>
+                                                                                  <x:Reference>__ReferenceID0</x:Reference>
+                                                                                </FlowStep.Next>
+                                                                              </FlowStep>
                                                                             </FlowDecision.False>
                                                                           </FlowDecision>
                                                                         </FlowStep.Next>
@@ -2446,7 +2459,7 @@
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">403,389</av:Point>
                     <av:Size x:Key="ShapeSize">200,52</av:Size>
-                    <av:PointCollection x:Key="ConnectorLocation">503,442 503,472 350,472 350,738.5</av:PointCollection>
+                    <av:PointCollection x:Key="ConnectorLocation">503,441 503,471 350,471 350,740.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <Assign DisplayName="Assign DistinctClientList Not First Run" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="Assign_51">
@@ -2486,7 +2499,7 @@
           <x:Reference>__ReferenceID18</x:Reference>
           <x:Reference>__ReferenceID19</x:Reference>
           <x:Reference>__ReferenceID20</x:Reference>
-          <FlowStep x:Name="__ReferenceID35" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+          <FlowStep x:Name="__ReferenceID36" sap2010:WorkflowViewState.IdRef="FlowStep_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">240,148.5</av:Point>
@@ -2544,7 +2557,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <Assign DisplayName="Assign ExcelFilePath" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_102">
+              <Assign DisplayName="Assign ExcelFilePath" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_102">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[ExcelFilePath]</OutArgument>
                 </Assign.To>
@@ -2552,7 +2565,7 @@
                   <InArgument x:TypeArguments="x:String">[FolderPath + "\"+FileName]</InArgument>
                 </Assign.Value>
               </Assign>
-              <TryCatch DisplayName="Try Catch Open Orginal File" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+              <TryCatch DisplayName="Try Catch Open Orginal File" sap:VirtualizedContainerService.HintSize="488,559" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2578,10 +2591,10 @@
                   </Sequence>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,371" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -2820,7 +2833,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_103">
+              <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_103">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[CaseManager]</OutArgument>
                 </Assign.To>
@@ -2833,7 +2846,7 @@
                   <OutArgument x:TypeArguments="x:String">[LastRun]</OutArgument>
                 </ui:ReadCell.Result>
               </ui:ReadCell>
-              <Assign DisplayName="Assign LastRun" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_40">
+              <Assign DisplayName="Assign LastRun" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_40">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[LastRun]</OutArgument>
                 </Assign.To>
@@ -2872,6 +2885,7 @@
             </sap:WorkflowViewStateService.ViewState>
           </FlowDecision>
           <x:Reference>__ReferenceID34</x:Reference>
+          <x:Reference>__ReferenceID35</x:Reference>
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>

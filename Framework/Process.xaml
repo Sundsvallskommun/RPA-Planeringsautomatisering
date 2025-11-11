@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1699,4506</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1995,4506</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="100">
@@ -2507,7 +2507,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">340,229.5 340,279.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Init Files" sap:VirtualizedContainerService.HintSize="840,3981" sap2010:WorkflowViewState.IdRef="Sequence_57">
+            <Sequence DisplayName="Init Files" sap:VirtualizedContainerService.HintSize="650,1978" sap2010:WorkflowViewState.IdRef="Sequence_57">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="FirstName" />
                 <Variable x:TypeArguments="x:String" Name="SurName" />
@@ -2522,7 +2522,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign DisplayName="Multiple Assign Config" sap:VirtualizedContainerService.HintSize="778,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+              <ui:MultipleAssign DisplayName="Multiple Assign Config" sap:VirtualizedContainerService.HintSize="588,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
@@ -2558,7 +2558,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <Assign DisplayName="Assign ExcelFilePath" sap:VirtualizedContainerService.HintSize="778,82" sap2010:WorkflowViewState.IdRef="Assign_102">
+              <Assign DisplayName="Assign ExcelFilePath" sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_102">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[ExcelFilePath]</OutArgument>
                 </Assign.To>
@@ -2566,7 +2566,7 @@
                   <InArgument x:TypeArguments="x:String">[FolderPath + "\"+FileName]</InArgument>
                 </Assign.Value>
               </Assign>
-              <TryCatch DisplayName="Try Catch Open Orginal File" sap:VirtualizedContainerService.HintSize="778,2939" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+              <TryCatch DisplayName="Try Catch Open Orginal File" sap:VirtualizedContainerService.HintSize="588,936" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2592,7 +2592,7 @@
                   </Sequence>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="744,2776" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="554,773" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2603,128 +2603,112 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <ui:ForEachFileX DisplayName="For Each File in Folder - get last working copy" Filter="*.xlsx" Folder="[TempFolderFilePath]" sap:VirtualizedContainerService.HintSize="738,2707" sap2010:WorkflowViewState.IdRef="ForEachFileX_3" IncludeSubDirectories="False" OrderBy="CreationDateNewFirst" SkipFolderWithoutPermission="False">
-                        <ui:ForEachFileX.Body>
-                          <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
-                            <ActivityAction.Argument1>
-                              <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
-                            </ActivityAction.Argument1>
-                            <ActivityAction.Argument2>
-                              <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
-                            </ActivityAction.Argument2>
-                            <If Condition="[CurrentFile.Name.Contains(FileName.replace(&quot;.xlsx&quot;,&quot;&quot;)) AndAlso Not CurrentFile.Name.Contains(Now.ToString(&quot;yyMMdd&quot;))]" DisplayName="If last copy" sap:VirtualizedContainerService.HintSize="704,2457" sap2010:WorkflowViewState.IdRef="If_26">
+                      <Sequence sap:VirtualizedContainerService.HintSize="548,684" sap2010:WorkflowViewState.IdRef="Sequence_204">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Error" Message="[&quot;Filen verkar vara korrupt.&quot; + exception.Message]" />
+                        <Throw Exception="[New SystemException(&quot;Filen verkar vara korrupt.&quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="486,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,311" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,192" sap2010:WorkflowViewState.IdRef="Sequence_203">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If.Then>
-                                <TryCatch DisplayName="Try Catch Open File" sap:VirtualizedContainerService.HintSize="628,2187" sap2010:WorkflowViewState.IdRef="TryCatch_21">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <TryCatch.Try>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="590,1959" sap2010:WorkflowViewState.IdRef="Sequence_167">
+                              <ui:ForEachFileX sap2010:Annotation.AnnotationText="Verkar inte gå att kopiera, måste troligen återskapa dessa i gränssnittet." DisplayName="For Each File in Folder - get last working copy" Filter="*.xlsx" Folder="[TempFolderFilePath]" sap:VirtualizedContainerService.HintSize="388,81" sap2010:WorkflowViewState.IdRef="ForEachFileX_3" IncludeSubDirectories="False" OrderBy="CreationDateNewFirst" SkipFolderWithoutPermission="False">
+                                <ui:ForEachFileX.Body>
+                                  <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+                                    <ActivityAction.Argument1>
+                                      <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+                                    </ActivityAction.Argument1>
+                                    <ActivityAction.Argument2>
+                                      <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                                    </ActivityAction.Argument2>
+                                    <If Condition="[CurrentFile.Name.Contains(FileName.replace(&quot;.xlsx&quot;,&quot;&quot;)) AndAlso Not CurrentFile.Name.Contains(Now.ToString(&quot;yyMMdd&quot;))]" DisplayName="If last copy" sap:VirtualizedContainerService.HintSize="662,1732" sap2010:WorkflowViewState.IdRef="If_26">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,92" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;Försöker öppna kopia: &quot; + CurrentFile.FullName.ToString]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:LogMessage>
-                                      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Settings]" DisplayName="Read Range Workbook Try open old file" sap:VirtualizedContainerService.HintSize="528,88" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Inställningar" WorkbookPath="[CurrentFile.FullName.ToString]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:ReadRange>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,92" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Info" Message="[&quot;Kunde öppna fil&quot;]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:LogMessage>
-                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="528,52" sap2010:WorkflowViewState.IdRef="TryCatch_16">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <TryCatch.Try>
-                                          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="RetryScope_9" NumberOfRetries="5" RetryInterval="[TimeSpan.FromSeconds(10)]">
-                                            <ui:RetryScope.ActivityBody>
-                                              <ActivityAction>
-                                                <ui:CopyFile ContinueOnError="{x:Null}" Destination="[FolderPath]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[CurrentFile.FullName]">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:CopyFile>
-                                              </ActivityAction>
-                                            </ui:RetryScope.ActivityBody>
-                                            <ui:RetryScope.Condition>
-                                              <ActivityFunc x:TypeArguments="x:Boolean" />
-                                            </ui:RetryScope.Condition>
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </ui:RetryScope>
-                                        </TryCatch.Try>
-                                        <TryCatch.Catches>
-                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_16">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ActivityAction x:TypeArguments="s:Exception">
-                                              <ActivityAction.Argument>
-                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                              </ActivityAction.Argument>
-                                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,604" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                                      <If.Then>
+                                        <TryCatch DisplayName="Try Catch Open File" sap:VirtualizedContainerService.HintSize="628,1550" sap2010:WorkflowViewState.IdRef="TryCatch_21">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <TryCatch.Try>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="590,1242" sap2010:WorkflowViewState.IdRef="Sequence_167">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,92" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;Försöker öppna kopia: &quot; + CurrentFile.FullName.ToString]">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:LogMessage>
+                                              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Settings]" DisplayName="Read Range Workbook Try open old file" sap:VirtualizedContainerService.HintSize="528,88" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Inställningar" WorkbookPath="[CurrentFile.FullName.ToString]">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:ReadRange>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,92" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Info" Message="[&quot;Kunde öppna fil&quot;]">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:LogMessage>
+                                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="528,52" sap2010:WorkflowViewState.IdRef="TryCatch_16">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
                                                 <TryCatch.Try>
-                                                  <Sequence sap:VirtualizedContainerService.HintSize="450,376" sap2010:WorkflowViewState.IdRef="Sequence_198">
+                                                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="RetryScope_9" NumberOfRetries="5" RetryInterval="[TimeSpan.FromSeconds(10)]">
+                                                    <ui:RetryScope.ActivityBody>
+                                                      <ActivityAction>
+                                                        <ui:CopyFile ContinueOnError="{x:Null}" Destination="[FolderPath]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[CurrentFile.FullName]">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:CopyFile>
+                                                      </ActivityAction>
+                                                    </ui:RetryScope.ActivityBody>
+                                                    <ui:RetryScope.Condition>
+                                                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                                                    </ui:RetryScope.Condition>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[&quot;Kunde inte kopiera. filen: &quot; + CurrentFile.FullName + &quot;. Felmeddelande: &quot; + exception.Message]">
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                    </ui:LogMessage>
-                                                    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
-                                                  </Sequence>
+                                                  </ui:RetryScope>
                                                 </TryCatch.Try>
                                                 <TryCatch.Catches>
-                                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_15">
+                                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_16">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2735,62 +2719,56 @@
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                       </ActivityAction.Argument>
-                                                      <Sequence sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_202">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Warn" Message="[&quot;Failed to kill Excel.&quot;]" />
-                                                        <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_5" />
-                                                      </Sequence>
+                                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,604" sap2010:WorkflowViewState.IdRef="TryCatch_15">
+                                                        <TryCatch.Try>
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="450,376" sap2010:WorkflowViewState.IdRef="Sequence_198">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[&quot;Kunde inte kopiera. filen: &quot; + CurrentFile.FullName + &quot;. Felmeddelande: &quot; + exception.Message]">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </ui:LogMessage>
+                                                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
+                                                          </Sequence>
+                                                        </TryCatch.Try>
+                                                        <TryCatch.Catches>
+                                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_15">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ActivityAction x:TypeArguments="s:Exception">
+                                                              <ActivityAction.Argument>
+                                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                              </ActivityAction.Argument>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_202">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Warn" Message="[&quot;Failed to kill Excel.&quot;]" />
+                                                                <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_5" />
+                                                              </Sequence>
+                                                            </ActivityAction>
+                                                          </Catch>
+                                                        </TryCatch.Catches>
+                                                      </TryCatch>
                                                     </ActivityAction>
                                                   </Catch>
                                                 </TryCatch.Catches>
                                               </TryCatch>
-                                            </ActivityAction>
-                                          </Catch>
-                                        </TryCatch.Catches>
-                                      </TryCatch>
-                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="528,901" sap2010:WorkflowViewState.IdRef="TryCatch_18">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <TryCatch.Try>
-                                          <ui:RetryScope DisplayName="Retry Scope Delete File" sap:VirtualizedContainerService.HintSize="376,255" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="5" RetryInterval="[TimeSpan.FromSeconds(10)]">
-                                            <ui:RetryScope.ActivityBody>
-                                              <ActivityAction>
-                                                <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[FolderPath + &quot;\&quot; + FileName]">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:DeleteFileX>
-                                              </ActivityAction>
-                                            </ui:RetryScope.ActivityBody>
-                                            <ui:RetryScope.Condition>
-                                              <ActivityFunc x:TypeArguments="x:Boolean" />
-                                            </ui:RetryScope.Condition>
-                                          </ui:RetryScope>
-                                        </TryCatch.Try>
-                                        <TryCatch.Catches>
-                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="494,738" sap2010:WorkflowViewState.IdRef="Catch`1_18">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ActivityAction x:TypeArguments="s:Exception">
-                                              <ActivityAction.Argument>
-                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                              </ActivityAction.Argument>
-                                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,669" sap2010:WorkflowViewState.IdRef="TryCatch_17">
+                                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="528,184" sap2010:WorkflowViewState.IdRef="TryCatch_18">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2798,27 +2776,26 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <TryCatch.Try>
-                                                  <Sequence sap:VirtualizedContainerService.HintSize="450,441" sap2010:WorkflowViewState.IdRef="Sequence_199">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;Kunde inte ta bort filen: &quot; + CurrentFile.FullName + &quot;. Felmeddelande: &quot; + exception.Message]">
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                    </ui:LogMessage>
-                                                    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="excel" />
-                                                    <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_6" />
-                                                  </Sequence>
+                                                  <ui:RetryScope DisplayName="Retry Scope Delete File" sap:VirtualizedContainerService.HintSize="376,255" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="5" RetryInterval="[TimeSpan.FromSeconds(10)]">
+                                                    <ui:RetryScope.ActivityBody>
+                                                      <ActivityAction>
+                                                        <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[FolderPath + &quot;\&quot; + FileName]">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:DeleteFileX>
+                                                      </ActivityAction>
+                                                    </ui:RetryScope.ActivityBody>
+                                                    <ui:RetryScope.Condition>
+                                                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                                                    </ui:RetryScope.Condition>
+                                                  </ui:RetryScope>
                                                 </TryCatch.Try>
                                                 <TryCatch.Catches>
-                                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+                                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_18">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2829,85 +2806,90 @@
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                       </ActivityAction.Argument>
-                                                      <Sequence sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_201">
+                                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,669" sap2010:WorkflowViewState.IdRef="TryCatch_17">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="Warn" Message="[&quot;Failed to kill Excel.&quot;]" />
-                                                        <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_4" />
-                                                      </Sequence>
+                                                        <TryCatch.Try>
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="450,441" sap2010:WorkflowViewState.IdRef="Sequence_199">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;Kunde inte ta bort filen: &quot; + CurrentFile.FullName + &quot;. Felmeddelande: &quot; + exception.Message]">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </ui:LogMessage>
+                                                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="excel" />
+                                                            <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_6" />
+                                                          </Sequence>
+                                                        </TryCatch.Try>
+                                                        <TryCatch.Catches>
+                                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_17">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ActivityAction x:TypeArguments="s:Exception">
+                                                              <ActivityAction.Argument>
+                                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                              </ActivityAction.Argument>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_201">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="Warn" Message="[&quot;Failed to kill Excel.&quot;]" />
+                                                                <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_4" />
+                                                              </Sequence>
+                                                            </ActivityAction>
+                                                          </Catch>
+                                                        </TryCatch.Catches>
+                                                      </TryCatch>
                                                     </ActivityAction>
                                                   </Catch>
                                                 </TryCatch.Catches>
                                               </TryCatch>
-                                            </ActivityAction>
-                                          </Catch>
-                                        </TryCatch.Catches>
-                                      </TryCatch>
-                                      <TryCatch DisplayName="Try Catch Rename File" sap:VirtualizedContainerService.HintSize="528,52" sap2010:WorkflowViewState.IdRef="TryCatch_20">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <TryCatch.Try>
-                                          <ui:RetryScope DisplayName="Retry Scope  Rename File" sap:VirtualizedContainerService.HintSize="376,318" sap2010:WorkflowViewState.IdRef="RetryScope_8" NumberOfRetries="5" RetryInterval="[TimeSpan.FromSeconds(10)]">
-                                            <ui:RetryScope.ActivityBody>
-                                              <ActivityAction>
-                                                <ui:RenameFileX DisplayName="Rename File" FilePath="[FolderPath + &quot;\&quot; + CurrentFile.Name]" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="RenameFileX_2" KeepExtension="True" NewName="[FileName]">
-                                                  <sap:WorkflowViewStateService.ViewState>
-                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                    </scg:Dictionary>
-                                                  </sap:WorkflowViewStateService.ViewState>
-                                                </ui:RenameFileX>
-                                              </ActivityAction>
-                                            </ui:RetryScope.ActivityBody>
-                                            <ui:RetryScope.Condition>
-                                              <ActivityFunc x:TypeArguments="x:Boolean" />
-                                            </ui:RetryScope.Condition>
-                                          </ui:RetryScope>
-                                        </TryCatch.Try>
-                                        <TryCatch.Catches>
-                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_20">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ActivityAction x:TypeArguments="s:Exception">
-                                              <ActivityAction.Argument>
-                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                              </ActivityAction.Argument>
-                                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,789" sap2010:WorkflowViewState.IdRef="TryCatch_19">
+                                              <TryCatch DisplayName="Try Catch Rename File" sap:VirtualizedContainerService.HintSize="528,52" sap2010:WorkflowViewState.IdRef="TryCatch_20">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
                                                 <TryCatch.Try>
-                                                  <Sequence sap:VirtualizedContainerService.HintSize="450,561" sap2010:WorkflowViewState.IdRef="Sequence_200">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Info" Message="[&quot;Kunde inte byta namn på filen &quot; + CurrentFile.FullName + &quot;. Felmeddelande: &quot; + exception.Message]">
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                    </ui:LogMessage>
-                                                    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="excel" />
-                                                    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_3" Path="[CurrentFile.FullName]" />
-                                                    <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_3" />
-                                                  </Sequence>
+                                                  <ui:RetryScope DisplayName="Retry Scope  Rename File" sap:VirtualizedContainerService.HintSize="376,318" sap2010:WorkflowViewState.IdRef="RetryScope_8" NumberOfRetries="5" RetryInterval="[TimeSpan.FromSeconds(10)]">
+                                                    <ui:RetryScope.ActivityBody>
+                                                      <ActivityAction>
+                                                        <ui:RenameFileX DisplayName="Rename File" FilePath="[FolderPath + &quot;\&quot; + CurrentFile.Name]" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="RenameFileX_2" KeepExtension="True" NewName="[FileName]">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                        </ui:RenameFileX>
+                                                      </ActivityAction>
+                                                    </ui:RetryScope.ActivityBody>
+                                                    <ui:RetryScope.Condition>
+                                                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                                                    </ui:RetryScope.Condition>
+                                                  </ui:RetryScope>
                                                 </TryCatch.Try>
                                                 <TryCatch.Catches>
-                                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_19">
+                                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_20">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2918,113 +2900,158 @@
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                       </ActivityAction.Argument>
-                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="Warn" Message="[&quot;Failed to kill Excel.&quot;]" />
+                                                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,789" sap2010:WorkflowViewState.IdRef="TryCatch_19">
+                                                        <TryCatch.Try>
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="450,561" sap2010:WorkflowViewState.IdRef="Sequence_200">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Info" Message="[&quot;Kunde inte byta namn på filen &quot; + CurrentFile.FullName + &quot;. Felmeddelande: &quot; + exception.Message]">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </ui:LogMessage>
+                                                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="excel" />
+                                                            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_3" Path="[CurrentFile.FullName]" />
+                                                            <Rethrow sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Rethrow_3" />
+                                                          </Sequence>
+                                                        </TryCatch.Try>
+                                                        <TryCatch.Catches>
+                                                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_19">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ActivityAction x:TypeArguments="s:Exception">
+                                                              <ActivityAction.Argument>
+                                                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                              </ActivityAction.Argument>
+                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="Warn" Message="[&quot;Failed to kill Excel.&quot;]" />
+                                                            </ActivityAction>
+                                                          </Catch>
+                                                        </TryCatch.Catches>
+                                                      </TryCatch>
                                                     </ActivityAction>
                                                   </Catch>
                                                 </TryCatch.Catches>
                                               </TryCatch>
-                                            </ActivityAction>
-                                          </Catch>
-                                        </TryCatch.Catches>
-                                      </TryCatch>
-                                      <Assign DisplayName="Assign out_CopyNotCoruptFile" sap:VirtualizedContainerService.HintSize="528,82" sap2010:WorkflowViewState.IdRef="Assign_100">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:String">[io_CopyNotCoruptFile(0)]</OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="x:String">["Har kopierat filen " +CurrentFile.Name.ToString]</InArgument>
-                                        </Assign.Value>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </Assign>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,52" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[CurrentFile.Name + &quot; har kopierats och bytt ut korrupt fil.&quot;]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:LogMessage>
-                                      <If Condition="[Not String.IsNullOrEmpty(dt_Settings.Rows(0)(&quot;Email&quot;).ToString())]" DisplayName="If Has Mail" sap:VirtualizedContainerService.HintSize="528,52" sap2010:WorkflowViewState.IdRef="If_24">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <If.Then>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="376,234" sap2010:WorkflowViewState.IdRef="Sequence_159">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[in_Config(&quot;CoruptFileTextToEmail&quot;).ToString]" DisplayName="Send SMTP Summary Mail Message" EnableSSL="True" From="[in_Config(&quot;MailSenderAddress&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="True" Name="[in_Config(&quot;MailSenderName&quot;).ToString]" Port="[CInt(in_Config(&quot;MailServerPort&quot;).ToString)]" SecureConnection="Auto" Server="[in_Config(&quot;MailServerAddress&quot;).ToString]" Subject="[in_Config(&quot;MailSubjectCoruptFile&quot;).ToString]" To="[dt_Settings.Rows(0)(&quot;Email&quot;).ToString]">
-                                              <ui:SendMail.Files>
-                                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                              </ui:SendMail.Files>
-                                            </ui:SendMail>
-                                          </Sequence>
-                                        </If.Then>
-                                        <If.Else>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_160">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </Sequence>
-                                        </If.Else>
-                                      </If>
-                                      <ui:Break sap:VirtualizedContainerService.HintSize="528,25" sap2010:WorkflowViewState.IdRef="Break_2" />
-                                    </Sequence>
-                                  </TryCatch.Try>
-                                  <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="594,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ActivityAction x:TypeArguments="s:Exception">
-                                        <ActivityAction.Argument>
-                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                                        </ActivityAction.Argument>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Warn" Message="[&quot;Kunde inte öppna, filen är troligen korrupt. felmeddelande: &quot; + exception.Message]" />
-                                      </ActivityAction>
-                                    </Catch>
-                                  </TryCatch.Catches>
-                                </TryCatch>
-                              </If.Then>
-                              <If.Else>
-                                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_151">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </Sequence>
-                              </If.Else>
-                            </If>
-                          </ActivityAction>
-                        </ui:ForEachFileX.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:ForEachFileX>
+                                              <Assign DisplayName="Assign out_CopyNotCoruptFile" sap:VirtualizedContainerService.HintSize="528,82" sap2010:WorkflowViewState.IdRef="Assign_100">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[io_CopyNotCoruptFile(0)]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["Har kopierat filen " +CurrentFile.Name.ToString]</InArgument>
+                                                </Assign.Value>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Assign>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="528,52" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[CurrentFile.Name + &quot; har kopierats och bytt ut korrupt fil.&quot;]">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:LogMessage>
+                                              <If Condition="[Not String.IsNullOrEmpty(dt_Settings.Rows(0)(&quot;Email&quot;).ToString())]" DisplayName="If Has Mail" sap:VirtualizedContainerService.HintSize="528,52" sap2010:WorkflowViewState.IdRef="If_24">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If.Then>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="376,234" sap2010:WorkflowViewState.IdRef="Sequence_159">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[in_Config(&quot;CoruptFileTextToEmail&quot;).ToString]" DisplayName="Send SMTP Summary Mail Message" EnableSSL="True" From="[in_Config(&quot;MailSenderAddress&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="True" Name="[in_Config(&quot;MailSenderName&quot;).ToString]" Port="[CInt(in_Config(&quot;MailServerPort&quot;).ToString)]" SecureConnection="Auto" Server="[in_Config(&quot;MailServerAddress&quot;).ToString]" Subject="[in_Config(&quot;MailSubjectCoruptFile&quot;).ToString]" To="[dt_Settings.Rows(0)(&quot;Email&quot;).ToString]">
+                                                      <ui:SendMail.Files>
+                                                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                                      </ui:SendMail.Files>
+                                                    </ui:SendMail>
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_160">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                              <ui:Break sap:VirtualizedContainerService.HintSize="528,25" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                            </Sequence>
+                                          </TryCatch.Try>
+                                          <TryCatch.Catches>
+                                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="594,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ActivityAction x:TypeArguments="s:Exception">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                                </ActivityAction.Argument>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Warn" Message="[&quot;Kunde inte öppna, filen är troligen korrupt. felmeddelande: &quot; + exception.Message]" />
+                                              </ActivityAction>
+                                            </Catch>
+                                          </TryCatch.Catches>
+                                        </TryCatch>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_151">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                  </ActivityAction>
+                                </ui:ForEachFileX.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:ForEachFileX>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                      </Sequence>
                     </ActivityAction>
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <ui:MultipleAssign DisplayName="Multiple Assign From ExcelFile" sap:VirtualizedContainerService.HintSize="778,194" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
+              <ui:MultipleAssign DisplayName="Multiple Assign From ExcelFile" sap:VirtualizedContainerService.HintSize="588,194" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                     <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_73">
@@ -3068,7 +3095,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="778,82" sap2010:WorkflowViewState.IdRef="Assign_103">
+              <Assign DisplayName="Assign CaseManager" sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_103">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[CaseManager]</OutArgument>
                 </Assign.To>
@@ -3076,12 +3103,12 @@
                   <InArgument x:TypeArguments="x:String">[SurName + ", " + FirstName]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ReadCell Cell="H2" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="778,88" sap2010:WorkflowViewState.IdRef="ReadCell_2" SheetName="Sammanfattning" WorkbookPath="[ExcelFilePath]">
+              <ui:ReadCell Cell="H2" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="588,88" sap2010:WorkflowViewState.IdRef="ReadCell_2" SheetName="Sammanfattning" WorkbookPath="[ExcelFilePath]">
                 <ui:ReadCell.Result>
                   <OutArgument x:TypeArguments="x:String">[LastRun]</OutArgument>
                 </ui:ReadCell.Result>
               </ui:ReadCell>
-              <Assign DisplayName="Assign LastRun" sap:VirtualizedContainerService.HintSize="778,82" sap2010:WorkflowViewState.IdRef="Assign_40">
+              <Assign DisplayName="Assign LastRun" sap:VirtualizedContainerService.HintSize="588,82" sap2010:WorkflowViewState.IdRef="Assign_40">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[LastRun]</OutArgument>
                 </Assign.To>

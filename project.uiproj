@@ -1,0 +1,6 @@
+{
+  "Name": "Planeringsautomatisering",
+  "ProjectType": "Process",
+  "Description": "Robotic Enterprise Framework (Windows)",
+  "MainFile": "Main.xaml"
+}

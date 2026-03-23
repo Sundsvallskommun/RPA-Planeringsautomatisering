@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.5.0",
-  "projectVersion": "1.1.23",
+  "projectVersion": "1.1.26",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -39,7 +39,6 @@
     "projectProfile": "Developement",
     "outputType": "Process",
     "libraryOptions": {
-      "includeOriginalXaml": false,
       "privateWorkflows": []
     },
     "processOptions": {
@@ -60,7 +59,6 @@
         "fileName": "Tests\\TestCaseSumAndSortBev.xaml"
       }
     ],
-    "modernBehavior": true,
     "saveToCloud": false
   },
   "arguments": {

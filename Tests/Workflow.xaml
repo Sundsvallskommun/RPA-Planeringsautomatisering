@@ -42,6 +42,8 @@
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -56,7 +58,6 @@
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
-      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
       <AssemblyReference>System.Drawing.Common</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
@@ -106,25 +107,22 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="472,1826" sap2010:WorkflowViewState.IdRef="Sequence_28">
+  <Sequence sap:VirtualizedContainerService.HintSize="1703,914.6566666666666" sap2010:WorkflowViewState.IdRef="Sequence_28">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="in_SheetName">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">Utredning</Literal>
+          <Literal x:TypeArguments="x:String">Blad1</Literal>
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="in_ExcelFilePath">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">\\safs008\RPA\VoF\RPA_029\Temp\Sammanställda klienter per handläggare\Amrén, Ida test.xlsx</Literal>
+          <Literal x:TypeArguments="x:String">C:\Users\the12lun\Desktop\New Microsoft Excel Worksheet.xlsx</Literal>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_Excel">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="New DataTable" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New DataTable]" Name="dt_Excel" />
       <Variable x:TypeArguments="sd:DataColumn" Name="Empty" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -132,73 +130,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Excel]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="410,88" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="[in_SheetName]" WorkbookPath="[in_ExcelFilePath]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel\GetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="410,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel\GetCellcolor.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExcelFilePath" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SheetName" />
-        </InArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_Excel">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Excel" />
-        </InOutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:WriteRange AddHeaders="False" DataTable="[dt_Excel]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[in_SheetName]" StartingCell="A2" WorkbookPath="[in_ExcelFilePath]" />
-    <ui:FilterDataTable DataTable="[dt_Excel]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="410,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_Excel]" SelectColumnsMode="Remove">
-      <ui:FilterDataTable.Filters>
-        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-          <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
-        </scg:List>
-      </ui:FilterDataTable.Filters>
-      <ui:FilterDataTable.SelectColumns>
-        <scg:List x:TypeArguments="InArgument" Capacity="4">
-          <InArgument x:TypeArguments="x:String">["CellColor"]</InArgument>
-        </scg:List>
-      </ui:FilterDataTable.SelectColumns>
-    </ui:FilterDataTable>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Empty" DataTable="[dt_Excel]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="410,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-    <ui:WriteRange AddHeaders="False" DataTable="[dt_Excel]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="[in_SheetName]" StartingCell="A2" WorkbookPath="[in_ExcelFilePath]" />
-    <If Condition="[dt_Excel.AsEnumerable().Any(Function(row) row(&quot;CellColor&quot;).ToString.Trim() &lt;&gt; &quot;Color [White]&quot;)]" DisplayName="If Set Color" sap:VirtualizedContainerService.HintSize="410,695" sap2010:WorkflowViewState.IdRef="If_3">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,333" sap2010:WorkflowViewState.IdRef="Sequence_29">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SetCellcolor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Excel\SetCellcolor.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_SheetName">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SheetName" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFilePath">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ExcelFilePath" />
-              </InArgument>
-              <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_DictColorUpdate" />
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;hejsan&quot;]" />
-        </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,180" sap2010:WorkflowViewState.IdRef="Sequence_30">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Endast vita rader i kommentarkolumnen.&quot;]" />
-        </Sequence>
-      </If.Else>
-    </If>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Excel]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="450,120" sap2010:WorkflowViewState.IdRef="ReadRange_6" SheetName="[in_SheetName]" WorkbookPath="[in_ExcelFilePath]" />
+    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Dokumentationsdatum" DataTable="[dt_Excel]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[dt_Excel]" SortOrder="Descending" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_Excel]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="450,148" sap2010:WorkflowViewState.IdRef="WriteRange_4" SheetName="sorterad" WorkbookPath="[in_ExcelFilePath]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,117" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Hej&quot;]" />
   </Sequence>
 </Activity>

@@ -97,7 +97,7 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Change PNr From yyyyMMddxxxxTo yyMMdd-xxxx" sap:VirtualizedContainerService.HintSize="608,1311" sap2010:WorkflowViewState.IdRef="Sequence_22">
+  <Sequence DisplayName="Change PNr From yyyyMMddxxxxTo yyMMdd-xxxx" sap:VirtualizedContainerService.HintSize="1697,1320" sap2010:WorkflowViewState.IdRef="Sequence_22">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="PNrFromProcapita" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="DistinctClientListCopy" />
@@ -111,7 +111,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign DistinctClientListCopy" sap:VirtualizedContainerService.HintSize="546,82" sap2010:WorkflowViewState.IdRef="Assign_28">
+    <Assign DisplayName="Assign DistinctClientListCopy" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_28">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[DistinctClientListCopy]</OutArgument>
       </Assign.To>
@@ -119,13 +119,13 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[io_DistinctClientList.Copy]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[Index]" DisplayName="For Each Item In List" sap:VirtualizedContainerService.HintSize="546,956" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[io_DistinctClientList]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[Index]" DisplayName="For Each Item In List" sap:VirtualizedContainerService.HintSize="488,956" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[io_DistinctClientList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
           </ActivityAction.Argument>
-          <If Condition="[currentItem.Count = 12 OrElse currentItem.Count &gt; 12]" sap:VirtualizedContainerService.HintSize="510,830" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[currentItem.Count = 12 OrElse currentItem.Count &gt; 12]" sap:VirtualizedContainerService.HintSize="452,797" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -133,13 +133,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="476,568" sap2010:WorkflowViewState.IdRef="Sequence_25">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,596" sap2010:WorkflowViewState.IdRef="Sequence_25">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Private: Assign PNrFromProcapita" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_22">
+                <Assign DisplayName="Private: Assign PNrFromProcapita" sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_22">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[PNrFromProcapita]</OutArgument>
                   </Assign.To>
@@ -153,7 +153,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign DisplayName="Private: Assign FirstPartPnR" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Assign_23">
+                <Assign DisplayName="Private: Assign FirstPartPnR" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="Assign_23">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[FirstPartPNr]</OutArgument>
                   </Assign.To>
@@ -167,7 +167,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign DisplayName="Private: Assign LastPartPNr" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Assign_24">
+                <Assign DisplayName="Private: Assign LastPartPNr" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="Assign_24">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[LastPartPNr]</OutArgument>
                   </Assign.To>
@@ -181,7 +181,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign DisplayName="Private: Assign PNr10" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="Assign_25">
+                <Assign DisplayName="Private: Assign PNr10" sap:VirtualizedContainerService.HintSize="416,61" sap2010:WorkflowViewState.IdRef="Assign_25">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[PNr10]</OutArgument>
                   </Assign.To>
@@ -195,7 +195,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <Assign DisplayName="Assign DistinctClientListCopy(Index)" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_27">
+                <Assign DisplayName="Assign DistinctClientListCopy(Index)" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="Assign_27">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[DistinctClientListCopy(Index)]</OutArgument>
                   </Assign.To>
@@ -212,7 +212,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_26">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -224,7 +224,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Assign DisplayName="Assign DistinctClientListCopy" sap:VirtualizedContainerService.HintSize="546,82" sap2010:WorkflowViewState.IdRef="Assign_29">
+    <Assign DisplayName="Assign DistinctClientListCopy" sap:VirtualizedContainerService.HintSize="488,166" sap2010:WorkflowViewState.IdRef="Assign_29">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[io_DistinctClientList]</OutArgument>
       </Assign.To>
